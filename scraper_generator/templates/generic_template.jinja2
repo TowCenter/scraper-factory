@@ -1,0 +1,126 @@
+"""
+Article Scraper for {{ org_name }}
+
+Generated at: {{ generated_at }}
+Target URL: {{ url }}
+Generated using: {{ model }}
+"""
+
+import json
+import os
+from playwright.async_api import async_playwright
+from dateutil.parser import parse
+import urllib.parse
+import asyncio
+
+base_url = '{{ url }}'
+
+# Scraper module path for tracking the source of scraped data
+SCRAPER_MODULE_PATH = '.'.join(os.path.splitext(os.path.abspath(__file__))[0].split(os.sep)[-3:])
+
+class PlaywrightContext:
+    """Context manager for Playwright browser sessions."""
+    
+    async def __aenter__(self):
+        self.playwright = await async_playwright().start()
+        self.browser = await self.playwright.chromium.launch()
+        self.context = await self.browser.new_context()
+        return self.context
+        
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.browser.close()
+        await self.playwright.stop()
+
+async def scrape_page(page):
+    """
+    Extract article data from the current page.
+    
+    Parameters:
+        page: Playwright page object
+        
+    Returns:
+        List of dictionaries containing article data (title, date, url)
+    """
+  
+    articles = []
+   
+    # TODO: Implement selector logic specific to the  website           
+    # 1. Find all article containers 
+    # 2. Extract title, date, and URL for each article
+    # 3. Format date consistently using YYYY-MM-DD format
+    # 4. Return structured data
+    
+    # When adding an article, include the scraper path for traceability
+    # Example structure:
+    # articles.append({
+    #     'title': title,
+    #     'date': date_str,
+    #     'url': url,
+    #     'scraper': SCRAPER_MODULE_PATH
+    # })
+
+    return articles
+
+async def get_next_page(page):
+    """
+    Find the URL to the next page of articles, if it exists.
+    
+    Parameters:
+        page: Playwright page object
+        
+    Returns:
+        URL string for the next page or None if no next page exists
+    """
+    # TODO: Implement logic to find "next page" link
+    # Common implementations include finding pagination elements
+    # or "next" buttons
+    # 
+    pass
+
+async def get_first_page(base_url=base_url):
+    """Fetch only the first page of articles."""
+    async with PlaywrightContext() as context:
+        page = await context.new_page()
+        await page.goto(base_url)
+        articles = await scrape_page(page)
+        await page.close()
+        return articles
+
+async def get_all_articles(base_url=base_url, max_pages=100):
+    """Fetch all articles from all pages."""
+
+    async with PlaywrightContext() as context:
+        articles = []
+        page = await context.new_page()
+        page_count = 0
+
+        await page.goto(base_url)
+        page_articles = await scrape_page(page)
+        articles.extend(page_articles)
+        
+        next_page_url = await get_next_page(page)
+        while next_page_url and page_count < max_pages:
+            if page_count == max_pages - 1:
+                print(f"Reached maximum page limit of {max_pages}. Stopping further scraping.")
+            await page.goto(next_page_url)
+            page_articles = await scrape_page(page)
+            articles.extend(page_articles)
+            next_page_url = await get_next_page(page)
+            page_count += 1
+            
+            
+        await page.close()
+        return articles
+
+async def main():
+    """Main execution function."""
+    all_articles = await get_all_articles()
+    
+    # Save results to JSON
+    result_path = os.path.join(os.path.dirname(__file__), 'result.json')
+    with open(result_path, 'w') as f:
+        json.dump(all_articles, f, indent=2)
+    print(f"Results saved to {result_path}")
+
+if __name__ == "__main__":
+    asyncio.run(main())

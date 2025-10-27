@@ -1,0 +1,25 @@
+################################################################################
+#                                                                              #
+#                              !!! READ ME !!!                                 #
+#                                                                              #
+#    The following code block is a temporary warning for users.                #
+#    It should be read carefully, then **DELETED** after review.               #
+#    DO NOT leave this in production code.                                     #
+#                                                                              #
+################################################################################
+import sys
+
+# Display warning on first run
+if __name__ == "__main__":
+    print("\033[93m" + "-" * 80 + "\033[0m")
+    print("\033[93mWARNING: This is an auto-generated scraper and will likely need customization\033[0m")
+    print("\033[93mParticularly check the selectors and pagination handling before using in production\033[0m")
+    print("\033[93mRemove these lines after you've reviewed and edited the scraper\033[0m")
+    print("\033[93m" + "-" * 80 + "\033[0m")
+    
+    # Uncomment to bypass this warning
+    #pass
+    
+    # Comment out this line after reviewing the code
+    sys.exit("⚠️ Exiting: Please review and edit this scraper before running it")
+################################################################################

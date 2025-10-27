@@ -1,0 +1,11 @@
+pymongo
+requests
+openai
+streamlit
+newspaper3k
+scrapegraphai
+dotenv
+jinja2
+inquirer
+retrying
+lxml_html_clean

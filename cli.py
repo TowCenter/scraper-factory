@@ -17,15 +17,16 @@ from pathlib import Path
 # Add the parent directory to the path so we can import the scraper_generator module
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from scraper_generator import (
-    generate_scraper, 
-    save_scraper, 
+from scraper_generator import generate_scraper
+from scraper_generator.utils import (
+    save_scraper,
+    setup_logging, 
+    sanitize_filename, 
+    check_org_scrapers_seed, 
     get_scraper_metadata
 )
-from utils import setup_logging, sanitize_filename, check_org_scrapers_seed
 from scraper_generator.config import LOG_LEVEL, LOG_FILE, SCRAPER_OUTPUT_DIR
 from scraper_generator.test import run_tests  # Import the test module
-from db.mongo_utils import check_org_exists, check_org_scrapers  # Import MongoDB utility functions
 
 # Load environment variables
 load_dotenv()
@@ -108,9 +109,6 @@ def parse_args():
     # Register command
     register_parser = subparsers.add_parser('register', help='Register a org in the database')
     register_parser.add_argument('--name', '-n', help='Name of the org (e.g., Harvard University)')
-    register_parser.add_argument('--color', help='org brand color in hex format (e.g., #A41034)')
-    register_parser.add_argument('--type', choices=['provost', 'president', 'trustees', 'other'], 
-                                help='Type of scraper (must be one of: provost, president, trustees, or other)')
     register_parser.add_argument('--url', help='URL for the articles page')
     register_parser.add_argument('--filename', '-f', default='scraper.py', help='Filename of the scraper (default: scraper.py)')
     register_parser.add_argument('--run-seed', action='store_true', help='Run db/seed.py after updating seed_data.json')
@@ -141,18 +139,6 @@ def parse_args():
     elif args.command == 'register':
         if not args.name:
             args.name = prompt_org_name('Enter the name of the org (e.g., Harvard University): ')
-        # We'll check for color in handle_register only if a new org is being created
-        if not args.type:
-            scraper_types = ['provost', 'president', 'trustees', 'other']
-            questions = [
-                inquirer.List('type',
-                              message="Select the scraper type",
-                              choices=scraper_types,
-                              default='other'
-                             ),
-            ]
-            answers = inquirer.prompt(questions)
-            args.type = answers['type']
         if not args.url:
             args.url = input('Enter the URL for the articles page: ')
 
@@ -244,14 +230,11 @@ def handle_generate(args):
 
                     if choice == f"Overwrite: {scraper_name} ({scraper_url})":
                         scraper_idx = i
-                        # Extract type from scraper name (e.g., "provost articles" -> "provost")
-                        args.type = scraper_name.replace(" articles", "").replace(" announcements", "")
                         break
                 
                 if scraper_idx is not None:
                     args.filename = scraper_path.split("/")[-1]
                     logger.info(f"\nOverwriting scraper: {existing_scrapers[scraper_idx]['name']}")
-                    logger.info(f"Detected type: {args.type}")
                     logger.info(f"Will save as: {args.filename}")
             else:
                 logger.error("Invalid choice. Operation cancelled.")
@@ -290,10 +273,6 @@ def handle_generate(args):
             "--url", args.url,
             "--filename", args.filename
         ]
-        
-        # Only add type if it was detected during overwrite
-        if hasattr(args, 'type') and args.type:
-            register_cmd.extend(["--type", args.type])
         
         subprocess.run(register_cmd)
         
@@ -422,7 +401,6 @@ def handle_register(args):
         module_suffix = args.filename.replace('.py', '')
         
         scraper = {
-            "name": args.type + " articles",
             "path": f"scrapers.{code_slug}.{module_suffix}",
             "url": args.url
         }
@@ -465,13 +443,8 @@ def handle_register(args):
             # Update the org in the seed data
             seed_data = existing_org
         else:
-            # Create new org entry
-            if not args.color:
-                args.color = input('Enter the org brand color in hex format (e.g., #A41034): ')
-                
             new_org = {
                 "name": args.name,
-                "color": args.color,
                 "scrapers": [scraper]
             }
             

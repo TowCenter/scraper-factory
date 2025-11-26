@@ -1,0 +1,51 @@
+You are implementing a web scraper for an articles page. I'm providing you with a template that already has the basic structure for a Playwright-based web scraper.
+
+Here is the template code:
+
+```python
+{{ rendered_template }}
+```
+
+Based on analysis of the page structure, here are the candidate selectors found:
+
+**Article Selectors with HTML Examples:**
+{{ article_examples }}
+
+**Title Selectors with HTML Examples:**
+{{ title_examples }}
+
+**URL Selectors with HTML Examples:**
+{{ url_examples }}
+
+**Date Selectors with HTML Examples:**
+{{ date_examples }}
+
+**Next Page Selectors with HTML Examples:**
+{{ next_page_examples }}
+
+Your task is to analyze the HTML examples above and implement the scraper with intelligent navigation:
+
+**Navigation Strategy:**
+1. If next page selectors are found: Use them for traditional page navigation in advance_page(). Prioritize a 'next' or 'load more' button or link over other pagination types. 
+2. If no next page selectors are found: Implement infinite scroll as fallback in advance_page()
+
+**Implementation Requirements:**
+1. Review the HTML examples for each selector and choose the most appropriate ones for extracting article titles, dates, and URLs.
+2. Implement the scrape_page() function using your chosen selectors.
+3. Implement the advance_page() function with this logic:
+   - **If next page selectors exist**: Click/navigate to next page using those selectors, or navigate to the next page URL based on hrefs
+   - **If no next page selectors exist**: Use infinite scroll fallback (scroll to bottom, wait for new content, return same URL)
+4. Make sure to handle date formatting consistently (YYYY-MM-DD).
+5. Return structured data as a list of dictionaries with keys: title, date, url.
+6. This is an async scraper using Playwright's async API. Make sure to use 'await' for ALL async methods.
+
+**Important Notes:**
+- DO NOT USE OVERLY SPECIFIC SELECTORS (watch for any that include IDs or strings that look auto-generated)
+- Many modern sites use infinite scroll without visible pagination buttons
+- Some sites have "Load More" buttons that auto-trigger on scroll
+- Always implement a fallback strategy if primary navigation fails
+- Test your selectors thoroughly - choose the most reliable ones from the examples
+- Ensure scrapers don't break entirely because of malformed HTML (like dates or URLs) or missing elements - use safe access patterns, especially if the article selector returns null or empty lists.
+- Be sure to understand child and parent HTML elements when selecting elements, since articles should be parents of all the child elements like date, url and title. 
+
+CRITICAL: Return ONLY the Python code with appropriate in-line comments and function docstrings. Do not include any explanations, descriptions, or markdown code blocks. Start your response directly with the Python imports and code. No introductory text, no ```python blocks, just the raw Python script that can be executed immediately.

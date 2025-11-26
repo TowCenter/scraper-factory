@@ -46,7 +46,7 @@ async def scrape_page(page):
    
     # TODO: Implement selector logic specific to the  website           
     # 1. Find all article containers 
-    # 2. Extract title, date, and URL for each article
+    # 2. Extract title, date, and URL for each article. If there is no element for date, use None and still include the article.
     # 3. Format date consistently using YYYY-MM-DD format
     # 4. Return structured data
     
@@ -61,21 +61,29 @@ async def scrape_page(page):
 
     return articles
 
-async def get_next_page(page):
+async def advance_page(page):
     """
-    Find the URL to the next page of articles, if it exists.
-    
+    Finds the next page button or link to navigate to the next page of articles.
+    Clicks button or navigates to next page URL if found. Scroll load more button into view if not visible. 
+    Defaults to infinite scroll if no pagination found.
+
     Parameters:
         page: Playwright page object
-        
-    Returns:
-        URL string for the next page or None if no next page exists
     """
-    # TODO: Implement logic to find "next page" link
-    # Common implementations include finding pagination elements
-    # or "next" buttons
-    # 
+
+    # TODO: Implement logic to find "next page" link or button to load more elements
+    # Common implementations include finding next page elements
+    # or "next", "more", "load buttons"
+
+    # fallback to infinite scroll if no pagination found
+
+    # Scroll to bottom
+    await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+    # Wait for potential new content to load
+    await page.wait_for_timeout(3000)
+
     pass
+    
 
 async def get_first_page(base_url=base_url):
     """Fetch only the first page of articles."""
@@ -91,23 +99,37 @@ async def get_all_articles(base_url=base_url, max_pages=100):
 
     async with PlaywrightContext() as context:
         articles = []
+        seen = set()
         page = await context.new_page()
         page_count = 0
 
         await page.goto(base_url)
-        page_articles = await scrape_page(page)
-        articles.extend(page_articles)
-        
-        next_page_url = await get_next_page(page)
-        while next_page_url and page_count < max_pages:
-            if page_count == max_pages - 1:
-                print(f"Reached maximum page limit of {max_pages}. Stopping further scraping.")
-            await page.goto(next_page_url)
-            page_articles = await scrape_page(page)
-            articles.extend(page_articles)
-            next_page_url = await get_next_page(page)
-            page_count += 1
-            
+
+        page_count = 0
+        article_count = 0  # previous count
+        new_article_count = 0  # current count
+
+        try:
+            while page_count < max_pages:
+                page_articles = await scrape_page(page)
+                for article in page_articles:
+                    key = tuple(sorted(article.items()))
+                    if key not in seen:
+                        seen.add(key)
+                        articles.append(article)
+                new_article_count = len(articles)
+
+                if new_article_count <= article_count:
+                    break
+
+                page_count += 1
+                article_count = new_article_count
+
+                await advance_page(page)
+                            
+        except Exception as e:
+            print(f"Error occurred while getting next page: {e}")
+
             
         await page.close()
         return articles

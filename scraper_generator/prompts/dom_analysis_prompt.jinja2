@@ -1,0 +1,42 @@
+Here is a chunk of a summarized DOM tree:
+```
+{{ dom_chunk }}
+```
+Please analyze this DOM chunk along with the screenshot of the page to identify CSS selectors that could be used for web scraping a list of articles and their attributes, as well as pagination or infinite scroll elements.
+
+IMPORTANT: Look carefully for next page and navigation elements. These might include:
+- Traditional pagination (numbered pages, "Next" links)  
+- "Load More" or "More" buttons that might trigger more articles or data to load
+- Infinite scroll indicators or loading elements
+- Any navigation that loads additional content
+
+Note: Some pages use infinite scroll without visible next page or load more indicators - this is normal and should result in empty next_page_selectors.
+
+Return your answer as a JSON object with this EXACT format:
+{
+  "article_selectors": ["selector1", "selector2", "selector3"],
+  "title_selectors": ["selector1", "selector2"],
+  "url_selectors": ["selector1", "selector2"],
+  "date_selectors": ["selector1", "selector2"],
+  "next_page_selectors": ["selector1", "selector2"]
+}
+
+If you think a selector is over 50 characters, you are probably wrong. Do not repeat selectors - only return unique ones. If there is any '+' in the selectors, make sure you're not including many of the same element.
+
+For article_selectors, include selectors for:
+- Any container that holds an article (.article, .post, .item, etc.). Ideally, it should contain links to the articles, with titles, URLS and dates. 
+
+Within those containers, look for:
+- Article titles (h1, h2, h3, .title, .heading, etc.)
+- Article dates (.date, .published, time elements, etc.)  
+- Article URLs (a[href] within article containers)
+
+For next_page_selectors, include selectors for:
+- Next page links (.next, .page-next, [aria-label*="next"], etc.)
+- Load more buttons (.load-more, .show-more, buttons that might auto-trigger, etc.)
+- Pagination containers (.pagination, .pager, etc.)
+- Any elements that indicate more content can be loaded
+
+If you don't see clear next page/load-more indicators or other selectors, return an empty array. Be conservative - if unsure, return an empty array.
+
+Only return the JSON object, no other text or markdown formatting.

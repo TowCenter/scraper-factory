@@ -13,6 +13,8 @@ import traceback
 import subprocess
 from dotenv import load_dotenv
 from pathlib import Path
+from urllib.parse import urlparse
+
 
 # Add the parent directory to the path so we can import the scraper_generator module
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -24,6 +26,11 @@ from scraper_generator.utils import (
     sanitize_filename, 
     check_org_scrapers_seed, 
     get_scraper_metadata
+)
+from scraper_generator.generator import (
+    get_robots_txt,
+    get_allowed_scraper_companies,
+    SCRAPER_GROUPS,
 )
 from scraper_generator.config import LOG_LEVEL, LOG_FILE, SCRAPER_OUTPUT_DIR
 from scraper_generator.test import run_tests  # Import the test module
@@ -172,6 +179,60 @@ def handle_generate(args):
     
     try:
         logger.info(f"Generating scraper for {args.org}...")
+
+        # --- robots.txt check BEFORE doing any heavy work ------------------
+        robots_txt = get_robots_txt(args.url)
+
+        if robots_txt.strip():
+            lines = [l.strip().lower() for l in robots_txt.splitlines() if l.strip()]
+            disallow_all = False
+            for i, line in enumerate(lines):
+                if line == "user-agent: *":
+                    for l in lines[i + 1:]:
+                        if l.startswith("user-agent:"):
+                            break
+                        if l.startswith("disallow:") and (l == "disallow: /" or l == "disallow:/"):
+                            disallow_all = True
+                            break
+                    if disallow_all:
+                        break
+
+            if disallow_all:
+                msg = (
+                    "robots.txt has 'User-agent: *' with 'Disallow: /' – "
+                    "site disallows all crawlers. Aborting."
+                )
+                print(f"❌ {msg}")
+                logger.warning(msg)
+                return 0
+
+            # Otherwise, check which AI companies are blocked using your helper
+            allowed_companies = get_allowed_scraper_companies(robots_txt)
+            blocked_ai = [c for c in SCRAPER_GROUPS.keys() if c not in allowed_companies]
+
+            if blocked_ai:
+                msg = "⚠️ robots.txt disallows some AI crawlers: " + ", ".join(blocked_ai)
+                print(msg)
+                logger.warning(msg)
+
+                parsed = urlparse(args.url)
+                robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+
+                # Ask the user if they still want to proceed
+                confirm_q = [
+                    inquirer.Confirm(
+                        "proceed",
+                        message=f"Do you still want to generate a scraper for this site? Please read the full robots.txt before deciding: {robots_url}",
+                        default=False,
+                    )
+                ]
+                confirm_answer = inquirer.prompt(confirm_q)
+
+                if not confirm_answer or not confirm_answer["proceed"]:
+                    logger.info("User cancelled generation due to robots.txt restrictions.")
+                    return 0
+        else:
+            logger.info("No robots.txt found or it is empty; proceeding with scraper generation.")
 
         # Check for existing scrapers in the seed_data.json file
         existing_scrapers = check_org_scrapers_seed(args.org)

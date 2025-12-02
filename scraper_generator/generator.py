@@ -11,6 +11,9 @@ import tempfile
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 import asyncio
+import requests
+from urllib.parse import urlparse
+
 
 # load environment variables from .env file
 dotenv.load_dotenv()
@@ -82,7 +85,7 @@ def log_llm_interaction(logger, interaction_type, prompt, response, model="gpt-4
     if logger is None:
         print(f"WARNING: Logger is None for {interaction_type}")
         return
-        
+
     try:
         logger.info(f"\n{'='*60}")
         logger.info(f"LLM INTERACTION: {interaction_type}")
@@ -92,12 +95,12 @@ def log_llm_interaction(logger, interaction_type, prompt, response, model="gpt-4
         logger.info(f"\n{'-'*40}")
         logger.info(f"\nRESPONSE:\n{response}")
         logger.info(f"\n{'='*60}\n")
-        
+
         # Force flush to ensure it's written
         for handler in logger.handlers:
             if hasattr(handler, 'flush'):
                 handler.flush()
-                
+
         print(f"✅ Logged {interaction_type} to {logger.name}")
     except Exception as e:
         print(f"❌ Error logging {interaction_type}: {e}")
@@ -105,10 +108,10 @@ def log_llm_interaction(logger, interaction_type, prompt, response, model="gpt-4
 def sanitize_filename(name):
     """
     Convert a string to a valid filename
-    
+
     Args:
         name (str): Input string
-        
+
     Returns:
         str: Sanitized filename
     """
@@ -118,6 +121,67 @@ def sanitize_filename(name):
     name = re.sub(r'[^\w\-.]', '', name)
     # Convert to lowercase
     return name.lower()
+
+# --- robots.txt helpers ---
+
+# Grouped user-agents by company
+SCRAPER_GROUPS = {
+    'openai': ['ChatGPT-User', 'GPTBot', 'OAI -SearchBot'],
+    'anthropic': ['Claude-Web', 'ClaudeBot', 'anthropic-ai', 'Claude-SearchBot'],
+    'apple': ['Applebot-Extended', 'Applebot'],
+    'perplexity': ['PerplexityBot'],
+    'google': ['Google-Extended'],
+    'meta': ['FacebookBot', 'Meta-ExternalAgent']
+}
+
+def get_robots_txt(url):
+    parsed = urlparse(url)
+    base_url = f"{parsed.scheme}://{parsed.netloc}"
+    robots_url = f"{base_url}/robots.txt"
+    try:
+        resp = requests.get(robots_url, timeout=5)
+        text = resp.text if resp.status_code == 200 else ""
+    except Exception as e:
+        text = ""
+    return text
+
+def get_allowed_scraper_companies(robots_txt):
+    allowed_companies = []
+    robots_txt = robots_txt.lower()
+    lines = robots_txt.splitlines()
+
+    # Check for global disallow: User-agent: * with Disallow: /
+    for i, line in enumerate(lines):
+        if line.strip() == 'user-agent: *':
+            for j in range(i + 1, len(lines)):
+                l = lines[j].strip()
+                if l.startswith('user-agent:'):
+                    break
+                if l.startswith('disallow:') and (l == 'disallow: /' or l == 'disallow:/'):
+                    # All bots disallowed
+                    return []
+
+    for company, agents in SCRAPER_GROUPS.items():
+        company_disallowed = False
+        for agent in agents:
+            user_agent = f"user-agent: {agent.lower()}"
+            for i, line in enumerate(lines):
+                if line.strip() == user_agent:
+                    for j in range(i + 1, len(lines)):
+                        l = lines[j].strip()
+                        if l.startswith('user-agent:'):
+                            break
+                        if l.startswith('disallow:'):
+                            company_disallowed = True
+                            break
+                    if company_disallowed:
+                        break
+            if company_disallowed:
+                break
+        if not company_disallowed:
+            allowed_companies.append(company)
+    return allowed_companies
+
 
 def analyze_page_structure(url, config, logger=None):
     """
@@ -131,17 +195,17 @@ def analyze_page_structure(url, config, logger=None):
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=False)
             page = await browser.new_page()
-            
+
             page.set_default_timeout(30000)
             page.set_default_navigation_timeout(30000)
-            
+
             try:
                 print(f"Loading page: {url}")
                 await page.goto(url, wait_until="domcontentloaded", timeout=30000)
                 print("Page loaded, extracting HTML...")
                 html = await page.content()
                 print(f"HTML extracted ({len(html)} characters)")
-                
+
                 print("Capturing screenshot...")
                 screenshot_bytes = await page.screenshot(full_page=True)
                 print(f"Screenshot captured ({len(screenshot_bytes)} bytes)")
@@ -151,7 +215,7 @@ def analyze_page_structure(url, config, logger=None):
                 return [], None, None  # Return None for html too
             finally:
                 await browser.close()
-        
+
         # Return the raw HTML along with condensed DOM
         soup = BeautifulSoup(html, 'html.parser')
         lines = []
@@ -177,7 +241,7 @@ def analyze_page_structure(url, config, logger=None):
             for child in node.children:
                 traverse(child, depth+1)
         traverse(soup.body if soup.body else soup)
-        
+
         # Summarize repetitive elements
         summarized = []
         prev_tag = None
@@ -212,7 +276,7 @@ def analyze_page_structure(url, config, logger=None):
             summarized.append(f"... ({repeat_count-3} more <{prev_tag} class=\"{prev_class}\"> elements omitted)")
         elif repeat_count > 0:
             summarized.extend(sample_lines)
-        
+
         return summarized, screenshot_bytes, html  # Return HTML too
 
     # split list of chunks
@@ -225,30 +289,30 @@ def analyze_page_structure(url, config, logger=None):
         # Call LLM with chunk and screenshot and ask for selectors for articles and pagination
         from openai import OpenAI
         import base64
-        
+
         client = OpenAI(api_key=config["api_key"])
-        
+
         # Encode screenshot to base64
         screenshot_base64 = base64.b64encode(screenshot_bytes).decode('utf-8')
-        
+
         # Load the DOM analysis prompt template
         prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
         env = Environment(loader=FileSystemLoader(prompts_dir))
         template = env.get_template("dom_analysis_prompt.jinja2")
-        
+
         # Render the template with variables
         prompt_text = template.render(
             dom_chunk=chr(10).join(chunk)
         )
-        
+
         print("Calling LLM for chunk analysis with screenshot...")
-        
+
         response = client.chat.completions.create(
             model=config["model"],
             messages=[
                 {"role": "system", "content": "You are a helpful AI assistant specialized in web scraping."},
                 {
-                    "role": "user", 
+                    "role": "user",
                     "content": [
                         {
                             "type": "text",
@@ -267,11 +331,11 @@ def analyze_page_structure(url, config, logger=None):
             max_tokens=1000
         )
         result = response.choices[0].message.content
-        
+
         # Log this interaction
         if logger:
             log_llm_interaction(logger, "DOM Chunk Analysis", prompt_text, result, config["model"])
-        
+
         # Clean up the response in case it has markdown code blocks
         cleaned_result = result.strip()
         if cleaned_result.startswith("```json"):
@@ -281,19 +345,19 @@ def analyze_page_structure(url, config, logger=None):
         if cleaned_result.endswith("```"):
             cleaned_result = cleaned_result[:-3]
         cleaned_result = cleaned_result.strip()
-        
+
         try:
             selectors = json.loads(cleaned_result)
         except Exception as e:
             print(f"Error parsing JSON response: {e}")
             print(f"Cleaned result was: {cleaned_result}")
             selectors = {"article_selectors": [], "next_page_selectors": []}
-        
+
         return selectors
 
     loop = asyncio.get_event_loop()
     summarized_dom, screenshot_bytes, raw_html = loop.run_until_complete(condense_dom(url))
-    
+
     chunk_size = 500
     all_article_selectors = set()
     all_next_page_selectors = set()
@@ -314,7 +378,7 @@ def analyze_page_structure(url, config, logger=None):
         """Get HTML examples using BeautifulSoup on already-fetched HTML"""
         soup = BeautifulSoup(html, 'html.parser')
         examples = {}
-        
+
         for selector in selectors:
             try:
                 # Use CSS selector with BeautifulSoup
@@ -329,9 +393,9 @@ def analyze_page_structure(url, config, logger=None):
             except Exception as e:
                 print(f"Error testing selector '{selector}': {e}")
                 continue
-        
+
         return examples
-    
+
     article_examples = get_selector_examples(raw_html, list(all_article_selectors))
     next_page_examples = get_selector_examples(raw_html, list(all_next_page_selectors))
     title_examples = get_selector_examples(raw_html, list(all_title_selectors))
@@ -358,7 +422,7 @@ def analyze_page_structure(url, config, logger=None):
         "article_examples": article_examples,
         "next_page_examples": next_page_examples,
         "title_examples": title_examples,
-        "url_examples": url_examples,      
+        "url_examples": url_examples,
         "date_examples": date_examples
     }
 
@@ -368,12 +432,12 @@ def clean_scraper_code(result):
     lines = result.split('\n')
     code_started = False
     cleaned_lines = []
-    
+
     for line in lines:
         # Look for the start of Python code (imports, comments, etc.)
         if not code_started:
-            if (line.strip().startswith('"""') or 
-                line.strip().startswith('import ') or 
+            if (line.strip().startswith('"""') or
+                line.strip().startswith('import ') or
                 line.strip().startswith('from ') or
                 line.strip().startswith('#') and 'import' not in line.lower() and 'python' not in line.lower()):
                 code_started = True
@@ -387,9 +451,9 @@ def clean_scraper_code(result):
             if line.strip() == '```':
                 break  # Stop at closing ```
             cleaned_lines.append(line)
-    
+
     result = '\n'.join(cleaned_lines)
-    
+
     # Original cleaning logic as fallback
     if result.startswith("```python"):
         result = result.replace("```python", "", 1)
@@ -399,7 +463,7 @@ def clean_scraper_code(result):
         result = result.replace("```", "", 1)
         if result.endswith("```"):
             result = result[:-3]
-    
+
     return result.strip()
 
 # Call the OpenAI API to generate the scraper code from the prompt.
@@ -416,11 +480,11 @@ def run_script_creator(scraper_prompt, config, logger=None):
         max_tokens=4000
     )
     result = response.choices[0].message.content
-    
+
     # Log this interaction
     if logger:
         log_llm_interaction(logger, "Scraper Generation", scraper_prompt, result, config["model"])
-    
+
     if result and isinstance(result, str):
         return clean_scraper_code(result)
     else:
@@ -430,12 +494,12 @@ def run_script_creator(scraper_prompt, config, logger=None):
 def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
     """
     Test the generated scraper and return feedback about any errors or issues
-    
+
     Args:
         scraper_code (str): The generated scraper code
         scraper_file_path (str): Path where to write the scraper for testing
         url (str): The target URL for the scraper
-        
+
     Returns:
         dict: Contains success status and error info
     """
@@ -451,7 +515,7 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
             temp_file.write(scraper_code)
             temp_file.flush()
             temp_scraper_path = temp_file.name
-    
+
         # Try to run the scraper with a short timeout
         print("Testing generated scraper...")
         # Use a timeout to prevent hanging indefinitely
@@ -462,13 +526,13 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
             text=True,
             timeout=60  # 60 second timeout
         )
-        
+
         if result.returncode == 0:
             print("✅ Scraper ran successfully!")
-            
+
             # Check the actual results.json file to see if any articles were found
             results_file_path = os.path.join(target_dir, "results.json")
-            
+
             article_count = 0
             try:
                 if os.path.exists(results_file_path):
@@ -478,7 +542,7 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
                         print(f"📊 Found {article_count} articles in results.json")
             except Exception as e:
                 print(f"⚠️ Could not read results.json: {e}")
-            
+
             # If 0 articles were found, return as failure
             if article_count == 0:
                 print("⚠️ 0 articles found - may need headless=False")
@@ -489,7 +553,7 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
                     'stderr': result.stderr,
                     'error_message': 'Scraper found 0 articles. May need headless=False or different selectors.'
                 }
-            
+
             return {
                 'success': True,
                 'stdout': result.stdout,
@@ -505,7 +569,7 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
                 'stdout': result.stdout,
                 'stderr': result.stderr
             }
-            
+
     except subprocess.TimeoutExpired:
         print("⏰ Scraper test timed out after 60 seconds")
         return {
@@ -530,7 +594,7 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
 def refine_scraper_with_feedback(original_code, feedback, url, scraper_name, config, logger=None):
     """
     Use LLM to refine scraper code based on test feedback
-    
+
     Args:
         original_code (str): The original scraper code that failed
         feedback (dict): Feedback from testing the scraper
@@ -538,19 +602,19 @@ def refine_scraper_with_feedback(original_code, feedback, url, scraper_name, con
         scraper_name (str): Name of the scraper
         config (dict): Configuration for API calls
         logger: Logger instance for LLM interactions
-        
+
     Returns:
         str: Refined scraper code
     """
     from openai import OpenAI
-    
+
     # Check if this is a zero results issue - if so, force headless=False
     if feedback.get('error_type') == 'zero_results':
         print("🔧 Zero results detected - setting headless=False in scraper code")
-        
+
         import re
         modified_code = original_code
-        
+
         # Case 1: Replace existing headless=True with headless=False
         if re.search(r'headless\s*=\s*True', modified_code, re.IGNORECASE):
             modified_code = re.sub(
@@ -560,7 +624,7 @@ def refine_scraper_with_feedback(original_code, feedback, url, scraper_name, con
                 flags=re.IGNORECASE
             )
             print("✅ Changed headless=True to headless=False")
-        
+
         # Case 2: Browser launch without headless parameter - add it
         elif re.search(r'\.chromium\.launch\(\s*\)', modified_code):
             modified_code = re.sub(
@@ -569,7 +633,7 @@ def refine_scraper_with_feedback(original_code, feedback, url, scraper_name, con
                 modified_code
             )
             print("✅ Added headless=False to browser launch")
-        
+
         # Case 3: Browser launch with other parameters but no headless
         elif re.search(r'\.chromium\.launch\([^)]*\)', modified_code) and 'headless' not in modified_code:
             # Find the launch call and add headless=False as the first parameter
@@ -579,9 +643,9 @@ def refine_scraper_with_feedback(original_code, feedback, url, scraper_name, con
                 modified_code
             )
             print("✅ Added headless=False to browser launch with existing parameters")
-        
+
         return modified_code
-    
+
     # Original LLM-based refinement for other errors
     error_info = f"""
 Error Type: {feedback.get('error_type', 'unknown')}
@@ -589,12 +653,12 @@ Exit Code: {feedback.get('exit_code', 'N/A')}
 STDOUT: {feedback.get('stdout', '')}
 STDERR: {feedback.get('stderr', '')}
 """
-    
+
     # Load the scraper refinement prompt template
     prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
     env = Environment(loader=FileSystemLoader(prompts_dir))
     template = env.get_template("scraper_refinement_prompt.jinja2")
-    
+
     # Render the template with variables
     refinement_prompt = template.render(
         original_code=original_code,
@@ -603,7 +667,7 @@ STDERR: {feedback.get('stderr', '')}
     )
 
     client = OpenAI(api_key=config["api_key"])
-    
+
     print("🔧 Refining scraper based on test feedback...")
     response = client.chat.completions.create(
         model=config["model"],
@@ -614,33 +678,33 @@ STDERR: {feedback.get('stderr', '')}
         temperature=0.1,  # Lower temperature for more consistent fixes
         max_tokens=4000
     )
-    
+
     refined_code = response.choices[0].message.content
-    
+
     # Log this interaction
     if logger:
         log_llm_interaction(logger, "Scraper Refinement", refinement_prompt, refined_code, config["model"])
-    
+
     return clean_scraper_code(refined_code)
 
 # Main function to generate a scraper for a given URL with testing and refinement
 def generate_scraper(url, scraper_name):
     config = setup_config()
     logger = setup_logging(scraper_name)
-    
+
     print(f"🔧 Set up LLM logger: {logger.name}")
     print(f"📁 Log file handlers: {[h.baseFilename if hasattr(h, 'baseFilename') else str(h) for h in logger.handlers]}")
-    
+
     logger.info(f"Target URL: {url}")
     logger.info(f"Scraper name: {scraper_name}")
-    
+
     print(f"Analyzing page structure for: {url}")
     page_analysis = analyze_page_structure(url, config, logger)
     scraper_prompt = make_prompt(url, scraper_name, page_analysis)
-    
+
     print("Generating initial scraper code...")
     scraper_code = run_script_creator(scraper_prompt, config, logger)
-    
+
     # Define working directory inside scrapers/<name> so results.json lives with the scraper
     sanitized_name = sanitize_filename(scraper_name) or 'scraper'
     output_dir = os.path.abspath(
@@ -648,15 +712,15 @@ def generate_scraper(url, scraper_name):
     )
     os.makedirs(output_dir, exist_ok=True)
     scraper_file_path = os.path.join(output_dir, 'scraper.py')
-    
+
     # Test the scraper once
     print("\n" + "="*60)
     print("TESTING GENERATED SCRAPER")
     print("="*60)
     logger.info("TESTING GENERATED SCRAPER")
-    
+
     feedback = test_scraper_and_get_feedback(scraper_code, scraper_file_path, url)
-    
+
     if feedback['success']:
         print("✅ Scraper ran successfully!")
         logger.info("✅ Scraper ran successfully!")
@@ -665,7 +729,7 @@ def generate_scraper(url, scraper_name):
         logger.info("❌ Scraper failed, attempting refinement...")
         logger.info(f"Error details: {feedback}")
         scraper_code = refine_scraper_with_feedback(scraper_code, feedback, url, scraper_name, config, logger)
-    
+
     # Write the final version to file
     try:
         with open(scraper_file_path, 'w') as f:
@@ -675,41 +739,41 @@ def generate_scraper(url, scraper_name):
     except Exception as e:
         print(f"❌ Error saving final scraper: {e}")
         logger.error(f"Error saving final scraper: {e}")
-    
+
     logger.info("Scraper generation completed")
     logger.info("="*80)
-    
+
     # Force flush all handlers before returning
     for handler in logger.handlers:
         if hasattr(handler, 'flush'):
             handler.flush()
-    
+
     print(f"✅ LLM interactions logged to: {logger.handlers[0].baseFilename if logger.handlers else 'No handlers!'}")
-    
+
     return scraper_code
 
 
 def make_prompt(url, scraper_name, page_analysis, template_name="generic_template.jinja2"):
     """
     Generate a prompt for the LLM to implement a scraper based on browser-use analysis.
-    
+
     Args:
         url (str): Target URL for the scraper
         scraper_name (str): Name of the scraper file without extension
         page_analysis (dict): Results from browser-use page analysis
         template_name (str): Name of the template file to use
-        
+
     Returns:
         str: Formatted prompt for the LLM
     """
     # Construct the module path
     module_path = f"scrapers.{scraper_name}"
-    
+
     # Load the template from the prompts directory
     prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
     env = Environment(loader=FileSystemLoader(prompts_dir))
     template = env.get_template("generic_template.jinja2")
-    
+
     # Render the template with our variables
     rendered_template = template.render(
         url=url,
@@ -722,7 +786,7 @@ def make_prompt(url, scraper_name, page_analysis, template_name="generic_templat
     prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
     env_local = Environment(loader=FileSystemLoader(prompts_dir))
     prompt_template = env_local.get_template("scraper_generation_prompt.jinja2")
-    
+
     # Render the prompt template with variables
     return prompt_template.render(
         rendered_template=rendered_template,
@@ -737,14 +801,14 @@ def format_selectors_with_examples(selector_examples):
     """Format selectors with their HTML examples for the prompt"""
     if not selector_examples:
         return "No selectors found."
-    
+
     formatted = []
     for selector, examples in selector_examples.items():
         formatted.append(f"- `{selector}` matches:")
         for example in examples:
             formatted.append(f"  {example}")
         formatted.append("")  # Empty line between selectors
-    
+
     return "\n".join(formatted)
 
 

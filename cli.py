@@ -180,9 +180,8 @@ def handle_generate(args):
             # Format existing scrapers for display
             scrapers_info = []
             for i, scraper in enumerate(existing_scrapers, 1):
-                scraper_name = scraper.get('name', 'Unknown')
                 scraper_url = scraper.get('url', 'No URL')
-                scrapers_info.append(f"{scraper_name} ({scraper_url})")
+                scrapers_info.append(f"({scraper_url})")
             
             logger.warning(f"Found existing scrapers for {args.org}:")
             for i, info in enumerate(scrapers_info, 1):
@@ -232,7 +231,7 @@ def handle_generate(args):
                 
                 if scraper_idx is not None:
                     args.filename = scraper_path.split("/")[-1]
-                    logger.info(f"\nOverwriting scraper: {existing_scrapers[scraper_idx]['name']}")
+                    logger.info(f"\nOverwriting scraper: {existing_scrapers[scraper_idx]['url']}")
                     logger.info(f"Will save as: {args.filename}")
             else:
                 logger.error("Invalid choice. Operation cancelled.")

@@ -1,0 +1,11 @@
+.git
+.gitignore
+.DS_Store
+.env
+.idea
+venv
+__pycache__/
+logs
+.logs
+*.log
+scrapers/

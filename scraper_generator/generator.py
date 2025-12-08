@@ -9,7 +9,6 @@ import base64
 import dotenv
 import json
 import logging
-import tempfile
 import subprocess
 import asyncio
 from datetime import datetime
@@ -512,20 +511,25 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
         dict: Contains success status and error info
     """
     target_dir = os.path.dirname(scraper_file_path) or os.getcwd()
-    temp_scraper_path = None
+    
+    # Write the scraper code to the actual file
     try:
-        with tempfile.NamedTemporaryFile(
-            mode='w', suffix='.py', dir=target_dir, delete=False
-        ) as temp_file:
-            temp_file.write(scraper_code)
-            temp_file.flush()
-            temp_scraper_path = temp_file.name
+        with open(scraper_file_path, 'w') as f:
+            f.write(scraper_code)
+    except Exception as e:
+        print(f"❌ Error writing scraper file: {e}")
+        return {
+            'success': False,
+            'error_type': 'write_error',
+            'error_message': str(e)
+        }
 
+    try:
         # Try to run the scraper with a short timeout
         print("Testing generated scraper...")
         # Use a timeout to prevent hanging indefinitely
         result = subprocess.run(
-            [sys.executable, temp_scraper_path],
+            [sys.executable, scraper_file_path],
             cwd=target_dir,
             capture_output=True,
             text=True,
@@ -589,12 +593,6 @@ def test_scraper_and_get_feedback(scraper_code, scraper_file_path, url):
             'error_type': 'execution_error',
             'error_message': str(e)
         }
-    finally:
-        if temp_scraper_path and os.path.exists(temp_scraper_path):
-            try:
-                os.remove(temp_scraper_path)
-            except OSError as cleanup_error:
-                print(f"⚠️ Could not remove temporary scraper: {cleanup_error}")
 
 def refine_scraper_with_feedback(original_code, feedback, url, scraper_name, config, logger=None):
     """
@@ -732,16 +730,16 @@ def generate_scraper(url, scraper_name):
         logger.info("❌ Scraper failed, attempting refinement...")
         logger.info(f"Error details: {feedback}")
         scraper_code = refine_scraper_with_feedback(scraper_code, feedback, url, scraper_name, config, logger)
-
-    # Write the final version to file
-    try:
-        with open(scraper_file_path, 'w') as f:
-            f.write(scraper_code)
-        print(f"\n Final scraper saved to: {scraper_file_path}")
-        logger.info(f"Final scraper saved to: {scraper_file_path}")
-    except Exception as e:
-        print(f"Error saving final scraper: {e}")
-        logger.error(f"Error saving final scraper: {e}")
+        
+        # Write the refined version to file
+        try:
+            with open(scraper_file_path, 'w') as f:
+                f.write(scraper_code)
+            print(f"\n📁 Refined scraper saved to: {scraper_file_path}")
+            logger.info(f"Refined scraper saved to: {scraper_file_path}")
+        except Exception as e:
+            print(f"❌ Error saving refined scraper: {e}")
+            logger.error(f"Error saving refined scraper: {e}")
 
     logger.info("Scraper generation completed")
     logger.info("="*80)

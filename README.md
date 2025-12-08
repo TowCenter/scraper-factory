@@ -127,13 +127,13 @@ python cli.py generate
 ```
 
 You'll be prompted to enter:
-1. **Organization name**: A name for the site (e.g., "New York Times" or "White House Press")
+1. **Organization name**: A name for the site (e.g., "Los Angeles Times" or "White House Press")
 2. **URL**: The web address of the articles page
 
 **Example:**
 ```
-Enter the name of the org: The Guardian UK
-Enter the URL of the articles page: https://www.theguardian.com/uk
+Enter the name of the org: Los Angeles Times
+Enter the URL of the articles page: https://www.latimes.com/
 ```
 
 The tool will:
@@ -147,9 +147,9 @@ The tool will:
 ```bash
 # Generate with custom options
 python cli.py generate \
-  --org "BBC News" \
-  --url "https://www.bbc.com/news" \
-  --filename "bbc_scraper.py" \
+  --org "Los Angeles Times" \
+  --url "https://www.latimes.com/" \
+  --filename "latimes_scraper.py" \
   --verbose
 ```
 
@@ -166,10 +166,10 @@ After generating a scraper, test it to make sure it works:
 
 ```bash
 # Test a specific scraper file
-python cli.py test --path scrapers/the_guardian_uk/scraper.py
+python cli.py test --path scrapers/los_angeles_times/scraper.py
 
 # Test all scrapers for an organization
-python cli.py test --org "The Guardian UK"
+python cli.py test --org "Los Angeles Times"
 ```
 
 ### Registering a scraper
@@ -178,10 +178,25 @@ Scrapers are automatically registered when generated, but you can manually regis
 
 ```bash
 python cli.py register \
-  --name "Washington Post" \
-  --url "https://www.washingtonpost.com/politics/" \
+  --name "Los Angeles Times" \
+  --url "https://www.latimes.com/" \
   --filename "scraper.py"
 ```
+
+## Run with Docker
+
+You can skip local Python/Playwright setup by building the image and running the CLI from a container:
+
+- Prerequisite: install Docker (Docker Desktop on macOS/Windows or Docker Engine on Linux) – https://docs.docker.com/get-docker/
+- Build the image (from the repo root): `docker build -t scraper-factory .`
+- Generate interactively (mount outputs so they persist): `docker run -it --init --rm -v "$PWD/scrapers:/app/scrapers" -v "$PWD/logs:/app/logs" --env-file .env scraper-factory generate`
+- Generate non-interactively: `docker run -it --init --rm -v "$PWD/scrapers:/app/scrapers" -v "$PWD/logs:/app/logs" -e OPENAI_API_KEY=sk-... scraper-factory generate --org "Los Angeles Times" --url "https://www.latimes.com/"`
+- Test an existing scraper: `docker run -it --init --rm -v "$PWD/scrapers:/app/scrapers" -v "$PWD/logs:/app/logs" --env-file .env scraper-factory test --path scrapers/los_angeles_times/scraper.py`
+
+Notes:
+- Base image already includes Playwright browsers (Chromium); no extra install needed.
+- Passing `.env` via `--env-file` or individual `-e` flags keeps your API key out of the image.
+- Mounting `scrapers` and `logs` keeps generated scrapers and logs on your host.
 
 ## Understanding the output
 

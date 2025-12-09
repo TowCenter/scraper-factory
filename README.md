@@ -236,19 +236,51 @@ python cli.py register \
 
 ## Run with Docker
 
-You can skip local Python/Playwright setup by building the image and running the CLI from a container:
+You can skip local Python/Playwright setup by using Docker (replace `OPENAI_API_KEY` with your real key):
 
 - Prerequisite: install Docker (Docker Desktop on macOS/Windows or Docker Engine on Linux) – https://docs.docker.com/get-docker/
-- Build the image (from the repo root): `docker build -t scraper-factory .`
-- Generate interactively (mount outputs so they persist): `docker run -it --init --rm -v "$PWD/scrapers:/app/scrapers" -v "$PWD/logs:/app/logs" --env-file .env scraper-factory generate`
-- Generate non-interactively: `docker run -it --init --rm -v "$PWD/scrapers:/app/scrapers" -v "$PWD/logs:/app/logs" -e OPENAI_API_KEY=sk-... scraper-factory generate --org "Los Angeles Times" --url "https://www.latimes.com/"`
-- Generate in batch mode (mount your list file): `docker run -it --init --rm -v "$PWD:/app" --env-file .env scraper-factory generate --batch-file batch/example.json`
-- Test an existing scraper: `docker run -it --init --rm -v "$PWD/scrapers:/app/scrapers" -v "$PWD/logs:/app/logs" --env-file .env scraper-factory test --path scrapers/los_angeles_times/scraper.py`
+- Generate interactively:
+  ```bash
+  docker run -it --init --rm \
+    -v "$PWD/scrapers:/app/scrapers" \
+    -v "$PWD/logs:/app/logs" \
+    -e OPENAI_API_KEY=sk-... \
+    towcenter/scraper-factory:latest \
+    generate
+  ```
+- Generate non-interactively:
+  ```bash
+  docker run -it --init --rm \
+    -v "$PWD/scrapers:/app/scrapers" \
+    -v "$PWD/logs:/app/logs" \
+    -e OPENAI_API_KEY=sk-... \
+    towcenter/scraper-factory:latest \
+    generate --org "Los Angeles Times" --url "https://www.latimes.com/"
+  ```
+- Generate in batch mode:
+  ```bash
+  docker run -it --init --rm \
+    -v "$PWD/scrapers:/app/scrapers" \
+    -v "$PWD/logs:/app/logs" \
+    -v "$PWD/batch:/app/batch" \
+    -e OPENAI_API_KEY=sk-... \
+    towcenter/scraper-factory:latest \
+    generate --batch-file batch/example.json
+  ```
+- Test an existing scraper:
+  ```bash
+  docker run -it --init --rm \
+    -v "$PWD/scrapers:/app/scrapers" \
+    -v "$PWD/logs:/app/logs" \
+    -e OPENAI_API_KEY=sk-... \
+    towcenter/scraper-factory:latest \
+    test --path scrapers/los_angeles_times/scraper.py
+  ```
 
-Notes:
-- Base image already includes Playwright browsers (Chromium); no extra install needed.
-- Passing `.env` via `--env-file` or individual `-e` flags keeps your API key out of the image.
-- Mounting `scrapers` and `logs` keeps generated scrapers and logs on your host.
+Optional: build locally (if you want to customize or work offline):
+- From repo root: `docker build -t scraper-factory .`
+- Then replace `towcenter/scraper-factory:latest` in the commands above with `scraper-factory`.
+
 
 ## Understanding the output
 

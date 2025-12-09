@@ -159,7 +159,7 @@ def load_batch_file(batch_path):
             continue
 
         if not org or not url:
-            print(f"⚠️ Skipping entry #{idx}: 'org' (or 'name') and 'url' are required.")
+            print(f"⚠️ Skipping entry #{idx}: 'org' and 'url' are required.")
             continue
 
         entries.append(

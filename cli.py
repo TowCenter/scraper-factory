@@ -495,12 +495,19 @@ def handle_generate_batch(args):
         print("❌ No valid entries found in the batch file.")
         return 1
 
-    exit_code = 0
     total = len(entries)
     robots_summary = {"disallow_all": [], "blocked_ai": []}
 
+    generated = []
+    failed = []
+
     for idx, entry in enumerate(entries, 1):
-        print(f"\n[{idx}/{total}] Generating scraper for {entry['org']} ({entry['url']})")
+        org = entry['org']
+        url = entry['url']
+        print(f"\n{'='*60}")
+        print(f"[{idx}/{total}] Generating scraper for {org} ({url})")
+        print(f"{'='*60}\n")
+
         # Prefer entry filename, then CLI-provided, otherwise None so numbering can pick next
         entry_filename = entry.get("filename")
         if not entry_filename and args.filename and args.filename != "scraper.py":
@@ -508,8 +515,8 @@ def handle_generate_batch(args):
 
         entry_args = argparse.Namespace(
             command='generate',
-            org=entry["org"],
-            url=entry["url"],
+            org=org,
+            url=url,
             filename=entry_filename,
             template=entry.get("template") or args.template,
             model=entry.get("model") or args.model,
@@ -517,22 +524,67 @@ def handle_generate_batch(args):
             batch_file=args.batch_file,
         )
 
-        result = run_generate(entry_args, batch_mode=True, robots_summary=robots_summary)
-        if result != 0:
-            exit_code = result
+        try:
+            result = run_generate(entry_args, batch_mode=True, robots_summary=robots_summary)
+            if result == 0:
+                folder_name = sanitize_filename(org)
+                output_path = os.path.join(SCRAPER_OUTPUT_DIR, folder_name, entry_args.filename)
+                generated.append({"name": org, "url": url, "path": output_path})
+            else:
+                failed.append({"name": org, "url": url})
+        except Exception as e:
+            logger.error(f"Error generating scraper for {org}: {e}")
+            failed.append({"name": org, "url": url})
+
+    # Run tests on successfully generated scrapers
+    tests_passed = 0
+    tests_failed = 0
+    for entry in generated:
+        path = entry['path']
+        if os.path.exists(path):
+            print(f"\nTesting {entry['name']} ({path})...")
+            try:
+                success = run_tests(path)
+                if success:
+                    tests_passed += 1
+                else:
+                    tests_failed += 1
+            except Exception as e:
+                logger.error(f"Error testing {entry['name']}: {e}")
+                tests_failed += 1
+        else:
+            tests_failed += 1
+
+    # Print summary
+    print(f"\n{'='*60}")
+    print("Batch Generation Summary")
+    print(f"{'='*60}")
+    print(f"  Total:     {total}")
+    print(f"  Generated: {len(generated)}")
+    print(f"  Failed:    {len(failed)}")
+    if generated:
+        print(f"\n  Tests:")
+        print(f"  Passed:    {tests_passed}")
+        print(f"  Failed:    {tests_failed}")
+
+    if failed:
+        print(f"\n  Failed entries:")
+        for entry in failed:
+            print(f"    - {entry['name']} ({entry['url']})")
 
     if robots_summary["disallow_all"] or robots_summary["blocked_ai"]:
-        print("\nℹ️robots.txt warnings:")
+        print(f"\n  robots.txt warnings:")
         if robots_summary["disallow_all"]:
-            print(" ❌ robots.txt disallows all crawlers:")
+            print("    Disallow all crawlers:")
             for robots_url in robots_summary["disallow_all"]:
-                print(f"   • {robots_url}")
+                print(f"      - {robots_url}")
         if robots_summary["blocked_ai"]:
-            print(" ⚠️robots.txt blocks specific AI crawlers:")
+            print("    Blocks specific AI crawlers:")
             for msg in robots_summary["blocked_ai"]:
-                print(f"   • {msg}")
+                print(f"      - {msg}")
 
-    return exit_code
+    print()
+    return 0 if not failed else 1
 
 
 def handle_generate(args):

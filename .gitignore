@@ -6,8 +6,8 @@
 logs/*
 scraper_generator/__pycache__/*
 
-# Ignore result.json files in scrapers
-scrapers/*/result.json
+# Ignore generated scrapers
+scrapers/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

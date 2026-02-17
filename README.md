@@ -502,6 +502,10 @@ Environment variables (set in `.env`):
 # Required
 OPENAI_API_KEY=your_key_here
 
+# Required for scripts (scrape_indexes.py, scrape_articles.py, seed.py, setup.py)
+MONGO_URI=mongodb://localhost:27017       # MongoDB connection string
+DB_NAME=org_data                          # MongoDB database name
+
 # Optional (with defaults)
 LLM_MODEL=openai/gpt-4o-mini
 SCRAPER_OUTPUT_DIR=scrapers

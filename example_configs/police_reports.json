@@ -1,0 +1,31 @@
+{
+  "content_type": "police_reports",
+  "description": "Police incident reports or press releases from a law enforcement agency",
+  "item_label": "police report",
+  "fields": [
+    {
+      "name": "title",
+      "description": "Title or subject line of the report",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "date",
+      "description": "Date the report was published or the incident occurred (YYYY-MM-DD)",
+      "required": false,
+      "type": "date"
+    },
+    {
+      "name": "url",
+      "description": "Link to the full report",
+      "required": true,
+      "type": "url"
+    },
+    {
+      "name": "incident_type",
+      "description": "Category or type of incident (e.g., theft, traffic, assault)",
+      "required": false,
+      "type": "text"
+    }
+  ]
+}

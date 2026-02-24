@@ -1,0 +1,31 @@
+{
+  "content_type": "school_board_meetings",
+  "description": "School board meeting records, agendas, and minutes from a school district",
+  "item_label": "school board meeting",
+  "fields": [
+    {
+      "name": "title",
+      "description": "Title or name of the meeting (e.g., Regular Board Meeting, Special Session)",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "date",
+      "description": "Date of the meeting (YYYY-MM-DD)",
+      "required": false,
+      "type": "date"
+    },
+    {
+      "name": "url",
+      "description": "Link to the meeting agenda, minutes, or detail page",
+      "required": true,
+      "type": "url"
+    },
+    {
+      "name": "agenda_url",
+      "description": "Direct link to the downloadable agenda document (PDF or other format)",
+      "required": false,
+      "type": "url"
+    }
+  ]
+}

@@ -90,6 +90,24 @@ class Test:
             
         return "\n".join(details)
 
+def _load_config_json(scraper_path: Path) -> dict:
+    """Walk up from the scraper path to find config.json at the project root."""
+    candidate = scraper_path.parent
+    while True:
+        config_file = candidate / "config.json"
+        if config_file.is_file():
+            with config_file.open(encoding="utf-8") as f:
+                return json.load(f)
+        parent = candidate.parent
+        if parent == candidate:
+            break
+        candidate = parent
+    raise FileNotFoundError(
+        "config.json not found. Please create one at the project root. "
+        "See content_configs/ for examples."
+    )
+
+
 class TestContext:
     """Holds shared data and state for tests."""
 
@@ -100,6 +118,15 @@ class TestContext:
         self.first_page_articles: Optional[List[Dict[str, Any]]] = None
         self.pagination_failed: bool = False
         self.pagination_page_counts: List[int] = []
+
+        # Load content config from project-root config.json (required)
+        content_config = _load_config_json(scraper_path)
+
+        fields = content_config["fields"]
+        self.expected_keys: set = {f["name"] for f in fields} | {"scraper"}
+        self.required_fields: set = {f["name"] for f in fields if f.get("required", True)}
+        self.date_fields: List[str] = [f["name"] for f in fields if f.get("type") == "date"]
+        self.url_fields: List[str] = [f["name"] for f in fields if f.get("type") == "url"]
 
 # ---------------------------------------------------------------------------
 # Test Implementations
@@ -143,59 +170,68 @@ class DataStructureTest(Test):
         return self.passed
 
 class ItemKeysTest(Test):
-    """Check each dict has only title, date, url, and scraper as keys."""
+    """Check each dict has only the configured field keys plus scraper."""
 
     def run(self, context: TestContext) -> bool:
         if not context.data:
             self.passed = False
             return False
-            
+
         failures = []
         for i, record in enumerate(context.data):
-            if set(record.keys()) != {"title", "date", "url", "scraper"}:
+            if set(record.keys()) != context.expected_keys:
                 failures.append({"index": i, "keys": set(record.keys())})
-        
+
         self.failures = failures
         self.passed = len(failures) == 0
         return self.passed
 
 class NonBlankValuesTest(Test):
-    """Check all fields are non-empty strings."""
-    
+    """Check all required fields are non-empty strings (optional fields may be null/empty)."""
+
     def run(self, context: TestContext) -> bool:
         if not context.data:
             self.passed = False
             return False
-            
+
+        enforce = context.required_fields | {"scraper"}
+
         failures = []
         for i, record in enumerate(context.data):
-            blank_fields = {k for k, v in record.items() 
-                           if not isinstance(v, str) or not v.strip()}
+            blank_fields = {
+                k for k, v in record.items()
+                if k in enforce and (not isinstance(v, str) or not v.strip())
+            }
             if blank_fields:
                 failures.append({"index": i, "fields": blank_fields})
-        
+
         self.failures = failures
         self.passed = len(failures) == 0
         return self.passed
 
 class DateFormatTest(Test):
-    """Check date strings parse as YYYY-MM-DD."""
-    
+    """Check date fields parse as YYYY-MM-DD (skipped if no date field in config)."""
+
     def run(self, context: TestContext) -> bool:
+        if not context.date_fields:
+            self.passed = True
+            return True
+
         if not context.data:
             self.passed = False
             return False
-            
+
         failures = []
         for i, record in enumerate(context.data):
-            date = record.get("date")
-            if isinstance(date, str) and not self._valid_date(date):
-                failures.append({"index": i, "invalid": date})
-        
+            for field_name in context.date_fields:
+                val = record.get(field_name)
+                if isinstance(val, str) and not self._valid_date(val):
+                    failures.append({"index": i, "invalid": val})
+
         self.failures = failures
         self.passed = len(failures) == 0
         return self.passed
-    
+
     def _valid_date(self, s: str) -> bool:
         try:
             datetime.strptime(s, "%Y-%m-%d")
@@ -203,24 +239,30 @@ class DateFormatTest(Test):
         except ValueError:
             return False
 
+
 class UrlFormatTest(Test):
-    """Check URLs are in valid format (e.g. https://example.com)."""
+    """Check URL fields are valid (skipped if no url field in config)."""
 
     def run(self, context: TestContext) -> bool:
+        if not context.url_fields:
+            self.passed = True
+            return True
+
         if not context.data:
             self.passed = False
             return False
-            
+
         failures = []
         for i, record in enumerate(context.data):
-            url = record.get("url")
-            if isinstance(url, str) and not self._valid_url(url):
-                failures.append({"index": i, "url": url})
-        
+            for field_name in context.url_fields:
+                val = record.get(field_name)
+                if isinstance(val, str) and not self._valid_url(val):
+                    failures.append({"index": i, "url": val})
+
         self.failures = failures
         self.passed = len(failures) == 0
         return self.passed
-    
+
     def _valid_url(self, s: str) -> bool:
         p = urllib.parse.urlparse(s)
         return bool(p.scheme and p.netloc)

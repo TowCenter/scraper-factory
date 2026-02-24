@@ -1,0 +1,31 @@
+{
+  "content_type": "faculty_bios",
+  "description": "Faculty or staff biography listings from a university or organization directory",
+  "item_label": "faculty member",
+  "fields": [
+    {
+      "name": "name",
+      "description": "Full name of the faculty member",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "position",
+      "description": "Job title or academic position (e.g., Associate Professor, Dean)",
+      "required": false,
+      "type": "text"
+    },
+    {
+      "name": "department",
+      "description": "Academic department or organizational unit",
+      "required": false,
+      "type": "text"
+    },
+    {
+      "name": "url",
+      "description": "Link to the individual faculty member's bio or profile page",
+      "required": false,
+      "type": "url"
+    }
+  ]
+}

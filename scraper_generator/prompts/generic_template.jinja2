@@ -1,9 +1,12 @@
 """
-Article Scraper for {{ org_name }}
+{{ content_type | title | replace('_', ' ') }} Scraper for {{ org_name }}
 
 Generated at: {{ generated_at }}
 Target URL: {{ url }}
 Generated using: {{ model }}
+Content type: {{ content_type }}
+Fields: {% for field in fields %}{{ field.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+
 """
 
 import json
@@ -20,51 +23,52 @@ SCRAPER_MODULE_PATH = '.'.join(os.path.splitext(os.path.abspath(__file__))[0].sp
 
 class PlaywrightContext:
     """Context manager for Playwright browser sessions."""
-    
+
     async def __aenter__(self):
         self.playwright = await async_playwright().start()
         self.browser = await self.playwright.chromium.launch()
         self.context = await self.browser.new_context()
         return self.context
-        
+
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         await self.browser.close()
         await self.playwright.stop()
 
 async def scrape_page(page):
     """
-    Extract article data from the current page.
-    
+    Extract {{ item_label }} data from the current page.
+
     Parameters:
         page: Playwright page object
-        
+
     Returns:
-        List of dictionaries containing article data (title, date, url)
+        List of dictionaries containing {{ item_label }} data with keys:
+        {% for field in fields %}- {{ field.name }}: {{ field.description }}
+        {% endfor %}- scraper: module path for traceability
     """
-  
-    articles = []
-   
-    # TODO: Implement selector logic specific to the  website           
-    # 1. Find all article containers 
-    # 2. Extract title, date, and URL for each article. If there is no element for date, use None and still include the article.
-    # 3. Format date consistently using YYYY-MM-DD format
-    # 4. Return structured data
-    
-    # When adding an article, include the scraper path for traceability
+
+    items = []
+
+    # TODO: Implement selector logic specific to the website
+    # 1. Find all {{ item_label }} containers
+    # 2. Extract the following fields for each {{ item_label }}:
+    {% for field in fields %}#    - {{ field.name }}: {{ field.description }}{% if not field.required %} (optional — use None if not found){% endif %}
+    {% endfor %}{% if has_date_field %}# 3. Format date consistently using YYYY-MM-DD format
+    {% endif %}# 4. Return structured data
+
+    # When adding an item, include the scraper path for traceability
     # Example structure:
-    # articles.append({
-    #     'title': title,
-    #     'date': date_str,
-    #     'url': url,
-    #     'scraper': SCRAPER_MODULE_PATH
+    # items.append({
+    {% for field in fields %}#     '{{ field.name }}': {{ field.name }}_value,
+    {% endfor %}#     'scraper': SCRAPER_MODULE_PATH
     # })
 
-    return articles
+    return items
 
 async def advance_page(page):
     """
-    Finds the next page button or link to navigate to the next page of articles.
-    Clicks button or navigates to next page URL if found. Scroll load more button into view if not visible. 
+    Finds the next page button or link to navigate to the next page of {{ item_label }}s.
+    Clicks button or navigates to next page URL if found. Scroll load more button into view if not visible.
     Defaults to infinite scroll if no pagination found.
 
     Parameters:
@@ -83,22 +87,22 @@ async def advance_page(page):
     await page.wait_for_timeout(3000)
 
     pass
-    
+
 
 async def get_first_page(base_url=base_url):
-    """Fetch only the first page of articles."""
+    """Fetch only the first page of {{ item_label }}s."""
     async with PlaywrightContext() as context:
         page = await context.new_page()
         await page.goto(base_url)
-        articles = await scrape_page(page)
+        items = await scrape_page(page)
         await page.close()
-        return articles
+        return items
 
 async def get_all_articles(base_url=base_url, max_pages=100):
-    """Fetch all articles from all pages."""
+    """Fetch all {{ item_label }}s from all pages."""
 
     async with PlaywrightContext() as context:
-        articles = []
+        items = []
         seen = set()
         page = await context.new_page()
         page_count = 0
@@ -106,42 +110,42 @@ async def get_all_articles(base_url=base_url, max_pages=100):
         await page.goto(base_url)
 
         page_count = 0
-        article_count = 0  # previous count
-        new_article_count = 0  # current count
+        item_count = 0  # previous count
+        new_item_count = 0  # current count
 
         try:
             while page_count < max_pages:
-                page_articles = await scrape_page(page)
-                for article in page_articles:
-                    key = tuple(sorted(article.items()))
+                page_items = await scrape_page(page)
+                for item in page_items:
+                    key = tuple(sorted((k, v) for k, v in item.items() if v is not None))
                     if key not in seen:
                         seen.add(key)
-                        articles.append(article)
-                new_article_count = len(articles)
+                        items.append(item)
+                new_item_count = len(items)
 
-                if new_article_count <= article_count:
+                if new_item_count <= item_count:
                     break
 
                 page_count += 1
-                article_count = new_article_count
+                item_count = new_item_count
 
                 await advance_page(page)
-                            
+
         except Exception as e:
             print(f"Error occurred while getting next page: {e}")
 
-            
+
         await page.close()
-        return articles
+        return items
 
 async def main():
     """Main execution function."""
-    all_articles = await get_all_articles()
-    
+    all_items = await get_all_articles()
+
     # Save results to JSON
     result_path = os.path.join(os.path.dirname(__file__), 'result.json')
     with open(result_path, 'w') as f:
-        json.dump(all_articles, f, indent=2)
+        json.dump(all_items, f, indent=2)
     print(f"Results saved to {result_path}")
 
 if __name__ == "__main__":

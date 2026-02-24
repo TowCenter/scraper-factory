@@ -23,14 +23,15 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from scraper_generator import generate_scraper
 from scraper_generator.utils import (
     save_scraper,
-    setup_logging, 
-    sanitize_filename, 
-    check_org_scrapers_seed, 
+    setup_logging,
+    sanitize_filename,
+    check_org_scrapers_seed,
     get_scraper_metadata
 )
 from scraper_generator.generator import (
     get_robots_txt,
     get_allowed_scraper_companies,
+    load_content_config,
     SCRAPER_GROUPS,
 )
 from scraper_generator.config import LOG_LEVEL, LOG_FILE, SCRAPER_OUTPUT_DIR
@@ -194,6 +195,8 @@ def parse_args():
     generate_parser.add_argument('--template', '-t', help='Template file name to use (default: generic_template.jinja2)')
     generate_parser.add_argument('--verbose', '-v', action='store_true', help='Enable verbose output')
     generate_parser.add_argument('--batch-file', '-b', help='Path to JSON or CSV list of org/url entries for batch generation')
+    generate_parser.add_argument('--config', '-c', default='config.json',
+                                 help='Path to content type config JSON (default: config.json)')
 
     # Test command
     test_parser = subparsers.add_parser('test', help='Test a generated scraper')
@@ -446,7 +449,10 @@ def run_generate(args, batch_mode=False, robots_summary=None):
         if args.template:
             logger.info(f"Using template: {args.template} (note: template selection is currently not applied during generation)")
 
-        scraper_code, test_results = generate_scraper(args.url, args.org, args.filename or "scraper.py")
+        content_config = load_content_config(getattr(args, 'config', 'config.json'))
+        logger.info(f"Content type: {content_config.get('content_type', 'unknown')}")
+
+        scraper_code, test_results = generate_scraper(args.url, args.org, args.filename or "scraper.py", content_config)
         
         # Save the scraper code using save_scraper with the specified filename
         output_path = save_scraper(scraper_code, args.org, args.url, args.filename)

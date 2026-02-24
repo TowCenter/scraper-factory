@@ -188,9 +188,23 @@ def get_allowed_scraper_companies(robots_txt):
     return allowed_companies
 
 
-def analyze_page_structure(url, config, logger=None):
+def load_content_config(config_path=None):
+    """Load content config from a JSON file. Raises if the file is missing."""
+    if config_path is None:
+        config_path = os.path.join(os.path.dirname(__file__), '..', 'config.json')
+    config_path = os.path.abspath(config_path)
+    if not os.path.exists(config_path):
+        raise FileNotFoundError(
+            f"config.json not found at {config_path}. "
+            "Please create one at the project root. See content_configs/ for examples."
+        )
+    with open(config_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def analyze_page_structure(url, config, logger=None, content_config=None):
     """
-    Use LLM to analyze the page structure and find article elements and pagination
+    Use LLM to analyze the page structure and find item elements and pagination
     """
     async def condense_dom(url):
         # scrape dom
@@ -295,9 +309,17 @@ def analyze_page_structure(url, config, logger=None):
         for i in range(0, len(lst), chunk_size):
             yield lst[i:i+chunk_size]
 
+    if content_config is None:
+        content_config = load_content_config()
+
+    fields = content_config["fields"]
+    item_label = content_config.get("item_label", "article")
+    content_type = content_config.get("content_type", "articles")
+    content_description = content_config.get("description", "")
+
     # call llm to extract selectors from chunk
     def extract_selectors_from_chunk(chunk, screenshot_bytes, config, logger=None):
-        # Call LLM with chunk and screenshot and ask for selectors for articles and pagination
+        # Call LLM with chunk and screenshot and ask for selectors for items and pagination
         client = OpenAI(api_key=config["api_key"])
 
         # Encode screenshot to base64
@@ -310,7 +332,11 @@ def analyze_page_structure(url, config, logger=None):
 
         # Render the template with variables
         prompt_text = template.render(
-            dom_chunk=chr(10).join(chunk)
+            dom_chunk=chr(10).join(chunk),
+            item_label=item_label,
+            content_type=content_type,
+            content_description=content_description,
+            fields=fields,
         )
 
         print("Calling LLM for chunk analysis with screenshot...")
@@ -367,19 +393,19 @@ def analyze_page_structure(url, config, logger=None):
     summarized_dom, screenshot_bytes, raw_html = loop.run_until_complete(condense_dom(url))
 
     chunk_size = 500
-    all_article_selectors = set()
+    all_item_selectors = set()
     all_next_page_selectors = set()
-    all_title_selectors = set()
-    all_url_selectors = set()
-    all_date_selectors = set()
+    # One set per configured field
+    all_field_selectors = {field["name"]: set() for field in fields}
 
     for chunk in chunk_list(summarized_dom, chunk_size):
         selectors = extract_selectors_from_chunk(chunk, screenshot_bytes, config, logger)
-        all_article_selectors.update(selectors.get("article_selectors", []))
+        all_item_selectors.update(selectors.get("item_selectors", []))
         all_next_page_selectors.update(selectors.get("next_page_selectors", []))
-        all_title_selectors.update(selectors.get("title_selectors", []))
-        all_url_selectors.update(selectors.get("url_selectors", []))
-        all_date_selectors.update(selectors.get("date_selectors", []))
+        for field in fields:
+            all_field_selectors[field["name"]].update(
+                selectors.get(f"{field['name']}_selectors", [])
+            )
 
     # Use BeautifulSoup on the HTML we already have
     def get_selector_examples(html, selectors, max_examples=1):
@@ -404,35 +430,34 @@ def analyze_page_structure(url, config, logger=None):
 
         return examples
 
-    article_examples = get_selector_examples(raw_html, list(all_article_selectors))
+    item_examples = get_selector_examples(raw_html, list(all_item_selectors))
     next_page_examples = get_selector_examples(raw_html, list(all_next_page_selectors))
-    title_examples = get_selector_examples(raw_html, list(all_title_selectors))
-    url_examples = get_selector_examples(raw_html, list(all_url_selectors))
-    date_examples = get_selector_examples(raw_html, list(all_date_selectors))
+    field_examples = {
+        name: get_selector_examples(raw_html, list(sels))
+        for name, sels in all_field_selectors.items()
+    }
 
     # Print summary of all candidate selectors found
     print("\n" + "=" * 80)
     print("CANDIDATE SELECTORS FOUND:")
     print("=" * 80)
-    print(f"Article selectors ({len(all_article_selectors)}): {list(all_article_selectors)}")
-    print(f"Title selectors ({len(all_title_selectors)}): {list(all_title_selectors)}")
-    print(f"URL selectors ({len(all_url_selectors)}): {list(all_url_selectors)}")
-    print(f"Date selectors ({len(all_date_selectors)}): {list(all_date_selectors)}")
+    print(f"Item selectors ({len(all_item_selectors)}): {list(all_item_selectors)}")
+    for name, sels in all_field_selectors.items():
+        print(f"{name} selectors ({len(sels)}): {list(sels)}")
     print(f"Next page selectors ({len(all_next_page_selectors)}): {list(all_next_page_selectors)}")
     print("=" * 80 + "\n")
 
-    return {
-        "article_selectors": list(all_article_selectors),
+    result = {
+        "item_selectors": list(all_item_selectors),
         "next_page_selectors": list(all_next_page_selectors),
-        "title_selectors": list(all_title_selectors),
-        "url_selectors": list(all_url_selectors),
-        "date_selectors": list(all_date_selectors),
-        "article_examples": article_examples,
+        "item_examples": item_examples,
         "next_page_examples": next_page_examples,
-        "title_examples": title_examples,
-        "url_examples": url_examples,
-        "date_examples": date_examples
     }
+    for name, sels in all_field_selectors.items():
+        result[f"{name}_selectors"] = list(sels)
+        result[f"{name}_examples"] = field_examples[name]
+
+    return result
 
 # Clean the code output from the LLM, removing markdown code fences.
 def clean_scraper_code(result):
@@ -737,7 +762,9 @@ def refine_pagination(original_code, next_page_selectors, next_page_examples,
 
 
 # Main function to generate a scraper for a given URL with testing and refinement
-def generate_scraper(url, scraper_name, output_filename="scraper.py"):
+def generate_scraper(url, scraper_name, output_filename="scraper.py", content_config=None):
+    if content_config is None:
+        content_config = load_content_config()
     config = setup_config()
     logger = setup_logging(scraper_name)
 
@@ -748,8 +775,8 @@ def generate_scraper(url, scraper_name, output_filename="scraper.py"):
     logger.info(f"Scraper name: {scraper_name}")
 
     print(f"Analyzing page structure for: {url}")
-    page_analysis = analyze_page_structure(url, config, logger)
-    scraper_prompt = make_prompt(url, scraper_name, page_analysis)
+    page_analysis = analyze_page_structure(url, config, logger, content_config)
+    scraper_prompt = make_prompt(url, scraper_name, page_analysis, content_config=content_config)
 
     print("Generating initial scraper code...")
     scraper_code = run_script_creator(scraper_prompt, config, logger)
@@ -767,6 +794,7 @@ def generate_scraper(url, scraper_name, output_filename="scraper.py"):
     with open(page_analysis_path, 'w') as f:
         json.dump(page_analysis, f, indent=2)
     logger.info(f"Page analysis saved to: {page_analysis_path}")
+
 
     # Helper to write scraper code to disk
     def _save_scraper(code):
@@ -963,7 +991,7 @@ def generate_scraper(url, scraper_name, output_filename="scraper.py"):
     return scraper_code, final_results
 
 
-def make_prompt(url, scraper_name, page_analysis, template_name="generic_template.jinja2"):
+def make_prompt(url, scraper_name, page_analysis, template_name="generic_template.jinja2", content_config=None):
     """
     Generate a prompt for the LLM to implement a scraper based on browser-use analysis.
 
@@ -972,10 +1000,20 @@ def make_prompt(url, scraper_name, page_analysis, template_name="generic_templat
         scraper_name (str): Name of the scraper file without extension
         page_analysis (dict): Results from browser-use page analysis
         template_name (str): Name of the template file to use
+        content_config (dict): Content type configuration
 
     Returns:
         str: Formatted prompt for the LLM
     """
+    if content_config is None:
+        content_config = load_content_config()
+
+    fields = content_config["fields"]
+    item_label = content_config.get("item_label", "article")
+    content_type = content_config.get("content_type", "articles")
+    content_description = content_config.get("description", "")
+    has_date_field = any(f.get("type") == "date" for f in fields)
+
     # Construct the module path
     module_path = f"scrapers.{scraper_name}"
 
@@ -987,24 +1025,39 @@ def make_prompt(url, scraper_name, page_analysis, template_name="generic_templat
     # Render the template with our variables
     rendered_template = template.render(
         url=url,
+        org_name=scraper_name,
         generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         model="gpt-4o",
-        module_path=module_path
+        module_path=module_path,
+        content_type=content_type,
+        item_label=item_label,
+        fields=fields,
+        has_date_field=has_date_field,
     )
 
+    # Build per-field examples dict for the generation prompt
+    field_examples = {
+        field["name"]: format_selectors_with_examples(
+            page_analysis.get(f"{field['name']}_examples", {})
+        )
+        for field in fields
+    }
+
     # Load the scraper generation prompt template
-    prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
     env_local = Environment(loader=FileSystemLoader(prompts_dir))
     prompt_template = env_local.get_template("scraper_generation_prompt.jinja2")
 
     # Render the prompt template with variables
     return prompt_template.render(
         rendered_template=rendered_template,
-        article_examples=format_selectors_with_examples(page_analysis.get('article_examples', {})),
-        title_examples=format_selectors_with_examples(page_analysis.get('title_examples', {})),
-        url_examples=format_selectors_with_examples(page_analysis.get('url_examples', {})),
-        date_examples=format_selectors_with_examples(page_analysis.get('date_examples', {})),
-        next_page_examples=format_selectors_with_examples(page_analysis.get('next_page_examples', {}))
+        content_type=content_type,
+        content_description=content_description,
+        item_label=item_label,
+        fields=fields,
+        has_date_field=has_date_field,
+        item_examples=format_selectors_with_examples(page_analysis.get('item_examples', {})),
+        field_examples=field_examples,
+        next_page_examples=format_selectors_with_examples(page_analysis.get('next_page_examples', {})),
     )
 
 def format_selectors_with_examples(selector_examples):

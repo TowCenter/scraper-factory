@@ -1,0 +1,25 @@
+{
+  "content_type": "articles",
+  "description": "News articles from a publication or organization",
+  "item_label": "article",
+  "fields": [
+    {
+      "name": "title",
+      "description": "Headline or title of the article",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "date",
+      "description": "Publication date in YYYY-MM-DD format",
+      "required": false,
+      "type": "date"
+    },
+    {
+      "name": "url",
+      "description": "Link to the full article",
+      "required": true,
+      "type": "url"
+    }
+  ]
+}

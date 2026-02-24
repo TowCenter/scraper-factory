@@ -202,6 +202,19 @@ def load_content_config(config_path=None):
         return json.load(f)
 
 
+def load_operator(operator_path=None):
+    """Load optional operator identity from operator.json. Returns empty dict if missing."""
+    if operator_path is None:
+        operator_path = os.path.join(os.path.dirname(__file__), '..', 'operator.json')
+    operator_path = os.path.abspath(operator_path)
+    if not os.path.exists(operator_path):
+        return {}
+    with open(operator_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    # Only return fields that have non-empty values
+    return {k: v for k, v in data.items() if v and str(v).strip()}
+
+
 def analyze_page_structure(url, config, logger=None, content_config=None):
     """
     Use LLM to analyze the page structure and find item elements and pagination
@@ -991,7 +1004,7 @@ def generate_scraper(url, scraper_name, output_filename="scraper.py", content_co
     return scraper_code, final_results
 
 
-def make_prompt(url, scraper_name, page_analysis, template_name="generic_template.jinja2", content_config=None):
+def make_prompt(url, scraper_name, page_analysis, template_name="generic_template.jinja2", content_config=None, operator=None):
     """
     Generate a prompt for the LLM to implement a scraper based on browser-use analysis.
 
@@ -1001,12 +1014,30 @@ def make_prompt(url, scraper_name, page_analysis, template_name="generic_templat
         page_analysis (dict): Results from browser-use page analysis
         template_name (str): Name of the template file to use
         content_config (dict): Content type configuration
+        operator (dict): Optional operator identity from operator.json
 
     Returns:
         str: Formatted prompt for the LLM
     """
     if content_config is None:
         content_config = load_content_config()
+    if operator is None:
+        operator = load_operator()
+
+    # Build a descriptive user-agent string from operator fields
+    if operator:
+        parts = ["ScraperFactory/1.0"]
+        if operator.get("organization"):
+            parts.append(operator["organization"])
+        elif operator.get("name"):
+            parts.append(operator["name"])
+        if operator.get("email"):
+            parts.append(f"+mailto:{operator['email']}")
+        if operator.get("message"):
+            parts.append(operator["message"])
+        user_agent = " ".join(parts)
+    else:
+        user_agent = ""
 
     fields = content_config["fields"]
     item_label = content_config.get("item_label", "article")
@@ -1033,6 +1064,7 @@ def make_prompt(url, scraper_name, page_analysis, template_name="generic_templat
         item_label=item_label,
         fields=fields,
         has_date_field=has_date_field,
+        user_agent=user_agent,
     )
 
     # Build per-field examples dict for the generation prompt

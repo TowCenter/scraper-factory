@@ -21,13 +21,17 @@ base_url = '{{ url }}'
 # Scraper module path for tracking the source of scraped data
 SCRAPER_MODULE_PATH = '.'.join(os.path.splitext(os.path.abspath(__file__))[0].split(os.sep)[-3:])
 
+# Operator user-agent (set in operator.json)
+USER_AGENT = '{{ user_agent }}'
+
 class PlaywrightContext:
     """Context manager for Playwright browser sessions."""
 
     async def __aenter__(self):
         self.playwright = await async_playwright().start()
         self.browser = await self.playwright.chromium.launch()
-        self.context = await self.browser.new_context()
+        context_kwargs = {'user_agent': USER_AGENT} if USER_AGENT else {}
+        self.context = await self.browser.new_context(**context_kwargs)
         return self.context
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):

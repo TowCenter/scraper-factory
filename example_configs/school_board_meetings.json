@@ -1,7 +1,7 @@
 {
   "content_type": "school_board_meetings",
   "description": "School board meeting records, agendas, and minutes from a school district",
-  "item_label": "school board meeting",
+  "item_label": "school_board_meeting",
   "fields": [
     {
       "name": "title",

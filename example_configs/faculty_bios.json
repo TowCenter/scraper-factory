@@ -1,7 +1,7 @@
 {
   "content_type": "faculty_bios",
   "description": "Faculty or staff biography listings from a university or organization directory",
-  "item_label": "faculty member",
+  "item_label": "faculty_member",
   "fields": [
     {
       "name": "name",

@@ -27,8 +27,6 @@ with open(_config_path) as _f:
 CONTENT_COL = _content_config["content_type"]
 SCRAPERS_COL = _content_config["content_type"] + "_scrapers"
 
-# Define the start date for filtering announcements
-start_date = datetime(2025, 1, 1)
 
 def utc_to_local(utc_dt):
     if utc_dt is None:
@@ -62,19 +60,19 @@ def get_organizations_data(mongo_uri, db_name):
     db = client[db_name]
     return list(db[SCRAPERS_COL].find({}, {"name": 1, "color": 1, "scrapers": 1}))
 
-def build_csv(db):
-    cursor = db[CONTENT_COL].find(
-        {"date": {"$gte": start_date}},
-        {"_id": 0, "title": 1, "org": 1, "date": 1, "url": 1, "scraper": 1}
-    ).sort("date", -1)
+@st.cache_data(ttl=300)
+def build_csv(mongo_uri, db_name):
+    client = MongoClient(mongo_uri)
+    db = client[db_name]
+    cursor = db[CONTENT_COL].find({}, {"_id": 0})
     rows = []
     for doc in cursor:
-        d = doc.get("date")
-        if isinstance(d, datetime):
-            if d.tzinfo is None:
-                d = d.replace(tzinfo=timezone.utc)
-            local_dt = utc_to_local(d)
-            doc["date"] = local_dt.strftime("%Y-%m-%d %I:%M:%S %p") if local_dt else str(d)
+        for key, val in list(doc.items()):
+            if isinstance(val, datetime):
+                if val.tzinfo is None:
+                    val = val.replace(tzinfo=timezone.utc)
+                local_dt = utc_to_local(val)
+                doc[key] = local_dt.strftime("%Y-%m-%d %I:%M:%S %p") if local_dt else str(val)
         rows.append(doc)
     df = pd.DataFrame(rows)
     buf = io.StringIO()
@@ -84,13 +82,29 @@ def build_csv(db):
 
 def main():
     st.set_page_config(
-        page_title="Scraper Monitor",
+        page_title="Scraper Factory Monitor",
         page_icon="🔍",
         layout="wide",
         initial_sidebar_state="collapsed",
     )
 
-    st.title("Scraper Monitor")
+    st.markdown("""
+    <style>
+    .block-container { padding-top: 1.5rem; padding-bottom: 1rem; }
+    [data-testid="stMetric"] {
+        background: #f4f6f9;
+        border: 1px solid #dde1e7;
+        border-radius: 10px;
+        padding: 0.85rem 1.1rem;
+    }
+    [data-testid="stMetricValue"] > div { font-size: 1.65rem; }
+    [data-testid="stMetricLabel"] p { color: #5a6272; font-size: 0.78rem; }
+    div[data-testid="stHorizontalBlock"] { gap: 0.6rem; }
+    hr { margin: 1rem 0 !important; }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.title("Scraper Factory Monitor")
 
     try:
         db = get_db()
@@ -107,12 +121,7 @@ def main():
 
     # === METRICS ===
     current_time = datetime.now(timezone.utc)
-    total_orgs = len(organizations_data)
-    total_items = db[CONTENT_COL].count_documents({"date": {"$gte": start_date}})
-
-    today = datetime.now()
-    today_start = datetime(today.year, today.month, today.day)
-    scrapers_with_new_content = len(db[CONTENT_COL].distinct("scraper", {"date": {"$gte": today_start}}))
+    total_items = db[CONTENT_COL].count_documents({})
 
     total_scrapers_all = 0
     passing = errors = no_results = inactive = 0
@@ -130,49 +139,64 @@ def main():
             elif status == "unable_to_fetch":
                 no_results += 1
 
-    col1, col2, _sep, col3, col4, col5, col6, col7 = st.columns([1.2, 1.2, 0.15, 1, 1, 1, 1, 1])
-    with col1:
-        st.metric("Total Scrapers", total_scrapers_all)
-    with col2:
-        st.metric("Total Items", f"{total_items:,}")
-    with _sep:
-        st.markdown("<div style='border-left:1px solid #444; height:60px; margin:12px auto;'></div>", unsafe_allow_html=True)
-    with col3:
-        st.metric("Active Today", scrapers_with_new_content)
-    with col4:
-        st.metric("✅ Passing", passing)
-    with col5:
-        st.metric("🔴 Error", errors)
-    with col6:
-        st.metric("🟡 No Results", no_results)
-    with col7:
-        st.metric("⏸️ Inactive", inactive)
+    rate_denom = passing + errors + no_results  # known active scrapers only
 
-    # === CSV EXPORT ===
-    if st.button("Generate CSV of scraped items"):
-        with st.spinner("Building CSV..."):
-            csv = build_csv(db)
-        st.download_button(
-            label="Download CSV",
-            data=csv,
-            file_name="scraped_items.csv",
-            mime="text/csv",
+    def pct(n):
+        return f" ({n * 100 // rate_denom}%)" if rate_denom else ""
+
+    m1, m2, _gap, m3, m4 = st.columns([1, 1, 0.08, 1, 1])
+    with m1:
+        st.metric(
+            "Total Scrapers", total_scrapers_all,
+            help="All registered scrapers across every org, including inactive ones.",
+        )
+    with m2:
+        st.metric(
+            "Total Items", f"{total_items:,}",
+            help="Total scraped items stored in the database across all time.",
+        )
+    with _gap:
+        st.markdown(
+            "<div style='display:flex;justify-content:center;align-items:center;height:72px'>"
+            "<div style='width:1px;height:52px;background:#dde1e7'></div>"
+            "</div>",
+            unsafe_allow_html=True,
+        )
+    with m3:
+        st.metric(
+            "Passing", f"{passing}{pct(passing)}",
+            help="Active scrapers whose last run successfully inserted new items. "
+                 "Percentage is share of all active (non-inactive) scrapers.",
+        )
+    with m4:
+        st.metric(
+            "Inactive", inactive,
+            help="Scrapers with active=false — permanently skipped during daily runs.",
         )
 
-    st.markdown("---")
+    st.divider()
 
-    # === FILTERS ===
-    filter_col1, filter_col2 = st.columns(2)
-    with filter_col1:
+    # === FILTERS + CSV EXPORT ===
+    fc1, fc2, fc3 = st.columns([3, 2, 1])
+    with fc1:
         status_filter = st.radio(
-            "Filter by Status",
+            "Filter by status",
             options=["All", "Error", "No Results", "Inactive only"],
             horizontal=True,
-            key="health_status_filter"
+            key="health_status_filter",
         )
-    with filter_col2:
+    with fc2:
         org_options = ["All"] + sorted([org.get("name", "Unknown") for org in organizations_data])
-        selected_org = st.selectbox("Filter by Org", org_options, key="health_school_filter")
+        selected_org = st.selectbox("Filter by org", org_options, key="health_school_filter")
+    with fc3:
+        st.markdown("<div style='padding-top:1.65rem'></div>", unsafe_allow_html=True)
+        st.download_button(
+            label="Export CSV",
+            data=build_csv(MONGO_URI, DB_NAME),
+            file_name="scraped_items.csv",
+            mime="text/csv",
+            use_container_width=True,
+        )
 
     # === FLAT SCRAPER TABLE ===
     scraper_counts = {
@@ -193,10 +217,16 @@ def main():
 
         # Org-level status filter: skip org if no matching scrapers
         if status_filter == "Error":
-            if not any(s.get("last_run_status") == "error" and s.get("active", True) is not False for s in scrapers):
+            if not any(
+                s.get("last_run_status") == "error" and s.get("active", True) is not False
+                for s in scrapers
+            ):
                 continue
         elif status_filter == "No Results":
-            if not any(s.get("last_run_status") == "unable_to_fetch" and s.get("active", True) is not False for s in scrapers):
+            if not any(
+                s.get("last_run_status") == "unable_to_fetch" and s.get("active", True) is not False
+                for s in scrapers
+            ):
                 continue
         elif status_filter == "Inactive only":
             if not any(s.get("active", True) is False for s in scrapers):
@@ -279,7 +309,7 @@ def main():
                 "Since": st.column_config.TextColumn("Since", width="small"),
                 "Total Scraped Items": st.column_config.NumberColumn("Total Scraped Items"),
                 "URL": st.column_config.LinkColumn("URL", display_text="Open"),
-            }
+            },
         )
     else:
         st.info("No scrapers match the current filters.")

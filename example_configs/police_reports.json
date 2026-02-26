@@ -1,7 +1,7 @@
 {
   "content_type": "police_reports",
   "description": "Police incident reports or press releases from a law enforcement agency",
-  "item_label": "police report",
+  "item_label": "police_report",
   "fields": [
     {
       "name": "title",

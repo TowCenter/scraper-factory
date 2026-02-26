@@ -25,10 +25,24 @@ logger = setup_logging('INFO', log_file)
 SCRAPERS_DIR = Path("scrapers")
 
 def normalize_scraper_fields(scraper):
+    """
+    Apply defaults for scraper fields that are managed at runtime.
+
+    Scraper fields (set on each entry in org.scrapers[]):
+      active              – If False, the scraper is always skipped during daily runs.
+      manual_force_export – One-time override that bypasses the S3 publish pre-check.
+                            Reset to False automatically after each publish cycle.
+      last_run_status     – Outcome of the most recent run attempt:
+                              "pass"           → ran and inserted new items
+                              "error"          → exception or HTTP failure
+                              "unable_to_fetch" → ran successfully but returned 0 results
+      last_run            – Timestamp of the most recent run attempt (set by the runner).
+      last_run_count      – Number of newly inserted items in the most recent run.
+    """
     scraper = dict(scraper)
-    scraper.setdefault("active", True)
-    scraper.setdefault("manual_force_export", False)
-    scraper.setdefault("last_run_status", "error")
+    scraper.setdefault("active", True)               # enabled by default
+    scraper.setdefault("manual_force_export", False) # no forced publish by default
+    scraper.setdefault("last_run_status", "error")   # treated as broken until first run
     return scraper
 
 def collect_seed_data():

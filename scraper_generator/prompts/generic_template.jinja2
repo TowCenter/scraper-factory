@@ -12,6 +12,7 @@ Fields: {% for field in fields %}{{ field.name }}{% if not loop.last %}, {% endi
 import json
 import os
 from playwright.async_api import async_playwright
+from playwright_stealth import Stealth
 from dateutil.parser import parse
 import urllib.parse
 import asyncio
@@ -29,6 +30,7 @@ class PlaywrightContext:
 
     async def __aenter__(self):
         self.playwright = await async_playwright().start()
+        Stealth().hook_playwright_context(self.playwright)
         self.browser = await self.playwright.chromium.launch()
         context_kwargs = {'user_agent': USER_AGENT} if USER_AGENT else {}
         self.context = await self.browser.new_context(**context_kwargs)

@@ -3,6 +3,7 @@ inquirer==3.4.1
 Jinja2==3.1.6
 openai==2.8.1
 playwright==1.56.0
+playwright-stealth==1.0.6
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.1
 requests==2.32.5

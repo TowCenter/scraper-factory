@@ -15,6 +15,7 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from openai import OpenAI
 from playwright.async_api import async_playwright
+from playwright_stealth import Stealth
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urlparse
@@ -222,6 +223,7 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
     async def condense_dom(url):
         # scrape dom
         async with async_playwright() as p:
+            Stealth().hook_playwright_context(p)
             browser = await p.chromium.launch(headless=False)
             page = await browser.new_page()
 
@@ -450,24 +452,25 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
         for name, sels in all_field_selectors.items()
     }
 
-    # Print summary of all candidate selectors found
+    # Print summary of matched selectors
     print("\n" + "=" * 80)
-    print("CANDIDATE SELECTORS FOUND:")
+    print("SELECTORS WITH MATCHES:")
     print("=" * 80)
-    print(f"Item selectors ({len(all_item_selectors)}): {list(all_item_selectors)}")
-    for name, sels in all_field_selectors.items():
-        print(f"{name} selectors ({len(sels)}): {list(sels)}")
-    print(f"Next page selectors ({len(all_next_page_selectors)}): {list(all_next_page_selectors)}")
+    print(f"Item selectors ({len(item_examples)}): {list(item_examples.keys())}")
+    for name in all_field_selectors:
+        matched = field_examples[name]
+        print(f"{name} selectors ({len(matched)}): {list(matched.keys())}")
+    print(f"Next page selectors ({len(next_page_examples)}): {list(next_page_examples.keys())}")
     print("=" * 80 + "\n")
 
     result = {
-        "item_selectors": list(all_item_selectors),
-        "next_page_selectors": list(all_next_page_selectors),
+        "item_selectors": list(item_examples.keys()),
+        "next_page_selectors": list(next_page_examples.keys()),
         "item_examples": item_examples,
         "next_page_examples": next_page_examples,
     }
-    for name, sels in all_field_selectors.items():
-        result[f"{name}_selectors"] = list(sels)
+    for name in all_field_selectors:
+        result[f"{name}_selectors"] = list(field_examples[name].keys())
         result[f"{name}_examples"] = field_examples[name]
 
     return result

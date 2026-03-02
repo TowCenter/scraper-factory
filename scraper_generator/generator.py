@@ -337,9 +337,6 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
         # Call LLM with chunk and screenshot and ask for selectors for items and pagination
         client = OpenAI(api_key=config["api_key"])
 
-        # Encode screenshot to base64
-        screenshot_base64 = base64.b64encode(screenshot_bytes).decode('utf-8')
-
         # Load the DOM analysis prompt template
         prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
         env = Environment(loader=FileSystemLoader(prompts_dir))
@@ -354,27 +351,27 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
             fields=fields,
         )
 
-        print("Calling LLM for chunk analysis with screenshot...")
+        MAX_IMAGE_BYTES = 5 * 1024 * 1024  # 5MB OpenAI limit
+        use_image = screenshot_bytes is not None and len(screenshot_bytes) <= MAX_IMAGE_BYTES
+
+        if not use_image and screenshot_bytes is not None:
+            print(f"Screenshot too large ({len(screenshot_bytes):,} bytes), falling back to text-only request...")
+
+        user_content = [{"type": "text", "text": prompt_text}]
+        if use_image:
+            screenshot_base64 = base64.b64encode(screenshot_bytes).decode('utf-8')
+            user_content.append({
+                "type": "image_url",
+                "image_url": {"url": f"data:image/jpeg;base64,{screenshot_base64}"}
+            })
+
+        print("Calling LLM for chunk analysis" + (" with screenshot..." if use_image else " (no screenshot)..."))
 
         response = client.chat.completions.create(
             model=config["model"],
             messages=[
                 {"role": "system", "content": "You are a helpful AI assistant specialized in web scraping."},
-                {
-                    "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": prompt_text
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/png;base64,{screenshot_base64}"
-                            }
-                        }
-                    ]
-                }
+                {"role": "user", "content": user_content}
             ],
             temperature=0.2,
             max_tokens=1000

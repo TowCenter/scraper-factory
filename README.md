@@ -124,6 +124,12 @@ You can also write your own. Any fields you define here will be passed to the AI
 python cli.py generate --org "Los Angeles Times" --url "https://www.latimes.com/"
 ```
 
+> **GitHub Codespaces:** The generator opens a real browser window during refinement. In Codespaces there's no display, so prefix the command with `xvfb-run` to provide a virtual one:
+>
+> ```bash
+> xvfb-run python cli.py generate --org "Los Angeles Times" --url "https://www.latimes.com/"
+> ```
+
 Or run without arguments for an interactive prompt:
 
 ```bash

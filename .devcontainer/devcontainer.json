@@ -1,7 +1,7 @@
 {
   "name": "Scraper Factory",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "postCreateCommand": "pip install -r requirements.txt && playwright install chromium --with-deps && cp .env.example .env",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y xvfb && pip install -r requirements.txt && playwright install chromium --with-deps && cp .env.example .env",
   "customizations": {
     "vscode": {
       "extensions": [

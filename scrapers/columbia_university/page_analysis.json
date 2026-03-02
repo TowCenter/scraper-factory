@@ -1,0 +1,86 @@
+{
+  "item_selectors": [
+    ".dynamic-grid-listing-item",
+    ".views-field"
+  ],
+  "next_page_selectors": [
+    ".pagination-page a",
+    ".pagination",
+    ".pagination-next a",
+    "a[aria-label*='next']"
+  ],
+  "item_examples": {
+    ".dynamic-grid-listing-item": [
+      "<div class=\"dynamic-grid-listing-item grid-item angular-animate ng-trans ng-trans-fade-down ng-scope grid-item-with-image\" ng-class=\"{'grid-item-with-image': 1}\" ng-repeat=\"item in filteredLimited track by item.id\">\n<a aria-labelledby=\"item-node-2291-title\" href=\"/directory/aida-alami\" ng-href=\"/directory/aida-alami\">\n<div ng-switch=\"\" on=\"item.image || 'null'\">\n<!-- ngSwitchWhen: null --><div class=\"sr-only\">no photo</div>\n<!-- ngSwitchDefault: --><div class=\"image ng-scope\" ng-style=\"{'background-image':'url(' + item.image + ')'}\" ng-switch-default=\"\" style='background-image: url(\"/sites/journalism.columbia.edu/files/styles/custom_crop_directory/public/content/Faculty/5aa7cc6d-043b-4fe7-ae3b-80312ee26be7.jpg?itok=mY0KX6bZ\");'></div><!-- end ngSwitchWhen: --><div class=\"sr-only\">photo of <span class=\"ng-binding\" ng-bind=\"::item.title\">Aida Alami</span></div>\n</div>\n<h2 class=\"ng-binding\" id=\"item-node-2291-title\" ng-attr-id=\"item-{{ item.id }}-title\" ng-bind-html=\"::item.title\">Aida Alami</h2>\n</a>\n<div class=\"text ng-binding\" ng-bind-html=\"::item.title_dept\">James Madison Visiting Professor on First Amendment Issues</div>\n<span class=\"copy-link badge hidden\"><i aria-hidden=\"true\" class=\"fa fa-clipboard\"></i><span class=\"ng-binding\" ng-bind=\"'#/directory/' + item.id\">#/directory/node-2291</span></span><span class=\"edit-link badge hidden\"><a href=\"/node/2291/edit\" ng-href=\"/node/2291/edit\">edit</a></span>\n</div>"
+    ],
+    ".views-field": [
+      "<div class=\"views-field views-field-title\"><span class=\"field-content\"><a href=\"/faculty/winnie-okelley\" hreflang=\"en\">Winnie O'Kelley</a></span></div>"
+    ]
+  },
+  "next_page_examples": {
+    ".pagination-page a": [
+      "<a aria-current=\"page\" aria-label=\"Current page 1\" class=\"ng-binding\" href=\"\" ng-click=\"selectPage(page.number, $event)\" ng-disabled=\"ngDisabled&amp;&amp;!page.active\" uib-tabindex-toggle=\"\">1</a>"
+    ],
+    ".pagination": [
+      "<ul boundary-link-numbers=\"true\" class=\"pagination-md ng-pristine ng-untouched ng-valid ng-isolate-scope pagination ng-not-empty\" items-per-page=\"itemsPerPage\" max-size=\"2\" ng-change=\"changePage('#directory-listing', currentPage)\" ng-model=\"currentPage\" ng-show=\"filteredCount &gt; itemsPerPage\" role=\"menu\" total-items=\"filteredCount\" uib-pagination=\"\"><!-- ngIf: ::boundaryLinks -->\n<!-- ngIf: ::directionLinks --><li class=\"pagination-prev ng-scope disabled\" ng-class=\"{disabled: noPrevious()||ngDisabled}\" ng-if=\"::directionLinks\" role=\"menuitem\"><a aria-label=\"Go to previous page\" class=\"ng-binding\" disabled=\"disabled\" href=\"\" ng-click=\"selectPage(page - 1, $event)\" ng-disabled=\"noPrevious()||ngDisabled\" tabindex=\"-1\" uib-tabindex-toggle=\"\">Previous</a></li><!-- end ngIf: ::directionLinks -->\n<!-- ngRepeat: page in pages track by $index --><li class=\"pagination-page ng-scope active\" ng-class=\"{active: page.active,disabled: ngDisabled&amp;&amp;!page.active}\" ng-repeat=\"page in pages track by $index\" role=\"menuitem\"><a aria-current=\"page\" aria-label=\"Current page 1\" class=\"ng-binding\" href=\"\" ng-click=\"selectPage(page.number, $event)\" ng-disabled=\"ngDisabled&amp;&amp;!page.active\" uib-tabindex-toggle=\"\">1</a></li><!-- end ngRepeat: page in pages track by $index --><li class=\"pagination-page ng-scope\" ng-class=\"{active: page.active,disabled: ngDisabled&amp;&amp;!page.active}\" ng-repeat=\"page in pages track by $index\" role=\"menuitem\"><a aria-label=\"Go to page 2\" class=\"ng-binding\" href=\"\" ng-click=\"selectPage(page.number, $event)\" ng-disabled=\"ngDisabled&amp;&amp;!page.active\" uib-tabindex-toggle=\"\">2</a></li><!-- end ngRepeat: page in pages track by $index -->\n<!-- ngIf: ::directionLinks --><li class=\"pagination-next ng-scope\" ng-class=\"{disabled: noNext()||ngDisabled}\" ng-if=\"::directionLinks\" role=\"menuitem\"><a aria-label=\"Go to next page 1\" class=\"ng-binding\" href=\"\" ng-click=\"selectPage(page + 1, $event)\" ng-disabled=\"noNext()||ngDisabled\" uib-tabindex-toggle=\"\">Nex..."
+    ],
+    ".pagination-next a": [
+      "<a aria-label=\"Go to next page 1\" class=\"ng-binding\" href=\"\" ng-click=\"selectPage(page + 1, $event)\" ng-disabled=\"noNext()||ngDisabled\" uib-tabindex-toggle=\"\">Next</a>"
+    ],
+    "a[aria-label*='next']": [
+      "<a aria-label=\"Go to next page 1\" class=\"ng-binding\" href=\"\" ng-click=\"selectPage(page + 1, $event)\" ng-disabled=\"noNext()||ngDisabled\" uib-tabindex-toggle=\"\">Next</a>"
+    ]
+  },
+  "name_selectors": [
+    "h2.ng-binding",
+    ".views-field-title .field-content",
+    ".field-content",
+    ".views-field-title"
+  ],
+  "name_examples": {
+    "h2.ng-binding": [
+      "<h2 class=\"ng-binding\" id=\"item-node-2291-title\" ng-attr-id=\"item-{{ item.id }}-title\" ng-bind-html=\"::item.title\">Aida Alami</h2>"
+    ],
+    ".views-field-title .field-content": [
+      "<span class=\"field-content\"><a href=\"/faculty/winnie-okelley\" hreflang=\"en\">Winnie O'Kelley</a></span>"
+    ],
+    ".field-content": [
+      "<span class=\"field-content\"><a href=\"/faculty/winnie-okelley\" hreflang=\"en\">Winnie O'Kelley</a></span>"
+    ],
+    ".views-field-title": [
+      "<div class=\"views-field views-field-title\"><span class=\"field-content\"><a href=\"/faculty/winnie-okelley\" hreflang=\"en\">Winnie O'Kelley</a></span></div>"
+    ]
+  },
+  "url_selectors": [
+    "a[href^='/faculty/']",
+    "a[href*='/faculty/']",
+    ".views-field-title a",
+    "a[href*='/directory/']"
+  ],
+  "url_examples": {
+    "a[href^='/faculty/']": [
+      "<a href=\"/faculty/winnie-okelley\" hreflang=\"en\">Winnie O'Kelley</a>"
+    ],
+    "a[href*='/faculty/']": [
+      "<a href=\"/faculty/winnie-okelley\" hreflang=\"en\">Winnie O'Kelley</a>"
+    ],
+    ".views-field-title a": [
+      "<a href=\"/faculty/winnie-okelley\" hreflang=\"en\">Winnie O'Kelley</a>"
+    ],
+    "a[href*='/directory/']": [
+      "<a href=\"/directory/sheila-coronel\" hreflang=\"en\">Sheila Coronel</a>"
+    ]
+  },
+  "position_selectors": [
+    ".views-field-field-cu-summary",
+    ".text.ng-binding"
+  ],
+  "position_examples": {
+    ".views-field-field-cu-summary": [
+      "<div class=\"views-field views-field-field-cu-summary\"><div class=\"field-content\"><p>Winnie O\u2019Kelley is an industry veteran known for her outstanding journalistic career as an editor on business and finance, with a specialty in economic impact and corporate wrongdoing.</p>\n<p>She served as executive editor for <em>Bloomberg News</em> covering government, legal issues and financial regulation. In this role, she managed several hundred journalists around the world, overseeing news and enterprise stories at the intersection of power and business, including financial fraud, cybersecurity and privacy and health care fraud. Additionally, she was executive editor of the <em>Washington bureau</em>.</p>\n<p>More recently, she created a global financial investigations team that covers everything from Russian money laundering and sanctions violations to corporate accounting shenanigans and collusion. O\u2019Kelley is also a regular guest on Bloomberg TV, providing context and analysis on the latest financial headlines.</p>\n<p>Prior to <em>Bloomberg</em>, O\u2019Kelley worked for 20 years at <em>The New York Times</em>, where she held several leadership roles. She was David Kocieniewski\u2019s editor on his Pulitzer Prize-winning series on tax avoidance, \u201cBut Nobody Pays That.\u201d\u00a0 As the deputy business editor, she managed the paper\u2019s coverage of the 2008 financial crisis and its aftermath.</p>\n<p>In 2012, O\u2019Kelley received the Lawrence Minard Editor Award, a Gerald Loeb recognition for lifetime achievement. She earned a bachelor\u2019s degree in journalism from Northwestern University.</p></div></div>"
+    ],
+    ".text.ng-binding": [
+      "<div class=\"text ng-binding\" ng-bind-html=\"::item.title_dept\">James Madison Visiting Professor on First Amendment Issues</div>"
+    ]
+  }
+}

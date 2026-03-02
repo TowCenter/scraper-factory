@@ -1,0 +1,9 @@
+{
+    "name": "University of Missouri",
+    "scrapers": [
+        {
+            "path": "scrapers.university_of_missouri.scraper",
+            "url": "https://journalism.missouri.edu/position/faculty/"
+        }
+    ]
+}

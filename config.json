@@ -1,25 +1,25 @@
 {
-  "content_type": "articles",
-  "description": "News articles from a publication or organization",
-  "item_label": "article",
+  "content_type": "journo_bios",
+  "description": "Journalism bios from university faculty directories",
+  "item_label": "bio",
   "fields": [
     {
-      "name": "title",
-      "description": "Headline or title of the article",
+      "name": "name",
+      "description": "Name of the faculty member",
       "required": true,
       "type": "text"
     },
-    {
-      "name": "date",
-      "description": "Publication date in YYYY-MM-DD format",
-      "required": false,
-      "type": "date"
-    },
-    {
+        {
       "name": "url",
-      "description": "Link to the full article",
+      "description": "Link to faculty bio",
       "required": true,
       "type": "url"
+    },
+    {
+      "name": "position",
+      "description": "Position of the faculty (e.g., Professor, Assistant Professor, Lecturer)",
+      "required": true,
+      "type": "text"
     }
   ]
 }

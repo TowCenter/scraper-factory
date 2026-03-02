@@ -1,0 +1,9 @@
+{
+    "name": "Columbia University",
+    "scrapers": [
+        {
+            "path": "scrapers.columbia_university.scraper",
+            "url": "https://journalism.columbia.edu/content/full-time-faculty"
+        }
+    ]
+}

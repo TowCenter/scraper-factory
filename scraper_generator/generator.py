@@ -1040,25 +1040,26 @@ def generate_scraper(url, scraper_name, output_filename="scraper.py", content_co
 
     # -- Step 5: Pagination test ----------------------------------------
     if first_page_test.passed:
-        print("\n" + "="*60)
-        print("STEP 5: TESTING PAGINATION")
-        print("="*60)
-        logger.info("STEP 5: Testing pagination")
+        with open(page_analysis_path, 'r') as f:
+            saved_page_analysis = json.load(f)
+        next_page_selectors = saved_page_analysis.get("next_page_selectors", [])
 
-        pagination_test = _run_test(GetAllArticlesTest, ctx)
+        if not next_page_selectors:
+            print("\n⚠️ No next-page selectors found — skipping pagination test.")
+            logger.info("STEP 5: Skipping pagination test — no next_page_selectors in page analysis.")
+            ctx.data = ctx.first_page_articles
+        else:
+            print("\n" + "="*60)
+            print("STEP 5: TESTING PAGINATION")
+            print("="*60)
+            logger.info("STEP 5: Testing pagination")
 
-        if not pagination_test.passed and ctx.pagination_failed:
-            print("❌ Pagination failed, attempting pagination-specific refinement...")
-            logger.info(f"Pagination failed. Page counts: {ctx.pagination_page_counts}")
+            pagination_test = _run_test(GetAllArticlesTest, ctx)
 
-            with open(page_analysis_path, 'r') as f:
-                saved_page_analysis = json.load(f)
+            if not pagination_test.passed and ctx.pagination_failed:
+                print("❌ Pagination failed, attempting pagination-specific refinement...")
+                logger.info(f"Pagination failed. Page counts: {ctx.pagination_page_counts}")
 
-            next_page_selectors = saved_page_analysis.get("next_page_selectors", [])
-            if not next_page_selectors:
-                print("⚠️ No next-page selectors found during page analysis — skipping pagination refinement.")
-                logger.info("Skipping pagination refinement: no next_page_selectors in page analysis.")
-            else:
                 scraper_code = refine_pagination(
                     scraper_code,
                     next_page_selectors,

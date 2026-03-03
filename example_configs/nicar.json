@@ -14,7 +14,13 @@
       "description": "List of speaker names",
       "required": true,
       "type": "text"
-    },        
+    },      
+      {
+      "name": "description",
+      "description": "Description of the session",
+      "required": true,
+      "type": "text"
+    },         
     {
       "name": "room",
       "description": "Room or location where the session is held",

@@ -1,9 +1,21 @@
+"""
+Journo bios Scraper for Columbia University
+
+Generated at: 2026-03-03 11:24:31
+Target URL: https://journalism.columbia.edu/content/full-time-faculty
+Generated using: gpt-5-mini-2025-08-07
+Content type: journo_bios
+Fields: name, url, position
+
+"""
+
 import json
 import os
 from playwright.async_api import async_playwright
-from playwright_stealth import Stealth
-import asyncio
+from playwright_stealth import Stealth  # v2.0.1 API
+from dateutil.parser import parse
 import urllib.parse
+import asyncio
 
 base_url = 'https://journalism.columbia.edu/content/full-time-faculty'
 
@@ -18,8 +30,7 @@ class PlaywrightContext:
 
     async def __aenter__(self):
         self.playwright = await async_playwright().start()
-        Stealth().hook_playwright_context(self.playwright)
-        self.browser = await self.playwright.chromium.launch()
+        self.browser = await self.playwright.chromium.launch(headless=False)
         context_kwargs = {'user_agent': USER_AGENT} if USER_AGENT else {}
         self.context = await self.browser.new_context(**context_kwargs)
         return self.context
@@ -44,32 +55,58 @@ async def scrape_page(page):
     """
 
     items = []
-    # Select all bio containers
-    bio_containers = await page.query_selector_all('.dynamic-grid-listing-item')
 
-    for container in bio_containers:
-        # Extract name
-        name_element = await container.query_selector('h2.ng-binding')
-        name = await name_element.inner_text() if name_element else None
+    # Robust item selector covering observed variants
+    item_selector = '.dynamic-grid-listing .grid-item, .dynamic-grid-listing-item'
 
-        # Extract URL
-        url_element = await container.query_selector('a[href*="/directory/"]')
-        url = await url_element.get_attribute('href') if url_element else None
-        if url:
-            url = urllib.parse.urljoin(base_url, url)
+    # Find all candidate bio containers
+    containers = await page.query_selector_all(item_selector)
 
-        # Extract position
-        position_element = await container.query_selector('.text.ng-binding')
-        position = await position_element.inner_text() if position_element else None
+    for container in containers:
+        try:
+            # Name: prefer h2 element (seen in examples). Fallback to first .ng-binding within the container.
+            name = None
+            name_el = await container.query_selector('h2')
+            if name_el:
+                name_text = await name_el.text_content()
+                name = name_text.strip() if name_text else None
+            else:
+                # fallback
+                bind_el = await container.query_selector('.ng-binding')
+                if bind_el:
+                    bind_text = await bind_el.text_content()
+                    name = bind_text.strip() if bind_text else None
 
-        # Append the extracted data to items list
-        if name and url and position:
-            items.append({
-                'name': name,
-                'url': url,
-                'position': position,
-                'scraper': SCRAPER_MODULE_PATH
-            })
+            # Url: first anchor inside the container. Convert to absolute URL.
+            url = None
+            a_el = await container.query_selector('a')
+            if a_el:
+                href = await a_el.get_attribute('href')
+                if href:
+                    url = urllib.parse.urljoin(base_url, href.strip())
+
+            # Position: element with class "text" (examples show .text.ng-binding)
+            position = None
+            pos_el = await container.query_selector('.text')
+            if pos_el:
+                pos_text = await pos_el.text_content()
+                if pos_text:
+                    pos = pos_text.strip()
+                    position = pos if pos != '' else None
+
+            # Ensure required keys are present; if missing, set to None
+            item = {
+                'name': name or None,
+                'url': url or None,
+                'position': position or None,
+                'scraper': SCRAPER_MODULE_PATH,
+            }
+
+            items.append(item)
+
+        except Exception:
+            # Be resilient to individual item parsing errors; skip problematic item
+            continue
 
     return items
 
@@ -83,21 +120,178 @@ async def advance_page(page):
         page: Playwright page object
     """
 
-    # Attempt to find and click the "Next" button
-    next_button = await page.query_selector('a[aria-label*="next"]')
-    if next_button:
-        await next_button.scroll_into_view_if_needed()
-        await next_button.click()
-        await page.wait_for_load_state('networkidle')
-    else:
-        # Fallback to infinite scroll
-        await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        await page.wait_for_timeout(3000)
+    # Item selector used to detect content changes (used by caller to determine new items)
+    item_selector = '.dynamic-grid-listing .grid-item, .dynamic-grid-listing-item'
+
+    # Candidate anchors to inspect (broad capture)
+    candidate_selector = ", ".join([
+        ".pagination-next a",
+        "ul.pagination-md .pagination-page a",
+        "a[rel='next']",
+        "a[aria-label]",
+        "nav a",  # generic fallback to capture site pagination anchors
+    ])
+
+    try:
+        # Current number of items on the page; used to detect that clicking advanced the content
+        try:
+            current_count = await page.evaluate(
+                "() => document.querySelectorAll('.dynamic-grid-listing .grid-item, .dynamic-grid-listing-item').length"
+            )
+        except Exception:
+            current_count = 0
+
+        candidates = await page.query_selector_all(candidate_selector)
+
+        next_btn = None
+
+        # Helper to normalize text/aria/ng-click
+        async def _get_text(el):
+            try:
+                return (await el.text_content() or '').strip()
+            except Exception:
+                return ''
+
+        async def _get_attr(el, name):
+            try:
+                return await el.get_attribute(name)
+            except Exception:
+                return None
+
+        # Priority selection: aria-label containing 'next' > visible text 'next' > ng-click selectPage(page + 1) > rel=next/href
+        for el in candidates:
+            try:
+                aria = (await _get_attr(el, 'aria-label') or '').lower()
+                txt = (await _get_text(el) or '').lower()
+                rel = (await _get_attr(el, 'rel') or '').lower()
+                ng_click = (await _get_attr(el, 'ng-click') or '').lower()
+
+                if 'next' in aria:
+                    next_btn = el
+                    break
+                if 'next' == txt or txt.startswith('next') or '>' == txt or '›' == txt:
+                    next_btn = el
+                    break
+                if 'selectpage' in ng_click and ('+ 1' in ng_click or '+1' in ng_click or 'page + 1' in ng_click or 'page+1' in ng_click):
+                    next_btn = el
+                    break
+                if 'next' in rel:
+                    next_btn = el
+                    break
+            except Exception:
+                continue
+
+        # As a last resort, if none matched precisely, try to pick the element inside .pagination-next if present
+        if not next_btn:
+            try:
+                alt = await page.query_selector('.pagination-next a')
+                if alt:
+                    next_btn = alt
+            except Exception:
+                pass
+
+        if next_btn:
+            # Scroll into view and attempt click first (Angular-style pagination often relies on click handlers)
+            try:
+                await next_btn.scroll_into_view_if_needed()
+            except Exception:
+                pass
+
+            clicked = False
+            try:
+                await next_btn.click()
+                clicked = True
+            except Exception:
+                clicked = False
+
+            # Wait for new content to be added (more items than before) or for network idle / navigation
+            try:
+                if clicked:
+                    # Wait for item count to be greater than previous (common when appends or loads new page content)
+                    try:
+                        await page.wait_for_function(
+                            "(prev) => document.querySelectorAll('.dynamic-grid-listing .grid-item, .dynamic-grid-listing-item').length > prev",
+                            current_count,
+                            timeout=8000,
+                        )
+                        return
+                    except Exception:
+                        # If that didn't happen, fallback to waiting for network activity to quiet down (covers full navigations)
+                        try:
+                            await page.wait_for_load_state('networkidle', timeout=5000)
+                            return
+                        except Exception:
+                            # continue to other fallbacks below
+                            pass
+                # If click didn't work or didn't produce detectable change, try navigation via href
+                href = await next_btn.get_attribute('href')
+                if href and href.strip() and href.strip() != '#':
+                    next_url = urllib.parse.urljoin(base_url, href.strip())
+                    try:
+                        await page.goto(next_url)
+                        try:
+                            await page.wait_for_load_state('networkidle', timeout=5000)
+                        except Exception:
+                            await page.wait_for_timeout(1000)
+                        return
+                    except Exception:
+                        pass
+
+                # If ng-click exists but click failed earlier, attempt to simulate click via JS
+                ng_click_attr = await next_btn.get_attribute('ng-click')
+                if ng_click_attr:
+                    try:
+                        # Attempt to click via JS dispatch
+                        await page.evaluate("(el) => el.click()", next_btn)
+                        try:
+                            await page.wait_for_function(
+                                "(prev) => document.querySelectorAll('.dynamic-grid-listing .grid-item, .dynamic-grid-listing-item').length > prev",
+                                current_count,
+                                timeout=8000,
+                            )
+                            return
+                        except Exception:
+                            try:
+                                await page.wait_for_load_state('networkidle', timeout=5000)
+                                return
+                            except Exception:
+                                pass
+                    except Exception:
+                        pass
+
+            except Exception:
+                # If anything unexpected happens, fall back to infinite scroll below
+                pass
+
+        # If no next button found or everything failed, fallback to infinite scroll
+        previous_height = await page.evaluate("() => document.body.scrollHeight")
+        for _ in range(4):
+            try:
+                await page.evaluate("() => window.scrollTo(0, document.body.scrollHeight)")
+                await page.wait_for_timeout(2000)
+                new_height = await page.evaluate("() => document.body.scrollHeight")
+                if new_height == previous_height:
+                    break
+                previous_height = new_height
+            except Exception:
+                break
+
+    except Exception:
+        # As a last resort, perform a single scroll and wait
+        try:
+            await page.evaluate("() => window.scrollTo(0, document.body.scrollHeight)")
+            await page.wait_for_timeout(1500)
+        except Exception:
+            pass
+
+    return
+
 
 async def get_first_page(base_url=base_url):
     """Fetch only the first page of bios."""
     async with PlaywrightContext() as context:
         page = await context.new_page()
+        await Stealth().apply_stealth_async(page)
         await page.goto(base_url)
         items = await scrape_page(page)
         await page.close()
@@ -110,6 +304,7 @@ async def get_all_articles(base_url=base_url, max_pages=100):
         items = []
         seen = set()
         page = await context.new_page()
+        await Stealth().apply_stealth_async(page)
         page_count = 0
 
         await page.goto(base_url)
@@ -138,6 +333,7 @@ async def get_all_articles(base_url=base_url, max_pages=100):
 
         except Exception as e:
             print(f"Error occurred while getting next page: {e}")
+
 
         await page.close()
         return items

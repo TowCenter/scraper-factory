@@ -1,53 +1,49 @@
 {
   "item_selectors": [
-    ".person-link",
-    ".archive-person"
+    "a.person-link",
+    "div.archive-person"
   ],
   "next_page_selectors": [
-    ".pagination",
-    ".next",
-    ".next.page-numbers"
+    "a.next.page-numbers",
+    "nav.navigation.pagination a.page-numbers"
   ],
   "item_examples": {
-    ".person-link": [
+    "a.person-link": [
       "<a class=\"person-link post-254 person type-person status-publish has-post-thumbnail hentry department-columbia-missourian department-journalism-professions position-faculty\" href=\"https://journalism.missouri.edu/people/jeanne-abbott/\">\n<div class=\"person-image\" style=\"background-image:url(https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg)\">\n<img alt=\"Jeanne Abbott\" class=\"sr-only wp-post-image\" data-id=\"255\" decoding=\"async\" height=\"400\" sizes=\"(max-width: 300px) 100vw, 300px\" src=\"https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg\" srcset=\"https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg 300w, https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-600x800.jpg 600w\" width=\"300\"/>\n</div>\n</a>"
     ],
-    ".archive-person": [
+    "div.archive-person": [
       "<div class=\"archive-person\">\n<a class=\"person-link post-254 person type-person status-publish has-post-thumbnail hentry department-columbia-missourian department-journalism-professions position-faculty\" href=\"https://journalism.missouri.edu/people/jeanne-abbott/\">\n<div class=\"person-image\" style=\"background-image:url(https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg)\">\n<img alt=\"Jeanne Abbott\" class=\"sr-only wp-post-image\" data-id=\"255\" decoding=\"async\" height=\"400\" sizes=\"(max-width: 300px) 100vw, 300px\" src=\"https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg\" srcset=\"https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg 300w, https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-600x800.jpg 600w\" width=\"300\"/>\n</div>\n</a>\n<header>\n<h2 class=\"person-name\">Jeanne Abbott</h2>\n<span class=\"person-job-title\">Professor</span>\n<span class=\"position-link\"><a href=\"https://journalism.missouri.edu/position/faculty/\">Faculty</a></span>\n</header>\n</div>"
     ]
   },
   "next_page_examples": {
-    ".pagination": [
-      "<nav aria-label=\"People navigation\" class=\"navigation pagination\">\n<h2 class=\"screen-reader-text\">People navigation</h2>\n<div class=\"nav-links\"><span aria-current=\"page\" class=\"page-numbers current\">1</span>\n<a class=\"page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/2/\">2</a>\n<a class=\"page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/3/\">3</a>\n<a class=\"page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/4/\">4</a>\n<span class=\"page-numbers dots\">\u2026</span>\n<a class=\"page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/6/\">6</a>\n<a class=\"next page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/2/\">Next</a></div>\n</nav>"
-    ],
-    ".next": [
+    "a.next.page-numbers": [
       "<a class=\"next page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/2/\">Next</a>"
     ],
-    ".next.page-numbers": [
-      "<a class=\"next page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/2/\">Next</a>"
+    "nav.navigation.pagination a.page-numbers": [
+      "<a class=\"page-numbers\" href=\"https://journalism.missouri.edu/position/faculty/page/2/\">2</a>"
     ]
   },
   "name_selectors": [
-    ".person-name"
+    "h2.person-name"
   ],
   "name_examples": {
-    ".person-name": [
+    "h2.person-name": [
       "<h2 class=\"person-name\">Jeanne Abbott</h2>"
     ]
   },
   "url_selectors": [
-    ".person-link"
+    "a.person-link[href]"
   ],
   "url_examples": {
-    ".person-link": [
+    "a.person-link[href]": [
       "<a class=\"person-link post-254 person type-person status-publish has-post-thumbnail hentry department-columbia-missourian department-journalism-professions position-faculty\" href=\"https://journalism.missouri.edu/people/jeanne-abbott/\">\n<div class=\"person-image\" style=\"background-image:url(https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg)\">\n<img alt=\"Jeanne Abbott\" class=\"sr-only wp-post-image\" data-id=\"255\" decoding=\"async\" height=\"400\" sizes=\"(max-width: 300px) 100vw, 300px\" src=\"https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg\" srcset=\"https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-300x400.jpg 300w, https://journalism.missouri.edu/wp-content/uploads/2011/10/jeanne-abbott-600x800.jpg 600w\" width=\"300\"/>\n</div>\n</a>"
     ]
   },
   "position_selectors": [
-    ".person-job-title"
+    "span.person-job-title"
   ],
   "position_examples": {
-    ".person-job-title": [
+    "span.person-job-title": [
       "<span class=\"person-job-title\">Professor</span>"
     ]
   }

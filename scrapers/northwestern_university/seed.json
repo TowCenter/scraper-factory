@@ -1,0 +1,9 @@
+{
+    "name": "Northwestern University",
+    "scrapers": [
+        {
+            "path": "scrapers.northwestern_university.scraper",
+            "url": "https://www.medill.northwestern.edu/directory/faculty/journalism/"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+  "item_selectors": [
+    ".c-card.js-filter-data",
+    ".c-cards__item"
+  ],
+  "next_page_selectors": [],
+  "item_examples": {
+    ".c-card.js-filter-data": [
+      "<div class=\"c-card --v5 js-filter-data\" data-name=\"J.A. Adande\" data-title=\"Associate Professor and Director of Sports Journalism\"><div class=\"c-card__body\"><div class=\"c-card__image\"><a href=\"../j-a-adande.html\"><img alt=\"J.A. Adande\" loading=\"lazy\" src=\"../../../_imgs/directory/faculty/750x1125-j-a-adande.jpg\"/></a></div><h2 class=\"c-card__heading\"><span>J.A. Adande</span></h2></div><div class=\"c-card__hover js-is-clickable\"><div class=\"c-card__blur\"></div><div class=\"c-card__content\"><h2 class=\"c-card__title\">J.A. Adande</h2><p class=\"c-card__caption\">Associate Professor and Director of Sports Journalism</p><a class=\"c-button --secondary --small\" href=\"../j-a-adande.html\"><span>View More</span></a></div></div></div>"
+    ],
+    ".c-cards__item": [
+      "<div class=\"o-col-6@sm o-col-4@md o-col-6@lg o-col-4@xl o-col-3@xxl c-cards__item\"><div class=\"c-card --v5 js-filter-data\" data-name=\"J.A. Adande\" data-title=\"Associate Professor and Director of Sports Journalism\"><div class=\"c-card__body\"><div class=\"c-card__image\"><a href=\"../j-a-adande.html\"><img alt=\"J.A. Adande\" loading=\"lazy\" src=\"../../../_imgs/directory/faculty/750x1125-j-a-adande.jpg\"/></a></div><h2 class=\"c-card__heading\"><span>J.A. Adande</span></h2></div><div class=\"c-card__hover js-is-clickable\"><div class=\"c-card__blur\"></div><div class=\"c-card__content\"><h2 class=\"c-card__title\">J.A. Adande</h2><p class=\"c-card__caption\">Associate Professor and Director of Sports Journalism</p><a class=\"c-button --secondary --small\" href=\"../j-a-adande.html\"><span>View More</span></a></div></div></div><p class=\"c-card-info\">Associate Professor and Director of Sports Journalism</p></div>"
+    ]
+  },
+  "next_page_examples": {},
+  "name_selectors": [
+    ".c-card__heading",
+    ".c-card__title"
+  ],
+  "name_examples": {
+    ".c-card__heading": [
+      "<h2 class=\"c-card__heading\"><span>J.A. Adande</span></h2>"
+    ],
+    ".c-card__title": [
+      "<h2 class=\"c-card__title\">J.A. Adande</h2>"
+    ]
+  },
+  "url_selectors": [],
+  "url_examples": {},
+  "position_selectors": [
+    ".c-card__caption",
+    ".c-card-info"
+  ],
+  "position_examples": {
+    ".c-card__caption": [
+      "<p class=\"c-card__caption\">Associate Professor and Director of Sports Journalism</p>"
+    ],
+    ".c-card-info": [
+      "<p class=\"c-card-info\">Associate Professor and Director of Sports Journalism</p>"
+    ]
+  }
+}

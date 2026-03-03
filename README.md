@@ -4,6 +4,7 @@ An AI-powered tool that generates custom Playwright-based web scrapers. Point it
 
 Built for journalists and researchers who need to monitor many sources without writing code from scratch each time.
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/TowCenter/scraper-factory?quickstart=1)
 ---
 
 ## Project Structure
@@ -123,6 +124,12 @@ You can also write your own. Any fields you define here will be passed to the AI
 ```bash
 python cli.py generate --org "Los Angeles Times" --url "https://www.latimes.com/"
 ```
+
+> **GitHub Codespaces:** The generator opens a real browser window during refinement. In Codespaces there's no display, so prefix the command with `xvfb-run` to provide a virtual one:
+>
+> ```bash
+> xvfb-run python cli.py generate --org "Los Angeles Times" --url "https://www.latimes.com/"
+> ```
 
 Or run without arguments for an interactive prompt:
 

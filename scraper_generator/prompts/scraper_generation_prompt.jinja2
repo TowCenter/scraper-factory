@@ -33,7 +33,7 @@ Your task is to analyze the HTML examples above and implement the scraper with i
 3. Implement the advance_page() function with this logic:
    - **If next page selectors exist**: Click/navigate to next page using those selectors, or navigate to the next page URL based on hrefs
    - **If no next page selectors exist**: Use infinite scroll fallback (scroll to bottom, wait for new content, return same URL)
-4. Return structured data as a list of dictionaries with these keys: {% for field in fields %}{{ field.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+4. Return structured data as a list of dictionaries with these keys: {% for field in fields %}{{ field.name }}, {% endfor %}scraper. Always set `scraper` to `SCRAPER_MODULE_PATH` (already defined as a module-level constant in the template).
 5. This is an async scraper using Playwright's async API. Make sure to use 'await' for ALL async methods.
 {% if has_date_field %}
 6. Make sure to handle date formatting consistently (YYYY-MM-DD) for the date field.
@@ -45,6 +45,7 @@ Your task is to analyze the HTML examples above and implement the scraper with i
 {% endfor %}
 
 **Important Notes:**
+- ALWAYS include `'scraper': SCRAPER_MODULE_PATH` in every item dict — this is required for traceability and tests will fail without it.
 - DO NOT USE OVERLY SPECIFIC SELECTORS (watch for any that include IDs or strings that look auto-generated)
 - Many modern sites use infinite scroll without visible pagination buttons
 - Some sites have "Load More" buttons that auto-trigger on scroll
@@ -53,5 +54,6 @@ Your task is to analyze the HTML examples above and implement the scraper with i
 - Ensure scrapers don't break entirely because of malformed HTML or missing elements - use safe access patterns, especially if the item selector returns null or empty lists.
 - Be sure to understand child and parent HTML elements when selecting elements, since item containers should be parents of all the child field elements.
 - For optional fields, return None if the value is not found rather than raising an error.
+- **Use `text_content()` instead of `inner_text()` when reading text from elements that may be inside collapsed containers** (e.g. `<details>`, hidden divs). `inner_text()` returns empty for visually hidden elements; `text_content()` always returns the DOM text regardless of visibility.
 
 CRITICAL: Return ONLY the Python code with appropriate in-line comments and function docstrings. Do not include any explanations, descriptions, or markdown code blocks. Start your response directly with the Python imports and code. No introductory text, no ```python blocks, just the raw Python script that can be executed immediately.

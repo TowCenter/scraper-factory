@@ -26,13 +26,37 @@ dotenv.load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 USE_VERBOSE = os.getenv("USE_VERBOSE", "false").lower() == "true"
 
+MODEL_NAME = "gpt-5-mini-2025-08-07"
+MODEL_CONTEXT_WINDOW = 400000  # tokens
+CONTEXT_OVERHEAD = 5000   # system prompt + template boilerplate
+RESPONSE_RESERVE = 3000   # space for model output
+MAX_DOM_TOKENS = MODEL_CONTEXT_WINDOW - CONTEXT_OVERHEAD - RESPONSE_RESERVE
+
+
+def estimate_text_tokens(text: str) -> int:
+    """Rough token estimate: ~4 chars per token."""
+    return max(1, len(text) // 4)
+
+
+def estimate_image_tokens(screenshot_bytes) -> int:
+    """
+    Rough token estimate for an OpenAI vision image.
+    High-detail mode costs ~170 tokens per 512×512 tile + 85 base.
+    We don't decode dimensions here; use a byte-based heuristic
+    (1 token per ~50 bytes of PNG, capped at 6000).
+    """
+    if not screenshot_bytes:
+        return 0
+    return min(len(screenshot_bytes) // 50, 6000)
+
+
 def setup_config():
     if not OPENAI_API_KEY:
         raise ValueError("OpenAI API key not set. Please set the OPENAI_API_KEY environment variable.")
 
     return {
         "api_key": OPENAI_API_KEY,
-        "model": "gpt-4o",  # Using gpt-4o for vision capabilities
+        "model": MODEL_NAME,
         "verbose": USE_VERBOSE,
         "headless": False,
     }
@@ -77,7 +101,7 @@ def setup_logging(scraper_name):
     
     return logger
 
-def log_llm_interaction(logger, interaction_type, prompt, response, model="gpt-4o"):
+def log_llm_interaction(logger, interaction_type, prompt, response, model=MODEL_NAME):
     """
     Log an LLM interaction with prompt and response
     
@@ -223,9 +247,9 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
     async def condense_dom(url):
         # scrape dom
         async with async_playwright() as p:
-            Stealth().hook_playwright_context(p)
             browser = await p.chromium.launch(headless=False)
             page = await browser.new_page()
+            await Stealth().apply_stealth_async(page)
 
             page.set_default_timeout(30000)
             page.set_default_navigation_timeout(30000)
@@ -337,9 +361,6 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
         # Call LLM with chunk and screenshot and ask for selectors for items and pagination
         client = OpenAI(api_key=config["api_key"])
 
-        # Encode screenshot to base64
-        screenshot_base64 = base64.b64encode(screenshot_bytes).decode('utf-8')
-
         # Load the DOM analysis prompt template
         prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
         env = Environment(loader=FileSystemLoader(prompts_dir))
@@ -354,30 +375,30 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
             fields=fields,
         )
 
-        print("Calling LLM for chunk analysis with screenshot...")
+        MAX_IMAGE_BYTES = 5 * 1024 * 1024  # 5MB OpenAI limit
+        use_image = screenshot_bytes is not None and len(screenshot_bytes) <= MAX_IMAGE_BYTES
+
+        if not use_image and screenshot_bytes is not None:
+            print(f"Screenshot too large ({len(screenshot_bytes):,} bytes), falling back to text-only request...")
+
+        user_content = [{"type": "text", "text": prompt_text}]
+        if use_image:
+            screenshot_base64 = base64.b64encode(screenshot_bytes).decode('utf-8')
+            user_content.append({
+                "type": "image_url",
+                "image_url": {"url": f"data:image/jpeg;base64,{screenshot_base64}"}
+            })
+
+        print("Calling LLM for chunk analysis" + (" with screenshot..." if use_image else " (no screenshot)..."))
 
         response = client.chat.completions.create(
             model=config["model"],
             messages=[
                 {"role": "system", "content": "You are a helpful AI assistant specialized in web scraping."},
-                {
-                    "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": prompt_text
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/png;base64,{screenshot_base64}"
-                            }
-                        }
-                    ]
-                }
+                {"role": "user", "content": user_content}
             ],
-            temperature=0.2,
-            max_tokens=1000
+            reasoning_effort="low",
+            max_completion_tokens=2000
         )
         result = response.choices[0].message.content
 
@@ -407,7 +428,21 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
     loop = asyncio.get_event_loop()
     summarized_dom, screenshot_bytes, raw_html = loop.run_until_complete(condense_dom(url))
 
-    chunk_size = 500
+    # Calculate how many DOM lines fit in one API call given the context window.
+    # Estimate tokens for the screenshot and a sample of the DOM text, then
+    # derive the max lines per chunk.  For most pages this will be the full DOM.
+    image_tokens = estimate_image_tokens(screenshot_bytes)
+    available_for_dom = MAX_DOM_TOKENS - image_tokens
+    tokens_per_line = 0
+    if summarized_dom:
+        sample = "\n".join(summarized_dom[:min(200, len(summarized_dom))])
+        tokens_per_line = estimate_text_tokens(sample) / min(200, len(summarized_dom))
+        max_lines = int(available_for_dom / max(1, tokens_per_line))
+        chunk_size = max(500, min(len(summarized_dom), max_lines))
+    else:
+        chunk_size = 500
+    print(f"DOM lines: {len(summarized_dom)}, ~{tokens_per_line:.1f} tokens/line, chunk_size: {chunk_size}")
+
     all_item_selectors = set()
     all_next_page_selectors = set()
     # One set per configured field
@@ -524,8 +559,8 @@ def run_script_creator(scraper_prompt, config, logger=None):
             {"role": "system", "content": "You are a helpful AI assistant specialized in creating web scrapers."},
             {"role": "user", "content": scraper_prompt}
         ],
-        temperature=0.2,
-        max_tokens=4000
+        reasoning_effort="medium",
+        max_completion_tokens=8000
     )
     result = response.choices[0].message.content
 
@@ -713,8 +748,8 @@ STDERR: {feedback.get('stderr', '')}
             {"role": "system", "content": "You are an expert web scraper debugger. Fix broken scrapers based on runtime errors."},
             {"role": "user", "content": refinement_prompt}
         ],
-        temperature=0.1,  # Lower temperature for more consistent fixes
-        max_tokens=4000
+        reasoning_effort="medium",
+        max_completion_tokens=8000
     )
 
     refined_code = response.choices[0].message.content
@@ -765,8 +800,8 @@ def refine_pagination(original_code, next_page_selectors, next_page_examples,
             {"role": "system", "content": "You are an expert at debugging Playwright-based web scrapers. Focus specifically on fixing the advance_page() function."},
             {"role": "user", "content": refinement_prompt}
         ],
-        temperature=0.1,
-        max_tokens=4000
+        reasoning_effort="medium",
+        max_completion_tokens=8000
     )
 
     refined_code = response.choices[0].message.content
@@ -774,6 +809,69 @@ def refine_pagination(original_code, next_page_selectors, next_page_examples,
     if logger:
         log_llm_interaction(logger, "Pagination Refinement", refinement_prompt, refined_code, config["model"])
 
+    return clean_scraper_code(refined_code)
+
+
+def refine_missing_fields(original_code, missing_field_names, page_analysis,
+                          content_config, sample_results, url, scraper_name, config, logger=None):
+    """
+    Use LLM to fix scraper when required fields are returning null.
+
+    Args:
+        original_code (str): Current scraper code
+        missing_field_names (set): Field names that are null/blank across results
+        page_analysis (dict): Saved page_analysis.json with selectors and HTML examples
+        content_config (dict): Content config with field descriptions
+        sample_results (list): First few result records for context
+        url (str): Target URL
+        scraper_name (str): Name of scraper
+        config (dict): API config
+        logger: Logger instance
+
+    Returns:
+        str: Refined scraper code
+    """
+    prompts_dir = os.path.join(os.path.dirname(__file__), "prompts")
+    env = Environment(loader=FileSystemLoader(prompts_dir))
+    template = env.get_template("missing_fields_refinement_prompt.jinja2")
+
+    fields_config = content_config.get("fields", [])
+    missing_fields_info = [f for f in fields_config if f["name"] in missing_field_names]
+
+    field_selectors = {}
+    field_examples = {}
+    for fname in missing_field_names:
+        sels = page_analysis.get(f"{fname}_selectors", [])
+        exs = page_analysis.get(f"{fname}_examples", {})
+        if sels:
+            field_selectors[fname] = sels
+        if exs:
+            field_examples[fname] = exs
+
+    refinement_prompt = template.render(
+        original_code=original_code,
+        missing_fields=missing_fields_info,
+        field_selectors=json.dumps(field_selectors, indent=2),
+        field_examples=format_selectors_with_examples(field_examples),
+        sample_results=json.dumps(sample_results, indent=2),
+        url=url
+    )
+
+    client = OpenAI(api_key=config["api_key"])
+    print("🔧 Refining scraper to fix missing required fields...")
+    response = client.chat.completions.create(
+        model=config["model"],
+        messages=[
+            {"role": "system", "content": "You are an expert web scraper debugger. Fix scrapers that are returning null for required fields."},
+            {"role": "user", "content": refinement_prompt}
+        ],
+        reasoning_effort="medium",
+        max_completion_tokens=8000
+    )
+
+    refined_code = response.choices[0].message.content
+    if logger:
+        log_llm_interaction(logger, "Required Fields Refinement", refinement_prompt, refined_code, config["model"])
     return clean_scraper_code(refined_code)
 
 
@@ -956,27 +1054,70 @@ def generate_scraper(url, scraper_name, output_filename="scraper.py", content_co
             with open(page_analysis_path, 'r') as f:
                 saved_page_analysis = json.load(f)
 
-            scraper_code = refine_pagination(
-                scraper_code,
-                saved_page_analysis.get("next_page_selectors", []),
-                saved_page_analysis.get("next_page_examples", {}),
-                ctx.pagination_page_counts,
-                url, scraper_name, config, logger
-            )
-            _save_scraper(scraper_code)
-            print(f"📁 Refined scraper saved to: {scraper_file_path}")
-            logger.info(f"Pagination-refined scraper saved to: {scraper_file_path}")
+            next_page_selectors = saved_page_analysis.get("next_page_selectors", [])
+            if not next_page_selectors:
+                print("⚠️ No next-page selectors found during page analysis — skipping pagination refinement.")
+                logger.info("Skipping pagination refinement: no next_page_selectors in page analysis.")
+            else:
+                scraper_code = refine_pagination(
+                    scraper_code,
+                    next_page_selectors,
+                    saved_page_analysis.get("next_page_examples", {}),
+                    ctx.pagination_page_counts,
+                    url, scraper_name, config, logger
+                )
+                _save_scraper(scraper_code)
+                print(f"📁 Refined scraper saved to: {scraper_file_path}")
+                logger.info(f"Pagination-refined scraper saved to: {scraper_file_path}")
     else:
         print("\n⚠️ Skipping pagination test — first page still failing.")
         logger.info("Skipping pagination test — first page still failing.")
 
     # -- Step 6: Validation tests (informational) -----------------------
+    # Fall back to first-page data if get_all_articles crashed before populating ctx.data
+    if not ctx.data and ctx.first_page_articles:
+        print("\n⚠️  get_all_articles failed but first-page data is available — using it for validation.")
+        logger.info("Step 6: falling back to first_page_articles for validation (get_all_articles failed).")
+        ctx.data = ctx.first_page_articles
+
+    nonblank_test = None
     if ctx.data:
         print("\n" + "="*60)
         print("STEP 6: DATA VALIDATION")
         print("="*60)
-        for test_cls in [ItemKeysTest, NonBlankValuesTest, DateFormatTest, UrlFormatTest]:
-            _run_test(test_cls, ctx)
+        _run_test(ItemKeysTest, ctx)
+        nonblank_test = _run_test(NonBlankValuesTest, ctx)
+        _run_test(DateFormatTest, ctx)
+        _run_test(UrlFormatTest, ctx)
+
+    # -- Step 7: Required fields refinement ----------------------------
+    if ctx.data and nonblank_test and not nonblank_test.passed:
+        missing_field_names = set()
+        for failure in nonblank_test.failures:
+            missing_field_names.update(failure.get("fields", set()))
+        missing_field_names.discard("scraper")
+
+        if missing_field_names:
+            print("\n" + "="*60)
+            print("STEP 7: REQUIRED FIELDS REFINEMENT")
+            print("="*60)
+            print(f"❌ Required fields returning null: {missing_field_names}")
+            logger.info(f"STEP 7: Refining for missing required fields: {missing_field_names}")
+
+            with open(page_analysis_path, 'r') as f:
+                saved_page_analysis = json.load(f)
+
+            scraper_code = refine_missing_fields(
+                scraper_code,
+                missing_field_names,
+                saved_page_analysis,
+                content_config,
+                ctx.data[:3],
+                url, scraper_name, config, logger
+            )
+            _save_scraper(scraper_code)
+            print(f"📁 Refined scraper saved to: {scraper_file_path}")
+            logger.info(f"Required-fields-refined scraper saved to: {scraper_file_path}")
 
     # -- Final: Full test suite summary -----------------------------------
     print("\n" + "="*60)
@@ -1061,7 +1202,7 @@ def make_prompt(url, scraper_name, page_analysis, template_name="generic_templat
         url=url,
         org_name=scraper_name,
         generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        model="gpt-4o",
+        model=MODEL_NAME,
         module_path=module_path,
         content_type=content_type,
         item_label=item_label,

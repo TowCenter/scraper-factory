@@ -12,7 +12,7 @@ Fields: {% for field in fields %}{{ field.name }}{% if not loop.last %}, {% endi
 import json
 import os
 from playwright.async_api import async_playwright
-from playwright_stealth import Stealth
+from playwright_stealth import Stealth  # v2.0.1 API
 from dateutil.parser import parse
 import urllib.parse
 import asyncio
@@ -30,7 +30,6 @@ class PlaywrightContext:
 
     async def __aenter__(self):
         self.playwright = await async_playwright().start()
-        Stealth().hook_playwright_context(self.playwright)
         self.browser = await self.playwright.chromium.launch()
         context_kwargs = {'user_agent': USER_AGENT} if USER_AGENT else {}
         self.context = await self.browser.new_context(**context_kwargs)
@@ -62,11 +61,13 @@ async def scrape_page(page):
     {% endfor %}{% if has_date_field %}# 3. Format date consistently using YYYY-MM-DD format
     {% endif %}# 4. Return structured data
 
-    # When adding an item, include the scraper path for traceability
-    # Example structure:
+    # REQUIRED: every item dict must include ALL of these keys:
+    # {% for field in fields %}'{{ field.name }}', {% endfor %}'scraper'
+    # 'scraper' must always be set to SCRAPER_MODULE_PATH (defined above).
+    # Example:
     # items.append({
     {% for field in fields %}#     '{{ field.name }}': {{ field.name }}_value,
-    {% endfor %}#     'scraper': SCRAPER_MODULE_PATH
+    {% endfor %}#     'scraper': SCRAPER_MODULE_PATH,  # <-- required, do not omit
     # })
 
     return items
@@ -99,6 +100,7 @@ async def get_first_page(base_url=base_url):
     """Fetch only the first page of {{ item_label }}s."""
     async with PlaywrightContext() as context:
         page = await context.new_page()
+        await Stealth().apply_stealth_async(page)
         await page.goto(base_url)
         items = await scrape_page(page)
         await page.close()
@@ -111,6 +113,7 @@ async def get_all_articles(base_url=base_url, max_pages=100):
         items = []
         seen = set()
         page = await context.new_page()
+        await Stealth().apply_stealth_async(page)
         page_count = 0
 
         await page.goto(base_url)

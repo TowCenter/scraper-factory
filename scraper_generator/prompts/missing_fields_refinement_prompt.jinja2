@@ -1,0 +1,32 @@
+The web scraper below is running successfully but returning null or blank values for required fields.
+
+Original scraper code:
+```python
+{{ original_code }}
+```
+
+Required fields that are returning null or blank:
+{% for field in missing_fields %}
+- **{{ field.name }}**: {{ field.description }}
+{% endfor %}
+
+Available CSS selectors from page analysis for these fields:
+{{ field_selectors }}
+
+HTML examples for these selectors:
+{{ field_examples }}
+
+Sample of current results (showing what IS and IS NOT being extracted):
+```json
+{{ sample_results }}
+```
+
+Target URL: {{ url }}
+
+Fix the `scrape_page()` function so that all required fields listed above are populated correctly. Use the available selectors and HTML examples to identify the right element for each missing field.
+
+**Common causes of null fields to check:**
+- Elements inside `<details>` or other collapsed/hidden containers: `inner_text()` returns empty for visually hidden elements. Use `text_content()` instead, which reads the DOM regardless of visibility.
+- Selector too specific or not matching the actual DOM structure — check the HTML examples above carefully.
+
+Return ONLY the corrected Python code. No explanations, markdown blocks, or additional text.

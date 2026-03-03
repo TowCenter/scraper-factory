@@ -187,7 +187,7 @@ class ItemKeysTest(Test):
         return self.passed
 
 class NonBlankValuesTest(Test):
-    """Check all required fields are non-empty strings (optional fields may be null/empty)."""
+    """Check all required fields are non-empty strings or non-empty lists (optional fields may be null/empty)."""
 
     def run(self, context: TestContext) -> bool:
         if not context.data:
@@ -200,7 +200,10 @@ class NonBlankValuesTest(Test):
         for i, record in enumerate(context.data):
             blank_fields = {
                 k for k, v in record.items()
-                if k in enforce and (not isinstance(v, str) or not v.strip())
+                if k in enforce and not (
+                    (isinstance(v, str) and v.strip()) or
+                    (isinstance(v, list) and len(v) > 0)
+                )
             }
             if blank_fields:
                 failures.append({"index": i, "fields": blank_fields})
@@ -443,7 +446,10 @@ class GetAllArticlesTest(Test):
             for page_num in range(self.MAX_PAGES):
                 page_articles = await module.scrape_page(page)
                 for article in page_articles:
-                    key = tuple(sorted(article.items()))
+                    key = tuple(sorted(
+                        (k, tuple(v) if isinstance(v, list) else v)
+                        for k, v in article.items()
+                    ))
                     if key not in seen:
                         seen.add(key)
                         all_articles.append(article)

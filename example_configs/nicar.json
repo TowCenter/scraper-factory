@@ -1,0 +1,49 @@
+{
+  "content_type": "sessions",
+  "description": "Conference sessions or presentations",
+  "item_label": "session",
+  "fields": [
+    {
+      "name": "title",
+      "description": "Headline or title of the session",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "name": "speakers",
+      "description": "List of speaker names",
+      "required": true,
+      "type": "text"
+    },        
+    {
+      "name": "room",
+      "description": "Room or location where the session is held",
+      "required": true,
+      "type": "text"
+    },  
+    {
+      "name": "skill_level",
+      "description": "Skill level of the session (e.g., beginner, intermediate, advanced)",
+      "required": true,
+      "type": "text"
+    },           
+    {
+      "name": "date",
+      "description": "Publication date in YYYY-MM-DD format",
+      "required": true,
+      "type": "date"
+    },
+    {
+      "name": "time",
+      "description": "Publication time in HH:MM format",
+      "required": true,
+      "type": "time"
+    },    
+    {
+      "name": "url",
+      "description": "Link to the full page",
+      "required": true,
+      "type": "url"
+    }
+  ]
+}

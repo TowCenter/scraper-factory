@@ -259,9 +259,6 @@ async def run():
                         logger.warning(f"INVALID DATE FOR ARTICLE: {ann.get(url_field)}: {date_val}", extra={"org": org_name, "error": "bad_date"})
                         ann[date_field] = None
 
-                # Ensure content field exists
-                ann.setdefault("content", "")
-
                 try:
                     # Atomic "insert if not exists" operation
                     result = db[content_col].update_one(

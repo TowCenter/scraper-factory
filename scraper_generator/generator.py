@@ -26,13 +26,37 @@ dotenv.load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 USE_VERBOSE = os.getenv("USE_VERBOSE", "false").lower() == "true"
 
+MODEL_NAME = "gpt-5-mini-2025-08-07"
+MODEL_CONTEXT_WINDOW = 400000  # tokens
+CONTEXT_OVERHEAD = 5000   # system prompt + template boilerplate
+RESPONSE_RESERVE = 3000   # space for model output
+MAX_DOM_TOKENS = MODEL_CONTEXT_WINDOW - CONTEXT_OVERHEAD - RESPONSE_RESERVE
+
+
+def estimate_text_tokens(text: str) -> int:
+    """Rough token estimate: ~4 chars per token."""
+    return max(1, len(text) // 4)
+
+
+def estimate_image_tokens(screenshot_bytes) -> int:
+    """
+    Rough token estimate for an OpenAI vision image.
+    High-detail mode costs ~170 tokens per 512×512 tile + 85 base.
+    We don't decode dimensions here; use a byte-based heuristic
+    (1 token per ~50 bytes of PNG, capped at 6000).
+    """
+    if not screenshot_bytes:
+        return 0
+    return min(len(screenshot_bytes) // 50, 6000)
+
+
 def setup_config():
     if not OPENAI_API_KEY:
         raise ValueError("OpenAI API key not set. Please set the OPENAI_API_KEY environment variable.")
 
     return {
         "api_key": OPENAI_API_KEY,
-        "model": "gpt-4o",  # Using gpt-4o for vision capabilities
+        "model": MODEL_NAME,
         "verbose": USE_VERBOSE,
         "headless": False,
     }
@@ -77,7 +101,7 @@ def setup_logging(scraper_name):
     
     return logger
 
-def log_llm_interaction(logger, interaction_type, prompt, response, model="gpt-4o"):
+def log_llm_interaction(logger, interaction_type, prompt, response, model=MODEL_NAME):
     """
     Log an LLM interaction with prompt and response
     
@@ -373,8 +397,8 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
                 {"role": "system", "content": "You are a helpful AI assistant specialized in web scraping."},
                 {"role": "user", "content": user_content}
             ],
-            temperature=0.2,
-            max_tokens=1000
+            reasoning_effort="low",
+            max_completion_tokens=2000
         )
         result = response.choices[0].message.content
 
@@ -404,7 +428,21 @@ def analyze_page_structure(url, config, logger=None, content_config=None):
     loop = asyncio.get_event_loop()
     summarized_dom, screenshot_bytes, raw_html = loop.run_until_complete(condense_dom(url))
 
-    chunk_size = 500
+    # Calculate how many DOM lines fit in one API call given the context window.
+    # Estimate tokens for the screenshot and a sample of the DOM text, then
+    # derive the max lines per chunk.  For most pages this will be the full DOM.
+    image_tokens = estimate_image_tokens(screenshot_bytes)
+    available_for_dom = MAX_DOM_TOKENS - image_tokens
+    tokens_per_line = 0
+    if summarized_dom:
+        sample = "\n".join(summarized_dom[:min(200, len(summarized_dom))])
+        tokens_per_line = estimate_text_tokens(sample) / min(200, len(summarized_dom))
+        max_lines = int(available_for_dom / max(1, tokens_per_line))
+        chunk_size = max(500, min(len(summarized_dom), max_lines))
+    else:
+        chunk_size = 500
+    print(f"DOM lines: {len(summarized_dom)}, ~{tokens_per_line:.1f} tokens/line, chunk_size: {chunk_size}")
+
     all_item_selectors = set()
     all_next_page_selectors = set()
     # One set per configured field
@@ -521,8 +559,8 @@ def run_script_creator(scraper_prompt, config, logger=None):
             {"role": "system", "content": "You are a helpful AI assistant specialized in creating web scrapers."},
             {"role": "user", "content": scraper_prompt}
         ],
-        temperature=0.2,
-        max_tokens=4000
+        reasoning_effort="medium",
+        max_completion_tokens=8000
     )
     result = response.choices[0].message.content
 
@@ -710,8 +748,8 @@ STDERR: {feedback.get('stderr', '')}
             {"role": "system", "content": "You are an expert web scraper debugger. Fix broken scrapers based on runtime errors."},
             {"role": "user", "content": refinement_prompt}
         ],
-        temperature=0.1,  # Lower temperature for more consistent fixes
-        max_tokens=4000
+        reasoning_effort="medium",
+        max_completion_tokens=8000
     )
 
     refined_code = response.choices[0].message.content
@@ -762,8 +800,8 @@ def refine_pagination(original_code, next_page_selectors, next_page_examples,
             {"role": "system", "content": "You are an expert at debugging Playwright-based web scrapers. Focus specifically on fixing the advance_page() function."},
             {"role": "user", "content": refinement_prompt}
         ],
-        temperature=0.1,
-        max_tokens=4000
+        reasoning_effort="medium",
+        max_completion_tokens=8000
     )
 
     refined_code = response.choices[0].message.content
@@ -1058,7 +1096,7 @@ def make_prompt(url, scraper_name, page_analysis, template_name="generic_templat
         url=url,
         org_name=scraper_name,
         generated_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        model="gpt-4o",
+        model=MODEL_NAME,
         module_path=module_path,
         content_type=content_type,
         item_label=item_label,

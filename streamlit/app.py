@@ -119,200 +119,285 @@ def main():
         st.warning("No orgs found in the database.")
         return
 
-    # === METRICS ===
-    current_time = datetime.now(timezone.utc)
-    total_items = db[CONTENT_COL].count_documents({})
+    tab1, tab2 = st.tabs(["Health", "Data"])
 
-    total_scrapers_all = 0
-    passing = errors = no_results = inactive = 0
-    for org in organizations_data:
-        for s in org.get("scrapers", []):
-            total_scrapers_all += 1
-            active = s.get("active", True)
-            status = s.get("last_run_status")
-            if active is False:
-                inactive += 1
-            elif status == "pass":
-                passing += 1
-            elif status == "error":
-                errors += 1
-            elif status == "unable_to_fetch":
-                no_results += 1
+    with tab1:
+        # === METRICS ===
+        current_time = datetime.now(timezone.utc)
+        total_items = db[CONTENT_COL].count_documents({})
 
-    rate_denom = passing + errors + no_results  # known active scrapers only
+        total_scrapers_all = 0
+        passing = errors = no_results = inactive = 0
+        for org in organizations_data:
+            for s in org.get("scrapers", []):
+                total_scrapers_all += 1
+                active = s.get("active", True)
+                status = s.get("last_run_status")
+                if active is False:
+                    inactive += 1
+                elif status == "pass":
+                    passing += 1
+                elif status == "error":
+                    errors += 1
+                elif status == "unable_to_fetch":
+                    no_results += 1
 
-    def pct(n):
-        return f" ({n * 100 // rate_denom}%)" if rate_denom else ""
+        rate_denom = passing + errors + no_results  # known active scrapers only
 
-    m1, m2, _gap, m3, m4 = st.columns([1, 1, 0.08, 1, 1])
-    with m1:
-        st.metric(
-            "Total Scrapers", total_scrapers_all,
-            help="All registered scrapers across every org, including inactive ones.",
-        )
-    with m2:
-        st.metric(
-            "Total Items", f"{total_items:,}",
-            help="Total scraped items stored in the database across all time.",
-        )
-    with _gap:
-        st.markdown(
-            "<div style='display:flex;justify-content:center;align-items:center;height:72px'>"
-            "<div style='width:1px;height:52px;background:#dde1e7'></div>"
-            "</div>",
-            unsafe_allow_html=True,
-        )
-    with m3:
-        st.metric(
-            "Passing", f"{passing}{pct(passing)}",
-            help="Active scrapers whose last run successfully inserted new items. "
-                 "Percentage is share of all active (non-inactive) scrapers.",
-        )
-    with m4:
-        st.metric(
-            "Inactive", inactive,
-            help="Scrapers with active=false — permanently skipped during daily runs.",
-        )
+        def pct(n):
+            return f" ({n * 100 // rate_denom}%)" if rate_denom else ""
 
-    st.divider()
+        m1, m2, _gap, m3, m4 = st.columns([1, 1, 0.08, 1, 1])
+        with m1:
+            st.metric(
+                "Total Scrapers", total_scrapers_all,
+                help="All registered scrapers across every org, including inactive ones.",
+            )
+        with m2:
+            st.metric(
+                "Total Items", f"{total_items:,}",
+                help="Total scraped items stored in the database across all time.",
+            )
+        with _gap:
+            st.markdown(
+                "<div style='display:flex;justify-content:center;align-items:center;height:72px'>"
+                "<div style='width:1px;height:52px;background:#dde1e7'></div>"
+                "</div>",
+                unsafe_allow_html=True,
+            )
+        with m3:
+            st.metric(
+                "Passing", f"{passing}{pct(passing)}",
+                help="Active scrapers whose last run successfully inserted new items. "
+                     "Percentage is share of all active (non-inactive) scrapers.",
+            )
+        with m4:
+            st.metric(
+                "Inactive", inactive,
+                help="Scrapers with active=false — permanently skipped during daily runs.",
+            )
 
-    # === FILTERS + CSV EXPORT ===
-    fc1, fc2, fc3 = st.columns([3, 2, 1])
-    with fc1:
-        status_filter = st.radio(
-            "Filter by status",
-            options=["All", "Error", "No Results", "Inactive only"],
-            horizontal=True,
-            key="health_status_filter",
-        )
-    with fc2:
-        org_options = ["All"] + sorted([org.get("name", "Unknown") for org in organizations_data])
-        selected_org = st.selectbox("Filter by org", org_options, key="health_school_filter")
-    with fc3:
-        st.markdown("<div style='padding-top:1.65rem'></div>", unsafe_allow_html=True)
-        st.download_button(
-            label="Export CSV",
-            data=build_csv(MONGO_URI, DB_NAME),
-            file_name="scraped_items.csv",
-            mime="text/csv",
-            use_container_width=True,
-        )
+        st.divider()
 
-    # === FLAT SCRAPER TABLE ===
-    scraper_counts = {
-        doc["_id"]: doc["count"]
-        for doc in db[CONTENT_COL].aggregate([
-            {"$group": {"_id": "$scraper", "count": {"$sum": 1}}}
-        ])
-    }
+        # === FILTERS + CSV EXPORT ===
+        fc1, fc2, fc3 = st.columns([3, 2, 1])
+        with fc1:
+            status_filter = st.radio(
+                "Filter by status",
+                options=["All", "Error", "No Results", "Inactive only"],
+                horizontal=True,
+                key="health_status_filter",
+            )
+        with fc2:
+            org_options = ["All"] + sorted([org.get("name", "Unknown") for org in organizations_data])
+            selected_org = st.selectbox("Filter by org", org_options, key="health_school_filter")
+        with fc3:
+            st.markdown("<div style='padding-top:1.65rem'></div>", unsafe_allow_html=True)
+            st.download_button(
+                label="Export CSV",
+                data=build_csv(MONGO_URI, DB_NAME),
+                file_name="scraped_items.csv",
+                mime="text/csv",
+                use_container_width=True,
+            )
 
-    rows = []
-    for org in organizations_data:
-        org_name = org.get("name", "Unknown Org")
+        # === FLAT SCRAPER TABLE ===
+        scraper_counts = {
+            doc["_id"]: doc["count"]
+            for doc in db[CONTENT_COL].aggregate([
+                {"$group": {"_id": "$scraper", "count": {"$sum": 1}}}
+            ])
+        }
 
-        if selected_org != "All" and org_name != selected_org:
-            continue
+        rows = []
+        for org in organizations_data:
+            org_name = org.get("name", "Unknown Org")
 
-        scrapers = org.get("scrapers", [])
-
-        # Org-level status filter: skip org if no matching scrapers
-        if status_filter == "Error":
-            if not any(
-                s.get("last_run_status") == "error" and s.get("active", True) is not False
-                for s in scrapers
-            ):
-                continue
-        elif status_filter == "No Results":
-            if not any(
-                s.get("last_run_status") == "unable_to_fetch" and s.get("active", True) is not False
-                for s in scrapers
-            ):
-                continue
-        elif status_filter == "Inactive only":
-            if not any(s.get("active", True) is False for s in scrapers):
+            if selected_org != "All" and org_name != selected_org:
                 continue
 
-        for scraper in scrapers:
-            active = scraper.get("active", True)
-            status = scraper.get("last_run_status")
+            scrapers = org.get("scrapers", [])
 
-            # Row-level status filter
-            if status_filter == "Error" and not (status == "error" and active is not False):
-                continue
-            if status_filter == "No Results" and not (status == "unable_to_fetch" and active is not False):
-                continue
-            if status_filter == "Inactive only" and active is not False:
-                continue
+            # Org-level status filter: skip org if no matching scrapers
+            if status_filter == "Error":
+                if not any(
+                    s.get("last_run_status") == "error" and s.get("active", True) is not False
+                    for s in scrapers
+                ):
+                    continue
+            elif status_filter == "No Results":
+                if not any(
+                    s.get("last_run_status") == "unable_to_fetch" and s.get("active", True) is not False
+                    for s in scrapers
+                ):
+                    continue
+            elif status_filter == "Inactive only":
+                if not any(s.get("active", True) is False for s in scrapers):
+                    continue
 
-            path = scraper.get("path", "")
-            module_name = path.split(".")[-1] if path else path
-            last_run = scraper.get("last_run")
-            count = scraper_counts.get(path, 0)
-            url = scraper.get("url", "")
+            for scraper in scrapers:
+                active = scraper.get("active", True)
+                status = scraper.get("last_run_status")
 
-            if status == "pass":
-                status_icon = "🟢 pass"
-            elif status == "error":
-                status_icon = "🔴 error"
-            elif status == "unable_to_fetch":
-                status_icon = "🟡 no results"
-            else:
-                status_icon = "⚪ no data"
+                # Row-level status filter
+                if status_filter == "Error" and not (status == "error" and active is not False):
+                    continue
+                if status_filter == "No Results" and not (status == "unable_to_fetch" and active is not False):
+                    continue
+                if status_filter == "Inactive only" and active is not False:
+                    continue
 
-            active_icon = "✅" if active is not False else "⏸️"
+                path = scraper.get("path", "")
+                module_name = path.split(".")[-1] if path else path
+                last_run = scraper.get("last_run")
+                count = scraper_counts.get(path, 0)
+                url = scraper.get("url", "")
 
-            last_run_str = ""
-            since_str = ""
-            has_error = status in ("error", "unable_to_fetch") and active is not False
-
-            if isinstance(last_run, datetime):
-                lr = last_run.replace(tzinfo=timezone.utc) if last_run.tzinfo is None else last_run
-                local_dt = utc_to_local(lr)
-                if local_dt:
-                    last_run_str = local_dt.strftime("%Y-%m-%d %I:%M %p")
-                hours_ago = (current_time - lr).total_seconds() / 3600
-                if hours_ago < 1:
-                    since_str = f"{int(hours_ago * 60)}m ago"
-                elif hours_ago < 24:
-                    since_str = f"{int(hours_ago)}h ago"
+                if status == "pass":
+                    status_icon = "🟢 pass"
+                elif status == "error":
+                    status_icon = "🔴 error"
+                elif status == "unable_to_fetch":
+                    status_icon = "🟡 no results"
                 else:
-                    since_str = f"{int(hours_ago / 24)}d ago"
+                    status_icon = "⚪ no data"
 
-            rows.append({
-                "_sort": (0 if has_error else 1, org_name.lower()),
-                "Org": org_name,
-                "Scraper Name": module_name,
-                "Status": status_icon,
-                "Active": active_icon,
-                "Last Run": last_run_str,
-                "Since": since_str,
-                "Total Scraped Items": count,
-                "URL": url,
-            })
+                active_icon = "✅" if active is not False else "⏸️"
 
-    rows.sort(key=lambda r: r["_sort"])
-    for r in rows:
-        del r["_sort"]
+                last_run_str = ""
+                since_str = ""
+                has_error = status in ("error", "unable_to_fetch") and active is not False
 
-    if rows:
-        df = pd.DataFrame(rows)
-        st.dataframe(
-            df,
-            hide_index=True,
-            use_container_width=True,
-            column_config={
-                "Org": st.column_config.TextColumn("Org"),
-                "Scraper Name": st.column_config.TextColumn("Scraper Name"),
-                "Status": st.column_config.TextColumn("Status", width="medium"),
-                "Active": st.column_config.TextColumn("Active", width="small"),
-                "Last Run": st.column_config.TextColumn("Last Run"),
-                "Since": st.column_config.TextColumn("Since", width="small"),
-                "Total Scraped Items": st.column_config.NumberColumn("Total Scraped Items"),
-                "URL": st.column_config.LinkColumn("URL", display_text="Open"),
-            },
-        )
-    else:
-        st.info("No scrapers match the current filters.")
+                if isinstance(last_run, datetime):
+                    lr = last_run.replace(tzinfo=timezone.utc) if last_run.tzinfo is None else last_run
+                    local_dt = utc_to_local(lr)
+                    if local_dt:
+                        last_run_str = local_dt.strftime("%Y-%m-%d %I:%M %p")
+                    hours_ago = (current_time - lr).total_seconds() / 3600
+                    if hours_ago < 1:
+                        since_str = f"{int(hours_ago * 60)}m ago"
+                    elif hours_ago < 24:
+                        since_str = f"{int(hours_ago)}h ago"
+                    else:
+                        since_str = f"{int(hours_ago / 24)}d ago"
+
+                rows.append({
+                    "_sort": (0 if has_error else 1, org_name.lower()),
+                    "Org": org_name,
+                    "Scraper Name": module_name,
+                    "Status": status_icon,
+                    "Active": active_icon,
+                    "Last Run": last_run_str,
+                    "Since": since_str,
+                    "Total Scraped Items": count,
+                    "URL": url,
+                })
+
+        rows.sort(key=lambda r: r["_sort"])
+        for r in rows:
+            del r["_sort"]
+
+        if rows:
+            df = pd.DataFrame(rows)
+            st.dataframe(
+                df,
+                hide_index=True,
+                use_container_width=True,
+                column_config={
+                    "Org": st.column_config.TextColumn("Org"),
+                    "Scraper Name": st.column_config.TextColumn("Scraper Name"),
+                    "Status": st.column_config.TextColumn("Status", width="medium"),
+                    "Active": st.column_config.TextColumn("Active", width="small"),
+                    "Last Run": st.column_config.TextColumn("Last Run"),
+                    "Since": st.column_config.TextColumn("Since", width="small"),
+                    "Total Scraped Items": st.column_config.NumberColumn("Total Scraped Items"),
+                    "URL": st.column_config.LinkColumn("URL", display_text="Open"),
+                },
+            )
+        else:
+            st.info("No scrapers match the current filters.")
+
+    with tab2:
+        # === DATA TAB ===
+        org_names = sorted([org.get("name", "Unknown") for org in organizations_data])
+        dc1, dc2 = st.columns([3, 1])
+        with dc1:
+            data_org = st.selectbox("Org", ["All"] + org_names, key="data_org_filter")
+        with dc2:
+            show_json = st.checkbox("Show as JSON", key="data_show_json")
+
+        if data_org == "All":
+            scraper_paths = [
+                s.get("path", "")
+                for org in organizations_data
+                for s in org.get("scrapers", [])
+                if s.get("path")
+            ]
+        else:
+            scraper_paths = [
+                s.get("path", "")
+                for org in organizations_data
+                if org.get("name") == data_org
+                for s in org.get("scrapers", [])
+                if s.get("path")
+            ]
+
+        PAGE_SIZE = 50
+        if "data_page" not in st.session_state:
+            st.session_state.data_page = 0
+        # Reset page when filter changes
+        if st.session_state.get("_data_filter_key") != data_org:
+            st.session_state.data_page = 0
+            st.session_state["_data_filter_key"] = data_org
+
+        skip = st.session_state.data_page * PAGE_SIZE
+        query = {"scraper": {"$in": scraper_paths}} if data_org != "All" else {}
+        items = list(db[CONTENT_COL].find(query, {"_id": 0}).skip(skip).limit(PAGE_SIZE))
+        total_count = db[CONTENT_COL].count_documents(query)
+
+        if total_count == 0:
+            st.info("No items found.")
+        else:
+            start = skip + 1
+            end = min(skip + PAGE_SIZE, total_count)
+            st.caption(f"Showing {start}–{end} of {total_count:,} items")
+
+            if show_json:
+                for item in items:
+                    label = item.get("title") or item.get("name") or item.get("scraper", "item")
+                    with st.expander(label):
+                        st.json(item)
+            else:
+                # Serialize any non-primitive values (lists, dicts) to JSON strings for table display
+                display_items = []
+                for item in items:
+                    row = {}
+                    for k, v in item.items():
+                        if isinstance(v, (list, dict)):
+                            row[k] = json.dumps(v)
+                        else:
+                            row[k] = v
+                    display_items.append(row)
+                st.dataframe(pd.DataFrame(display_items), hide_index=True, use_container_width=True)
+
+            # Pagination controls
+            total_pages = (total_count - 1) // PAGE_SIZE
+            p1, p2, p3 = st.columns([1, 2, 1])
+            with p1:
+                if st.session_state.data_page > 0:
+                    if st.button("← Prev", use_container_width=True):
+                        st.session_state.data_page -= 1
+                        st.rerun()
+            with p2:
+                st.markdown(
+                    f"<div style='text-align:center;padding-top:0.4rem'>Page {st.session_state.data_page + 1} of {total_pages + 1}</div>",
+                    unsafe_allow_html=True,
+                )
+            with p3:
+                if st.session_state.data_page < total_pages:
+                    if st.button("Next →", use_container_width=True):
+                        st.session_state.data_page += 1
+                        st.rerun()
 
 if __name__ == "__main__":
     main()

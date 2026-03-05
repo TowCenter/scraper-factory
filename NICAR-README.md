@@ -72,11 +72,12 @@ DB_NAME=""
 
 ## Step 2: Configure What to Scrape
 
-`config.json` at the project root controls what kind of content to scrape and which fields to extract. Every scraper you generate will follow this schema.
-
 Take a look at the site and decide how you'd like to configure the scrapers. 
 
-https://towcenter.github.io/2026_NICAR/
+[https://towcenter.github.io/2026_NICAR/
+](https://towcenter.github.io/2026_NICAR/
+)
+`config.json` at the project root controls what kind of content to scrape and which fields to extract. Every scraper you generate will follow this schema.
 
 ```json
 {
@@ -98,8 +99,6 @@ https://towcenter.github.io/2026_NICAR/
 - `"url"` — validated as a URL
 - `"list"` — validated as a list of objects
 
-
-**Prebuilt configs** are in `example_configs/` — copy one to `config.json` to use it:
 ---
 
 ## Step 3: Generate a Scraper
@@ -115,7 +114,7 @@ xvfb-run python cli.py generate --org "NICAR" --url https://towcenter.github.io/
 Or run without arguments for an interactive prompt:
 
 ```bash
-python cli.py generate
+xvfb-run python cli.py generate
 ```
 
 The tool will:

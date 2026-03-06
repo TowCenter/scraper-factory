@@ -77,6 +77,7 @@ Take a look at the site and decide how you'd like to configure the scrapers.
 [https://towcenter.github.io/2026_NICAR/
 ](https://towcenter.github.io/2026_NICAR/
 )
+
 `config.json` at the project root controls what kind of content to scrape and which fields to extract. Every scraper you generate will follow this schema.
 
 ```json

@@ -109,7 +109,7 @@ Take a look at the site and decide how you'd like to configure the scrapers.
 > **GitHub Codespaces:** The generator opens a real browser window during refinement. In Codespaces there's no display, so prefix the command with `xvfb-run` to provide a virtual one:
 
 ```bash
-xvfb-run python cli.py generate --org "NICAR" --url https://towcenter.github.io/2026_NICAR/"
+xvfb-run python cli.py generate --org "NICAR" --url "https://towcenter.github.io/2026_NICAR/"
 ```
 
 Or run without arguments for an interactive prompt:

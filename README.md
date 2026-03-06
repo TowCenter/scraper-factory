@@ -1,6 +1,6 @@
 # Scraper Factory
 
-An AI-powered tool that generates custom Playwright-based web scrapers. Point it at a page, and it analyzes the DOM and screenshot with GPT-4o to write a working Python scraper — then tests and refines it automatically.
+An AI-powered tool that generates custom Playwright-based web scrapers. Point it at a list of pages, and it analyzes the DOM to write a working Python scraper — then tests and refines it automatically.
 
 Built for journalists and researchers who need to monitor many sources without writing code from scratch each time.
 

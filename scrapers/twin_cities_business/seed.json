@@ -1,0 +1,9 @@
+{
+    "name": "Twin Cities Business",
+    "scrapers": [
+        {
+            "path": "scrapers.twin_cities_business.scraper",
+            "url": "https://tcbmag.com/news/"
+        }
+    ]
+}

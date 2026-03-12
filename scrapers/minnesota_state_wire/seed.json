@@ -1,0 +1,9 @@
+{
+    "name": "Minnesota State Wire",
+    "scrapers": [
+        {
+            "path": "scrapers.minnesota_state_wire.scraper",
+            "url": "https://minnesotastatewire.com/stories/"
+        }
+    ]
+}

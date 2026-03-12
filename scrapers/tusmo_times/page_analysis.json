@@ -1,0 +1,74 @@
+{
+  "item_selectors": [
+    ".mvp-feat1-list-out",
+    ".mvp-widget-feat2-right-cont",
+    "li.mvp-blog-story-wrap"
+  ],
+  "next_page_selectors": [
+    ".mvp-inf-more-but",
+    ".mvp-nav-links",
+    ".pagination a.inactive"
+  ],
+  "item_examples": {
+    ".mvp-feat1-list-out": [
+      "<div class=\"mvp-feat1-list-out relative\">\n<div class=\"mvp-feat1-list-img left relative\">\n<img alt=\"\" class=\"attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image\" decoding=\"async\" height=\"80\" loading=\"lazy\" sizes=\"auto, (max-width: 80px) 100vw, 80px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Soomaali-iyo-Selma-front-Hore-80x80.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Soomaali-iyo-Selma-front-Hore-80x80.jpg 80w, https://tusmotimes.com/wp-content/uploads/2026/03/Soomaali-iyo-Selma-front-Hore-150x150.jpg 150w\" width=\"80\"/> </div><!--mvp-feat1-list-img-->\n<div class=\"mvp-feat1-list-in\">\n<div class=\"mvp-feat1-list-text\">\n<div class=\"mvp-cat-date-wrap left relative\">\n<span class=\"mvp-cd-cat left relative\">Local News</span><span class=\"mvp-cd-date left relative\">2 days ago</span>\n</div><!--mvp-cat-date-wrap-->\n<h2>From Minneapolis to Selma: Somali American Minnesotans Honor the Legacy of Bloody Sunday</h2>\n</div><!--mvp-feat1-list-text-->\n</div><!--mvp-feat1-list-in-->\n</div>"
+    ],
+    ".mvp-widget-feat2-right-cont": [
+      "<div class=\"mvp-widget-feat2-right-cont left relative\">\n<div class=\"mvp-widget-feat2-right-img left relative\">\n<img alt=\"\" class=\"mvp-reg-img lazy wp-post-image\" decoding=\"async\" height=\"240\" sizes=\"(max-width: 400px) 100vw, 400px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Mpls-3-shootings-in-20-minutes-400x240.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Mpls-3-shootings-in-20-minutes-400x240.jpg 400w, https://tusmotimes.com/wp-content/uploads/2026/03/Mpls-3-shootings-in-20-minutes-1000x600.jpg 1000w, https://tusmotimes.com/wp-content/uploads/2026/03/Mpls-3-shootings-in-20-minutes-590x354.jpg 590w\" width=\"400\"/> <img alt=\"\" class=\"mvp-mob-img lazy wp-post-image\" decoding=\"async\" height=\"80\" sizes=\"(max-width: 80px) 100vw, 80px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Mpls-3-shootings-in-20-minutes-80x80.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Mpls-3-shootings-in-20-minutes-80x80.jpg 80w, https://tusmotimes.com/wp-content/uploads/2026/03/Mpls-3-shootings-in-20-minutes-150x150.jpg 150w\" width=\"80\"/> </div><!--mvp-widget-feat2-right-img-->\n<div class=\"mvp-widget-feat2-right-text left relative\">\n<div class=\"mvp-cat-date-wrap left relative\">\n<span class=\"mvp-cd-cat left relative\">Local News</span><span class=\"mvp-cd-date left relative\">4 days ago</span>\n</div><!--mvp-cat-date-wrap-->\n<h2>Saddex goobood oo kala duwan oo ay toogasho ka dhacday magaaladda Minneapolis mudo 20 daqiiqo gudahood</h2>\n</div><!--mvp-widget-feat2-right-text-->\n</div>"
+    ],
+    "li.mvp-blog-story-wrap": [
+      "<li class=\"mvp-blog-story-wrap left relative infinite-post\">\n<a href=\"https://tusmotimes.com/garsoore-mar-kalle-amar-ku-bixiyay-in-aan-la-xiri-karin-dadka-qaxooti-ahaanta-ku-soo-galay-wadanka/\" rel=\"bookmark\">\n<div class=\"mvp-blog-story-out relative\">\n<div class=\"mvp-blog-story-img left relative\">\n<img alt=\"\" class=\"mvp-big-img wp-post-image\" decoding=\"async\" height=\"600\" loading=\"lazy\" sizes=\"auto, (max-width: 1000px) 100vw, 1000px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-1000x600.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-1000x600.jpg 1000w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-590x354.jpg 590w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-400x240.jpg 400w\" width=\"1000\"/> <img alt=\"\" class=\"mvp-reg-img wp-post-image\" decoding=\"async\" height=\"240\" loading=\"lazy\" sizes=\"auto, (max-width: 400px) 100vw, 400px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-400x240.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-400x240.jpg 400w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-1000x600.jpg 1000w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-590x354.jpg 590w\" width=\"400\"/> <img alt=\"\" class=\"mvp-mob-img wp-post-image\" decoding=\"async\" height=\"80\" loading=\"lazy\" sizes=\"auto, (max-width: 80px) 100vw, 80px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-80x80.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-80x80.jpg 80w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-150x150.jpg 150w\" width=\"80\"/> </div><!--mvp-blog-story-img-->\n<div class=\"mvp-blog-story-in\">\n<div class=\"mvp-blog-story-text left relative\">\n<div class=\"mvp-cat-date-wrap left relative\">\n<span class=\"mvp-cd-cat left relative\">Local News</span><span class=\"mvp-cd-date left relative\">5 days ago</span>\n</div><!--mvp-cat-..."
+    ]
+  },
+  "next_page_examples": {
+    ".mvp-inf-more-but": [
+      "<a class=\"mvp-inf-more-but\" href=\"#\" style=\"display: inline-block;\">More Posts</a>"
+    ],
+    ".mvp-nav-links": [
+      "<div class=\"mvp-nav-links\">\n<div class=\"pagination\"><span>Page 1 of 5</span><span class=\"current\">1</span><a class=\"inactive\" href=\"https://tusmotimes.com/category/local-news/page/2/\">2</a><a class=\"inactive\" href=\"https://tusmotimes.com/category/local-news/page/3/\">3</a><a class=\"inactive\" href=\"https://tusmotimes.com/category/local-news/page/4/\">4</a><a class=\"inactive\" href=\"https://tusmotimes.com/category/local-news/page/5/\">5</a></div>\n</div>"
+    ],
+    ".pagination a.inactive": [
+      "<a class=\"inactive\" href=\"https://tusmotimes.com/category/local-news/page/2/\">2</a>"
+    ]
+  },
+  "title_selectors": [
+    "li.mvp-blog-story-wrap h2",
+    ".mvp-stand-title",
+    ".mvp-feat1-list-out h2"
+  ],
+  "title_examples": {
+    "li.mvp-blog-story-wrap h2": [
+      "<h2>GARSOORE MAR KALLE AMAR KU BIXIYAY IN AAN LA XIRI KARIN DADKA QAXOOTI AHAANTA KU SOO GALAY WADANKA</h2>"
+    ],
+    ".mvp-stand-title": [
+      "<h2 class=\"mvp-stand-title\">From Minneapolis to Selma: Somali American Minnesotans Honor the Legacy of Bloody Sunday</h2>"
+    ],
+    ".mvp-feat1-list-out h2": [
+      "<h2>From Minneapolis to Selma: Somali American Minnesotans Honor the Legacy of Bloody Sunday</h2>"
+    ]
+  },
+  "date_selectors": [
+    ".mvp-feat1-list .mvp-cd-date",
+    "li.mvp-blog-story-wrap .mvp-cd-date",
+    ".mvp-cat-date-wrap .mvp-cd-date"
+  ],
+  "date_examples": {
+    ".mvp-feat1-list .mvp-cd-date": [
+      "<span class=\"mvp-cd-date left relative\">2 days ago</span>"
+    ],
+    "li.mvp-blog-story-wrap .mvp-cd-date": [
+      "<span class=\"mvp-cd-date left relative\">5 days ago</span>"
+    ],
+    ".mvp-cat-date-wrap .mvp-cd-date": [
+      "<span class=\"mvp-cd-date left relative\">2 days ago</span>"
+    ]
+  },
+  "url_selectors": [
+    "li.mvp-blog-story-wrap > a"
+  ],
+  "url_examples": {
+    "li.mvp-blog-story-wrap > a": [
+      "<a href=\"https://tusmotimes.com/garsoore-mar-kalle-amar-ku-bixiyay-in-aan-la-xiri-karin-dadka-qaxooti-ahaanta-ku-soo-galay-wadanka/\" rel=\"bookmark\">\n<div class=\"mvp-blog-story-out relative\">\n<div class=\"mvp-blog-story-img left relative\">\n<img alt=\"\" class=\"mvp-big-img wp-post-image\" decoding=\"async\" height=\"600\" loading=\"lazy\" sizes=\"auto, (max-width: 1000px) 100vw, 1000px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-1000x600.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-1000x600.jpg 1000w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-590x354.jpg 590w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-400x240.jpg 400w\" width=\"1000\"/> <img alt=\"\" class=\"mvp-reg-img wp-post-image\" decoding=\"async\" height=\"240\" loading=\"lazy\" sizes=\"auto, (max-width: 400px) 100vw, 400px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-400x240.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-400x240.jpg 400w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-1000x600.jpg 1000w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-590x354.jpg 590w\" width=\"400\"/> <img alt=\"\" class=\"mvp-mob-img wp-post-image\" decoding=\"async\" height=\"80\" loading=\"lazy\" sizes=\"auto, (max-width: 80px) 100vw, 80px\" src=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-80x80.jpg\" srcset=\"https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-80x80.jpg 80w, https://tusmotimes.com/wp-content/uploads/2026/03/Operation-Parris-150x150.jpg 150w\" width=\"80\"/> </div><!--mvp-blog-story-img-->\n<div class=\"mvp-blog-story-in\">\n<div class=\"mvp-blog-story-text left relative\">\n<div class=\"mvp-cat-date-wrap left relative\">\n<span class=\"mvp-cd-cat left relative\">Local News</span><span class=\"mvp-cd-date left relative\">5 days ago</span>\n</div><!--mvp-cat-date-wrap-->\n<h2>GARSOORE MAR KALLE AMAR KU BIXIYAY IN AAN LA..."
+    ]
+  }
+}

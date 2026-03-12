@@ -1,0 +1,68 @@
+{
+  "item_selectors": [
+    ".fl-post-grid .fl-post-grid-post",
+    ".fl-post-column",
+    ".fl-post-grid-post"
+  ],
+  "next_page_selectors": [],
+  "item_examples": {
+    ".fl-post-grid .fl-post-grid-post": [
+      "<div class=\"fl-post-grid-post fl-post-grid-image-above-title fl-post-columns-post fl-post-align-left post-5965 post type-post status-publish format-standard has-post-thumbnail hentry category-minnesota-state-legislature tag-anti-semitism tag-israel tag-minnesota-state-legislature tag-palestine tag-ron-latz\" itemscope=\"\" itemtype=\"https://schema.org/BlogPosting\">\n<meta content=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\" itemid=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" itemprop=\"mainEntityOfPage\" itemscope=\"\" itemtype=\"https://schema.org/WebPage\"/><meta content=\"2024-07-22\" itemprop=\"datePublished\"/><meta content=\"2024-07-22\" itemprop=\"dateModified\"/><div itemprop=\"publisher\" itemscope=\"\" itemtype=\"https://schema.org/Organization\"><meta content=\"The Uptake\" itemprop=\"name\"/></div><div itemprop=\"author\" itemscope=\"\" itemtype=\"https://schema.org/Person\"><meta content=\"https://theuptake.org/author/cirien/\" itemprop=\"url\"/><meta content=\"Cirien Saadeh\" itemprop=\"name\"/></div><div itemprop=\"image\" itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"><meta content=\"https://theuptake.org/wp-content/uploads/2024/07/46Latz.jpg\" itemprop=\"url\"/><meta content=\"1200\" itemprop=\"width\"/><meta content=\"1500\" itemprop=\"height\"/></div><div itemprop=\"interactionStatistic\" itemscope=\"\" itemtype=\"https://schema.org/InteractionCounter\"><meta content=\"https://schema.org/CommentAction\" itemprop=\"interactionType\"/><meta content=\"0\" itemprop=\"userInteractionCount\"/></div> <div class=\"fl-post-grid-image\">\n<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" rel=\"bookmark\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">\n<img alt=\"\" class=\"attachment-medium size-medium wp-post-image\" decoding=\"async\" fetchpriority=\"h..."
+    ],
+    ".fl-post-column": [
+      "<div class=\"fl-post-column\" style=\"visibility: visible;\">\n<div class=\"fl-post-grid-post fl-post-grid-image-above-title fl-post-columns-post fl-post-align-left post-5965 post type-post status-publish format-standard has-post-thumbnail hentry category-minnesota-state-legislature tag-anti-semitism tag-israel tag-minnesota-state-legislature tag-palestine tag-ron-latz\" itemscope=\"\" itemtype=\"https://schema.org/BlogPosting\">\n<meta content=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\" itemid=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" itemprop=\"mainEntityOfPage\" itemscope=\"\" itemtype=\"https://schema.org/WebPage\"/><meta content=\"2024-07-22\" itemprop=\"datePublished\"/><meta content=\"2024-07-22\" itemprop=\"dateModified\"/><div itemprop=\"publisher\" itemscope=\"\" itemtype=\"https://schema.org/Organization\"><meta content=\"The Uptake\" itemprop=\"name\"/></div><div itemprop=\"author\" itemscope=\"\" itemtype=\"https://schema.org/Person\"><meta content=\"https://theuptake.org/author/cirien/\" itemprop=\"url\"/><meta content=\"Cirien Saadeh\" itemprop=\"name\"/></div><div itemprop=\"image\" itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"><meta content=\"https://theuptake.org/wp-content/uploads/2024/07/46Latz.jpg\" itemprop=\"url\"/><meta content=\"1200\" itemprop=\"width\"/><meta content=\"1500\" itemprop=\"height\"/></div><div itemprop=\"interactionStatistic\" itemscope=\"\" itemtype=\"https://schema.org/InteractionCounter\"><meta content=\"https://schema.org/CommentAction\" itemprop=\"interactionType\"/><meta content=\"0\" itemprop=\"userInteractionCount\"/></div> <div class=\"fl-post-grid-image\">\n<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" rel=\"bookmark\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">\n<img alt=\"\" class=\"attachment-medium si..."
+    ],
+    ".fl-post-grid-post": [
+      "<div class=\"fl-post-grid-post fl-post-grid-image-above-title fl-post-columns-post fl-post-align-left post-5965 post type-post status-publish format-standard has-post-thumbnail hentry category-minnesota-state-legislature tag-anti-semitism tag-israel tag-minnesota-state-legislature tag-palestine tag-ron-latz\" itemscope=\"\" itemtype=\"https://schema.org/BlogPosting\">\n<meta content=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\" itemid=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" itemprop=\"mainEntityOfPage\" itemscope=\"\" itemtype=\"https://schema.org/WebPage\"/><meta content=\"2024-07-22\" itemprop=\"datePublished\"/><meta content=\"2024-07-22\" itemprop=\"dateModified\"/><div itemprop=\"publisher\" itemscope=\"\" itemtype=\"https://schema.org/Organization\"><meta content=\"The Uptake\" itemprop=\"name\"/></div><div itemprop=\"author\" itemscope=\"\" itemtype=\"https://schema.org/Person\"><meta content=\"https://theuptake.org/author/cirien/\" itemprop=\"url\"/><meta content=\"Cirien Saadeh\" itemprop=\"name\"/></div><div itemprop=\"image\" itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"><meta content=\"https://theuptake.org/wp-content/uploads/2024/07/46Latz.jpg\" itemprop=\"url\"/><meta content=\"1200\" itemprop=\"width\"/><meta content=\"1500\" itemprop=\"height\"/></div><div itemprop=\"interactionStatistic\" itemscope=\"\" itemtype=\"https://schema.org/InteractionCounter\"><meta content=\"https://schema.org/CommentAction\" itemprop=\"interactionType\"/><meta content=\"0\" itemprop=\"userInteractionCount\"/></div> <div class=\"fl-post-grid-image\">\n<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" rel=\"bookmark\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">\n<img alt=\"\" class=\"attachment-medium size-medium wp-post-image\" decoding=\"async\" fetchpriority=\"h..."
+    ]
+  },
+  "next_page_examples": {},
+  "title_selectors": [
+    "h2.fl-post-grid-title",
+    ".fl-post-grid-title",
+    "h2.fl-post-grid-title a"
+  ],
+  "title_examples": {
+    "h2.fl-post-grid-title": [
+      "<h2 class=\"fl-post-grid-title\" itemprop=\"headline\">\n<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota</a>\n</h2>"
+    ],
+    ".fl-post-grid-title": [
+      "<h2 class=\"fl-post-grid-title\" itemprop=\"headline\">\n<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota</a>\n</h2>"
+    ],
+    "h2.fl-post-grid-title a": [
+      "<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota</a>"
+    ]
+  },
+  "date_selectors": [
+    ".fl-post-grid-meta",
+    ".fl-post-grid-meta .fl-post-grid-date",
+    "span.fl-post-grid-date"
+  ],
+  "date_examples": {
+    ".fl-post-grid-meta": [
+      "<div class=\"fl-post-grid-meta\">\n<span class=\"fl-post-grid-date\">\n\t\t\t\t\tJuly 22, 2024\t\t\t\t</span>\n</div>"
+    ],
+    ".fl-post-grid-meta .fl-post-grid-date": [
+      "<span class=\"fl-post-grid-date\">\n\t\t\t\t\tJuly 22, 2024\t\t\t\t</span>"
+    ],
+    "span.fl-post-grid-date": [
+      "<span class=\"fl-post-grid-date\">\n\t\t\t\t\tJuly 22, 2024\t\t\t\t</span>"
+    ]
+  },
+  "url_selectors": [
+    ".fl-post-grid-text a[href]",
+    ".fl-post-grid-post a",
+    "h2.fl-post-grid-title a"
+  ],
+  "url_examples": {
+    ".fl-post-grid-text a[href]": [
+      "<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota</a>"
+    ],
+    ".fl-post-grid-post a": [
+      "<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" rel=\"bookmark\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">\n<img alt=\"\" class=\"attachment-medium size-medium wp-post-image\" decoding=\"async\" fetchpriority=\"high\" height=\"300\" sizes=\"(max-width: 240px) 100vw, 240px\" src=\"https://theuptake.org/wp-content/uploads/2024/07/46Latz-240x300.jpg\" srcset=\"https://theuptake.org/wp-content/uploads/2024/07/46Latz-240x300.jpg 240w, https://theuptake.org/wp-content/uploads/2024/07/46Latz-819x1024.jpg 819w, https://theuptake.org/wp-content/uploads/2024/07/46Latz-768x960.jpg 768w, https://theuptake.org/wp-content/uploads/2024/07/46Latz.jpg 1200w\" width=\"240\"/> </a>"
+    ],
+    "h2.fl-post-grid-title a": [
+      "<a href=\"https://theuptake.org/senate-judiciary-and-public-safety-committee-discusses-anti-semitism-at-the-university-of-minnesota/\" title=\"Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota\">Senate Judiciary and Public Safety committee discusses anti-Semitism at the University of Minnesota</a>"
+    ]
+  }
+}

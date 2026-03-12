@@ -1,0 +1,62 @@
+{
+  "item_selectors": [
+    "ul.search-results-module-results-menu > li",
+    ".promo-wrapper"
+  ],
+  "next_page_selectors": [
+    ".search-results-module-next-page a",
+    ".search-results-module-pagination a"
+  ],
+  "item_examples": {
+    "ul.search-results-module-results-menu > li": [
+      "<li> <div class=\"promo promo-position-large promo-medium\" data-content-type=\"article\" data-module-id=\"0000019c-e361-da78-ad9c-ebe39bab0000\" data-promotable-id=\"0000019c-de05-dcaa-a39e-feb5b2840000\" data-show-img=\"\"> <div class=\"promo-wrapper\"> <div class=\"promo-media z-1\"><a aria-label=\"Letters to the Editor: The Trump administration has lied before, but video can tell us the truth\" class=\"link promo-placeholder\" href=\"https://www.latimes.com/opinion/letters-to-the-editor/story/2026-03-12/iranian-girls-school-bombing\"><picture> <source sizes=\"(max-width: 768px) 180px, 320px\" srcset=\"https://ca-times.brightspotcdn.com/dims4/default/02ecfa7/2147483647/strip/true/crop/6000x4000+0+0/resize/110x73!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 110w,https://ca-times.brightspotcdn.com/dims4/default/d8c0dc7/2147483647/strip/true/crop/6000x4000+0+0/resize/180x120!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 180w,https://ca-times.brightspotcdn.com/dims4/default/1baf22d/2147483647/strip/true/crop/6000x4000+0+0/resize/320x213!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 320w,https://ca-times.brightspotcdn.com/dims4/default/c7df90c/2147483647/strip/true/crop/6000x4000+0+0/resize/568x379!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 568w,https://ca-times.brightspotcdn.com/dims4/default/3a8ea50/2147483647/strip/true/crop/6000x4000+0+0/resize/768x512!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71..."
+    ],
+    ".promo-wrapper": [
+      "<div class=\"promo-wrapper\"> <div class=\"promo-media z-1\"><a aria-label=\"Letters to the Editor: The Trump administration has lied before, but video can tell us the truth\" class=\"link promo-placeholder\" href=\"https://www.latimes.com/opinion/letters-to-the-editor/story/2026-03-12/iranian-girls-school-bombing\"><picture> <source sizes=\"(max-width: 768px) 180px, 320px\" srcset=\"https://ca-times.brightspotcdn.com/dims4/default/02ecfa7/2147483647/strip/true/crop/6000x4000+0+0/resize/110x73!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 110w,https://ca-times.brightspotcdn.com/dims4/default/d8c0dc7/2147483647/strip/true/crop/6000x4000+0+0/resize/180x120!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 180w,https://ca-times.brightspotcdn.com/dims4/default/1baf22d/2147483647/strip/true/crop/6000x4000+0+0/resize/320x213!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 320w,https://ca-times.brightspotcdn.com/dims4/default/c7df90c/2147483647/strip/true/crop/6000x4000+0+0/resize/568x379!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 568w,https://ca-times.brightspotcdn.com/dims4/default/3a8ea50/2147483647/strip/true/crop/6000x4000+0+0/resize/768x512!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 768w,https://ca-times.brightspotcdn.com/dims4/default/28a9b70/2147483647/strip/true/crop/6000x4000+0+0/resize/840x560!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws...."
+    ]
+  },
+  "next_page_examples": {
+    ".search-results-module-next-page a": [
+      "<a href=\"https://www.latimes.com/search?q=minneapolis&amp;s=1&amp;p=2\" rel=\"nofollow\"><svg class=\"icon chevron-icon\"><use xlink:href=\"#chevron\"></use></svg><span class=\"visually-hidden\">Next</span></a>"
+    ],
+    ".search-results-module-pagination a": [
+      "<a href=\"https://www.latimes.com/search?q=minneapolis&amp;s=1&amp;p=2\" rel=\"nofollow\"><svg class=\"icon chevron-icon\"><use xlink:href=\"#chevron\"></use></svg><span class=\"visually-hidden\">Next</span></a>"
+    ]
+  },
+  "title_selectors": [
+    "h3.promo-title",
+    "h3.promo-title a"
+  ],
+  "title_examples": {
+    "h3.promo-title": [
+      "<h3 class=\"promo-title\"> <a class=\"link\" href=\"https://www.latimes.com/opinion/letters-to-the-editor/story/2026-03-12/iranian-girls-school-bombing\">Letters to the Editor: The Trump administration has lied before, but video can tell us the truth</a> </h3>"
+    ],
+    "h3.promo-title a": [
+      "<a class=\"link\" href=\"https://www.latimes.com/opinion/letters-to-the-editor/story/2026-03-12/iranian-girls-school-bombing\">Letters to the Editor: The Trump administration has lied before, but video can tell us the truth</a>"
+    ]
+  },
+  "date_selectors": [
+    "time.promo-timestamp",
+    ".promo-timestamp"
+  ],
+  "date_examples": {
+    "time.promo-timestamp": [
+      "<time class=\"promo-timestamp font-cms-font-service-text font-medium text-sm text-cms-color-timestamp-text\" datetime=\"2026-03-12T15:00:00.000Z\"> <span data-element=\"date-time-content\">March 12, 2026</span> </time>"
+    ],
+    ".promo-timestamp": [
+      "<time class=\"promo-timestamp font-cms-font-service-text font-medium text-sm text-cms-color-timestamp-text\" datetime=\"2026-03-12T15:00:00.000Z\"> <span data-element=\"date-time-content\">March 12, 2026</span> </time>"
+    ]
+  },
+  "url_selectors": [
+    "a.link.promo-placeholder",
+    "h3.promo-title a"
+  ],
+  "url_examples": {
+    "a.link.promo-placeholder": [
+      "<a aria-label=\"Letters to the Editor: The Trump administration has lied before, but video can tell us the truth\" class=\"link promo-placeholder\" href=\"https://www.latimes.com/opinion/letters-to-the-editor/story/2026-03-12/iranian-girls-school-bombing\"><picture> <source sizes=\"(max-width: 768px) 180px, 320px\" srcset=\"https://ca-times.brightspotcdn.com/dims4/default/02ecfa7/2147483647/strip/true/crop/6000x4000+0+0/resize/110x73!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 110w,https://ca-times.brightspotcdn.com/dims4/default/d8c0dc7/2147483647/strip/true/crop/6000x4000+0+0/resize/180x120!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 180w,https://ca-times.brightspotcdn.com/dims4/default/1baf22d/2147483647/strip/true/crop/6000x4000+0+0/resize/320x213!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 320w,https://ca-times.brightspotcdn.com/dims4/default/c7df90c/2147483647/strip/true/crop/6000x4000+0+0/resize/568x379!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 568w,https://ca-times.brightspotcdn.com/dims4/default/3a8ea50/2147483647/strip/true/crop/6000x4000+0+0/resize/768x512!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6eefc448880b2c71180f615b3.jpg 768w,https://ca-times.brightspotcdn.com/dims4/default/28a9b70/2147483647/strip/true/crop/6000x4000+0+0/resize/840x560!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2F7f%2F114ef0af4b22a363ca1d58ee6f6b%2F34f052c6ee..."
+    ],
+    "h3.promo-title a": [
+      "<a class=\"link\" href=\"https://www.latimes.com/opinion/letters-to-the-editor/story/2026-03-12/iranian-girls-school-bombing\">Letters to the Editor: The Trump administration has lied before, but video can tell us the truth</a>"
+    ]
+  }
+}

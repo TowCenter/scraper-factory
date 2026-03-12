@@ -1,0 +1,9 @@
+{
+    "name": "The Wake Magazine",
+    "scrapers": [
+        {
+            "path": "scrapers.the_wake_magazine.scraper",
+            "url": "https://wakemag.org/features"
+        }
+    ]
+}

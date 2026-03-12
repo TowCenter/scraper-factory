@@ -1,0 +1,54 @@
+{
+  "item_selectors": [
+    "article.BlogList-item"
+  ],
+  "next_page_selectors": [
+    "nav.BlogList-pagination",
+    "a.BlogList-pagination-link"
+  ],
+  "item_examples": {
+    "article.BlogList-item": [
+      "<article class=\"BlogList-item hentry author-wake-mag post-type-text article-index-1\" data-item-id=\"68f7e19f857cda1d2c4f7288\" id=\"post-68f7e19f857cda1d2c4f7288\">\n<div class=\"BlogList-item-image\">\n<a class=\"BlogList-item-image-link\" href=\"/features/2025/10/21/federal-vilification-of-the-trans-community\" style=\"overflow: hidden;\">\n<img alt=\"Federal Vilification of the Trans Community\" class=\"\" data-image=\"https://images.squarespace-cdn.com/content/v1/5bbbf769fd679359977477ee/1761075746073-VFJD4RJ1BNE89L1UKIGR/Issue2FeatureArt_EmilyChavez_CYMK.jpg\" data-image-dimensions=\"1098x1098\" data-image-focal-point=\"0.5,0.5\" data-image-resolution=\"300w\" data-load=\"false\" data-parent-ratio=\"1.0\" data-src=\"https://images.squarespace-cdn.com/content/v1/5bbbf769fd679359977477ee/1761075746073-VFJD4RJ1BNE89L1UKIGR/Issue2FeatureArt_EmilyChavez_CYMK.jpg\" src=\"https://images.squarespace-cdn.com/content/v1/5bbbf769fd679359977477ee/1761075746073-VFJD4RJ1BNE89L1UKIGR/Issue2FeatureArt_EmilyChavez_CYMK.jpg?format=300w\" style=\"font-size: 0px; left: 0px; top: 0px; width: 274px; height: 274px; position: relative;\"/>\n</a>\n</div>\n<a class=\"BlogList-item-title\" data-content-field=\"title\" href=\"/features/2025/10/21/federal-vilification-of-the-trans-community\">Federal Vilification of the Trans Community</a>\n<div class=\"Blog-meta BlogList-item-meta\">\n<!--\n\n        Author\n\n        --><a class=\"Blog-meta-item Blog-meta-item--author\" href=\"/features?author=5bbbf70a7e697d51d5cfc103\">Wake Mag</a><!--\n\n        Date\n\n        --><time class=\"Blog-meta-item Blog-meta-item--date\" datetime=\"2025-10-13\">October 13, 2025</time>\n</div>\n</article>"
+    ]
+  },
+  "next_page_examples": {
+    "nav.BlogList-pagination": [
+      "<nav class=\"BlogList-pagination\">\n<a class=\"BlogList-pagination-link\" href=\"/features?offset=1698644281250\">\n<span class=\"BlogList-pagination-link-label\">Older</span><svg class=\"BlogList-pagination-link-icon\" viewbox=\"0 0 9 16\">\n<g class=\"svg-icon\">\n<polyline fill=\"none\" points=\"1.6,1.2 6.5,7.9 1.6,14.7 \" stroke-miterlimit=\"10\"></polyline>\n</g>\n</svg>\n</a>\n</nav>"
+    ],
+    "a.BlogList-pagination-link": [
+      "<a class=\"BlogList-pagination-link\" href=\"/features?offset=1698644281250\">\n<span class=\"BlogList-pagination-link-label\">Older</span><svg class=\"BlogList-pagination-link-icon\" viewbox=\"0 0 9 16\">\n<g class=\"svg-icon\">\n<polyline fill=\"none\" points=\"1.6,1.2 6.5,7.9 1.6,14.7 \" stroke-miterlimit=\"10\"></polyline>\n</g>\n</svg>\n</a>"
+    ]
+  },
+  "title_selectors": [
+    "a.BlogList-item-title"
+  ],
+  "title_examples": {
+    "a.BlogList-item-title": [
+      "<a class=\"BlogList-item-title\" data-content-field=\"title\" href=\"/features/2025/10/21/federal-vilification-of-the-trans-community\">Federal Vilification of the Trans Community</a>"
+    ]
+  },
+  "date_selectors": [
+    "time.Blog-meta-item.Blog-meta-item--date",
+    "article.BlogList-item time.Blog-meta-item--date"
+  ],
+  "date_examples": {
+    "time.Blog-meta-item.Blog-meta-item--date": [
+      "<time class=\"Blog-meta-item Blog-meta-item--date\" datetime=\"2025-10-13\">October 13, 2025</time>"
+    ],
+    "article.BlogList-item time.Blog-meta-item--date": [
+      "<time class=\"Blog-meta-item Blog-meta-item--date\" datetime=\"2025-10-13\">October 13, 2025</time>"
+    ]
+  },
+  "url_selectors": [
+    "a.BlogList-item-title",
+    "a.BlogList-item-image-link"
+  ],
+  "url_examples": {
+    "a.BlogList-item-title": [
+      "<a class=\"BlogList-item-title\" data-content-field=\"title\" href=\"/features/2025/10/21/federal-vilification-of-the-trans-community\">Federal Vilification of the Trans Community</a>"
+    ],
+    "a.BlogList-item-image-link": [
+      "<a class=\"BlogList-item-image-link\" href=\"/features/2025/10/21/federal-vilification-of-the-trans-community\" style=\"overflow: hidden;\">\n<img alt=\"Federal Vilification of the Trans Community\" class=\"\" data-image=\"https://images.squarespace-cdn.com/content/v1/5bbbf769fd679359977477ee/1761075746073-VFJD4RJ1BNE89L1UKIGR/Issue2FeatureArt_EmilyChavez_CYMK.jpg\" data-image-dimensions=\"1098x1098\" data-image-focal-point=\"0.5,0.5\" data-image-resolution=\"300w\" data-load=\"false\" data-parent-ratio=\"1.0\" data-src=\"https://images.squarespace-cdn.com/content/v1/5bbbf769fd679359977477ee/1761075746073-VFJD4RJ1BNE89L1UKIGR/Issue2FeatureArt_EmilyChavez_CYMK.jpg\" src=\"https://images.squarespace-cdn.com/content/v1/5bbbf769fd679359977477ee/1761075746073-VFJD4RJ1BNE89L1UKIGR/Issue2FeatureArt_EmilyChavez_CYMK.jpg?format=300w\" style=\"font-size: 0px; left: 0px; top: 0px; width: 274px; height: 274px; position: relative;\"/>\n</a>"
+    ]
+  }
+}

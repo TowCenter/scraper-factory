@@ -1,0 +1,9 @@
+{
+    "name": "Bethel University Clarion",
+    "scrapers": [
+        {
+            "path": "scrapers.bethel_university_clarion.scraper",
+            "url": "https://thebuclarion.com/category/news/"
+        }
+    ]
+}

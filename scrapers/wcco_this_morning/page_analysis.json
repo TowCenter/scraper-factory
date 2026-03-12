@@ -1,0 +1,78 @@
+{
+  "item_selectors": [
+    "article.item.item--type-video",
+    "article.item.item--type-article",
+    "article.item.lazyload",
+    "article.item"
+  ],
+  "next_page_selectors": [
+    "a.component__view-more.component__view-more--sm",
+    "a.component__view-more",
+    "a.component__view-more.component__view-more--lg"
+  ],
+  "item_examples": {
+    "article.item.item--type-video": [
+      "<article class=\"item lazyload item--type-video item--topic-weather\">\n<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/video/noon-minnesota-forecast-from-march-10-2026-next-weather/\" ondragstart=\"return false;\">\n<span class=\"img item__thumb item__thumb--crop-0\"><img alt=\" \" class=\"lazyload\" height=\"360\" layout=\"responsive\" pinger-seen=\"true\" src=\"https://assets1.cbsnewsstatic.com/hub/i/r/2026/03/10/348f0a3b-8f7d-4c65-b530-d271a0d8d040/thumbnail/640x360/81d043549a851ad754d4861712c64645/7e6978bed66e1d68cf6f8e29aa8e83a1.jpg#\" srcset=\"https://assets1.cbsnewsstatic.com/hub/i/r/2026/03/10/348f0a3b-8f7d-4c65-b530-d271a0d8d040/thumbnail/640x360/81d043549a851ad754d4861712c64645/7e6978bed66e1d68cf6f8e29aa8e83a1.jpg 1x, https://assets3.cbsnewsstatic.com/hub/i/r/2026/03/10/348f0a3b-8f7d-4c65-b530-d271a0d8d040/thumbnail/1280x720/b8a67051dc663c2186892aa8ec3daf28/7e6978bed66e1d68cf6f8e29aa8e83a1.jpg 2x\" width=\"640\"/></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__component-headline\">\n                          NEXT Weather\n                      </h4>\n<h4 class=\"item__hed\">\n                      Noon Minnesota forecast from March 10, 2026 | NEXT Weather\n                  </h4>\n<p class=\"item__dek\">\n          Highs in the 40s this work week with lows below freezing overnight. An even colder weekend looms, WCCO meteorologist Lisa Meadows reports.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">50M ago</li>\n<li class=\"item__info\">\n                                          03:37\n                                    </li>\n</ul>\n</div>\n</a>\n</article>"
+    ],
+    "article.item.item--type-article": [
+      "<article class=\"item item--type-article item--topic-crime\">\n<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/news/eagan-hit-and-run-charges-march-2026/\" ondragstart=\"return false;\">\n<span class=\"img item__thumb item__thumb--crop-0\"><img alt=\"hit-and-run-vo-wcco9z8k.jpg \" height=\"360\" layout=\"responsive\" pinger-seen=\"true\" src=\"https://assets2.cbsnewsstatic.com/hub/i/r/2026/03/10/19a90c72-9641-4d20-819c-8e2b77a75ecc/thumbnail/640x360/d126c82b7396bf25673ccbf556a6a1de/hit-and-run-vo-wcco9z8k.jpg#\" srcset=\"https://assets2.cbsnewsstatic.com/hub/i/r/2026/03/10/19a90c72-9641-4d20-819c-8e2b77a75ecc/thumbnail/640x360/d126c82b7396bf25673ccbf556a6a1de/hit-and-run-vo-wcco9z8k.jpg 1x, https://assets1.cbsnewsstatic.com/hub/i/r/2026/03/10/19a90c72-9641-4d20-819c-8e2b77a75ecc/thumbnail/1280x720/105f641e006ae18e83f3167a3a4abd4b/hit-and-run-vo-wcco9z8k.jpg 2x\" width=\"640\"/></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">\n                      Driver accused in Eagan hit-and-run has history of drunken driving\n                  </h4>\n<p class=\"item__dek\">\n          A 58-year-old man is accused in a hit-and-run in Eagan\u200b, Minnesota, over the weekend that left a woman dead.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">27M ago</li>\n<li class=\"item__info\">\n</li>\n</ul>\n</div>\n</a>\n</article>"
+    ],
+    "article.item.lazyload": [
+      "<article class=\"item lazyload item--type-article item--topic-politics\">\n<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/news/gov-tim-walz-minnesota-human-services-system-fraud-plan/\" ondragstart=\"return false;\">\n<span class=\"img item__thumb item__thumb--crop-0\"><img alt=\"Minnesota Legislature \" height=\"360\" layout=\"responsive\" pinger-seen=\"true\" src=\"https://assets3.cbsnewsstatic.com/hub/i/r/2026/02/17/2623df0d-d413-4ac9-bdca-b3088ce8c93b/thumbnail/640x360/06ca631fb047be05ec55761b24217ac3/ap25168651330067.jpg#\" srcset=\"https://assets3.cbsnewsstatic.com/hub/i/r/2026/02/17/2623df0d-d413-4ac9-bdca-b3088ce8c93b/thumbnail/640x360/06ca631fb047be05ec55761b24217ac3/ap25168651330067.jpg 1x, https://assets2.cbsnewsstatic.com/hub/i/r/2026/02/17/2623df0d-d413-4ac9-bdca-b3088ce8c93b/thumbnail/1280x720/f379103b14610566cedef663ee42cf30/ap25168651330067.jpg 2x\" width=\"640\"/></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">\n                      Walz announces plan to reshape Minnesota's human services system\n                  </h4>\n<p class=\"item__dek\">\n          Under the new proposal, the state would determine eligibility for Medicaid and manage claims processing, financial transactions and provider services.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">3H ago</li>\n<li class=\"item__info\">\n</li>\n</ul>\n</div>\n</a>\n</article>"
+    ],
+    "article.item": [
+      "<article class=\"item item--type-cbsn_live item--topic-cbs-news\" data-video-params='{\"autoplay\":false,\"isCollapsible\":false,\"device\":\"desktop\",\"video\":{\"items\":[{\"type\":\"live\",\"id\":\"a8da38b8-d91f-4bb0-97c3-b7d4023ff0e4\",\"mpxRefId\":\"8WIj2vnthzogHfOdiIs_ds6KEEp__vLl\",\"originEdition\":\"min\",\"slug\":\"minnesota\",\"title\":\"CBS News Minnesota\",\"dek\":\"\",\"fulltitle\":\"CBS News Minnesota\",\"canonicalTitle\":\"CBS News Minnesota\",\"timestamp\":1573762495000,\"duration\":-1,\"durationLabel\":\"Live\",\"label\":null,\"images\":{\"sd\":\"https:\\/\\/assets1.cbsnewsstatic.com\\/hub\\/i\\/r\\/2023\\/11\\/08\\/12c2612a-ce6c-479e-b080-cadc7a2bdaff\\/thumbnail\\/640x360\\/47081f5f3f4e6258aeff3dd535141404\\/keyart-minnesota-1920x1080.jpg\",\"hd\":\"https:\\/\\/assets2.cbsnewsstatic.com\\/hub\\/i\\/r\\/2023\\/11\\/08\\/12c2612a-ce6c-479e-b080-cadc7a2bdaff\\/thumbnail\\/1280x720\\/5336458c403abeee1faf16cb3c400dde\\/keyart-minnesota-1920x1080.jpg\"},\"previewUrl\":\"https:\\/\\/minne3h5cdh7.airspace-cdn.cbsivideo.com\\/live\\/manifest.m3u8\",\"video\":\"https:\\/\\/dai.google.com\\/linear\\/hls\\/event\\/c0XucO32RNKG8oeQ351a4Q\\/master.m3u8\",\"video2\":\"https:\\/\\/minne3h5cdh7.airspace-cdn.cbsivideo.com\\/live\\/manifest.m3u8\",\"format\":\"application\\/x-mpegURL\",\"url\":\"https:\\/\\/www.cbsnews.com\\/minnesota\\/live\\/\",\"isImposter\":false,\"topic\":{\"id\":\"0aa453b7-5583-4b6b-84db-6e995521c908\",\"slug\":\"cbs-news-live\",\"hierarchy\":[\"cbs news\",\"cbs news live\"],\"parentTopicName\":\"CBS News\",\"hierarchyByName\":[\"CBS News\",\"Live\"],\"all\":[]},\"episode\":1,\"season\":\"1\",\"segment\":1,\"suppress\":false,\"allAccessBlock\":null,\"isUserSubscribed\":false,\"sponsor\":null,\"hexADefault\":\"0,0,0\",\"hexBDefault\":\"39,45,59\",\"ad\":{\"fw\":{\"dai_with_fw\":\"https:\\/\\/dai.google.com\\/linear\\/hls\\/event\\/c0XucO32RNKG8oeQ351a4Q\\/master.m3u8?imafw_csid={imafw_csid};imafw__fw_site_page={app_id}&amp;imafw_vguid={vguid}&amp;imafw_sz={player_size}&amp;imafw__fw_is_lat={is_lat}&amp;us_privacy={privacy}&amp;imafw__fw_us_privacy={privacy}&amp;imafw_gpp={gpp_string}&amp;imafw_gpp_sid={gpp_sid}&amp;dai-apto=3000&amp;imafw__fw_..."
+    ]
+  },
+  "next_page_examples": {
+    "a.component__view-more.component__view-more--sm": [
+      "<a class=\"component__view-more component__view-more--sm lazyload\" data-component=\"inline-view-more\" data-inline-view-more-options='{\"url\":\"\\/minnesota\\/local-news\\/2\\/\",\"urlParams\":{\"componentId\":\"6fcc1f59-6090-467c-b0d5-afc34f013cd8\"},\"contextViewMore\":1}' href=\"/minnesota/local-news/2/\">\n          Show More\n          <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ],
+    "a.component__view-more": [
+      "<a class=\"component__view-more component__view-more--sm lazyload\" data-component=\"inline-view-more\" data-inline-view-more-options='{\"url\":\"\\/minnesota\\/local-news\\/2\\/\",\"urlParams\":{\"componentId\":\"6fcc1f59-6090-467c-b0d5-afc34f013cd8\"},\"contextViewMore\":1}' href=\"/minnesota/local-news/2/\">\n          Show More\n          <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ],
+    "a.component__view-more.component__view-more--lg": [
+      "<a class=\"component__view-more component__view-more--lg\" href=\"/minnesota/live/\">\n                              More\n                            <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ]
+  },
+  "title_selectors": [
+    "div.item__title-wrapper h4",
+    "h4.item__component-headline",
+    "h4.item__hed"
+  ],
+  "title_examples": {
+    "div.item__title-wrapper h4": [
+      "<h4 class=\"item__component-headline\">\n                          CBS News Live\n                      </h4>"
+    ],
+    "h4.item__component-headline": [
+      "<h4 class=\"item__component-headline\">\n                          CBS News Live\n                      </h4>"
+    ],
+    "h4.item__hed": [
+      "<h4 class=\"item__hed\">\n                      \n                                              \n              CBS News Minnesota: Local News, Weather &amp; More\n                              </h4>"
+    ]
+  },
+  "date_selectors": [
+    "li.item__date",
+    "ul.item__metadata > li.item__date"
+  ],
+  "date_examples": {
+    "li.item__date": [
+      "<li class=\"item__date\">Dec 12, 2019</li>"
+    ],
+    "ul.item__metadata > li.item__date": [
+      "<li class=\"item__date\">Dec 12, 2019</li>"
+    ]
+  },
+  "url_selectors": [
+    "article.item a.item__anchor",
+    "a.item__anchor"
+  ],
+  "url_examples": {
+    "article.item a.item__anchor": [
+      "<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/live/\" ondragstart=\"return false;\">\n<style>\n                .item__thumb--bg {\n                  background-image: linear-gradient(to top, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0)), url(\"https://assets1.cbsnewsstatic.com/hub/i/2023/11/08/12c2612a-ce6c-479e-b080-cadc7a2bdaff/keyart-minnesota-1920x1080.jpg\");\n                }\n              </style>\n<span class=\"item__thumb item__thumb--live item__thumb--bg\"></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__component-headline\">\n                          CBS News Live\n                      </h4>\n<h4 class=\"item__hed\">\n                      \n                                              \n              CBS News Minnesota: Local News, Weather &amp; More\n                              </h4>\n<p class=\"item__dek\">\n          CBS News Minnesota is your streaming home for breaking news, weather, traffic and sports for the Minnesota area and beyond. Watch 24/7.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">Dec 12, 2019</li>\n<li class=\"item__info\">\n                          CBS News Minnesota\n                      </li>\n</ul>\n</div>\n</a>"
+    ],
+    "a.item__anchor": [
+      "<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/live/\" ondragstart=\"return false;\">\n<style>\n                .item__thumb--bg {\n                  background-image: linear-gradient(to top, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0)), url(\"https://assets1.cbsnewsstatic.com/hub/i/2023/11/08/12c2612a-ce6c-479e-b080-cadc7a2bdaff/keyart-minnesota-1920x1080.jpg\");\n                }\n              </style>\n<span class=\"item__thumb item__thumb--live item__thumb--bg\"></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__component-headline\">\n                          CBS News Live\n                      </h4>\n<h4 class=\"item__hed\">\n                      \n                                              \n              CBS News Minnesota: Local News, Weather &amp; More\n                              </h4>\n<p class=\"item__dek\">\n          CBS News Minnesota is your streaming home for breaking news, weather, traffic and sports for the Minnesota area and beyond. Watch 24/7.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">Dec 12, 2019</li>\n<li class=\"item__info\">\n                          CBS News Minnesota\n                      </li>\n</ul>\n</div>\n</a>"
+    ]
+  }
+}

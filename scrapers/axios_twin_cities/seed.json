@@ -1,0 +1,9 @@
+{
+    "name": "Axios Twin Cities",
+    "scrapers": [
+        {
+            "path": "scrapers.axios_twin_cities.scraper",
+            "url": "https://www.axios.com/local/twin-cities/news"
+        }
+    ]
+}

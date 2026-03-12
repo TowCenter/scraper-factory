@@ -1,0 +1,9 @@
+{
+    "name": "Twins Daily",
+    "scrapers": [
+        {
+            "path": "scrapers.twins_daily.scraper",
+            "url": "https://twinsdaily.com/"
+        }
+    ]
+}

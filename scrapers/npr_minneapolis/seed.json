@@ -1,0 +1,9 @@
+{
+    "name": "NPR Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.npr_minneapolis.scraper",
+            "url": "https://www.npr.org/search/?query=minneapolis&page=1&sortType=byDate"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "American Civil Liberties Union of Minnesota Foundation",
+    "scrapers": [
+        {
+            "path": "scrapers.american_civil_liberties_union_of_minnesota_foundation.scraper",
+            "url": "https://www.aclu-mn.org/press-releases/"
+        }
+    ]
+}

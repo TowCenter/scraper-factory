@@ -1,0 +1,9 @@
+{
+    "name": "Zerkalo - Russian Language Media of Minnesota",
+    "scrapers": [
+        {
+            "path": "scrapers.zerkalo_-_russian_language_media_of_minnesota.scraper",
+            "url": "https://www.zerkalomn.com/news"
+        }
+    ]
+}

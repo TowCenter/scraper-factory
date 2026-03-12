@@ -1,0 +1,9 @@
+{
+    "name": "WUCW",
+    "scrapers": [
+        {
+            "path": "scrapers.wucw.scraper",
+            "url": "https://thecwtc.com/news/local"
+        }
+    ]
+}

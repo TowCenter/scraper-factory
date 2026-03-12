@@ -1,0 +1,9 @@
+{
+    "name": "White Bear Press",
+    "scrapers": [
+        {
+            "path": "scrapers.white_bear_press.scraper",
+            "url": "https://www.presspubs.com/white_bear/"
+        }
+    ]
+}

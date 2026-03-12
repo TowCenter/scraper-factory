@@ -1,0 +1,9 @@
+{
+    "name": "Wedge LIVE",
+    "scrapers": [
+        {
+            "path": "scrapers.wedge_live.scraper",
+            "url": "https://wedgelive.com/"
+        }
+    ]
+}

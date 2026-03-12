@@ -1,0 +1,54 @@
+{
+  "item_selectors": [
+    "ul > li"
+  ],
+  "next_page_selectors": [
+    "button.bttn"
+  ],
+  "item_examples": {
+    "ul > li": [
+      "<li class=\"ml-16 first:ml-0 mb-0 whitespace-nowrap !m-0\"><a class=\"font-regular font-sans leading-none no-underline inline-flex items-center [&amp;&gt;.icon+span]:ml-2 [&amp;&gt;span+.icon]:ml-2\" data-cy=\"news-link\" href=\"/local/twin-cities/news\"><span class=\"no-underline hover:underline focus:underline text-sm text-blue-core whitespace-nowrap\">News</span></a></li>"
+    ]
+  },
+  "next_page_examples": {
+    "button.bttn": [
+      "<button class=\"bttn inline-flex border items-center justify-center border-solid focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-50 whitespace-nowrap py-[9px] px-[9px] px-2 bg-interactive-tertiary text-interactive-tertiary border-interactive-tertiary hover:bg-interactive-tertiary-hover hover:text-interactive-tertiary-hover hover:border-interactive-tertiary-hover active:bg-interactive-tertiary-selected active:border-interactive-tertiary-selected active:text-interactive-tertiary-selected rounded hover:bg-transparent !border-none hover:!border-none pl-0 text-tertiary font-light\" data-cy=\"local-login-btn\" type=\"button\"><svg aria-hidden=\"true\" class=\"lucide lucide-user w-7 h-7 pointer-events-none\" fill=\"none\" height=\"24\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg><span class=\"sr-only\">login</span></button>"
+    ]
+  },
+  "title_selectors": [
+    "li a.group",
+    "li h2"
+  ],
+  "title_examples": {
+    "li a.group": [
+      "<a class=\"font-regular font-sans leading-none no-underline inline-flex items-center [&amp;&gt;.icon+span]:ml-2 [&amp;&gt;span+.icon]:ml-2 group !block\" data-cy=\"story-promo-headline\" href=\"https://www.axios.com/local/twin-cities/2026/03/10/minnesota-high-school-cricket-2028-olympics-usa-cricket-growth\"><h2><span class=\"h-editorial-040 @2xl:h-editorial-030 text-primary group-hover:underline\" data-cy=\"story-headline-Cricket's rise in Minnesota reaches the state Capitol\">Cricket's rise in Minnesota reaches the state Capitol</span></h2><div class=\"mt-3 py-2 pr-2 col-1-13 items-center @2xl:self-center @2xl:col-1-7 hidden @lg:inline-flex btn-utility-020 text-interactive-tertiary group-hover:bg-interactive-tertiary-hover group-hover:rounded group-active:bg-interactive-tertiary-selected\"><span class=\"font-regular text-p whitespace-nowrap\">Go deeper (2 min. read)</span><svg aria-hidden=\"true\" class=\"ml-2 pt-0.5 fill-current\" fill=\"none\" height=\"24\" viewbox=\"0 0 25 24\" width=\"25\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24.3536 12.3536C24.5488 12.1583 24.5488 11.8417 24.3536 11.6464L21.1716 8.46447C20.9763 8.2692 20.6597 8.2692 20.4645 8.46447C20.2692 8.65973 20.2692 8.97631 20.4645 9.17157L23.2929 12L20.4645 14.8284C20.2692 15.0237 20.2692 15.3403 20.4645 15.5355C20.6597 15.7308 20.9763 15.7308 21.1716 15.5355L24.3536 12.3536ZM0 12.5H24V11.5H0V12.5Z\" fill=\"currentColor\"></path></svg></div></a>"
+    ],
+    "li h2": [
+      "<h2><span class=\"h-editorial-040 @2xl:h-editorial-030 text-primary group-hover:underline\" data-cy=\"story-headline-Cricket's rise in Minnesota reaches the state Capitol\">Cricket's rise in Minnesota reaches the state Capitol</span></h2>"
+    ]
+  },
+  "date_selectors": [
+    "li p.mb-1",
+    "li p.label-utility-020-thin"
+  ],
+  "date_examples": {
+    "li p.mb-1": [
+      "<p class=\"mb-1 md:mb-3 leading-relaxed text-secondary label-utility-020-thin whitespace-nowrap\" data-cy=\"timestamp\">7 hours ago</p>"
+    ],
+    "li p.label-utility-020-thin": [
+      "<p class=\"mb-1 md:mb-3 leading-relaxed text-secondary label-utility-020-thin whitespace-nowrap\" data-cy=\"timestamp\">7 hours ago</p>"
+    ]
+  },
+  "url_selectors": [
+    "a.group[href]",
+    "li a[href]"
+  ],
+  "url_examples": {
+    "a.group[href]": [
+      "<a class=\"font-regular font-sans leading-none no-underline inline-flex items-center [&amp;&gt;.icon+span]:ml-2 [&amp;&gt;span+.icon]:ml-2 group !block\" data-cy=\"story-promo-headline\" href=\"https://www.axios.com/local/twin-cities/2026/03/10/minnesota-high-school-cricket-2028-olympics-usa-cricket-growth\"><h2><span class=\"h-editorial-040 @2xl:h-editorial-030 text-primary group-hover:underline\" data-cy=\"story-headline-Cricket's rise in Minnesota reaches the state Capitol\">Cricket's rise in Minnesota reaches the state Capitol</span></h2><div class=\"mt-3 py-2 pr-2 col-1-13 items-center @2xl:self-center @2xl:col-1-7 hidden @lg:inline-flex btn-utility-020 text-interactive-tertiary group-hover:bg-interactive-tertiary-hover group-hover:rounded group-active:bg-interactive-tertiary-selected\"><span class=\"font-regular text-p whitespace-nowrap\">Go deeper (2 min. read)</span><svg aria-hidden=\"true\" class=\"ml-2 pt-0.5 fill-current\" fill=\"none\" height=\"24\" viewbox=\"0 0 25 24\" width=\"25\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24.3536 12.3536C24.5488 12.1583 24.5488 11.8417 24.3536 11.6464L21.1716 8.46447C20.9763 8.2692 20.6597 8.2692 20.4645 8.46447C20.2692 8.65973 20.2692 8.97631 20.4645 9.17157L23.2929 12L20.4645 14.8284C20.2692 15.0237 20.2692 15.3403 20.4645 15.5355C20.6597 15.7308 20.9763 15.7308 21.1716 15.5355L24.3536 12.3536ZM0 12.5H24V11.5H0V12.5Z\" fill=\"currentColor\"></path></svg></div></a>"
+    ],
+    "li a[href]": [
+      "<a class=\"font-regular font-sans leading-none no-underline inline-flex items-center [&amp;&gt;.icon+span]:ml-2 [&amp;&gt;span+.icon]:ml-2\" data-cy=\"news-link\" href=\"/local/twin-cities/news\"><span class=\"no-underline hover:underline focus:underline text-sm text-blue-core whitespace-nowrap\">News</span></a>"
+    ]
+  }
+}

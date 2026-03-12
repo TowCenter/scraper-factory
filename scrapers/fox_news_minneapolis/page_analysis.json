@@ -1,0 +1,62 @@
+{
+  "item_selectors": [
+    "article.article",
+    "div.collection-search article.article"
+  ],
+  "next_page_selectors": [
+    "div.button.load-more a",
+    "div.button.load-more"
+  ],
+  "item_examples": {
+    "article.article": [
+      "<article class=\"article\"><div class=\"m\"><a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\"><picture><img alt=\"\" src=\"https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/02/156/88/minneapolis-agitators.jpg?ve=1&amp;tl=1\"/></picture></a></div> <div class=\"info\"><header class=\"info-header\"><div class=\"meta\"><!-- --> <span class=\"eyebrow\"><a href=\"https://www.foxnews.com/us\" target=\"_blank\">us</a></span> <span class=\"time\">February 6</span></div> <h2 class=\"title\"><a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\">12 Minneapolis anti-ICE agitators arrested after massive crowd gathers outside Hilton hotel</a></h2></header> <div class=\"content\"><p class=\"dek\">At least 12 arrested at Minneapolis Hilton hotel during anti-ICE demonstration that drew up to 175 people making noise with pots, pans and whistles.</p></div></div></article>"
+    ],
+    "div.collection-search article.article": [
+      "<article class=\"article\"><div class=\"m\"><a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\"><picture><img alt=\"\" src=\"https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/02/156/88/minneapolis-agitators.jpg?ve=1&amp;tl=1\"/></picture></a></div> <div class=\"info\"><header class=\"info-header\"><div class=\"meta\"><!-- --> <span class=\"eyebrow\"><a href=\"https://www.foxnews.com/us\" target=\"_blank\">us</a></span> <span class=\"time\">February 6</span></div> <h2 class=\"title\"><a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\">12 Minneapolis anti-ICE agitators arrested after massive crowd gathers outside Hilton hotel</a></h2></header> <div class=\"content\"><p class=\"dek\">At least 12 arrested at Minneapolis Hilton hotel during anti-ICE demonstration that drew up to 175 people making noise with pots, pans and whistles.</p></div></div></article>"
+    ]
+  },
+  "next_page_examples": {
+    "div.button.load-more a": [
+      "<a><span>Load More</span></a>"
+    ],
+    "div.button.load-more": [
+      "<div class=\"button load-more\"><a><span>Load More</span></a></div>"
+    ]
+  },
+  "title_selectors": [
+    "h2.title",
+    "h2.title a"
+  ],
+  "title_examples": {
+    "h2.title": [
+      "<h2 class=\"title\"><a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\">12 Minneapolis anti-ICE agitators arrested after massive crowd gathers outside Hilton hotel</a></h2>"
+    ],
+    "h2.title a": [
+      "<a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\">12 Minneapolis anti-ICE agitators arrested after massive crowd gathers outside Hilton hotel</a>"
+    ]
+  },
+  "date_selectors": [
+    "div.meta .time",
+    "span.time"
+  ],
+  "date_examples": {
+    "div.meta .time": [
+      "<span class=\"time\">February 6</span>"
+    ],
+    "span.time": [
+      "<span class=\"time\"></span>"
+    ]
+  },
+  "url_selectors": [
+    "article.article a[href]",
+    "h2.title a[href]"
+  ],
+  "url_examples": {
+    "article.article a[href]": [
+      "<a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\"><picture><img alt=\"\" src=\"https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/02/156/88/minneapolis-agitators.jpg?ve=1&amp;tl=1\"/></picture></a>"
+    ],
+    "h2.title a[href]": [
+      "<a href=\"https://www.foxnews.com/us/12-minneapolis-anti-ice-agitators-arrested-after-massive-crowd-gathers-outside-hilton-hotel\" target=\"_blank\">12 Minneapolis anti-ICE agitators arrested after massive crowd gathers outside Hilton hotel</a>"
+    ]
+  }
+}

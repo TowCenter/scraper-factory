@@ -1,0 +1,78 @@
+{
+  "item_selectors": [
+    "div.blog-item-holder",
+    "div.gdl-blog-grid",
+    "div.recent-post-widget",
+    "div.blog-item-class"
+  ],
+  "next_page_selectors": [
+    "div.gdl-pagination a:contains(\"Next\")",
+    "div.gdl-pagination a[href*=\"/noticias/page/\"]"
+  ],
+  "item_examples": {
+    "div.blog-item-holder": [
+      "<div class=\"blog-item-holder\"><div class=\"row\"><div class=\"six columns gdl-blog-grid\"><div class=\"blog-content-wrapper\"><div class=\"blog-media-wrapper gdl-image\"><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\"><img alt=\"Investigan un tiroteo que dej\u00f3 a un hombre gravemente herido en Minneapolis\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2023/10/policia-luces2-400x220.jpeg\"/></a><div class=\"blog-comment\"><i class=\"icon-comments\"></i><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/#respond\" title=\"Comentarios en Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica\">0</a></div></div><h2 class=\"blog-title\"><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\">Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica</a></h2><div class=\"blog-content\">MINNEAPOLIS, MINNESOTA \u2013 Las autoridades locales se encuentran tras la pista de un sospechoso vinculado a un tiroteo ocurrido a altas horas de la noche del s\u00e1bado, el cual dej\u00f3 a... <div class=\"blog-info-wrapper\"><div class=\"blog-date\"><span class=\"head\">Publicado:</span> <a href=\"https://www.univisionminnesota.com/2026/03/09/\">09 mar 2026</a></div><div class=\"clear\"></div></div></div></div></div><div class=\"six columns gdl-blog-grid\"><div class=\"blog-content-wrapper\"><div class=\"blog-media-wrapper gdl-image\"><a href=\"https://www.univisionminnesota.com/joven-de-duluth-hospitalizado-tras-accidente-en-el-sureste-de-minnesota/\"><img alt=\"accidente en la I-94 en St. Paul\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2021/01/minnesota-state-patrol-400x220.jpg\"/></a><div class=\"blog-comment\"><i class=\"icon-comments\"></i><a href=\"https://www.univisionminnesota.com/joven-de-duluth-hospitalizado-tras-accidente-en-el-sureste-de-minnesota/#respond\" title=\"Comentarios en Joven de Duluth hospitalizado tras accidente en el sureste ..."
+    ],
+    "div.gdl-blog-grid": [
+      "<div class=\"six columns gdl-blog-grid\"><div class=\"blog-content-wrapper\"><div class=\"blog-media-wrapper gdl-image\"><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\"><img alt=\"Investigan un tiroteo que dej\u00f3 a un hombre gravemente herido en Minneapolis\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2023/10/policia-luces2-400x220.jpeg\"/></a><div class=\"blog-comment\"><i class=\"icon-comments\"></i><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/#respond\" title=\"Comentarios en Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica\">0</a></div></div><h2 class=\"blog-title\"><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\">Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica</a></h2><div class=\"blog-content\">MINNEAPOLIS, MINNESOTA \u2013 Las autoridades locales se encuentran tras la pista de un sospechoso vinculado a un tiroteo ocurrido a altas horas de la noche del s\u00e1bado, el cual dej\u00f3 a... <div class=\"blog-info-wrapper\"><div class=\"blog-date\"><span class=\"head\">Publicado:</span> <a href=\"https://www.univisionminnesota.com/2026/03/09/\">09 mar 2026</a></div><div class=\"clear\"></div></div></div></div></div>"
+    ],
+    "div.recent-post-widget": [
+      "<div class=\"recent-post-widget\">\n<div class=\"recent-post-widget-thumbnail\"><a href=\"https://www.univisionminnesota.com/por-que-la-falta-de-mantenimientos-en-los-autos-conlleva-a-los-accidentes/\"><img alt=\"\u00bfPor qu\u00e9 la falta de mantenimientos en los autos conlleva a los accidentes?\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2026/03/accidentes-75x52.jpg\"/></a></div>\n<div class=\"recent-post-widget-context\">\n<h4 class=\"recent-post-widget-title\">\n<a href=\"https://www.univisionminnesota.com/por-que-la-falta-de-mantenimientos-en-los-autos-conlleva-a-los-accidentes/\"> \n\t\t\t\t\t\t\t\t\u00bfPor qu\u00e9 la falta de mantenimientos en los autos conlleva a los accidentes? \n\t\t\t\t\t\t\t</a>\n</h4>\n<div class=\"recent-post-widget-info\">\n<div class=\"recent-post-widget-date\">\n</div>\n</div>\n</div>\n<div class=\"clear\"></div>\n</div>"
+    ],
+    "div.blog-item-class": [
+      "<div class=\"twelve columns blog-item-class blog-item-class-1 mb40\"><div class=\"gdl-header-wrapper\"><h3 class=\"gdl-header-title\"><a href=\"http://www.univisionminnesota.com/noticias-locales/\">Noticias Locales</a></h3><i class=\"icon-double-angle-right\"></i></div><div class=\"blog-item-holder\"><div class=\"row\"><div class=\"six columns gdl-blog-grid\"><div class=\"blog-content-wrapper\"><div class=\"blog-media-wrapper gdl-image\"><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\"><img alt=\"Investigan un tiroteo que dej\u00f3 a un hombre gravemente herido en Minneapolis\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2023/10/policia-luces2-400x220.jpeg\"/></a><div class=\"blog-comment\"><i class=\"icon-comments\"></i><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/#respond\" title=\"Comentarios en Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica\">0</a></div></div><h2 class=\"blog-title\"><a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\">Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica</a></h2><div class=\"blog-content\">MINNEAPOLIS, MINNESOTA \u2013 Las autoridades locales se encuentran tras la pista de un sospechoso vinculado a un tiroteo ocurrido a altas horas de la noche del s\u00e1bado, el cual dej\u00f3 a... <div class=\"blog-info-wrapper\"><div class=\"blog-date\"><span class=\"head\">Publicado:</span> <a href=\"https://www.univisionminnesota.com/2026/03/09/\">09 mar 2026</a></div><div class=\"clear\"></div></div></div></div></div><div class=\"six columns gdl-blog-grid\"><div class=\"blog-content-wrapper\"><div class=\"blog-media-wrapper gdl-image\"><a href=\"https://www.univisionminnesota.com/joven-de-duluth-hospitalizado-tras-accidente-en-el-sureste-de-minnesota/\"><img alt=\"accidente en la I-94 en St. Paul\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2021/01/minnesota-state-patrol-400x220.jpg\"/></a><d..."
+    ]
+  },
+  "next_page_examples": {
+    "div.gdl-pagination a:contains(\"Next\")": [
+      "<a href=\"https://www.univisionminnesota.com/noticias/page/2/\">Next \u203a</a>"
+    ],
+    "div.gdl-pagination a[href*=\"/noticias/page/\"]": [
+      "<a class=\"inactive\" href=\"https://www.univisionminnesota.com/noticias/page/2/\">2</a>"
+    ]
+  },
+  "title_selectors": [
+    "h3.gdl-header-title",
+    "h4.recent-post-widget-title a",
+    "h2.blog-title a"
+  ],
+  "title_examples": {
+    "h3.gdl-header-title": [
+      "<h3 class=\"gdl-header-title\"><a href=\"http://www.univisionminnesota.com/noticias-locales/\">Noticias Locales</a></h3>"
+    ],
+    "h4.recent-post-widget-title a": [
+      "<a href=\"https://www.univisionminnesota.com/por-que-la-falta-de-mantenimientos-en-los-autos-conlleva-a-los-accidentes/\"> \n\t\t\t\t\t\t\t\t\u00bfPor qu\u00e9 la falta de mantenimientos en los autos conlleva a los accidentes? \n\t\t\t\t\t\t\t</a>"
+    ],
+    "h2.blog-title a": [
+      "<a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\">Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica</a>"
+    ]
+  },
+  "date_selectors": [
+    "div.blog-date a",
+    "div.blog-info-wrapper"
+  ],
+  "date_examples": {
+    "div.blog-date a": [
+      "<a href=\"https://www.univisionminnesota.com/2026/03/09/\">09 mar 2026</a>"
+    ],
+    "div.blog-info-wrapper": [
+      "<div class=\"blog-info-wrapper\"><div class=\"blog-date\"><span class=\"head\">Publicado:</span> <a href=\"https://www.univisionminnesota.com/2026/03/09/\">09 mar 2026</a></div><div class=\"clear\"></div></div>"
+    ]
+  },
+  "url_selectors": [
+    "div.recent-post-widget a",
+    "div.blog-media-wrapper a",
+    "h2.blog-title a"
+  ],
+  "url_examples": {
+    "div.recent-post-widget a": [
+      "<a href=\"https://www.univisionminnesota.com/por-que-la-falta-de-mantenimientos-en-los-autos-conlleva-a-los-accidentes/\"><img alt=\"\u00bfPor qu\u00e9 la falta de mantenimientos en los autos conlleva a los accidentes?\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2026/03/accidentes-75x52.jpg\"/></a>"
+    ],
+    "div.blog-media-wrapper a": [
+      "<a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\"><img alt=\"Investigan un tiroteo que dej\u00f3 a un hombre gravemente herido en Minneapolis\" src=\"https://www.univisionminnesota.com/wp-content/uploads/2023/10/policia-luces2-400x220.jpeg\"/></a>"
+    ],
+    "h2.blog-title a": [
+      "<a href=\"https://www.univisionminnesota.com/tiroteo-en-el-centro-de-minneapolis-deja-una-victima-critica/\">Tiroteo en el centro de Minneapolis deja una v\u00edctima cr\u00edtica</a>"
+    ]
+  }
+}

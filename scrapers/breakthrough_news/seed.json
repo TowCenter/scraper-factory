@@ -1,0 +1,9 @@
+{
+    "name": "Breakthrough News",
+    "scrapers": [
+        {
+            "path": "scrapers.breakthrough_news.scraper",
+            "url": "https://breakthroughnews.org/category/united-states/"
+        }
+    ]
+}

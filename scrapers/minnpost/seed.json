@@ -1,0 +1,9 @@
+{
+    "name": "MinnPost",
+    "scrapers": [
+        {
+            "path": "scrapers.minnpost.scraper",
+            "url": "https://www.minnpost.com/tag/news/"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Minneapolis Times",
+    "scrapers": [
+        {
+            "path": "scrapers.minneapolis_times.scraper",
+            "url": "https://minneapolistimes.com/category/immigration-enforcement/"
+        }
+    ]
+}

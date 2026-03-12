@@ -1,0 +1,9 @@
+{
+    "name": "Workday Magazine",
+    "scrapers": [
+        {
+            "path": "scrapers.workday_magazine.scraper",
+            "url": "https://workdaymagazine.org/category/minnesota/"
+        }
+    ]
+}

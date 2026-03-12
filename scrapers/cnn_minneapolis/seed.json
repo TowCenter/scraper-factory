@@ -1,0 +1,9 @@
+{
+    "name": "CNN Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.cnn_minneapolis.scraper",
+            "url": "https://www.cnn.com/search?q=minneapolis&from=0&size=10&page=1&sort=newest&types=all&section="
+        }
+    ]
+}

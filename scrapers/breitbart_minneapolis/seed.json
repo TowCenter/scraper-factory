@@ -1,0 +1,9 @@
+{
+    "name": "Breitbart Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.breitbart_minneapolis.scraper",
+            "url": "https://www.breitbart.com/search/?s=minneapolis"
+        }
+    ]
+}

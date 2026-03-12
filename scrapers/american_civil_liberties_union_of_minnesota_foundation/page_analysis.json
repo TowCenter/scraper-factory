@@ -1,0 +1,62 @@
+{
+  "item_selectors": [
+    "div.card--listing--press.pb-6",
+    "div.card--listing--press"
+  ],
+  "next_page_selectors": [
+    "nav.aclu-pagination a.page-numbers",
+    "nav.aclu-pagination a.next.page-numbers"
+  ],
+  "item_examples": {
+    "div.card--listing--press.pb-6": [
+      "<div class=\"card--listing--press pb-6 lg:pb-0 md:flex gap-default relative colorway-white border-b-[1px] border-gray-2 lg:border-b-0\"><div class=\"flex flex-col md:flex-row gap-default md:items-start\"><div class=\"is-body font-bold color-link is-size-6 gap-4 items-center whitespace-nowrap hidden md:flex md:mt-2\">\n\t\t\tMar 03, 2026\t\t\t<span class=\"h-1 bg-blue-7 w-14\"></span></div> <div><div class=\"is-body font-bold color-link is-size-6 flex items-center gap-default md:hidden mb-2 md:mt-2\">\n\t\t\t\tMar 03, 2026\t\t\t</div> <h3 class=\"is-heading is-special-size-21 md:is-size-3 mt-0 mb-3\"><a class=\"hocus--opacity\" href=\"https://www.aclu-mn.org/press-releases/hf3413/\">\n\t\t\t\t\tACLU of Minnesota Pushes to End 287(g) Agreements with HF 3413, New Report, Community Organizing\t\t\t\t</a></h3> <div class=\"flex gap-default\"><div class=\"w-full\"><div class=\"is-body-serif is-size-5 color-primary mb-4 line-clamp-3\"></div></div></div></div></div></div>"
+    ],
+    "div.card--listing--press": [
+      "<div class=\"card--listing--press pb-6 lg:pb-0 md:flex gap-default relative colorway-white border-b-[1px] border-gray-2 lg:border-b-0\"><div class=\"flex flex-col md:flex-row gap-default md:items-start\"><div class=\"is-body font-bold color-link is-size-6 gap-4 items-center whitespace-nowrap hidden md:flex md:mt-2\">\n\t\t\tMar 03, 2026\t\t\t<span class=\"h-1 bg-blue-7 w-14\"></span></div> <div><div class=\"is-body font-bold color-link is-size-6 flex items-center gap-default md:hidden mb-2 md:mt-2\">\n\t\t\t\tMar 03, 2026\t\t\t</div> <h3 class=\"is-heading is-special-size-21 md:is-size-3 mt-0 mb-3\"><a class=\"hocus--opacity\" href=\"https://www.aclu-mn.org/press-releases/hf3413/\">\n\t\t\t\t\tACLU of Minnesota Pushes to End 287(g) Agreements with HF 3413, New Report, Community Organizing\t\t\t\t</a></h3> <div class=\"flex gap-default\"><div class=\"w-full\"><div class=\"is-body-serif is-size-5 color-primary mb-4 line-clamp-3\"></div></div></div></div></div></div>"
+    ]
+  },
+  "next_page_examples": {
+    "nav.aclu-pagination a.page-numbers": [
+      "<a class=\"page-numbers\" href=\"https://www.aclu-mn.org/press-releases/page/2/#all-content\">2</a>"
+    ],
+    "nav.aclu-pagination a.next.page-numbers": [
+      "<a class=\"next page-numbers\" href=\"https://www.aclu-mn.org/press-releases/page/2/#all-content\"><span class=\"icon-next\"></span></a>"
+    ]
+  },
+  "title_selectors": [
+    "div.card--listing--press a.hocus--opacity",
+    "div.card--listing--press h3.is-heading a"
+  ],
+  "title_examples": {
+    "div.card--listing--press a.hocus--opacity": [
+      "<a class=\"hocus--opacity\" href=\"https://www.aclu-mn.org/press-releases/hf3413/\">\n\t\t\t\t\tACLU of Minnesota Pushes to End 287(g) Agreements with HF 3413, New Report, Community Organizing\t\t\t\t</a>"
+    ],
+    "div.card--listing--press h3.is-heading a": [
+      "<a class=\"hocus--opacity\" href=\"https://www.aclu-mn.org/press-releases/hf3413/\">\n\t\t\t\t\tACLU of Minnesota Pushes to End 287(g) Agreements with HF 3413, New Report, Community Organizing\t\t\t\t</a>"
+    ]
+  },
+  "date_selectors": [
+    "div.card--listing--press .is-body.font-bold.color-link.is-size-6",
+    "div.card--listing--press .is-body.font-bold.color-link.is-size-6.flex"
+  ],
+  "date_examples": {
+    "div.card--listing--press .is-body.font-bold.color-link.is-size-6": [
+      "<div class=\"is-body font-bold color-link is-size-6 gap-4 items-center whitespace-nowrap hidden md:flex md:mt-2\">\n\t\t\tMar 03, 2026\t\t\t<span class=\"h-1 bg-blue-7 w-14\"></span></div>"
+    ],
+    "div.card--listing--press .is-body.font-bold.color-link.is-size-6.flex": [
+      "<div class=\"is-body font-bold color-link is-size-6 flex items-center gap-default md:hidden mb-2 md:mt-2\">\n\t\t\t\tMar 03, 2026\t\t\t</div>"
+    ]
+  },
+  "url_selectors": [
+    "div.card--listing--press h3.is-heading a",
+    "div.card--listing--press a.hocus--opacity"
+  ],
+  "url_examples": {
+    "div.card--listing--press h3.is-heading a": [
+      "<a class=\"hocus--opacity\" href=\"https://www.aclu-mn.org/press-releases/hf3413/\">\n\t\t\t\t\tACLU of Minnesota Pushes to End 287(g) Agreements with HF 3413, New Report, Community Organizing\t\t\t\t</a>"
+    ],
+    "div.card--listing--press a.hocus--opacity": [
+      "<a class=\"hocus--opacity\" href=\"https://www.aclu-mn.org/press-releases/hf3413/\">\n\t\t\t\t\tACLU of Minnesota Pushes to End 287(g) Agreements with HF 3413, New Report, Community Organizing\t\t\t\t</a>"
+    ]
+  }
+}

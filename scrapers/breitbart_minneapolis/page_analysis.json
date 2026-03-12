@@ -1,0 +1,66 @@
+{
+  "item_selectors": [
+    "div.gs-webResult.gs-result",
+    "div.gsc-table-result",
+    "div.gsc-webResult.gsc-result"
+  ],
+  "next_page_selectors": [
+    "div.gsc-cursor-page",
+    "div.gsc-cursor-page[aria-label*=\"Page\"]"
+  ],
+  "item_examples": {
+    "div.gs-webResult.gs-result": [
+      "<div class=\"gs-webResult gs-result\"><div class=\"gsc-table-cell-thumbnail gsc-thumbnail\"><div class=\"gs-image-box gs-web-image-box gs-web-image-box-portrait\"><a class=\"gs-image\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><img alt=\"Thumbnail image\" class=\"gs-image\" src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBdedCcooJDu10lTCENn3gOgkGLRkll4mQYSI1MFE7SVgTDfSyAN9em4M&amp;s\"/></a></div></div><div class=\"gsc-thumbnail-inside\"><div class=\"gs-title\"><a class=\"gs-title\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" dir=\"ltr\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><b>Minneapolis</b> Articles - Breitbart</a></div></div><div class=\"gsc-url-top\"><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short\" dir=\"ltr\">www.breitbart.com</div><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long\" dir=\"ltr\" style=\"word-break:break-all;\">https://www.breitbart.com/tag/<b>minneapolis</b>/</div><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb\"><span>Breitbart</span><span> \u203a tag</span><span> \u203a minneapolis</span></div></div><div class=\"gsc-table-result\" role=\"main\"><div class=\"gsc-table-cell-snippet-close\"><div class=\"gs-title gsc-table-cell-thumbnail gsc-thumbnail-left\"><a class=\"gs-title\" data-ctorig=\"https://www.br..."
+    ],
+    "div.gsc-table-result": [
+      "<div class=\"gsc-table-result\" role=\"main\"><div class=\"gsc-table-cell-snippet-close\"><div class=\"gs-title gsc-table-cell-thumbnail gsc-thumbnail-left\"><a class=\"gs-title\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" dir=\"ltr\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><b>Minneapolis</b> Articles - Breitbart</a></div><div><span></span></div><div class=\"gs-bidi-start-align gs-snippet\" dir=\"ltr\"><b>Minneapolis</b> \u00b7 Man Sentenced for Trying to Bribe Juror in $250M Welfare Fraud Trial \u00b7 GOP Sen. \u00b7 VIDEO \u2014 Police: 54 Arrested During Violent Anti-ICE Protest in\u00a0...</div><div class=\"gsc-url-bottom\"><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short\" dir=\"ltr\">www.breitbart.com</div><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long\" dir=\"ltr\" style=\"word-break:break-all;\">https://www.breitbart.com/tag/<b>minneapolis</b>/</div></div><div class=\"gs-richsnippet-box\" style=\"display: none;\"></div><div class=\"gs-per-result-labels\" url=\"https://www.breitbart.com/tag/minneapolis/\"></div></div></div>"
+    ],
+    "div.gsc-webResult.gsc-result": [
+      "<div class=\"gsc-webResult gsc-result\"><div class=\"gs-webResult gs-result\"><div class=\"gsc-table-cell-thumbnail gsc-thumbnail\"><div class=\"gs-image-box gs-web-image-box gs-web-image-box-portrait\"><a class=\"gs-image\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><img alt=\"Thumbnail image\" class=\"gs-image\" src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBdedCcooJDu10lTCENn3gOgkGLRkll4mQYSI1MFE7SVgTDfSyAN9em4M&amp;s\"/></a></div></div><div class=\"gsc-thumbnail-inside\"><div class=\"gs-title\"><a class=\"gs-title\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" dir=\"ltr\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><b>Minneapolis</b> Articles - Breitbart</a></div></div><div class=\"gsc-url-top\"><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short\" dir=\"ltr\">www.breitbart.com</div><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long\" dir=\"ltr\" style=\"word-break:break-all;\">https://www.breitbart.com/tag/<b>minneapolis</b>/</div><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb\"><span>Breitbart</span><span> \u203a tag</span><span> \u203a minneapolis</span></div></div><div class=\"gsc-table-result\" role=\"main\"><div class=\"gsc-table-cell-snippet-close\"><div class=\"gs-title gsc-table-cell-thumbnail gsc-thumbnail-left\"><a class=..."
+    ]
+  },
+  "next_page_examples": {
+    "div.gsc-cursor-page": [
+      "<div class=\"gsc-cursor-page gsc-cursor-current-page\" tabindex=\"0\">1</div>"
+    ],
+    "div.gsc-cursor-page[aria-label*=\"Page\"]": [
+      "<div aria-label=\"Page 2\" class=\"gsc-cursor-page\" role=\"link\" tabindex=\"0\">2</div>"
+    ]
+  },
+  "title_selectors": [
+    "a.gs-title",
+    "div.gs-title"
+  ],
+  "title_examples": {
+    "a.gs-title": [
+      "<a class=\"gs-title\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" dir=\"ltr\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><b>Minneapolis</b> Articles - Breitbart</a>"
+    ],
+    "div.gs-title": [
+      "<div class=\"gs-title\"><a class=\"gs-title\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" dir=\"ltr\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><b>Minneapolis</b> Articles - Breitbart</a></div>"
+    ]
+  },
+  "date_selectors": [
+    "div.gs-bidi-start-align.gs-snippet",
+    "div.gsc-table-cell-snippet-close"
+  ],
+  "date_examples": {
+    "div.gs-bidi-start-align.gs-snippet": [
+      "<div class=\"gs-bidi-start-align gs-snippet\" dir=\"ltr\"><b>Minneapolis</b> \u00b7 Man Sentenced for Trying to Bribe Juror in $250M Welfare Fraud Trial \u00b7 GOP Sen. \u00b7 VIDEO \u2014 Police: 54 Arrested During Violent Anti-ICE Protest in\u00a0...</div>"
+    ],
+    "div.gsc-table-cell-snippet-close": [
+      "<div class=\"gsc-table-cell-snippet-close\"><div class=\"gs-title gsc-table-cell-thumbnail gsc-thumbnail-left\"><a class=\"gs-title\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" dir=\"ltr\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><b>Minneapolis</b> Articles - Breitbart</a></div><div><span></span></div><div class=\"gs-bidi-start-align gs-snippet\" dir=\"ltr\"><b>Minneapolis</b> \u00b7 Man Sentenced for Trying to Bribe Juror in $250M Welfare Fraud Trial \u00b7 GOP Sen. \u00b7 VIDEO \u2014 Police: 54 Arrested During Violent Anti-ICE Protest in\u00a0...</div><div class=\"gsc-url-bottom\"><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short\" dir=\"ltr\">www.breitbart.com</div><div class=\"gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long\" dir=\"ltr\" style=\"word-break:break-all;\">https://www.breitbart.com/tag/<b>minneapolis</b>/</div></div><div class=\"gs-richsnippet-box\" style=\"display: none;\"></div><div class=\"gs-per-result-labels\" url=\"https://www.breitbart.com/tag/minneapolis/\"></div></div>"
+    ]
+  },
+  "url_selectors": [
+    "a.gs-title",
+    "a.gs-image"
+  ],
+  "url_examples": {
+    "a.gs-title": [
+      "<a class=\"gs-title\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" dir=\"ltr\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><b>Minneapolis</b> Articles - Breitbart</a>"
+    ],
+    "a.gs-image": [
+      "<a class=\"gs-image\" data-ctorig=\"https://www.breitbart.com/tag/minneapolis/\" data-cturl=\"https://www.google.com/url?client=internal-element-cse&amp;cx=partner-pub-9229289037503472:6795176714&amp;q=https://www.breitbart.com/tag/minneapolis/&amp;sa=U&amp;ved=2ahUKEwjn857FiJuTAxUsM1kFHYNfLI8QFnoECAcQAQ&amp;usg=AOvVaw3AtAR67q83JSmPUk7T_nlO&amp;fexp=121574859,121574858,73152292,73152290\" href=\"https://www.breitbart.com/tag/minneapolis/\" target=\"_self\"><img alt=\"Thumbnail image\" class=\"gs-image\" src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBdedCcooJDu10lTCENn3gOgkGLRkll4mQYSI1MFE7SVgTDfSyAN9em4M&amp;s\"/></a>"
+    ]
+  }
+}

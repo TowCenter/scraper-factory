@@ -1,0 +1,9 @@
+{
+    "name": "Alight",
+    "scrapers": [
+        {
+            "path": "scrapers.alight.scraper",
+            "url": "https://www.wearealight.org/news-stories"
+        }
+    ]
+}

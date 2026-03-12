@@ -1,0 +1,70 @@
+{
+  "item_selectors": [
+    "div.td_module_flex",
+    "div.td-module-container",
+    "div.td_module_wrap"
+  ],
+  "next_page_selectors": [
+    "a.td-ajax-next-page",
+    "#next-page-tdi_90"
+  ],
+  "item_examples": {
+    "div.td_module_flex": [
+      "<div class=\"td_module_flex td_module_flex_1 td_module_wrap td-animation-stack td-cpt-post\">\n<div class=\"td-module-container td-category-pos-above\">\n<div class=\"td-image-container\">\n<div class=\"td-module-thumb\"><a class=\"td-image-wrap\" href=\"https://minneapolistimes.com/minneapolis-united-when-federal-immigration-operations-surged-reflecting-a-long-tradition-of-mutual-aid/\" rel=\"bookmark\" title=\"Minneapolis united when federal immigration operations surged \u2013 reflecting a long tradition of mutual aid\"><span class=\"entry-thumb td-thumb-css td-animation-stack-type0-2\" data-img-url=\"https://minneapolistimes.com/wp-content/uploads/2026/02/Stronger-696x462.jpg\" data-type=\"css_image\" style='background-image: url(\"https://minneapolistimes.com/wp-content/uploads/2026/02/Stronger-696x462.jpg\")'></span></a></div> </div>\n<div class=\"td-module-meta-info\">\n<a class=\"td-post-category\" href=\"https://minneapolistimes.com/category/immigration-enforcement/\">Immigration Enforcement</a>\n<h3 class=\"entry-title td-module-title\"><a href=\"https://minneapolistimes.com/minneapolis-united-when-federal-immigration-operations-surged-reflecting-a-long-tradition-of-mutual-aid/\" rel=\"bookmark\" title=\"Minneapolis united when federal immigration operations surged \u2013 reflecting a long tradition of mutual aid\">Minneapolis united when federal immigration operations surged \u2013 reflecting a long tradition of mutual aid</a></h3>\n<div class=\"td-editor-date\">\n<span class=\"td-author-date\">\n<span class=\"td-post-author-name\"><a href=\"https://minneapolistimes.com/author/community-post/\">Community Post</a> <span>-</span> </span> </span>\n</div>\n<div class=\"td-excerpt\">\n\nBy Daniel Cueto-Villalobos\n\nI\u2019ve been living in Minneapolis and working on my\u00a0doctoral dissertation about local religious communities\u00a0since 2019.\n\nIt\u2019s given...</div>\n</div>\n</div>\n</div>"
+    ],
+    "div.td-module-container": [
+      "<div class=\"td-module-container\">\n<div class=\"td-module-thumb\"><a class=\"td-image-wrap\" href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\"><span class=\"entry-thumb td-thumb-css td-animation-stack-type0-2\" data-img-url=\"https://minneapolistimes.com/wp-content/uploads/2026/02/Cities-Church-Protest-Scene-1068x648.jpg\" data-type=\"css_image\" style='background-image: url(\"https://minneapolistimes.com/wp-content/uploads/2026/02/Cities-Church-Protest-Scene-1068x648.jpg\")'></span></a></div>\n<div class=\"td-module-meta-info\">\n<a class=\"td-post-category\" href=\"https://minneapolistimes.com/category/immigration-enforcement/\">Immigration Enforcement</a>\n<h3 class=\"entry-title td-module-title\"><a href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\">The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39</a></h3>\n<div class=\"td-excerpt\">\nThe federal government has officially moved beyond local trespassing charges in the St. Paul \"Cities Church\" incident, pivoting to a sweeping strategy of federal conspiracy. On February 27, 2026,...</div>\n<div class=\"td-editor-date\">\n<span class=\"td-author-date\">\n<span class=\"td-post-author-name\"><a href=\"https://minneapolistimes.com/author/aaron-jones/\">Aaron Jones</a> <span>-</span> </span> </span>\n</div>\n</div>\n</div>"
+    ],
+    "div.td_module_wrap": [
+      "<div class=\"td_module_flex_2 td_module_wrap td-animation-stack td-cpt-post\">\n<div class=\"td-module-container\">\n<div class=\"td-module-thumb\"><a class=\"td-image-wrap\" href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\"><span class=\"entry-thumb td-thumb-css td-animation-stack-type0-2\" data-img-url=\"https://minneapolistimes.com/wp-content/uploads/2026/02/Cities-Church-Protest-Scene-1068x648.jpg\" data-type=\"css_image\" style='background-image: url(\"https://minneapolistimes.com/wp-content/uploads/2026/02/Cities-Church-Protest-Scene-1068x648.jpg\")'></span></a></div>\n<div class=\"td-module-meta-info\">\n<a class=\"td-post-category\" href=\"https://minneapolistimes.com/category/immigration-enforcement/\">Immigration Enforcement</a>\n<h3 class=\"entry-title td-module-title\"><a href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\">The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39</a></h3>\n<div class=\"td-excerpt\">\nThe federal government has officially moved beyond local trespassing charges in the St. Paul \"Cities Church\" incident, pivoting to a sweeping strategy of federal conspiracy. On February 27, 2026,...</div>\n<div class=\"td-editor-date\">\n<span class=\"td-author-date\">\n<span class=\"td-post-author-name\"><a href=\"https://minneapolistimes.com/author/aaron-jones/\">Aaron Jones</a> <span>-</span> </span> </span>\n</div>\n</div>\n</div>\n</div>"
+    ]
+  },
+  "next_page_examples": {
+    "a.td-ajax-next-page": [
+      "<a aria-label=\"next-page\" class=\"td-ajax-next-page\" data-td_block_id=\"tdi_90\" href=\"#\" id=\"next-page-tdi_90\"><i class=\"td-next-prev-icon td-icon-font td-icon-menu-right\"></i></a>"
+    ],
+    "#next-page-tdi_90": [
+      "<a aria-label=\"next-page\" class=\"td-ajax-next-page\" data-td_block_id=\"tdi_90\" href=\"#\" id=\"next-page-tdi_90\"><i class=\"td-next-prev-icon td-icon-font td-icon-menu-right\"></i></a>"
+    ]
+  },
+  "title_selectors": [
+    "h3.entry-title.td-module-title",
+    "h3.entry-title.td-module-title a"
+  ],
+  "title_examples": {
+    "h3.entry-title.td-module-title": [
+      "<h3 class=\"entry-title td-module-title\"><a href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\">The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39</a></h3>"
+    ],
+    "h3.entry-title.td-module-title a": [
+      "<a href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\">The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39</a>"
+    ]
+  },
+  "date_selectors": [
+    "time.entry-date.updated.td-module-date",
+    "span.td-author-date",
+    "span.td-post-date"
+  ],
+  "date_examples": {
+    "time.entry-date.updated.td-module-date": [
+      "<time class=\"entry-date updated td-module-date\" datetime=\"2026-02-21T08:07:55-06:00\">February 21, 2026</time>"
+    ],
+    "span.td-author-date": [
+      "<span class=\"td-author-date\">\n<span class=\"td-post-author-name\"><a href=\"https://minneapolistimes.com/author/aaron-jones/\">Aaron Jones</a> <span>-</span> </span> </span>"
+    ],
+    "span.td-post-date": [
+      "<span class=\"td-post-date\"><time class=\"entry-date updated td-module-date\" datetime=\"2026-02-21T08:07:55-06:00\">February 21, 2026</time></span>"
+    ]
+  },
+  "url_selectors": [
+    "h3.entry-title.td-module-title a",
+    "a.td-image-wrap"
+  ],
+  "url_examples": {
+    "h3.entry-title.td-module-title a": [
+      "<a href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\">The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39</a>"
+    ],
+    "a.td-image-wrap": [
+      "<a class=\"td-image-wrap\" href=\"https://minneapolistimes.com/the-siege-of-cities-church-doj-deploys-federal-conspiracy-charges-against-39/\" rel=\"bookmark\" title=\"The Siege of Cities Church: DOJ Deploys Federal Conspiracy Charges Against 39\"><span class=\"entry-thumb td-thumb-css td-animation-stack-type0-2\" data-img-url=\"https://minneapolistimes.com/wp-content/uploads/2026/02/Cities-Church-Protest-Scene-1068x648.jpg\" data-type=\"css_image\" style='background-image: url(\"https://minneapolistimes.com/wp-content/uploads/2026/02/Cities-Church-Protest-Scene-1068x648.jpg\")'></span></a>"
+    ]
+  }
+}

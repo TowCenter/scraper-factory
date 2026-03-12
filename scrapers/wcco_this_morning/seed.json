@@ -1,0 +1,9 @@
+{
+    "name": "WCCO This Morning",
+    "scrapers": [
+        {
+            "path": "scrapers.wcco_this_morning.scraper",
+            "url": "https://www.cbsnews.com/minnesota/local-news/"
+        }
+    ]
+}

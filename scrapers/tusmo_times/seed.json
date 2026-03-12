@@ -1,0 +1,9 @@
+{
+    "name": "Tusmo Times",
+    "scrapers": [
+        {
+            "path": "scrapers.tusmo_times.scraper",
+            "url": "https://tusmotimes.com/category/local-news/"
+        }
+    ]
+}

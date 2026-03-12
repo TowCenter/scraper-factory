@@ -1,0 +1,58 @@
+{
+  "item_selectors": [
+    "article.ultp-block-item"
+  ],
+  "next_page_selectors": [
+    "ul.ultp-pagination a[href*=\"/page/\"]",
+    "li.ultp-next-page-numbers a"
+  ],
+  "item_examples": {
+    "article.ultp-block-item": [
+      "<article class=\"ultp-block-item ultp-block-media post-id-72368\"><div class=\"ultp-block-content-wrap ultp-first-postlist-2\"><div class=\"ultp-block-image ultp-block-image-zoomIn\"><a href=\"https://easttwincities.com/pete-stauber-shares-weekly-highlights-and-comments-on-crime-policy/\"><img alt=\"Pete Stauber shares weekly highlights and comments on crime policy\" class=\"fva-cover-img\" fifulocal-featured=\"1\" post-id=\"72368\" src=\"https://d33ioocfz0fzi4.cloudfront.net/jns-media/40/8c/26074206/webp_xloknyv3neqqz8utnr5c2syfqyap.webp\" title=\"Pete Stauber shares weekly highlights and comments on crime policy\"/></a></div><div class=\"ultp-block-content\"><div class=\"ultp-category-grid ultp-category-classic ultp-category-aboveTitle\"><div class=\"ultp-category-in\"><a class=\"ultp-cat-local-government\" href=\"https://easttwincities.com/category/local-government/\">Local Government</a></div></div><h3 class=\"ultp-block-title\"><a href=\"https://easttwincities.com/pete-stauber-shares-weekly-highlights-and-comments-on-crime-policy/\">Pete Stauber shares weekly highlights and comments on crime policy</a></h3><div class=\"ultp-block-meta ultp-block-meta-verticalbar ultp-block-meta-noIcon\"><span class=\"ultp-block-author ultp-block-meta-element\">By<a class=\"\" href=\"https://easttwincities.com/author/s-r-reid/\">S. R. Reid</a></span><span class=\"ultp-block-date ultp-block-meta-element\">Aug 25, 2025</span><span class=\"ultp-post-comment ultp-block-meta-element\">0 comments</span><span class=\"ultp-post-view ultp-block-meta-element\">29 views</span></div><div class=\"ultp-block-excerpt\"><p>Congressman Pete Stauber posted several updates between August 23 and August 25, including reflections on local life and support for federal crime policies.</p>\n</div></div></div></article>"
+    ]
+  },
+  "next_page_examples": {
+    "ul.ultp-pagination a[href*=\"/page/\"]": [
+      "<a href=\"https://easttwincities.com/category/local-government/page/2/\">2</a>"
+    ],
+    "li.ultp-next-page-numbers a": [
+      "<a href=\"https://easttwincities.com/category/local-government/page/2/\">Next<svg fill=\"none\" viewbox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"m9 18 6-6-6-6\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"></path>\n</svg>\n</a>"
+    ]
+  },
+  "title_selectors": [
+    "h3.ultp-block-title a",
+    "h3.ultp-block-title"
+  ],
+  "title_examples": {
+    "h3.ultp-block-title a": [
+      "<a href=\"https://easttwincities.com/pete-stauber-shares-weekly-highlights-and-comments-on-crime-policy/\">Pete Stauber shares weekly highlights and comments on crime policy</a>"
+    ],
+    "h3.ultp-block-title": [
+      "<h3 class=\"ultp-block-title\"><a href=\"https://easttwincities.com/pete-stauber-shares-weekly-highlights-and-comments-on-crime-policy/\">Pete Stauber shares weekly highlights and comments on crime policy</a></h3>"
+    ]
+  },
+  "date_selectors": [
+    ".ultp-block-meta .ultp-block-date",
+    "span.ultp-block-date"
+  ],
+  "date_examples": {
+    ".ultp-block-meta .ultp-block-date": [
+      "<span class=\"ultp-block-date ultp-block-meta-element\">Aug 25, 2025</span>"
+    ],
+    "span.ultp-block-date": [
+      "<span class=\"ultp-block-date ultp-block-meta-element\">Aug 25, 2025</span>"
+    ]
+  },
+  "url_selectors": [
+    ".ultp-block-title a",
+    "article.ultp-block-item a"
+  ],
+  "url_examples": {
+    ".ultp-block-title a": [
+      "<a href=\"https://easttwincities.com/pete-stauber-shares-weekly-highlights-and-comments-on-crime-policy/\">Pete Stauber shares weekly highlights and comments on crime policy</a>"
+    ],
+    "article.ultp-block-item a": [
+      "<a href=\"https://easttwincities.com/pete-stauber-shares-weekly-highlights-and-comments-on-crime-policy/\"><img alt=\"Pete Stauber shares weekly highlights and comments on crime policy\" class=\"fva-cover-img\" fifulocal-featured=\"1\" post-id=\"72368\" src=\"https://d33ioocfz0fzi4.cloudfront.net/jns-media/40/8c/26074206/webp_xloknyv3neqqz8utnr5c2syfqyap.webp\" title=\"Pete Stauber shares weekly highlights and comments on crime policy\"/></a>"
+    ]
+  }
+}

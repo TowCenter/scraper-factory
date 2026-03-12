@@ -1,0 +1,9 @@
+{
+    "name": "Unicorn Riot",
+    "scrapers": [
+        {
+            "path": "scrapers.unicorn_riot.scraper",
+            "url": "https://unicornriot.ninja/"
+        }
+    ]
+}

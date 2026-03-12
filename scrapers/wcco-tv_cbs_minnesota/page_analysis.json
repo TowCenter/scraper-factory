@@ -1,0 +1,78 @@
+{
+  "item_selectors": [
+    "article.item",
+    "article.item.lazyload",
+    "article.item--type-article"
+  ],
+  "next_page_selectors": [
+    "a.component__view-more--sm",
+    "a.component__view-more",
+    "a.component__view-more--lg"
+  ],
+  "item_examples": {
+    "article.item": [
+      "<article class=\"item item--type-cbsn_live item--topic-cbs-news\" data-video-params='{\"autoplay\":false,\"isCollapsible\":false,\"device\":\"desktop\",\"video\":{\"items\":[{\"type\":\"live\",\"id\":\"a8da38b8-d91f-4bb0-97c3-b7d4023ff0e4\",\"mpxRefId\":\"8WIj2vnthzogHfOdiIs_ds6KEEp__vLl\",\"originEdition\":\"min\",\"slug\":\"minnesota\",\"title\":\"CBS News Minnesota\",\"dek\":\"\",\"fulltitle\":\"CBS News Minnesota\",\"canonicalTitle\":\"CBS News Minnesota\",\"timestamp\":1573762495000,\"duration\":-1,\"durationLabel\":\"Live\",\"label\":null,\"images\":{\"sd\":\"https:\\/\\/assets1.cbsnewsstatic.com\\/hub\\/i\\/r\\/2023\\/11\\/08\\/12c2612a-ce6c-479e-b080-cadc7a2bdaff\\/thumbnail\\/640x360\\/47081f5f3f4e6258aeff3dd535141404\\/keyart-minnesota-1920x1080.jpg\",\"hd\":\"https:\\/\\/assets2.cbsnewsstatic.com\\/hub\\/i\\/r\\/2023\\/11\\/08\\/12c2612a-ce6c-479e-b080-cadc7a2bdaff\\/thumbnail\\/1280x720\\/5336458c403abeee1faf16cb3c400dde\\/keyart-minnesota-1920x1080.jpg\"},\"previewUrl\":\"https:\\/\\/minne3h5cdh7.airspace-cdn.cbsivideo.com\\/live\\/manifest.m3u8\",\"video\":\"https:\\/\\/dai.google.com\\/linear\\/hls\\/event\\/c0XucO32RNKG8oeQ351a4Q\\/master.m3u8\",\"video2\":\"https:\\/\\/minne3h5cdh7.airspace-cdn.cbsivideo.com\\/live\\/manifest.m3u8\",\"format\":\"application\\/x-mpegURL\",\"url\":\"https:\\/\\/www.cbsnews.com\\/minnesota\\/live\\/\",\"isImposter\":false,\"topic\":{\"id\":\"0aa453b7-5583-4b6b-84db-6e995521c908\",\"slug\":\"cbs-news-live\",\"hierarchy\":[\"cbs news\",\"cbs news live\"],\"parentTopicName\":\"CBS News\",\"hierarchyByName\":[\"CBS News\",\"Live\"],\"all\":[]},\"episode\":1,\"season\":\"1\",\"segment\":1,\"suppress\":false,\"allAccessBlock\":null,\"isUserSubscribed\":false,\"sponsor\":null,\"hexADefault\":\"0,0,0\",\"hexBDefault\":\"39,45,59\",\"ad\":{\"fw\":{\"dai_with_fw\":\"https:\\/\\/dai.google.com\\/linear\\/hls\\/event\\/c0XucO32RNKG8oeQ351a4Q\\/master.m3u8?imafw_csid={imafw_csid};imafw__fw_site_page={app_id}&amp;imafw_vguid={vguid}&amp;imafw_sz={player_size}&amp;imafw__fw_is_lat={is_lat}&amp;us_privacy={privacy}&amp;imafw__fw_us_privacy={privacy}&amp;imafw_gpp={gpp_string}&amp;imafw_gpp_sid={gpp_sid}&amp;dai-apto=3000&amp;imafw__fw_..."
+    ],
+    "article.item.lazyload": [
+      "<article class=\"item lazyload item--type-article item--topic-politics\">\n<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/news/senate-vote-homeland-security-funding/\" ondragstart=\"return false;\">\n<span class=\"img item__thumb item__thumb--crop-0\"><img alt=\"Senate Majority Leader John Thune speaks during a news conference following a weekly Republican policy luncheon at the U.S. Capitol on March 10, 2026 in Washington, D.C. \" height=\"360\" layout=\"responsive\" pinger-seen=\"true\" src=\"https://assets1.cbsnewsstatic.com/hub/i/r/2026/03/12/9da2c591-0041-44b6-b3f7-3cb271fd5aef/thumbnail/640x360/45249cc0acff6f82f8f5c402bfd2bb51/gettyimages-2265829461.jpg#\" srcset=\"https://assets1.cbsnewsstatic.com/hub/i/r/2026/03/12/9da2c591-0041-44b6-b3f7-3cb271fd5aef/thumbnail/640x360/45249cc0acff6f82f8f5c402bfd2bb51/gettyimages-2265829461.jpg 1x, https://assets2.cbsnewsstatic.com/hub/i/r/2026/03/12/9da2c591-0041-44b6-b3f7-3cb271fd5aef/thumbnail/1280x720/aff0cd0bf13db90b9e45a546d186af18/gettyimages-2265829461.jpg 2x\" width=\"640\"/></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">\n                      Senate to vote again on funding DHS as tempers flare over impasse\n                  </h4>\n<p class=\"item__dek\">\n          The Senate will vote again on a measure to fund the Department of Homeland Security as an impasse over how to reform immigration enforcement agencies has grown ugly, nearly a month into a partial shutdown.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">1H ago</li>\n<li class=\"item__info\">\n</li>\n</ul>\n</div>\n</a>\n</article>"
+    ],
+    "article.item--type-article": [
+      "<article class=\"item item--type-article item--topic-local-news\">\n<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/news/rochester-police-shoot-man-mental-health-crisis-call/\" ondragstart=\"return false;\">\n<span class=\"img item__thumb item__thumb--crop-0\"><img alt=\"copy-of-copy-of-copy-of-yt-batchers-opera-2025-11-22t142717-896.jpg \" height=\"360\" layout=\"responsive\" pinger-seen=\"true\" src=\"https://assets2.cbsnewsstatic.com/hub/i/r/2025/11/22/2c4c78e2-565e-4c28-a77e-48168dfe6a34/thumbnail/640x360/8400ee385ff299399f7cb27f095b5765/copy-of-copy-of-copy-of-yt-batchers-opera-2025-11-22t142717-896.jpg#\" srcset=\"https://assets2.cbsnewsstatic.com/hub/i/r/2025/11/22/2c4c78e2-565e-4c28-a77e-48168dfe6a34/thumbnail/640x360/8400ee385ff299399f7cb27f095b5765/copy-of-copy-of-copy-of-yt-batchers-opera-2025-11-22t142717-896.jpg 1x, https://assets1.cbsnewsstatic.com/hub/i/r/2025/11/22/2c4c78e2-565e-4c28-a77e-48168dfe6a34/thumbnail/1280x720/7359e6544bf063e262469e3555105d1e/copy-of-copy-of-copy-of-yt-batchers-opera-2025-11-22t142717-896.jpg 2x\" width=\"640\"/></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">\n                      Rochester police fatally shoot man while responding to mental health crisis call\n                  </h4>\n<p class=\"item__dek\">\n          According to Rochester Police, officers were dispatched around 9:30 p.m. to the 1900 block of Ashland Drive Northwest. The call was domestic-related, police say.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">2H ago</li>\n<li class=\"item__info\">\n</li>\n</ul>\n</div>\n</a>\n</article>"
+    ]
+  },
+  "next_page_examples": {
+    "a.component__view-more--sm": [
+      "<a class=\"component__view-more component__view-more--sm lazyload\" data-component=\"inline-view-more\" data-inline-view-more-options='{\"url\":\"\\/minnesota\\/local-news\\/2\\/\",\"urlParams\":{\"componentId\":\"6fcc1f59-6090-467c-b0d5-afc34f013cd8\"},\"contextViewMore\":1}' href=\"/minnesota/local-news/2/\">\n          Show More\n          <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ],
+    "a.component__view-more": [
+      "<a class=\"component__view-more component__view-more--sm lazyload\" data-component=\"inline-view-more\" data-inline-view-more-options='{\"url\":\"\\/minnesota\\/local-news\\/2\\/\",\"urlParams\":{\"componentId\":\"6fcc1f59-6090-467c-b0d5-afc34f013cd8\"},\"contextViewMore\":1}' href=\"/minnesota/local-news/2/\">\n          Show More\n          <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ],
+    "a.component__view-more--lg": [
+      "<a class=\"component__view-more component__view-more--lg\" href=\"/minnesota/live/\">\n                              More\n                            <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ]
+  },
+  "title_selectors": [
+    ".item__component-headline",
+    ".item__hed",
+    "h4.item__hed"
+  ],
+  "title_examples": {
+    ".item__component-headline": [
+      "<h4 class=\"item__component-headline\">\n                          CBS News Live\n                      </h4>"
+    ],
+    ".item__hed": [
+      "<h4 class=\"item__hed\">\n                      \n                                              \n              CBS News Minnesota: Local News, Weather &amp; More\n                              </h4>"
+    ],
+    "h4.item__hed": [
+      "<h4 class=\"item__hed\">\n                      \n                                              \n              CBS News Minnesota: Local News, Weather &amp; More\n                              </h4>"
+    ]
+  },
+  "date_selectors": [
+    ".item__date",
+    "ul.item__metadata li.item__date",
+    "li.item__date"
+  ],
+  "date_examples": {
+    ".item__date": [
+      "<li class=\"item__date\">Dec 12, 2019</li>"
+    ],
+    "ul.item__metadata li.item__date": [
+      "<li class=\"item__date\">Dec 12, 2019</li>"
+    ],
+    "li.item__date": [
+      "<li class=\"item__date\">Dec 12, 2019</li>"
+    ]
+  },
+  "url_selectors": [
+    "a.item__anchor",
+    "article.item a.item__anchor"
+  ],
+  "url_examples": {
+    "a.item__anchor": [
+      "<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/live/\" ondragstart=\"return false;\">\n<style>\n                .item__thumb--bg {\n                  background-image: linear-gradient(to top, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0)), url(\"https://assets1.cbsnewsstatic.com/hub/i/2023/11/08/12c2612a-ce6c-479e-b080-cadc7a2bdaff/keyart-minnesota-1920x1080.jpg\");\n                }\n              </style>\n<span class=\"item__thumb item__thumb--live item__thumb--bg\"></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__component-headline\">\n                          CBS News Live\n                      </h4>\n<h4 class=\"item__hed\">\n                      \n                                              \n              CBS News Minnesota: Local News, Weather &amp; More\n                              </h4>\n<p class=\"item__dek\">\n          CBS News Minnesota is your streaming home for breaking news, weather, traffic and sports for the Minnesota area and beyond. Watch 24/7.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">Dec 12, 2019</li>\n<li class=\"item__info\">\n                          CBS News Minnesota\n                      </li>\n</ul>\n</div>\n</a>"
+    ],
+    "article.item a.item__anchor": [
+      "<a class=\"item__anchor\" data-invalid-url-rewritten-http=\"\" draggable=\"false\" href=\"https://www.cbsnews.com/minnesota/live/\" ondragstart=\"return false;\">\n<style>\n                .item__thumb--bg {\n                  background-image: linear-gradient(to top, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0)), url(\"https://assets1.cbsnewsstatic.com/hub/i/2023/11/08/12c2612a-ce6c-479e-b080-cadc7a2bdaff/keyart-minnesota-1920x1080.jpg\");\n                }\n              </style>\n<span class=\"item__thumb item__thumb--live item__thumb--bg\"></span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__component-headline\">\n                          CBS News Live\n                      </h4>\n<h4 class=\"item__hed\">\n                      \n                                              \n              CBS News Minnesota: Local News, Weather &amp; More\n                              </h4>\n<p class=\"item__dek\">\n          CBS News Minnesota is your streaming home for breaking news, weather, traffic and sports for the Minnesota area and beyond. Watch 24/7.\n        </p>\n<ul class=\"item__metadata\">\n<li class=\"item__date\">Dec 12, 2019</li>\n<li class=\"item__info\">\n                          CBS News Minnesota\n                      </li>\n</ul>\n</div>\n</a>"
+    ]
+  }
+}

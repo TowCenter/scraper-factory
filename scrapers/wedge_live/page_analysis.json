@@ -1,0 +1,78 @@
+{
+  "item_selectors": [
+    "article.hentry",
+    "article.post",
+    "#main article"
+  ],
+  "next_page_selectors": [
+    "a.next.page-numbers",
+    ".navigation.pagination a.next.page-numbers",
+    ".nav-links a.next.page-numbers"
+  ],
+  "item_examples": {
+    "article.hentry": [
+      "<article class=\"post-4899 post type-post status-publish format-standard sticky hentry category-uncategorized\" id=\"post-4899\">\n<svg aria-hidden=\"true\" class=\"icon icon-thumb-tack\" role=\"img\"> <use href=\"#icon-thumb-tack\" xlink:href=\"#icon-thumb-tack\"></use> </svg> <header class=\"entry-header\">\n<div class=\"entry-meta\"><span class=\"screen-reader-text\">Posted on</span> <a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\"><time class=\"entry-date published\" datetime=\"2023-08-08T01:19:44-05:00\">August 8, 2023</time><time class=\"updated\" datetime=\"2025-05-16T15:18:40-05:00\">May 16, 2025</time></a></div><!-- .entry-meta --><h3 class=\"entry-title\"><a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\">Where to find Wedge LIVE!</a></h3> </header><!-- .entry-header -->\n<div class=\"entry-content\">\n<p><strong>Wedge LIVE! social content is posted to primarily on <a href=\"https://bsky.app/profile/wedge.live\">bluesky</a></strong>, which now has a thriving community of local posters \u2014 sign up now if you haven\u2019t already.</p>\n<p><strong>The Wedge LIVE! podcast</strong> is available wherever you get your podcasts. Video content and podcast episodes are posted to <a href=\"https://youtube.com/wedgelive\">youtube.com/wedgelive</a>.</p>\n<p><strong>Most importantly, please support <a href=\"https://www.patreon.com/wedgelive\">Wedge LIVE! on Patreon.</a></strong> And if you\u2019re already doing so, thank you for keeping us alive and free for all.</p>\n</div><!-- .entry-content -->\n</article>"
+    ],
+    "article.post": [
+      "<article class=\"post-4899 post type-post status-publish format-standard sticky hentry category-uncategorized\" id=\"post-4899\">\n<svg aria-hidden=\"true\" class=\"icon icon-thumb-tack\" role=\"img\"> <use href=\"#icon-thumb-tack\" xlink:href=\"#icon-thumb-tack\"></use> </svg> <header class=\"entry-header\">\n<div class=\"entry-meta\"><span class=\"screen-reader-text\">Posted on</span> <a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\"><time class=\"entry-date published\" datetime=\"2023-08-08T01:19:44-05:00\">August 8, 2023</time><time class=\"updated\" datetime=\"2025-05-16T15:18:40-05:00\">May 16, 2025</time></a></div><!-- .entry-meta --><h3 class=\"entry-title\"><a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\">Where to find Wedge LIVE!</a></h3> </header><!-- .entry-header -->\n<div class=\"entry-content\">\n<p><strong>Wedge LIVE! social content is posted to primarily on <a href=\"https://bsky.app/profile/wedge.live\">bluesky</a></strong>, which now has a thriving community of local posters \u2014 sign up now if you haven\u2019t already.</p>\n<p><strong>The Wedge LIVE! podcast</strong> is available wherever you get your podcasts. Video content and podcast episodes are posted to <a href=\"https://youtube.com/wedgelive\">youtube.com/wedgelive</a>.</p>\n<p><strong>Most importantly, please support <a href=\"https://www.patreon.com/wedgelive\">Wedge LIVE! on Patreon.</a></strong> And if you\u2019re already doing so, thank you for keeping us alive and free for all.</p>\n</div><!-- .entry-content -->\n</article>"
+    ],
+    "#main article": [
+      "<article class=\"post-4899 post type-post status-publish format-standard sticky hentry category-uncategorized\" id=\"post-4899\">\n<svg aria-hidden=\"true\" class=\"icon icon-thumb-tack\" role=\"img\"> <use href=\"#icon-thumb-tack\" xlink:href=\"#icon-thumb-tack\"></use> </svg> <header class=\"entry-header\">\n<div class=\"entry-meta\"><span class=\"screen-reader-text\">Posted on</span> <a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\"><time class=\"entry-date published\" datetime=\"2023-08-08T01:19:44-05:00\">August 8, 2023</time><time class=\"updated\" datetime=\"2025-05-16T15:18:40-05:00\">May 16, 2025</time></a></div><!-- .entry-meta --><h3 class=\"entry-title\"><a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\">Where to find Wedge LIVE!</a></h3> </header><!-- .entry-header -->\n<div class=\"entry-content\">\n<p><strong>Wedge LIVE! social content is posted to primarily on <a href=\"https://bsky.app/profile/wedge.live\">bluesky</a></strong>, which now has a thriving community of local posters \u2014 sign up now if you haven\u2019t already.</p>\n<p><strong>The Wedge LIVE! podcast</strong> is available wherever you get your podcasts. Video content and podcast episodes are posted to <a href=\"https://youtube.com/wedgelive\">youtube.com/wedgelive</a>.</p>\n<p><strong>Most importantly, please support <a href=\"https://www.patreon.com/wedgelive\">Wedge LIVE! on Patreon.</a></strong> And if you\u2019re already doing so, thank you for keeping us alive and free for all.</p>\n</div><!-- .entry-content -->\n</article>"
+    ]
+  },
+  "next_page_examples": {
+    "a.next.page-numbers": [
+      "<a class=\"next page-numbers\" href=\"https://wedgelive.com/page/2/\"><span class=\"screen-reader-text\">Next page</span><svg aria-hidden=\"true\" class=\"icon icon-arrow-right\" role=\"img\"> <use href=\"#icon-arrow-right\" xlink:href=\"#icon-arrow-right\"></use> </svg></a>"
+    ],
+    ".navigation.pagination a.next.page-numbers": [
+      "<a class=\"next page-numbers\" href=\"https://wedgelive.com/page/2/\"><span class=\"screen-reader-text\">Next page</span><svg aria-hidden=\"true\" class=\"icon icon-arrow-right\" role=\"img\"> <use href=\"#icon-arrow-right\" xlink:href=\"#icon-arrow-right\"></use> </svg></a>"
+    ],
+    ".nav-links a.next.page-numbers": [
+      "<a class=\"next page-numbers\" href=\"https://wedgelive.com/page/2/\"><span class=\"screen-reader-text\">Next page</span><svg aria-hidden=\"true\" class=\"icon icon-arrow-right\" role=\"img\"> <use href=\"#icon-arrow-right\" xlink:href=\"#icon-arrow-right\"></use> </svg></a>"
+    ]
+  },
+  "title_selectors": [
+    "h3.entry-title",
+    "h3.entry-title a",
+    ".entry-header .entry-title"
+  ],
+  "title_examples": {
+    "h3.entry-title": [
+      "<h3 class=\"entry-title\"><a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\">Where to find Wedge LIVE!</a></h3>"
+    ],
+    "h3.entry-title a": [
+      "<a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\">Where to find Wedge LIVE!</a>"
+    ],
+    ".entry-header .entry-title": [
+      "<h3 class=\"entry-title\"><a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\">Where to find Wedge LIVE!</a></h3>"
+    ]
+  },
+  "date_selectors": [
+    "time.entry-date.published",
+    ".entry-meta time.entry-date",
+    ".entry-meta time.published"
+  ],
+  "date_examples": {
+    "time.entry-date.published": [
+      "<time class=\"entry-date published\" datetime=\"2023-08-08T01:19:44-05:00\">August 8, 2023</time>"
+    ],
+    ".entry-meta time.entry-date": [
+      "<time class=\"entry-date published\" datetime=\"2023-08-08T01:19:44-05:00\">August 8, 2023</time>"
+    ],
+    ".entry-meta time.published": [
+      "<time class=\"entry-date published\" datetime=\"2023-08-08T01:19:44-05:00\">August 8, 2023</time>"
+    ]
+  },
+  "url_selectors": [
+    "article.post a[href]",
+    "h3.entry-title a"
+  ],
+  "url_examples": {
+    "article.post a[href]": [
+      "<a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\"><time class=\"entry-date published\" datetime=\"2023-08-08T01:19:44-05:00\">August 8, 2023</time><time class=\"updated\" datetime=\"2025-05-16T15:18:40-05:00\">May 16, 2025</time></a>"
+    ],
+    "h3.entry-title a": [
+      "<a href=\"https://wedgelive.com/where-to-find-wedge-live-during-a-time-of-transition/\" rel=\"bookmark\">Where to find Wedge LIVE!</a>"
+    ]
+  }
+}

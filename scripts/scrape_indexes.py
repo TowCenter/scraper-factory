@@ -19,7 +19,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 import importlib
 import asyncio
 import argparse
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date, timedelta
+import re
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 from dateutil.parser import parse as parse_date, ParserError
@@ -39,6 +40,38 @@ script_name = os.path.splitext(os.path.basename(__file__))[0]
 log_file = os.path.join(os.path.dirname(__file__), '..', 'logs', 'scripts', f"{script_name}.log")
 logger = setup_logging('INFO', log_file)
 
+DATE_URL_RE = re.compile(r'\d{4}-\d{2}-\d{2}')
+
+
+def _get_date_url_template(url):
+    """If url contains a YYYY-MM-DD date, return a template with '{}' in its place, else None."""
+    m = DATE_URL_RE.search(url)
+    return (url[:m.start()] + '{}' + url[m.end():]) if m else None
+
+
+def _iter_date_urls(template, since_date):
+    """Yield one URL per day from since_date to today (inclusive)."""
+    current = since_date
+    today = date.today()
+    while current <= today:
+        yield template.format(current.isoformat())
+        current += timedelta(days=1)
+
+
+def _article_before_since(article, date_field, since_dt):
+    """Return True if article's date is before since_dt (so it should be dropped)."""
+    if not date_field:
+        return False
+    val = article.get(date_field)
+    if not val:
+        return False
+    try:
+        dt = val if isinstance(val, datetime) else parse_date(val)
+        return dt.replace(tzinfo=None) < since_dt
+    except Exception:
+        return False
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Scrape articles for orgs.")
     parser.add_argument(
@@ -57,6 +90,12 @@ def parse_args():
         action="store_true",
         help="Use get_all_articles instead of get_first_page to get historical articles."
     )
+    parser.add_argument(
+        "--since",
+        type=str,
+        default=None,
+        help="Only keep articles on or after this date (YYYY-MM-DD). Used with --all."
+    )
     return parser.parse_args()
 
 async def run():
@@ -68,6 +107,8 @@ async def run():
     org_name = args.org
     use_all = args.all
     max_pages = args.maxpages
+    since_date = date.fromisoformat(args.since) if args.since else None
+    since_dt = datetime.fromisoformat(args.since) if args.since else None
 
     # Configuration
     MONGO_URI = os.environ.get("MONGO_URI")
@@ -204,7 +245,19 @@ async def run():
 
             # Execute the appropriate scraper function
             try:
-                if use_all:
+                date_url_template = _get_date_url_template(scraper_url) if (use_all and since_date) else None
+                if date_url_template:
+                    # Date-URL scraper (e.g. MPR News /content/YYYY-MM-DD): iterate one page per day
+                    all_articles = []
+                    for date_url in _iter_date_urls(date_url_template, since_date):
+                        for attr in ('BASE_URL', 'URL', 'START_URL', 'INDEX_URL'):
+                            if hasattr(scraper, attr):
+                                setattr(scraper, attr, date_url)
+                                break
+                        day_articles = await scraper.get_first_page()
+                        all_articles.extend(day_articles)
+                    articles = all_articles
+                elif use_all:
                     # Check if get_all_articles accepts max_pages parameter
                     signature = inspect.signature(scraper.get_all_articles)
                     has_kwargs = any(param.kind == inspect.Parameter.VAR_KEYWORD for param in signature.parameters.values())
@@ -213,6 +266,8 @@ async def run():
                         articles = await scraper.get_all_articles(max_pages=max_pages)
                     else:
                         articles = await scraper.get_all_articles()
+                    if since_dt and date_field:
+                        articles = [a for a in articles if not _article_before_since(a, date_field, since_dt)]
                 else:
                     articles = await scraper.get_first_page()
             except Exception as e:

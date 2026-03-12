@@ -1,0 +1,82 @@
+{
+  "item_selectors": [
+    ".card-image-text-block .w-dyn-item",
+    ".post-collections .w-dyn-item",
+    ".image-text-col-4.w-dyn-item"
+  ],
+  "next_page_selectors": [
+    ".paginationnext",
+    ".paginationpagecount",
+    ".paginationprevious"
+  ],
+  "item_examples": {
+    ".card-image-text-block .w-dyn-item": [
+      "<div class=\"image-text-col-4 mt-32 w-dyn-item\" role=\"listitem\" style=\"display: block;\"><img alt=\"\" class=\"image-1\" loading=\"lazy\" sizes=\"(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px\" src=\"https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1).png\" srcset=\"https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-800.png 800w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-1600.png 1600w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1).png 1920w\"/><h6 class=\"card-label mt-16 label-bg-yellow\">Stories</h6><div class=\"card-content\"><a class=\"post-heading w-inline-block\" href=\"/stories/supporting-our-minnesota-community\"><h4 class=\"content-heading mt-16\">Supporting our Minnesota Community: Doing the doable amid Operation PARRIS</h4></a><p class=\"content-paragraph mt-16\">Operation PARRIS and the broader enforcement initiative known as Metro Surge have created widespread fear and economic hardship for refugee families across Minnesota since December 2025. This page brings together essential resources, forms, and ways to either get support or give support.</p><a class=\"anchor-link\" href=\"/stories/supporting-our-minnesota-community\"><strong>READ MORE \u2197</strong></a><h1 class=\"custom-published-date\">January 14, 2026 15:00</h1><h1 class=\"default-published-date\">March 11, 2026 20:25</h1><div class=\"w-embed\"><h3 class=\"featured\" style=\"display: none\">true</h3></div></div><div class..."
+    ],
+    ".post-collections .w-dyn-item": [
+      "<div class=\"image-text-col-4 mt-32 w-dyn-item\" role=\"listitem\" style=\"display: block;\"><img alt=\"\" class=\"image-1\" loading=\"lazy\" sizes=\"(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px\" src=\"https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1).png\" srcset=\"https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-800.png 800w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-1600.png 1600w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1).png 1920w\"/><h6 class=\"card-label mt-16 label-bg-yellow\">Stories</h6><div class=\"card-content\"><a class=\"post-heading w-inline-block\" href=\"/stories/supporting-our-minnesota-community\"><h4 class=\"content-heading mt-16\">Supporting our Minnesota Community: Doing the doable amid Operation PARRIS</h4></a><p class=\"content-paragraph mt-16\">Operation PARRIS and the broader enforcement initiative known as Metro Surge have created widespread fear and economic hardship for refugee families across Minnesota since December 2025. This page brings together essential resources, forms, and ways to either get support or give support.</p><a class=\"anchor-link\" href=\"/stories/supporting-our-minnesota-community\"><strong>READ MORE \u2197</strong></a><h1 class=\"custom-published-date\">January 14, 2026 15:00</h1><h1 class=\"default-published-date\">March 11, 2026 20:25</h1><div class=\"w-embed\"><h3 class=\"featured\" style=\"display: none\">true</h3></div></div><div class..."
+    ],
+    ".image-text-col-4.w-dyn-item": [
+      "<div class=\"image-text-col-4 mt-32 w-dyn-item\" role=\"listitem\" style=\"display: block;\"><img alt=\"\" class=\"image-1\" loading=\"lazy\" sizes=\"(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px\" src=\"https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1).png\" srcset=\"https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-800.png 800w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1)-p-1600.png 1600w, https://cdn.prod.website-files.com/663b2fde1c164df36812934a/6967c08a2fc2be5f8c7ebf47_Emergency%20Blog%20Banner%20Template%20(1).png 1920w\"/><h6 class=\"card-label mt-16 label-bg-yellow\">Stories</h6><div class=\"card-content\"><a class=\"post-heading w-inline-block\" href=\"/stories/supporting-our-minnesota-community\"><h4 class=\"content-heading mt-16\">Supporting our Minnesota Community: Doing the doable amid Operation PARRIS</h4></a><p class=\"content-paragraph mt-16\">Operation PARRIS and the broader enforcement initiative known as Metro Surge have created widespread fear and economic hardship for refugee families across Minnesota since December 2025. This page brings together essential resources, forms, and ways to either get support or give support.</p><a class=\"anchor-link\" href=\"/stories/supporting-our-minnesota-community\"><strong>READ MORE \u2197</strong></a><h1 class=\"custom-published-date\">January 14, 2026 15:00</h1><h1 class=\"default-published-date\">March 11, 2026 20:25</h1><div class=\"w-embed\"><h3 class=\"featured\" style=\"display: none\">true</h3></div></div><div class..."
+    ]
+  },
+  "next_page_examples": {
+    ".paginationnext": [
+      "<a class=\"paginationnext w-inline-block\" href=\"#\" style=\"opacity: 1;\"><div class=\"paginationnextarrow\">\u2192</div></a>"
+    ],
+    ".paginationpagecount": [
+      "<div class=\"paginationpagecount\">1 / 19</div>"
+    ],
+    ".paginationprevious": [
+      "<a class=\"paginationprevious w-inline-block\" href=\"#\" style=\"pointer-events: none; opacity: 0.5;\"><div class=\"paginationprevarrow\">\u2190</div></a>"
+    ]
+  },
+  "title_selectors": [
+    "a.story_sub_heading.post-title",
+    "h4.content-heading",
+    "a.post-heading"
+  ],
+  "title_examples": {
+    "a.story_sub_heading.post-title": [
+      "<a class=\"story_sub_heading post-title\" href=\"/stories/the-women-who-shaped-alight---susan-and-patricia-walker\">Find Others: The women who shaped Alight \u2013 Susan and Patricia Walker</a>"
+    ],
+    "h4.content-heading": [
+      "<h4 class=\"content-heading mt-16\">Supporting our Minnesota Community: Doing the doable amid Operation PARRIS</h4>"
+    ],
+    "a.post-heading": [
+      "<a class=\"post-heading w-inline-block\" href=\"/stories/supporting-our-minnesota-community\"><h4 class=\"content-heading mt-16\">Supporting our Minnesota Community: Doing the doable amid Operation PARRIS</h4></a>"
+    ]
+  },
+  "date_selectors": [
+    ".default-published-date",
+    ".custom-published-date",
+    ".date-published"
+  ],
+  "date_examples": {
+    ".default-published-date": [
+      "<h1 class=\"default-published-date\">March 11, 2026 20:25</h1>"
+    ],
+    ".custom-published-date": [
+      "<h1 class=\"custom-published-date\">January 14, 2026 15:00</h1>"
+    ],
+    ".date-published": [
+      "<h1 class=\"date-published\">March 9, 2026</h1>"
+    ]
+  },
+  "url_selectors": [
+    "a.story_sub_heading.post-title",
+    "a.story_link",
+    "a.post-heading"
+  ],
+  "url_examples": {
+    "a.story_sub_heading.post-title": [
+      "<a class=\"story_sub_heading post-title\" href=\"/stories/the-women-who-shaped-alight---susan-and-patricia-walker\">Find Others: The women who shaped Alight \u2013 Susan and Patricia Walker</a>"
+    ],
+    "a.story_link": [
+      "<a class=\"story_link\" href=\"/stories/the-women-who-shaped-alight---susan-and-patricia-walker\">READ MORE \u2197</a>"
+    ],
+    "a.post-heading": [
+      "<a class=\"post-heading w-inline-block\" href=\"/stories/supporting-our-minnesota-community\"><h4 class=\"content-heading mt-16\">Supporting our Minnesota Community: Doing the doable amid Operation PARRIS</h4></a>"
+    ]
+  }
+}

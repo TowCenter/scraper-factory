@@ -1,0 +1,58 @@
+{
+  "item_selectors": [
+    "div[id^=\"post-\"]",
+    "div.post-block"
+  ],
+  "next_page_selectors": [
+    "div.pagination a[href*=\"/page/\"]"
+  ],
+  "item_examples": {
+    "div[id^=\"post-\"]": [
+      "<div class=\"post-block post-5094 post type-post status-publish format-standard has-post-thumbnail hentry category-news\" id=\"post-5094\">\n<div class=\"postmetadata\">\n<h6><em>Posted on: March 5, 2026</em></h6>\n<!-- Category: <a href=\"https://thealliancetc.org/category/news/\" rel=\"category tag\">News</a> | <span>Comments Off<span class=\"screen-reader-text\"> on Pause Evictions, Save Lives!</span></span><br>Posted by genevieve roudan\u00e9 |  -->\n</div>\n<div class=\"title\">\n<h3><a href=\"https://thealliancetc.org/pause-evictions-save-lives/\" rel=\"bookmark\">Pause Evictions, Save Lives!</a></h3>\n</div><!-- /title -->\n<!--div class=\"entry\"-->\n        \n\t\t\t\tOn March 11th, Mayor Frey abandoned tenants, small business owners, and community advocates by vetoing a measure designed to stabilize economic turmoil across the city through a temporary eviction pause ordinance. The Pause Evictions, Save Lives ordinance would have temporarily extended eviction pre-filing notice by 30 days, giving renters critical time to access rental assistance...<div class=\"sharedaddy sd-sharing-enabled\"><div class=\"robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing\"><h3 class=\"sd-title\">Share this:</h3><div class=\"sd-content\"><ul data-sharing-events-added=\"true\"><li class=\"share-twitter\"><a class=\"share-twitter sd-button share-icon\" data-shared=\"sharing-twitter-5094\" href=\"https://thealliancetc.org/pause-evictions-save-lives/?share=twitter&amp;nb=1\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" title=\"Click to share on Twitter\"><span>Twitter</span></a></li><li class=\"share-facebook\"><a class=\"share-facebook sd-button share-icon\" data-shared=\"sharing-facebook-5094\" href=\"https://thealliancetc.org/pause-evictions-save-lives/?share=facebook&amp;nb=1\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" title=\"Click to share on Facebook\"><span>Facebook</span></a></li><li class=\"share-end\"></li></ul></div></div></div> <!--/div><!-- /entry -->\n</div>"
+    ],
+    "div.post-block": [
+      "<div class=\"post-block post-5094 post type-post status-publish format-standard has-post-thumbnail hentry category-news\" id=\"post-5094\">\n<div class=\"postmetadata\">\n<h6><em>Posted on: March 5, 2026</em></h6>\n<!-- Category: <a href=\"https://thealliancetc.org/category/news/\" rel=\"category tag\">News</a> | <span>Comments Off<span class=\"screen-reader-text\"> on Pause Evictions, Save Lives!</span></span><br>Posted by genevieve roudan\u00e9 |  -->\n</div>\n<div class=\"title\">\n<h3><a href=\"https://thealliancetc.org/pause-evictions-save-lives/\" rel=\"bookmark\">Pause Evictions, Save Lives!</a></h3>\n</div><!-- /title -->\n<!--div class=\"entry\"-->\n        \n\t\t\t\tOn March 11th, Mayor Frey abandoned tenants, small business owners, and community advocates by vetoing a measure designed to stabilize economic turmoil across the city through a temporary eviction pause ordinance. The Pause Evictions, Save Lives ordinance would have temporarily extended eviction pre-filing notice by 30 days, giving renters critical time to access rental assistance...<div class=\"sharedaddy sd-sharing-enabled\"><div class=\"robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing\"><h3 class=\"sd-title\">Share this:</h3><div class=\"sd-content\"><ul data-sharing-events-added=\"true\"><li class=\"share-twitter\"><a class=\"share-twitter sd-button share-icon\" data-shared=\"sharing-twitter-5094\" href=\"https://thealliancetc.org/pause-evictions-save-lives/?share=twitter&amp;nb=1\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" title=\"Click to share on Twitter\"><span>Twitter</span></a></li><li class=\"share-facebook\"><a class=\"share-facebook sd-button share-icon\" data-shared=\"sharing-facebook-5094\" href=\"https://thealliancetc.org/pause-evictions-save-lives/?share=facebook&amp;nb=1\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" title=\"Click to share on Facebook\"><span>Facebook</span></a></li><li class=\"share-end\"></li></ul></div></div></div> <!--/div><!-- /entry -->\n</div>"
+    ]
+  },
+  "next_page_examples": {
+    "div.pagination a[href*=\"/page/\"]": [
+      "<a href=\"https://thealliancetc.org/news-events/news/page/2/\">Previous</a>"
+    ]
+  },
+  "title_selectors": [
+    "div.post-block .title a",
+    "div.post-block h3 a"
+  ],
+  "title_examples": {
+    "div.post-block .title a": [
+      "<a href=\"https://thealliancetc.org/pause-evictions-save-lives/\" rel=\"bookmark\">Pause Evictions, Save Lives!</a>"
+    ],
+    "div.post-block h3 a": [
+      "<a href=\"https://thealliancetc.org/pause-evictions-save-lives/\" rel=\"bookmark\">Pause Evictions, Save Lives!</a>"
+    ]
+  },
+  "date_selectors": [
+    "div.post-block .postmetadata h6",
+    "div.post-block .postmetadata"
+  ],
+  "date_examples": {
+    "div.post-block .postmetadata h6": [
+      "<h6><em>Posted on: March 5, 2026</em></h6>"
+    ],
+    "div.post-block .postmetadata": [
+      "<div class=\"postmetadata\">\n<h6><em>Posted on: March 5, 2026</em></h6>\n<!-- Category: <a href=\"https://thealliancetc.org/category/news/\" rel=\"category tag\">News</a> | <span>Comments Off<span class=\"screen-reader-text\"> on Pause Evictions, Save Lives!</span></span><br>Posted by genevieve roudan\u00e9 |  -->\n</div>"
+    ]
+  },
+  "url_selectors": [
+    "div.post-block .title a",
+    "div.post-block h3 a"
+  ],
+  "url_examples": {
+    "div.post-block .title a": [
+      "<a href=\"https://thealliancetc.org/pause-evictions-save-lives/\" rel=\"bookmark\">Pause Evictions, Save Lives!</a>"
+    ],
+    "div.post-block h3 a": [
+      "<a href=\"https://thealliancetc.org/pause-evictions-save-lives/\" rel=\"bookmark\">Pause Evictions, Save Lives!</a>"
+    ]
+  }
+}

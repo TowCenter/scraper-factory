@@ -1,0 +1,52 @@
+{
+  "item_selectors": [
+    "div.list-grid article.post",
+    "article.post"
+  ],
+  "next_page_selectors": [
+    "ul.pagination a.next.page-link",
+    "nav[aria-label=\"Posts navigation\"] a.next.page-link"
+  ],
+  "item_examples": {
+    "div.list-grid article.post": [
+      "<article class=\"post-97746 post type-post status-publish format-standard has-post-thumbnail hentry category-guest-commentary\" id=\"post-97746\">\n<div class=\"post-thumbnail\">\n<a class=\"thumb-link\" href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\">\n<img alt=\"In Business and Politics, Find Solutions Based on the Facts\" class=\"attachment-everstrap-square size-everstrap-square wp-post-image\" decoding=\"async\" fetchpriority=\"high\" height=\"370\" sizes=\"(max-width: 370px) 100vw, 370px\" src=\"https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-370x370.jpg\" srcset=\"https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-370x370.jpg 370w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-150x150.jpg 150w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-24x24.jpg 24w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-48x48.jpg 48w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-96x96.jpg 96w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-300x300.jpg 300w\" width=\"370\"/> </a>\n</div>\n<div class=\"entry-content\">\n<div class=\"entry-header\">\n<div class=\"post-meta\">\n<ul class=\"everstrap-post-meta\">\n<li>\n<span class=\"posted-in\">\n<a href=\"https://tcbmag.com/category/viewpoint/guest-commentary/\">Guest Commentary</a>\n</span>\n</li>\n</ul>\n</div>\n<h2 class=\"entry-title\"><a href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\" rel=\"bookmark\">In Business and Politics, Find Solutions Based on the Facts</a></h2> </div>\n<div class=\"entry-summary\">\n\t\t\t\t\t\tThe obsession to \u2018control the narrative\u2019 merely erodes public trust and allows problems to grow larger.\t\t\t\t\t</div>\n</div>\n</article>"
+    ],
+    "article.post": [
+      "<article class=\"post-97746 post type-post status-publish format-standard has-post-thumbnail hentry category-guest-commentary\" id=\"post-97746\">\n<div class=\"post-thumbnail\">\n<a class=\"thumb-link\" href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\">\n<img alt=\"In Business and Politics, Find Solutions Based on the Facts\" class=\"attachment-everstrap-square size-everstrap-square wp-post-image\" decoding=\"async\" fetchpriority=\"high\" height=\"370\" sizes=\"(max-width: 370px) 100vw, 370px\" src=\"https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-370x370.jpg\" srcset=\"https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-370x370.jpg 370w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-150x150.jpg 150w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-24x24.jpg 24w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-48x48.jpg 48w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-96x96.jpg 96w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-300x300.jpg 300w\" width=\"370\"/> </a>\n</div>\n<div class=\"entry-content\">\n<div class=\"entry-header\">\n<div class=\"post-meta\">\n<ul class=\"everstrap-post-meta\">\n<li>\n<span class=\"posted-in\">\n<a href=\"https://tcbmag.com/category/viewpoint/guest-commentary/\">Guest Commentary</a>\n</span>\n</li>\n</ul>\n</div>\n<h2 class=\"entry-title\"><a href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\" rel=\"bookmark\">In Business and Politics, Find Solutions Based on the Facts</a></h2> </div>\n<div class=\"entry-summary\">\n\t\t\t\t\t\tThe obsession to \u2018control the narrative\u2019 merely erodes public trust and allows problems to grow larger.\t\t\t\t\t</div>\n</div>\n</article>"
+    ]
+  },
+  "next_page_examples": {
+    "ul.pagination a.next.page-link": [
+      "<a class=\"next page-link\" href=\"https://tcbmag.com/news/page/2/\">\u00bb</a>"
+    ],
+    "nav[aria-label=\"Posts navigation\"] a.next.page-link": [
+      "<a class=\"next page-link\" href=\"https://tcbmag.com/news/page/2/\">\u00bb</a>"
+    ]
+  },
+  "title_selectors": [
+    "h2.entry-title",
+    "h2.entry-title a"
+  ],
+  "title_examples": {
+    "h2.entry-title": [
+      "<h2 class=\"entry-title\"><a href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\" rel=\"bookmark\">In Business and Politics, Find Solutions Based on the Facts</a></h2>"
+    ],
+    "h2.entry-title a": [
+      "<a href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\" rel=\"bookmark\">In Business and Politics, Find Solutions Based on the Facts</a>"
+    ]
+  },
+  "date_selectors": [],
+  "date_examples": {},
+  "url_selectors": [
+    "article.post a.thumb-link",
+    "h2.entry-title a"
+  ],
+  "url_examples": {
+    "article.post a.thumb-link": [
+      "<a class=\"thumb-link\" href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\">\n<img alt=\"In Business and Politics, Find Solutions Based on the Facts\" class=\"attachment-everstrap-square size-everstrap-square wp-post-image\" decoding=\"async\" fetchpriority=\"high\" height=\"370\" sizes=\"(max-width: 370px) 100vw, 370px\" src=\"https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-370x370.jpg\" srcset=\"https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-370x370.jpg 370w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-150x150.jpg 150w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-24x24.jpg 24w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-48x48.jpg 48w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-96x96.jpg 96w, https://d20kvx01grnrq8.cloudfront.net/wp-content/uploads/2026/03/NEXT-2026-335-1-300x300.jpg 300w\" width=\"370\"/> </a>"
+    ],
+    "h2.entry-title a": [
+      "<a href=\"https://tcbmag.com/in-business-and-politics-find-solutions-based-on-the-facts/\" rel=\"bookmark\">In Business and Politics, Find Solutions Based on the Facts</a>"
+    ]
+  }
+}

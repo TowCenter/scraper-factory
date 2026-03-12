@@ -1,0 +1,58 @@
+{
+  "item_selectors": [
+    ".postlist.post_type_post",
+    ".row.postlist.post_type_post"
+  ],
+  "next_page_selectors": [
+    ".misha_loadmore.btn",
+    "#load-more-container .misha_loadmore"
+  ],
+  "item_examples": {
+    ".postlist.post_type_post": [
+      "<div class=\"row postlist post_type_post\">\n<div class=\"col-md-6\">\n<div class=\"postthumbnail\">\n<a class=\"\" href=\"https://breakthroughnews.org/elected-officials-need-to-do-far-more-to-stand-up-to-ice-and-trump-say-minnesotans/\">\n<img src=\"https://breakthroughnews.org/wp-content/uploads/2026/01/7-1024x818.png\"/>\n</a>\n</div>\n</div>\n<div class=\"col-md-6\">\n<div class=\"postcontent\">\n<div class=\"cat_date\">\n<span class=\"postdate\">January 22, 2026</span>\n</div>\n<a class=\"posttitle\" href=\"https://breakthroughnews.org/elected-officials-need-to-do-far-more-to-stand-up-to-ice-and-trump-say-minnesotans/\">\n<h3>Elected Officials Need to Do Far More to Stand Up to ICE and Trump, Say Minnesotans</h3>\n</a>\n<span class=\"authorname\">Meghnad Bose</span>\n<div class=\"description\">\n\t\t\t\t\tThe killing of Renee Nicole Good by ICE officer Jonathan Ross on January 7th during Operation Metro Surge, ICE\u2019s extended crackdown on Minnesota\u2019s Twin Cities, has unleashed a wave of protests across the country. Despite the vocal public opposition, the raids themselves are intensifying. More than 3,000 federal agents have...\t\t\t\t</div>\n</div>\n</div>\n</div>"
+    ],
+    ".row.postlist.post_type_post": [
+      "<div class=\"row postlist post_type_post\">\n<div class=\"col-md-6\">\n<div class=\"postthumbnail\">\n<a class=\"\" href=\"https://breakthroughnews.org/elected-officials-need-to-do-far-more-to-stand-up-to-ice-and-trump-say-minnesotans/\">\n<img src=\"https://breakthroughnews.org/wp-content/uploads/2026/01/7-1024x818.png\"/>\n</a>\n</div>\n</div>\n<div class=\"col-md-6\">\n<div class=\"postcontent\">\n<div class=\"cat_date\">\n<span class=\"postdate\">January 22, 2026</span>\n</div>\n<a class=\"posttitle\" href=\"https://breakthroughnews.org/elected-officials-need-to-do-far-more-to-stand-up-to-ice-and-trump-say-minnesotans/\">\n<h3>Elected Officials Need to Do Far More to Stand Up to ICE and Trump, Say Minnesotans</h3>\n</a>\n<span class=\"authorname\">Meghnad Bose</span>\n<div class=\"description\">\n\t\t\t\t\tThe killing of Renee Nicole Good by ICE officer Jonathan Ross on January 7th during Operation Metro Surge, ICE\u2019s extended crackdown on Minnesota\u2019s Twin Cities, has unleashed a wave of protests across the country. Despite the vocal public opposition, the raids themselves are intensifying. More than 3,000 federal agents have...\t\t\t\t</div>\n</div>\n</div>\n</div>"
+    ]
+  },
+  "next_page_examples": {
+    ".misha_loadmore.btn": [
+      "<div class=\"misha_loadmore btn\" data_id=\"post\">Load More</div>"
+    ],
+    "#load-more-container .misha_loadmore": [
+      "<div class=\"misha_loadmore btn\" data_id=\"post\">Load More</div>"
+    ]
+  },
+  "title_selectors": [
+    "a.posttitle",
+    ".posttitle h3"
+  ],
+  "title_examples": {
+    "a.posttitle": [
+      "<a class=\"posttitle\" href=\"https://breakthroughnews.org/elected-officials-need-to-do-far-more-to-stand-up-to-ice-and-trump-say-minnesotans/\">\n<h3>Elected Officials Need to Do Far More to Stand Up to ICE and Trump, Say Minnesotans</h3>\n</a>"
+    ],
+    ".posttitle h3": [
+      "<h3>Elected Officials Need to Do Far More to Stand Up to ICE and Trump, Say Minnesotans</h3>"
+    ]
+  },
+  "date_selectors": [
+    ".cat_date",
+    "span.postdate"
+  ],
+  "date_examples": {
+    ".cat_date": [
+      "<div class=\"cat_date\">\n<span class=\"postdate\">January 22, 2026</span>\n</div>"
+    ],
+    "span.postdate": [
+      "<span class=\"postdate\">January 22, 2026</span>"
+    ]
+  },
+  "url_selectors": [
+    "a.posttitle[href]"
+  ],
+  "url_examples": {
+    "a.posttitle[href]": [
+      "<a class=\"posttitle\" href=\"https://breakthroughnews.org/elected-officials-need-to-do-far-more-to-stand-up-to-ice-and-trump-say-minnesotans/\">\n<h3>Elected Officials Need to Do Far More to Stand Up to ICE and Trump, Say Minnesotans</h3>\n</a>"
+    ]
+  }
+}

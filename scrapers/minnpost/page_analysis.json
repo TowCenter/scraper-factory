@@ -1,0 +1,74 @@
+{
+  "item_selectors": [
+    "article.post",
+    ".wpnbha article.tag-news"
+  ],
+  "next_page_selectors": [
+    ".nav-links a.next.page-numbers",
+    "nav.navigation.pagination a.page-numbers"
+  ],
+  "item_examples": {
+    "article.post": [
+      "<article class=\"post-2223958 post type-post status-publish format-standard has-post-thumbnail hentry category-economy category-news category-state-government category-top-story tag-news entry\" id=\"post-2223958\">\n<figure class=\"post-thumbnail\">\n<a aria-hidden=\"true\" class=\"post-thumbnail-inner\" href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" tabindex=\"-1\">\n<img alt=\"Ellen Schmidt/MinnPost/CatchLight Local/Report for America\" class=\"attachment-newspack-archive-image size-newspack-archive-image wp-post-image\" data-hero-candidate=\"1\" data-perfmatters-preload=\"\" decoding=\"async\" fetchpriority=\"high\" height=\"600\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" src=\"https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-800x600.jpg?crop=1\" srcset=\"https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-800x600.jpg?crop=1 800w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-1200x900.jpg?crop=1 1200w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-600x450.jpg?crop=1 600w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-400x300.jpg?crop=1 400w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-200x150.jpg?crop=1 200w\" width=\"800\"/> </a>\n</figure>\n<div class=\"entry-container\">\n<span class=\"cat-links\"><span class=\"screen-reader-text\">Posted in</span><a href=\"https://www.minnpost.com/category/economy/\" rel=\"category tag\">Economy</a></span> <header class=\"entry-header\">\n<h2 class=\"entry-title\"><a href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" rel=\"bookmark\">Minnesota winter tourism hurt by federal immigration enforcement, Trump\u2019s tariff ..."
+    ],
+    ".wpnbha article.tag-news": [
+      "<article class=\"tag-news category-news category-state-government category-top-story type-post post-has-image\" data-post-id=\"2195357\">\n<figure class=\"post-thumbnail\">\n<a aria-hidden=\"true\" href=\"https://www.minnpost.com/state-government/2025/03/walz-sales-tax-proposal-hits-consumers-while-sparing-business-to-business-transactions/\" rel=\"bookmark\" tabindex=\"-1\">\n<img alt=\"Walz sales tax proposal hits consumers, while sparing business-to-business transactions\" class=\"attachment-newspack-article-block-landscape-medium size-newspack-article-block-landscape-medium wp-post-image\" data-hero-candidate=\"1\" decoding=\"async\" height=\"600\" loading=\"lazy\" sizes=\"auto, (max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" src=\"https://www.minnpost.com/wp-content/uploads/2025/01/MNCapitolBuilding0125_940-800x600.png?crop=1\" srcset=\"https://www.minnpost.com/wp-content/uploads/2025/01/MNCapitolBuilding0125_940-800x600.png?crop=1 800w, https://www.minnpost.com/wp-content/uploads/2025/01/MNCapitolBuilding0125_940-600x450.png?crop=1 600w, https://www.minnpost.com/wp-content/uploads/2025/01/MNCapitolBuilding0125_940-400x300.png?crop=1 400w, https://www.minnpost.com/wp-content/uploads/2025/01/MNCapitolBuilding0125_940-200x150.png?crop=1 200w\" width=\"800\"/> </a>\n</figure><!-- .featured-image -->\n<div class=\"entry-wrapper\">\n<div class=\"cat-links\">\n<a href=\"https://www.minnpost.com/category/state-government/\">State Government</a> </div>\n<h3 class=\"entry-title\"><a href=\"https://www.minnpost.com/state-government/2025/03/walz-sales-tax-proposal-hits-consumers-while-sparing-business-to-business-transactions/\" rel=\"bookmark\">Walz sales tax proposal hits consumers, while sparing business-to-business transactions</a></h3> <div class=\"entry-meta\">\n<span class=\"byline\">\n<span class=\"author-prefix\">by</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"https://www.minnpost.com/author/matthew-blake/\">Matthew Blake</a..."
+    ]
+  },
+  "next_page_examples": {
+    ".nav-links a.next.page-numbers": [
+      "<a class=\"next page-numbers\" href=\"https://www.minnpost.com/tag/news/page/2/\"><span class=\"nav-next-text\">Older posts</span> <svg aria-hidden=\"true\" class=\"svg-icon\" focusable=\"false\" height=\"22\" role=\"img\" viewbox=\"0 0 24 24\" width=\"22\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"></path><path d=\"M0 0h24v24H0z\" fill=\"none\"></path></svg></a>"
+    ],
+    "nav.navigation.pagination a.page-numbers": [
+      "<a class=\"page-numbers\" href=\"https://www.minnpost.com/tag/news/page/2/\">2</a>"
+    ]
+  },
+  "title_selectors": [
+    ".entry-title a",
+    ".entry-header .entry-title a",
+    "h2.entry-title"
+  ],
+  "title_examples": {
+    ".entry-title a": [
+      "<a href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" rel=\"bookmark\">Minnesota winter tourism hurt by federal immigration enforcement, Trump\u2019s tariff feuds, surveys suggest</a>"
+    ],
+    ".entry-header .entry-title a": [
+      "<a href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" rel=\"bookmark\">Minnesota winter tourism hurt by federal immigration enforcement, Trump\u2019s tariff feuds, surveys suggest</a>"
+    ],
+    "h2.entry-title": [
+      "<h2 class=\"entry-title\"><a href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" rel=\"bookmark\">Minnesota winter tourism hurt by federal immigration enforcement, Trump\u2019s tariff feuds, surveys suggest</a></h2>"
+    ]
+  },
+  "date_selectors": [
+    "time.entry-date.published",
+    ".entry-meta .posted-on",
+    "time.updated"
+  ],
+  "date_examples": {
+    "time.entry-date.published": [
+      "<time class=\"entry-date published\" datetime=\"2026-03-10T12:00:04-05:00\">58 minutes ago</time>"
+    ],
+    ".entry-meta .posted-on": [
+      "<span class=\"posted-on\"><a href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" rel=\"bookmark\"><time class=\"entry-date published\" datetime=\"2026-03-10T12:00:04-05:00\">58 minutes ago</time><time class=\"updated\" datetime=\"2026-03-10T12:00:13-05:00\">03/10/2026</time></a></span>"
+    ],
+    "time.updated": [
+      "<time class=\"updated\" datetime=\"2026-03-10T12:00:13-05:00\">03/10/2026</time>"
+    ]
+  },
+  "url_selectors": [
+    ".entry-header a",
+    "h2.entry-title a",
+    "a.post-thumbnail-inner"
+  ],
+  "url_examples": {
+    ".entry-header a": [
+      "<a href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" rel=\"bookmark\">Minnesota winter tourism hurt by federal immigration enforcement, Trump\u2019s tariff feuds, surveys suggest</a>"
+    ],
+    "h2.entry-title a": [
+      "<a href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" rel=\"bookmark\">Minnesota winter tourism hurt by federal immigration enforcement, Trump\u2019s tariff feuds, surveys suggest</a>"
+    ],
+    "a.post-thumbnail-inner": [
+      "<a aria-hidden=\"true\" class=\"post-thumbnail-inner\" href=\"https://www.minnpost.com/economy/2026/03/minnesota-winter-tourism-hurt-by-federal-immigration-enforcement-trumps-tariff-feuds-surveys-suggest/\" tabindex=\"-1\">\n<img alt=\"Ellen Schmidt/MinnPost/CatchLight Local/Report for America\" class=\"attachment-newspack-archive-image size-newspack-archive-image wp-post-image\" data-hero-candidate=\"1\" data-perfmatters-preload=\"\" decoding=\"async\" fetchpriority=\"high\" height=\"600\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" src=\"https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-800x600.jpg?crop=1\" srcset=\"https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-800x600.jpg?crop=1 800w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-1200x900.jpg?crop=1 1200w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-600x450.jpg?crop=1 600w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-400x300.jpg?crop=1 400w, https://www.minnpost.com/wp-content/uploads/2026/03/Tourism-ICE-030826-es_1-200x150.jpg?crop=1 200w\" width=\"800\"/> </a>"
+    ]
+  }
+}

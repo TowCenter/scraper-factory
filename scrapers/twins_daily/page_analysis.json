@@ -1,0 +1,78 @@
+{
+  "item_selectors": [
+    "div.news-entry-teaser",
+    "article.cCmsCategoryFeaturedEntry",
+    "article.news-entry-list"
+  ],
+  "next_page_selectors": [
+    "ul.ipsPagination a[href*=\"/page/\"]",
+    "a#elPagination_f50793b116c3f1f4dccfde3ed0d7e703_61968548_jump",
+    "ul.ipsPagination li.ipsPagination_next a"
+  ],
+  "item_examples": {
+    "div.news-entry-teaser": [
+      "<div class=\"ipsColumn ipsColumn_fluid news-entry-teaser\">\n<section class=\"ipsType_normal ipsType_richText ipsType_break ipsMargin_bottom\">\n<div>\n<h2 class=\"ipsType_pageTitle ipsContained_container\">\n<span class=\"ipsType_break ipsContained\">\n<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\" title=\"Read more about Front Office Confirms Payroll Is Technically a Social Construct\">Front Office Confirms Payroll Is Technically a Social Construct</a>\n</span>\n</h2>\n<p class=\"ipsType_light ipsType_reset\">\n                By \n\n\n<a class=\"ipsType_break\" data-ipshover=\"\" data-ipshover-target=\"https://twinsdaily.com/profile/25-cody-christie/?do=hovercard&amp;referrer=https%253A%252F%252Ftwinsdaily.com%252F\" data-ipshover-width=\"370\" href=\"https://twinsdaily.com/profile/25-cody-christie/\" rel=\"nofollow\" title=\"Go to Cody Christie's profile\">Cody Christie</a> in <a href=\"https://twinsdaily.com/news-rumors/just-for-fun/\">Just For Fun</a>, <time data-short=\"1 hr\" datetime=\"2026-03-10T17:21:03Z\" title=\"03/10/2026 05:21  PM\">1 hour ago</time>\n</p>\n</div>\n</section>\n<hr class=\"ipsHr\"/>\n<ul class=\"ipsList_inline ipsClear\">\n<li><strong><a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\" title=\"Read more about \">Read more...</a></strong></li>\n<li><a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/#comments\" title=\"View comments\"><i class=\"fa fa-comment\"></i> 1 comment</a></li>\n<!--li class='ipsType_light'>369 views</li-->\n</ul>\n</div>"
+    ],
+    "article.cCmsCategoryFeaturedEntry": [
+      "<article class=\"news-entry-list cCmsCategoryFeaturedEntry ipsClear ipsClearfix ipsPadding red-border-bottom\">\n<div class=\"ipsColumns ipsColumns_collapsePhone news-entry-index\">\n<div class=\"ipsColumn ipsColumn_medium\">\n<div class=\"cCmsRecord_image\">\n<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\">\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showDesktop\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\" srcset=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg 2x\"/>\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showTablet\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\" srcset=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_02/TargetFieldOpeningDay.jpg.17b751cce535c104bf8a45907375a8b3.jpg 2x\"/>\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showPhone\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\"/>\n</a>\n</div>\n</div>\n<div class=\"ipsColumn ipsColumn_fluid news-entry-teaser\">\n<section class=\"ipsType_normal ipsType_richText ipsType_break ipsMargin_bottom\">\n<div>\n<h2 class=\"ipsType_pageTitle ipsContained_container\">\n<span class=\"ipsType_break ipsContained\">\n<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\" title=\"Read more about Front Office Confirms Payroll Is Technically a Social Construct\">Front Office Confirms Payroll Is Technically a Social Construct</a>\n</span>\n</h2>\n<p class=\"ipsType_light ipsType_r..."
+    ],
+    "article.news-entry-list": [
+      "<article class=\"news-entry-list cCmsCategoryFeaturedEntry ipsClear ipsClearfix ipsPadding red-border-bottom\">\n<div class=\"ipsColumns ipsColumns_collapsePhone news-entry-index\">\n<div class=\"ipsColumn ipsColumn_medium\">\n<div class=\"cCmsRecord_image\">\n<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\">\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showDesktop\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\" srcset=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg 2x\"/>\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showTablet\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\" srcset=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_02/TargetFieldOpeningDay.jpg.17b751cce535c104bf8a45907375a8b3.jpg 2x\"/>\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showPhone\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\"/>\n</a>\n</div>\n</div>\n<div class=\"ipsColumn ipsColumn_fluid news-entry-teaser\">\n<section class=\"ipsType_normal ipsType_richText ipsType_break ipsMargin_bottom\">\n<div>\n<h2 class=\"ipsType_pageTitle ipsContained_container\">\n<span class=\"ipsType_break ipsContained\">\n<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\" title=\"Read more about Front Office Confirms Payroll Is Technically a Social Construct\">Front Office Confirms Payroll Is Technically a Social Construct</a>\n</span>\n</h2>\n<p class=\"ipsType_light ipsType_r..."
+    ]
+  },
+  "next_page_examples": {
+    "ul.ipsPagination a[href*=\"/page/\"]": [
+      "<a data-page=\"2\" href=\"https://twinsdaily.com/news-rumors/page/2/\">2</a>"
+    ],
+    "a#elPagination_f50793b116c3f1f4dccfde3ed0d7e703_61968548_jump": [
+      "<a data-ipsmenu=\"\" data-ipsmenu-appendto=\"#elPagination_f50793b116c3f1f4dccfde3ed0d7e703_61968548\" data-ipsmenu-closeonclick=\"false\" href=\"#\" id=\"elPagination_f50793b116c3f1f4dccfde3ed0d7e703_61968548_jump\">Page 1 of 1087 \u00a0<i class=\"fa fa-caret-down\"></i></a>"
+    ],
+    "ul.ipsPagination li.ipsPagination_next a": [
+      "<a data-ipstooltip=\"\" data-page=\"2\" href=\"https://twinsdaily.com/news-rumors/page/2/\" rel=\"next\" title=\"Next page\">Next</a>"
+    ]
+  },
+  "title_selectors": [
+    "article.news-entry-list h2",
+    "div.front-page-article-title a",
+    "h2.ipsType_pageTitle"
+  ],
+  "title_examples": {
+    "article.news-entry-list h2": [
+      "<h2 class=\"ipsType_pageTitle ipsContained_container\">\n<span class=\"ipsType_break ipsContained\">\n<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\" title=\"Read more about Front Office Confirms Payroll Is Technically a Social Construct\">Front Office Confirms Payroll Is Technically a Social Construct</a>\n</span>\n</h2>"
+    ],
+    "div.front-page-article-title a": [
+      "<a class=\"ipsType_pageTitle ipsType_veryLarge white\" href=\"https://twinsdaily.com/news-rumors/minnesota-twins/minnesota-twins-2026-position-analysis-center-field-r19917/\">Minnesota Twins 2026 Position Analysis: Center Field</a>"
+    ],
+    "h2.ipsType_pageTitle": [
+      "<h2 class=\"ipsType_pageTitle ipsContained_container\">\n<span class=\"ipsType_break ipsContained\">\n<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\" title=\"Read more about Front Office Confirms Payroll Is Technically a Social Construct\">Front Office Confirms Payroll Is Technically a Social Construct</a>\n</span>\n</h2>"
+    ]
+  },
+  "date_selectors": [
+    "article time",
+    "p.ipsType_light time",
+    "article.news-entry-list time"
+  ],
+  "date_examples": {
+    "article time": [
+      "<time data-short=\"1 hr\" datetime=\"2026-03-10T17:21:03Z\" title=\"03/10/2026 05:21  PM\">1 hour ago</time>"
+    ],
+    "p.ipsType_light time": [
+      "<time data-short=\"1 hr\" datetime=\"2026-03-10T17:21:03Z\" title=\"03/10/2026 05:21  PM\">1 hour ago</time>"
+    ],
+    "article.news-entry-list time": [
+      "<time data-short=\"1 hr\" datetime=\"2026-03-10T17:21:03Z\" title=\"03/10/2026 05:21  PM\">1 hour ago</time>"
+    ]
+  },
+  "url_selectors": [
+    "div.news-entry-teaser a[href]",
+    "article.news-entry-list a[href]"
+  ],
+  "url_examples": {
+    "div.news-entry-teaser a[href]": [
+      "<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\" title=\"Read more about Front Office Confirms Payroll Is Technically a Social Construct\">Front Office Confirms Payroll Is Technically a Social Construct</a>"
+    ],
+    "article.news-entry-list a[href]": [
+      "<a href=\"https://twinsdaily.com/news-rumors/just-for-fun/front-office-confirms-payroll-is-technically-a-social-construct-r19852/\">\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showDesktop\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\" srcset=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg 2x\"/>\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showTablet\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\" srcset=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_02/TargetFieldOpeningDay.jpg.17b751cce535c104bf8a45907375a8b3.jpg 2x\"/>\n<img alt=\"Front Office Confirms Payroll Is Technically a Social Construct\" class=\"ipsImage ipsResponsive_showPhone\" loading=\"lazy\" src=\"//dtb3yzl0vm3pr.cloudfront.net/monthly_2026_03/TargetFieldOpeningDay.thumb768.jpg.b21883914dcdaf8d3c40a5897609e073.jpg\"/>\n</a>"
+    ]
+  }
+}

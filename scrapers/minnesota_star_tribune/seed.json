@@ -1,0 +1,9 @@
+{
+    "name": "Minnesota Star Tribune",
+    "scrapers": [
+        {
+            "path": "scrapers.minnesota_star_tribune.scraper",
+            "url": "https://www.startribune.com/news-politics/twin-cities"
+        }
+    ]
+}

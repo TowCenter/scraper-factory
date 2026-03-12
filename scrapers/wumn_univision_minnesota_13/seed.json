@@ -1,0 +1,9 @@
+{
+    "name": "WUMN Univision Minnesota 13",
+    "scrapers": [
+        {
+            "path": "scrapers.wumn_univision_minnesota_13.scraper",
+            "url": "https://www.univisionminnesota.com/noticias/"
+        }
+    ]
+}

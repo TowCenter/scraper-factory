@@ -1,0 +1,70 @@
+{
+  "item_selectors": [
+    "div.catlist-panel-inner",
+    "div.profile-rendered.catlist-panel",
+    "article"
+  ],
+  "next_page_selectors": [
+    "div.category-pagination a.next",
+    "ol.wp-paginate a.page",
+    "a.next"
+  ],
+  "item_examples": {
+    "div.catlist-panel-inner": [
+      "<div class=\"catlist-panel-inner\"><div class=\"catlist-panel-media\">\n<img alt=\"Inside the Minnesota Capitol, parents set up the desks of the two students killed in the Minneapolis Annunciation Catholic School shooting.\n\" class=\"\" data-ratio=\"0.73\" src=\"https://mndaily.com/wp-content/uploads/2026/03/xoL90Abd8uozUZjrzuhn0frGQfBIKn26qoDtMhpg-1200x870.jpg\" style=\"object-fit: cover;\"/></div><div class=\"catlist-textarea-with-media\" style=\"position: unset; transform: unset; padding-top: 0px; margin-right: -15px;\"><h2>\n<a class=\"homeheadline\" href=\"https://mndaily.com/city/gun-safety-bill-co-written-by-students-stalls-in-minnesota-house-heads-to-senate/03/08/2026/shill/\" title=\"Permanent Link to Story\">\nGun safety bill co-written by students stalls in Minnesota House, heads to Senate                            </a></h2><div class=\"catlist-meta\">\n<span class=\"catlist-writer\">by  <a class=\"creditline\" href=\"https://mndaily.com/staff_name/shay-scanlan/\">Shay Scanlan</a></span>\n<br/> <span class=\"catlist-date\"><span class=\"time-wrapper\">Published  March 8, 2026</span></span></div><div class=\"catlist-teaser\"><p>In early December, \u201clockdown, locks, lights, out of sight\u201d echoed from the loudspeakers in Edina High School. Teachers locked classroom doors as students hid, prayed and texted their families that...</p></div></div><div class=\"clear\"></div></div>"
+    ],
+    "div.profile-rendered.catlist-panel": [
+      "<div class=\"profile-rendered catlist-panel catlist_sidebar\" data-rendered=\"297685\"><div class=\"catlist-panel-inner\"><div class=\"catlist-panel-media\">\n<img alt=\"Inside the Minnesota Capitol, parents set up the desks of the two students killed in the Minneapolis Annunciation Catholic School shooting.\n\" class=\"\" data-ratio=\"0.73\" src=\"https://mndaily.com/wp-content/uploads/2026/03/xoL90Abd8uozUZjrzuhn0frGQfBIKn26qoDtMhpg-1200x870.jpg\" style=\"object-fit: cover;\"/></div><div class=\"catlist-textarea-with-media\" style=\"position: unset; transform: unset; padding-top: 0px; margin-right: -15px;\"><h2>\n<a class=\"homeheadline\" href=\"https://mndaily.com/city/gun-safety-bill-co-written-by-students-stalls-in-minnesota-house-heads-to-senate/03/08/2026/shill/\" title=\"Permanent Link to Story\">\nGun safety bill co-written by students stalls in Minnesota House, heads to Senate                            </a></h2><div class=\"catlist-meta\">\n<span class=\"catlist-writer\">by  <a class=\"creditline\" href=\"https://mndaily.com/staff_name/shay-scanlan/\">Shay Scanlan</a></span>\n<br/> <span class=\"catlist-date\"><span class=\"time-wrapper\">Published  March 8, 2026</span></span></div><div class=\"catlist-teaser\"><p>In early December, \u201clockdown, locks, lights, out of sight\u201d echoed from the loudspeakers in Edina High School. Teachers locked classroom doors as students hid, prayed and texted their families that...</p></div></div><div class=\"clear\"></div></div></div>"
+    ],
+    "article": [
+      "<article><div class=\"profile-rendered catlist-panel catlist_sidebar\" data-rendered=\"297685\"><div class=\"catlist-panel-inner\"><div class=\"catlist-panel-media\">\n<img alt=\"Inside the Minnesota Capitol, parents set up the desks of the two students killed in the Minneapolis Annunciation Catholic School shooting.\n\" class=\"\" data-ratio=\"0.73\" src=\"https://mndaily.com/wp-content/uploads/2026/03/xoL90Abd8uozUZjrzuhn0frGQfBIKn26qoDtMhpg-1200x870.jpg\" style=\"object-fit: cover;\"/></div><div class=\"catlist-textarea-with-media\" style=\"position: unset; transform: unset; padding-top: 0px; margin-right: -15px;\"><h2>\n<a class=\"homeheadline\" href=\"https://mndaily.com/city/gun-safety-bill-co-written-by-students-stalls-in-minnesota-house-heads-to-senate/03/08/2026/shill/\" title=\"Permanent Link to Story\">\nGun safety bill co-written by students stalls in Minnesota House, heads to Senate                            </a></h2><div class=\"catlist-meta\">\n<span class=\"catlist-writer\">by  <a class=\"creditline\" href=\"https://mndaily.com/staff_name/shay-scanlan/\">Shay Scanlan</a></span>\n<br/> <span class=\"catlist-date\"><span class=\"time-wrapper\">Published  March 8, 2026</span></span></div><div class=\"catlist-teaser\"><p>In early December, \u201clockdown, locks, lights, out of sight\u201d echoed from the loudspeakers in Edina High School. Teachers locked classroom doors as students hid, prayed and texted their families that...</p></div></div><div class=\"clear\"></div></div></div></article>"
+    ]
+  },
+  "next_page_examples": {
+    "div.category-pagination a.next": [
+      "<a aria-label=\"Go to next page\" class=\"next\" href=\"https://mndaily.com/category/city/page/2\">\u00bb</a>"
+    ],
+    "ol.wp-paginate a.page": [
+      "<a aria-label=\"Go to page 2\" class=\"page\" href=\"https://mndaily.com/category/city/page/2/\" title=\"2\">2</a>"
+    ],
+    "a.next": [
+      "<a aria-label=\"Go to next page\" class=\"next\" href=\"https://mndaily.com/category/city/page/2\">\u00bb</a>"
+    ]
+  },
+  "title_selectors": [
+    "h2",
+    "a.homeheadline"
+  ],
+  "title_examples": {
+    "h2": [
+      "<h2>\n<a class=\"homeheadline\" href=\"https://mndaily.com/city/gun-safety-bill-co-written-by-students-stalls-in-minnesota-house-heads-to-senate/03/08/2026/shill/\" title=\"Permanent Link to Story\">\nGun safety bill co-written by students stalls in Minnesota House, heads to Senate                            </a></h2>"
+    ],
+    "a.homeheadline": [
+      "<a class=\"homeheadline\" href=\"https://mndaily.com/city/gun-safety-bill-co-written-by-students-stalls-in-minnesota-house-heads-to-senate/03/08/2026/shill/\" title=\"Permanent Link to Story\">\nGun safety bill co-written by students stalls in Minnesota House, heads to Senate                            </a>"
+    ]
+  },
+  "date_selectors": [
+    "span.catlist-date",
+    "span.time-wrapper"
+  ],
+  "date_examples": {
+    "span.catlist-date": [
+      "<span class=\"catlist-date\"><span class=\"time-wrapper\">Published  March 8, 2026</span></span>"
+    ],
+    "span.time-wrapper": [
+      "<span class=\"time-wrapper\">Published  March 8, 2026</span>"
+    ]
+  },
+  "url_selectors": [
+    "a.homeheadline",
+    "div.catlist-panel-inner a"
+  ],
+  "url_examples": {
+    "a.homeheadline": [
+      "<a class=\"homeheadline\" href=\"https://mndaily.com/city/gun-safety-bill-co-written-by-students-stalls-in-minnesota-house-heads-to-senate/03/08/2026/shill/\" title=\"Permanent Link to Story\">\nGun safety bill co-written by students stalls in Minnesota House, heads to Senate                            </a>"
+    ],
+    "div.catlist-panel-inner a": [
+      "<a class=\"homeheadline\" href=\"https://mndaily.com/city/gun-safety-bill-co-written-by-students-stalls-in-minnesota-house-heads-to-senate/03/08/2026/shill/\" title=\"Permanent Link to Story\">\nGun safety bill co-written by students stalls in Minnesota House, heads to Senate                            </a>"
+    ]
+  }
+}

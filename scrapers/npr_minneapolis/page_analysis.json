@@ -1,0 +1,62 @@
+{
+  "item_selectors": [
+    "div.storyInfo",
+    "article.item",
+    "ul.ais-InfiniteHits-list > li.ais-InfiniteHits-item"
+  ],
+  "next_page_selectors": [
+    "button.ais-InfiniteHits-loadMore"
+  ],
+  "item_examples": {
+    "div.storyInfo": [
+      "<div class=\"storyInfo noimg\"><div class=\"slug-wrap\"><h3 class=\"slug\"><a href=\"https://www.npr.org/sections/politics/\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Politics</span></span></a></h3></div><h2 class=\"title\"><a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Blue cities in red states debate over how to respond to efforts to resist ICE</span></span></a></h2><p class=\"byline\"><b>By</b> <span class=\"ais-Highlight\"><span><span class=\"ais-Highlight-nonHighlighted\">Mose Buchele</span></span></span> </p><time datetime=\"2026-03-12T04:44:30-04:00\"><span class=\"date\">March 12, 2026 \u2022 </span></time><p class=\"teaser\"><a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"affiliation\"><span class=\"ais-Highlight\"></span></span>\u2026<span class=\"ais-Snippet\"><span class=\"ais-Snippet-nonHighlighted\">While cities in blue states like Minnesota and California resist ICE enforcement, some Democrat-led cities in red states, like Austin, Texas, are in a heated debate over how to respond.</span></span>\u2026</a></p></div>"
+    ],
+    "article.item": [
+      "<article class=\"item\"><div class=\"storyInfo noimg\"><div class=\"slug-wrap\"><h3 class=\"slug\"><a href=\"https://www.npr.org/sections/politics/\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Politics</span></span></a></h3></div><h2 class=\"title\"><a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Blue cities in red states debate over how to respond to efforts to resist ICE</span></span></a></h2><p class=\"byline\"><b>By</b> <span class=\"ais-Highlight\"><span><span class=\"ais-Highlight-nonHighlighted\">Mose Buchele</span></span></span> </p><time datetime=\"2026-03-12T04:44:30-04:00\"><span class=\"date\">March 12, 2026 \u2022 </span></time><p class=\"teaser\"><a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"affiliation\"><span class=\"ais-Highlight\"></span></span>\u2026<span class=\"ais-Snippet\"><span class=\"ais-Snippet-nonHighlighted\">While cities in blue states like Minnesota and California resist ICE enforcement, some Democrat-led cities in red states, like Austin, Texas, are in a heated debate over how to respond.</span></span>\u2026</a></p></div></article>"
+    ],
+    "ul.ais-InfiniteHits-list > li.ais-InfiniteHits-item": [
+      "<li class=\"ais-InfiniteHits-item\"><article class=\"item\"><div class=\"storyInfo noimg\"><div class=\"slug-wrap\"><h3 class=\"slug\"><a href=\"https://www.npr.org/sections/politics/\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Politics</span></span></a></h3></div><h2 class=\"title\"><a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Blue cities in red states debate over how to respond to efforts to resist ICE</span></span></a></h2><p class=\"byline\"><b>By</b> <span class=\"ais-Highlight\"><span><span class=\"ais-Highlight-nonHighlighted\">Mose Buchele</span></span></span> </p><time datetime=\"2026-03-12T04:44:30-04:00\"><span class=\"date\">March 12, 2026 \u2022 </span></time><p class=\"teaser\"><a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"affiliation\"><span class=\"ais-Highlight\"></span></span>\u2026<span class=\"ais-Snippet\"><span class=\"ais-Snippet-nonHighlighted\">While cities in blue states like Minnesota and California resist ICE enforcement, some Democrat-led cities in red states, like Austin, Texas, are in a heated debate over how to respond.</span></span>\u2026</a></p></div></article></li>"
+    ]
+  },
+  "next_page_examples": {
+    "button.ais-InfiniteHits-loadMore": [
+      "<button class=\"ais-InfiniteHits-loadMore\">Load more</button>"
+    ]
+  },
+  "title_selectors": [
+    "h2.title",
+    "h2.title a"
+  ],
+  "title_examples": {
+    "h2.title": [
+      "<h2 class=\"title\"><a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Blue cities in red states debate over how to respond to efforts to resist ICE</span></span></a></h2>"
+    ],
+    "h2.title a": [
+      "<a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Blue cities in red states debate over how to respond to efforts to resist ICE</span></span></a>"
+    ]
+  },
+  "date_selectors": [
+    "time",
+    "span.date"
+  ],
+  "date_examples": {
+    "time": [
+      "<time datetime=\"2026-03-12T04:44:30-04:00\"><span class=\"date\">March 12, 2026 \u2022 </span></time>"
+    ],
+    "span.date": [
+      "<span class=\"date\">March 12, 2026 \u2022 </span>"
+    ]
+  },
+  "url_selectors": [
+    "article.item a[href]",
+    "h2.title a[href]"
+  ],
+  "url_examples": {
+    "article.item a[href]": [
+      "<a href=\"https://www.npr.org/sections/politics/\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Politics</span></span></a>"
+    ],
+    "h2.title a[href]": [
+      "<a href=\"/2026/03/12/nx-s1-5718541/blue-cities-in-red-states-debate-over-how-to-respond-to-efforts-to-resist-ice\"><span class=\"ais-Highlight\"><span class=\"ais-Highlight-nonHighlighted\">Blue cities in red states debate over how to respond to efforts to resist ICE</span></span></a>"
+    ]
+  }
+}

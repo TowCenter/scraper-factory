@@ -1,0 +1,50 @@
+{
+  "item_selectors": [
+    "div.blog-post"
+  ],
+  "next_page_selectors": [
+    "div.blog-page-nav-previous a.blog-link"
+  ],
+  "item_examples": {
+    "div.blog-post": [
+      "<div class=\"blog-post\" id=\"blog-post-773304220481361391\">\n<div class=\"blog-header\">\n<h2 class=\"blog-title\">\n<a class=\"blog-title-link blog-link\" href=\"//www.zerkalomn.com/news/7801991\">\u0413\u043b\u0430\u0432\u0430 \u043f\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u043e\u0439 \u0441\u043b\u0443\u0436\u0431\u044b \u0437\u0430\u044f\u0432\u0438\u043b \u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u043f\u043e \u0443\u0436\u0435\u0441\u0442\u043e\u0447\u0435\u043d\u0438\u044e \u0438\u043c\u043c\u0438\u0433\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0433\u043e \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u0432 \u041c\u0438\u043d\u043d\u0435\u0441\u043e\u0442\u0435 \u043f\u043e\u0441\u043b\u0435 \u0433\u043d\u0435\u0432\u043d\u044b\u0445 \u043f\u0440\u043e\u0442\u0435\u0441\u0442\u043e\u0432 \u0438 \u0434\u0432\u0443</a>\n</h2>\n<p class=\"blog-date\">\n<span class=\"date-text\">\n\t\t2/20/2026\n\t</span>\n</p>\n<p class=\"blog-comments\">\n</p>\n</div>\n<div class=\"blog-separator\">\u00a0</div>\n<div class=\"blog-content\">\n<div><div class=\"wsite-image wsite-image-border-none\" style=\"padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center\"> <a> <img alt=\"Picture\" src=\"/uploads/1/2/0/7/12072560/published/head-of-bc.jpg?1771567824\" style=\"width:725;max-width:100%\"/> </a> <div style=\"display:block;font-size:90%\"></div> </div></div>\n<br/>\n<div class=\"blog-read-more\">\n<a class=\"blog-link\" href=\"//www.zerkalomn.com/news/7801991\">Read More</a>\n</div>\n</div>\n<div class=\"blog-social\">\n<div class=\"blog-social-item blog-fb-like\"><fb:like action=\"like\" class=\"fb_iframe_widget\" fb-iframe-plugin-query=\"action=like&amp;app_id=190291501407&amp;container_width=0&amp;href=https%3A%2F%2Fwww.zerkalomn.com%2F4%2Fpost%2F2026%2F02%2F7801991.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90\" fb-xfbml-state=\"parsed\" href=\"https://www.zerkalomn.com/4/post/2026/02/7801991.html\" layout=\"button_count\" share=\"false\" show_faces=\"false\" width=\"90\"><span style=\"vertical-align: top; width: 0px; height: 0px; overflow: hidden;\"><iframe allow=\"encrypted-media\" allowfullscreen=\"true\" allowtransparency=\"true\" data-testid=\"fb:like Facebook Social Plugin\" frameborder=\"0\" height=\"1000px\" name=\"f6d3b0fb89cca0b65\" scrolling=\"no\" src=\"https://www.facebook.com/v2.6/plugins/like.php?action=like&amp;app_id=190291501407&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df4505ad1d2bcfd743%26domain%3Dwww.ze..."
+    ]
+  },
+  "next_page_examples": {
+    "div.blog-page-nav-previous a.blog-link": [
+      "<a class=\"blog-link\" href=\"/news/previous/2\">&lt;&lt;Previous</a>"
+    ]
+  },
+  "title_selectors": [
+    "h2.blog-title"
+  ],
+  "title_examples": {
+    "h2.blog-title": [
+      "<h2 class=\"blog-title\">\n<a class=\"blog-title-link blog-link\" href=\"//www.zerkalomn.com/news/7801991\">\u0413\u043b\u0430\u0432\u0430 \u043f\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u043e\u0439 \u0441\u043b\u0443\u0436\u0431\u044b \u0437\u0430\u044f\u0432\u0438\u043b \u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u043f\u043e \u0443\u0436\u0435\u0441\u0442\u043e\u0447\u0435\u043d\u0438\u044e \u0438\u043c\u043c\u0438\u0433\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0433\u043e \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u0432 \u041c\u0438\u043d\u043d\u0435\u0441\u043e\u0442\u0435 \u043f\u043e\u0441\u043b\u0435 \u0433\u043d\u0435\u0432\u043d\u044b\u0445 \u043f\u0440\u043e\u0442\u0435\u0441\u0442\u043e\u0432 \u0438 \u0434\u0432\u0443</a>\n</h2>"
+    ]
+  },
+  "date_selectors": [
+    "p.blog-date",
+    "span.date-text"
+  ],
+  "date_examples": {
+    "p.blog-date": [
+      "<p class=\"blog-date\">\n<span class=\"date-text\">\n\t\t2/20/2026\n\t</span>\n</p>"
+    ],
+    "span.date-text": [
+      "<span class=\"date-text\">\n\t\t2/20/2026\n\t</span>"
+    ]
+  },
+  "url_selectors": [
+    "a.blog-title-link",
+    "div.blog-header a.blog-link"
+  ],
+  "url_examples": {
+    "a.blog-title-link": [
+      "<a class=\"blog-title-link blog-link\" href=\"//www.zerkalomn.com/news/7801991\">\u0413\u043b\u0430\u0432\u0430 \u043f\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u043e\u0439 \u0441\u043b\u0443\u0436\u0431\u044b \u0437\u0430\u044f\u0432\u0438\u043b \u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u043f\u043e \u0443\u0436\u0435\u0441\u0442\u043e\u0447\u0435\u043d\u0438\u044e \u0438\u043c\u043c\u0438\u0433\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0433\u043e \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u0432 \u041c\u0438\u043d\u043d\u0435\u0441\u043e\u0442\u0435 \u043f\u043e\u0441\u043b\u0435 \u0433\u043d\u0435\u0432\u043d\u044b\u0445 \u043f\u0440\u043e\u0442\u0435\u0441\u0442\u043e\u0432 \u0438 \u0434\u0432\u0443</a>"
+    ],
+    "div.blog-header a.blog-link": [
+      "<a class=\"blog-title-link blog-link\" href=\"//www.zerkalomn.com/news/7801991\">\u0413\u043b\u0430\u0432\u0430 \u043f\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u043e\u0439 \u0441\u043b\u0443\u0436\u0431\u044b \u0437\u0430\u044f\u0432\u0438\u043b \u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u043f\u043e \u0443\u0436\u0435\u0441\u0442\u043e\u0447\u0435\u043d\u0438\u044e \u0438\u043c\u043c\u0438\u0433\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0433\u043e \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u0432 \u041c\u0438\u043d\u043d\u0435\u0441\u043e\u0442\u0435 \u043f\u043e\u0441\u043b\u0435 \u0433\u043d\u0435\u0432\u043d\u044b\u0445 \u043f\u0440\u043e\u0442\u0435\u0441\u0442\u043e\u0432 \u0438 \u0434\u0432\u0443</a>"
+    ]
+  }
+}

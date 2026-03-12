@@ -1,0 +1,9 @@
+{
+    "name": "Minnesota Daily",
+    "scrapers": [
+        {
+            "path": "scrapers.minnesota_daily.scraper",
+            "url": "https://mndaily.com/category/city/"
+        }
+    ]
+}

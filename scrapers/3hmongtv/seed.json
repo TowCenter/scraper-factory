@@ -1,0 +1,9 @@
+{
+    "name": "3HMONGTV",
+    "scrapers": [
+        {
+            "path": "scrapers.3hmongtv.scraper",
+            "url": "https://hbctv.net/category/3hmongtv-news/"
+        }
+    ]
+}

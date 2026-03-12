@@ -1,0 +1,52 @@
+{
+  "item_selectors": [
+    ".ultp-block-item",
+    ".ultp-block-item.ultp-block-media"
+  ],
+  "next_page_selectors": [
+    ".ultp-pagination a",
+    ".ultp-next-page-numbers a"
+  ],
+  "item_examples": {
+    ".ultp-block-item": [
+      "<div class=\"ultp-block-item ultp-block-media post-id-176476\"><div class=\"ultp-block-content-wrap\"><div class=\"ultp-block-image ultp-block-image-opacity\"><a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\"><img alt=\"Gordon Ramsay, St. Louis County Sheriff\" fifu-featured=\"1\" post-id=\"176476\" src=\"https://d33ioocfz0fzi4.cloudfront.net/jns-media/7b/d9/27616326/webp_cjzg4ck6a4k0akm4i49ecwoilj87.webp\" title=\"Gordon Ramsay, St. Louis County Sheriff\"/></a></div><div class=\"ultp-block-content\"><h3 class=\"ultp-block-title\"><a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\">One person dies in snowmobile accident on Arrowhead Trail north of Orr</a></h3><div class=\"ultp-block-excerpt\"><p>A North Branch man died in a snowmobile accident north of Orr, Minnesota, after failing to navigate a turn and colliding with a tree. Authorities are withholding his name pending family notification while the investigation continues.</p>\n</div><div class=\"ultp-dynamic-content-group-common ultp-dynamic-content-group-1739922421473\"><div class=\"ultp-dynamic-content-field-common ultp-dynamic-content-field-1739922421473\"><p class=\"ultp-dynamic-content-field-dc\"></p></div></div><div class=\"ultp-dynamic-content-group-common ultp-dynamic-content-group-1745405235933\"><div class=\"ultp-dynamic-content-field-common ultp-dynamic-content-field-1745405235933\"><p class=\"ultp-dynamic-content-field-dc\"></p></div></div></div></div></div>"
+    ],
+    ".ultp-block-item.ultp-block-media": [
+      "<div class=\"ultp-block-item ultp-block-media post-id-176476\"><div class=\"ultp-block-content-wrap\"><div class=\"ultp-block-image ultp-block-image-opacity\"><a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\"><img alt=\"Gordon Ramsay, St. Louis County Sheriff\" fifu-featured=\"1\" post-id=\"176476\" src=\"https://d33ioocfz0fzi4.cloudfront.net/jns-media/7b/d9/27616326/webp_cjzg4ck6a4k0akm4i49ecwoilj87.webp\" title=\"Gordon Ramsay, St. Louis County Sheriff\"/></a></div><div class=\"ultp-block-content\"><h3 class=\"ultp-block-title\"><a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\">One person dies in snowmobile accident on Arrowhead Trail north of Orr</a></h3><div class=\"ultp-block-excerpt\"><p>A North Branch man died in a snowmobile accident north of Orr, Minnesota, after failing to navigate a turn and colliding with a tree. Authorities are withholding his name pending family notification while the investigation continues.</p>\n</div><div class=\"ultp-dynamic-content-group-common ultp-dynamic-content-group-1739922421473\"><div class=\"ultp-dynamic-content-field-common ultp-dynamic-content-field-1739922421473\"><p class=\"ultp-dynamic-content-field-dc\"></p></div></div><div class=\"ultp-dynamic-content-group-common ultp-dynamic-content-group-1745405235933\"><div class=\"ultp-dynamic-content-field-common ultp-dynamic-content-field-1745405235933\"><p class=\"ultp-dynamic-content-field-dc\"></p></div></div></div></div></div>"
+    ]
+  },
+  "next_page_examples": {
+    ".ultp-pagination a": [
+      "<a href=\"https://minnesotastatewire.com/stories/\"><svg fill=\"none\" viewbox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"m15 18-6-6 6-6\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"></path>\n</svg>\n Previous</a>"
+    ],
+    ".ultp-next-page-numbers a": [
+      "<a href=\"https://minnesotastatewire.com/stories/page/2/\">Next<svg fill=\"none\" viewbox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"m9 18 6-6-6-6\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"></path>\n</svg>\n</a>"
+    ]
+  },
+  "title_selectors": [
+    ".ultp-block-title a",
+    "h3.ultp-block-title"
+  ],
+  "title_examples": {
+    ".ultp-block-title a": [
+      "<a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\">One person dies in snowmobile accident on Arrowhead Trail north of Orr</a>"
+    ],
+    "h3.ultp-block-title": [
+      "<h3 class=\"ultp-block-title\"><a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\">One person dies in snowmobile accident on Arrowhead Trail north of Orr</a></h3>"
+    ]
+  },
+  "date_selectors": [],
+  "date_examples": {},
+  "url_selectors": [
+    ".ultp-block-title a",
+    ".ultp-block-content-wrap a"
+  ],
+  "url_examples": {
+    ".ultp-block-title a": [
+      "<a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\">One person dies in snowmobile accident on Arrowhead Trail north of Orr</a>"
+    ],
+    ".ultp-block-content-wrap a": [
+      "<a href=\"https://minnesotastatewire.com/one-person-dies-in-snowmobile-accident-on-arrowhead-trail-north-of-orr/\"><img alt=\"Gordon Ramsay, St. Louis County Sheriff\" fifu-featured=\"1\" post-id=\"176476\" src=\"https://d33ioocfz0fzi4.cloudfront.net/jns-media/7b/d9/27616326/webp_cjzg4ck6a4k0akm4i49ecwoilj87.webp\" title=\"Gordon Ramsay, St. Louis County Sheriff\"/></a>"
+    ]
+  }
+}

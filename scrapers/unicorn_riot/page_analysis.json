@@ -1,0 +1,66 @@
+{
+  "item_selectors": [
+    "article.post",
+    "article.f-carousel__slide"
+  ],
+  "next_page_selectors": [
+    "a.pagination-link.larger",
+    "a.pagination-last",
+    "a.pagination-next"
+  ],
+  "item_examples": {
+    "article.post": [
+      "<article class=\"post-111867 post type-post status-publish format-standard has-post-thumbnail hentry category-prison category-protest-direct-action tag-13th-amendment tag-8th-amendment tag-adoc tag-alabama tag-bullock-correctional-facility tag-free-alabama-movement tag-hunger-strike tag-iwoc tag-jailhouse-lawyers-speak tag-kenneth-traywick tag-prison tag-prison-strike tag-reduce-recidivism tag-swift-justice tag-unheard-voice-of-the-concrete-jungle wpautop\" id=\"post-111867\">\n<div class=\"container content\">\n<figure class=\"image story-featured-image story-featured-image-archive-home\">\n<a href=\"https://unicornriot.ninja/2026/behind-the-hunger-strike-swift-justice-continues-fight-for-prisoners-rights/\">\n<img alt=\"\" class=\"attachment-medium size-medium wp-post-image lazy\" data-sizes=\"(max-width: 744px) 100vw, 744px\" data-src=\"https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-744x419.png\" data-srcset=\"https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-744x419.png 744w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-1200x675.png 1200w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-420x236.png 420w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-1536x864.png 1536w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-480x270.png 480w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image.png 1920w\" decoding=\"async\" fetchpriority=\"high\" height=\"419\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20744%20419'%3E%3C/svg%3E\" width=\"744\"/> </a>\n</figure>\n<div class=\"post-content-wrapper\">\n<header class=\"meta-content\">\n<h3 class=\"title entry-title is-3\"><a href=\"https://unicornriot.ninja/2026/behind..."
+    ],
+    "article.f-carousel__slide": [
+      "<article class=\"f-carousel__slide post-111876 ur_media_post type-ur_media_post status-publish has-post-thumbnail hentry category-global category-protest-direct-action tag-video-gallery wpautop is-selected\" id=\"post-111876\" index=\"0\">\n<div class=\"container content\">\n<figure class=\"image story-featured-image\">\n<a href=\"https://unicornriot.ninja/media/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-anniversary/\" title=\"Over 100,000 Protest Tempi Train Crash in Athens, Greece on 3-Year Anniversary\">\n<div class=\"thumb-bg lazyloaded\" data-bg-image=\"url(https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-ann-cover.jpg)\" style=\"background-image: url(https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-ann-cover.jpg);\"></div> </a>\n</figure>\n<div class=\"post-content-wrapper\">\n<header class=\"media-content\">\n<h3 class=\"title entry-title is-3\"><a href=\"https://unicornriot.ninja/media/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-anniversary/\" rel=\"bookmark\">Over 100,000 Protest Tempi Train Crash in Athens, Greece on 3-Year Anniversary</a></h3> </header>\n</div>\n</div>\n</article>"
+    ]
+  },
+  "next_page_examples": {
+    "a.pagination-link.larger": [
+      "<a class=\"pagination-link larger\" href=\"https://unicornriot.ninja/page/2/\" title=\"Page 2\">2</a>"
+    ],
+    "a.pagination-last": [
+      "<a class=\"pagination-last\" href=\"https://unicornriot.ninja/page/102/\">Last <i class=\"fas fa-arrow-circle-right\"></i></a>"
+    ],
+    "a.pagination-next": [
+      "<a class=\"pagination-next\" href=\"https://unicornriot.ninja/page/2/\" rel=\"next\">Next <i class=\"fas fa-arrow-circle-right\"></i></a>"
+    ]
+  },
+  "title_selectors": [
+    "article.f-carousel__slide h3.title",
+    "h3.title.entry-title"
+  ],
+  "title_examples": {
+    "article.f-carousel__slide h3.title": [
+      "<h3 class=\"title entry-title is-3\"><a href=\"https://unicornriot.ninja/media/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-anniversary/\" rel=\"bookmark\">Over 100,000 Protest Tempi Train Crash in Athens, Greece on 3-Year Anniversary</a></h3>"
+    ],
+    "h3.title.entry-title": [
+      "<h3 class=\"title entry-title is-3\"><a href=\"https://unicornriot.ninja/media/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-anniversary/\" rel=\"bookmark\">Over 100,000 Protest Tempi Train Crash in Athens, Greece on 3-Year Anniversary</a></h3>"
+    ]
+  },
+  "date_selectors": [
+    "time.entry-date.published",
+    ".subtitle.is-5"
+  ],
+  "date_examples": {
+    "time.entry-date.published": [
+      "<time class=\"entry-date published\" datetime=\"2026-03-09T16:05:43-06:00\">March 9, 2026</time>"
+    ],
+    ".subtitle.is-5": [
+      "<div class=\"subtitle is-5\">\n<span class=\"posted-on\"> <i class=\"fas fa-caret-right\"></i> <time class=\"entry-date published\" datetime=\"2026-03-09T16:05:43-06:00\">March 9, 2026</time><time class=\"updated\" datetime=\"2026-03-09T16:05:46-06:00\">March 9, 2026</time></span> </div>"
+    ]
+  },
+  "url_selectors": [
+    "article.post a",
+    "article.f-carousel__slide a"
+  ],
+  "url_examples": {
+    "article.post a": [
+      "<a href=\"https://unicornriot.ninja/2026/behind-the-hunger-strike-swift-justice-continues-fight-for-prisoners-rights/\">\n<img alt=\"\" class=\"attachment-medium size-medium wp-post-image lazy\" data-sizes=\"(max-width: 744px) 100vw, 744px\" data-src=\"https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-744x419.png\" data-srcset=\"https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-744x419.png 744w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-1200x675.png 1200w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-420x236.png 420w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-1536x864.png 1536w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image-480x270.png 480w, https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/unicorn-riot-swift-justice-cover-image.png 1920w\" decoding=\"async\" fetchpriority=\"high\" height=\"419\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20744%20419'%3E%3C/svg%3E\" width=\"744\"/> </a>"
+    ],
+    "article.f-carousel__slide a": [
+      "<a href=\"https://unicornriot.ninja/media/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-anniversary/\" title=\"Over 100,000 Protest Tempi Train Crash in Athens, Greece on 3-Year Anniversary\">\n<div class=\"thumb-bg lazyloaded\" data-bg-image=\"url(https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-ann-cover.jpg)\" style=\"background-image: url(https://ur-web1.unicornriot.ninja/wp-content/uploads/2026/03/over-100000-protest-tempi-train-crash-in-athens-greece-on-3-year-ann-cover.jpg);\"></div> </a>"
+    ]
+  }
+}

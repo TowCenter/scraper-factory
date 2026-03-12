@@ -1,0 +1,50 @@
+{
+  "item_selectors": [
+    "article.teaser"
+  ],
+  "next_page_selectors": [
+    ".page-header-nav a"
+  ],
+  "item_examples": {
+    "article.teaser": [
+      "<article class=\"teaser\"><div class=\"teaser-primary-visual\"><a data-testid=\"relativeLink\" href=\"/story/2026/03/02/total-lunar-eclipse-tuesday-morning-spring-preview-this-week\"><picture class=\"\" data-testid=\"picture\"><source data-testid=\"webp\" sizes=\"(max-width: 1023px) 100vw, (min-width: 1024px) 50vw, 900px\" type=\"image/webp\"/><source data-testid=\"notwebp\" sizes=\"(max-width: 1023px) 100vw, (min-width: 1024px) 50vw, 900px\" type=\"image/png\"/><img alt=\"Total lunar eclipse Tuesday morning; spring preview this week\" src=\"https://img.apmcdn.org/cf0c222558a100f2cad40261293bef3ef1ad96eb/uncropped/9604af-20260302-blood-moon-eclipse-1286.png\"/></picture></a></div><div class=\"teaser_content\"><div class=\"teaser_meta type-sm\"><div class=\"date\"><time datetime=\"2026-03-02T16:58:00-06:00\">March 2, 2026 4:58 PM</time></div></div><div class=\"teaser_header\"><a data-testid=\"relativeLink\" href=\"/story/2026/03/02/total-lunar-eclipse-tuesday-morning-spring-preview-this-week\"><h2 class=\"hdg hdg-2\">Total lunar eclipse Tuesday morning; spring preview this week</h2></a></div><div class=\"teaser_body userContent\">A total lunar eclipse happens Tuesday morning. Fewer clouds in northern Minnesota may make for better viewing than in the south. Get ready for a mild week ahead.\n</div><div class=\"teaser_contributors type-sm\"><svg aria-hidden=\"true\" fill=\"none\" height=\"1rem\" viewbox=\"0 0 16 16\" width=\"0.75rem\" xmlns=\"http://www.w3.org/2000/svg\"><polygon fill=\"var(--color-mpr-button-blue)\" points=\"0 0 16 16 0 16 0 0\"></polygon></svg>by <span><a href=\"/people/paul-huttner\">Paul Huttner</a></span></div><div class=\"teaser-controls\"><div class=\"teaser_button\"></div><div class=\"teaser_save\"><div class=\"Modal_modal__nSuXm Modal_modal_close__A2wId undefined\"><div><div class=\"styles_modal__dl30Z\"><header class=\"Modal_modal_header__41Crz styles_modal_header__BNisk\"><div><h3 class=\"\">Go Deeper.</h3></div><button class=\"Modal_btn_close__3QMW1\" type=\"button\"><svg aria-label=\"Close\" class=\"\" fill=\"none\" height=\"14\" s..."
+    ]
+  },
+  "next_page_examples": {
+    ".page-header-nav a": [
+      "<a href=\"/content/2026-03-01\"><button class=\"btn btn-primary btn-slim\">Previous</button></a>"
+    ]
+  },
+  "title_selectors": [
+    ".teaser_header a",
+    "h2.hdg-2"
+  ],
+  "title_examples": {
+    ".teaser_header a": [
+      "<a data-testid=\"relativeLink\" href=\"/story/2026/03/02/total-lunar-eclipse-tuesday-morning-spring-preview-this-week\"><h2 class=\"hdg hdg-2\">Total lunar eclipse Tuesday morning; spring preview this week</h2></a>"
+    ],
+    "h2.hdg-2": [
+      "<h2 class=\"hdg hdg-2\">Total lunar eclipse Tuesday morning; spring preview this week</h2>"
+    ]
+  },
+  "date_selectors": [
+    ".teaser_meta .date",
+    ".teaser_meta time"
+  ],
+  "date_examples": {
+    ".teaser_meta .date": [
+      "<div class=\"date\"><time datetime=\"2026-03-02T16:58:00-06:00\">March 2, 2026 4:58 PM</time></div>"
+    ],
+    ".teaser_meta time": [
+      "<time datetime=\"2026-03-02T16:58:00-06:00\">March 2, 2026 4:58 PM</time>"
+    ]
+  },
+  "url_selectors": [
+    ".teaser_header a"
+  ],
+  "url_examples": {
+    ".teaser_header a": [
+      "<a data-testid=\"relativeLink\" href=\"/story/2026/03/02/total-lunar-eclipse-tuesday-morning-spring-preview-this-week\"><h2 class=\"hdg hdg-2\">Total lunar eclipse Tuesday morning; spring preview this week</h2></a>"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "East Twin Cities",
+    "scrapers": [
+        {
+            "path": "scrapers.east_twin_cities.scraper",
+            "url": "https://easttwincities.com/category/local-government/"
+        }
+    ]
+}

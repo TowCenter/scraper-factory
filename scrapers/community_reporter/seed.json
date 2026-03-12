@@ -1,0 +1,9 @@
+{
+    "name": "Community Reporter",
+    "scrapers": [
+        {
+            "path": "scrapers.community_reporter.scraper",
+            "url": "https://communityreporter.org/"
+        }
+    ]
+}

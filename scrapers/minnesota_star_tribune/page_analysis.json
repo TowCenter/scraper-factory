@@ -1,0 +1,54 @@
+{
+  "item_selectors": [
+    "div.rt-Box.col-span-8.md\\:col-span-5.flex.flex-col.gap-2",
+    "div.rt-Box.col-span-8.md\\:col-span-5"
+  ],
+  "next_page_selectors": [
+    "button.Button_secondary-default-mode__yzoDW",
+    "button.rt-reset.rt-BaseButton.rt-Button"
+  ],
+  "item_examples": {
+    "div.rt-Box.col-span-8.md\\:col-span-5.flex.flex-col.gap-2": [
+      "<div class=\"rt-Box col-span-8 md:col-span-5 flex flex-col gap-2\"><div class=\"rt-Box\" data-testid=\"primary-section-eyebrow\"><div class=\"rt-Box flex items-center gap-x-1 items-center gap-1.5 hover:underline\" data-testid=\"link-eyebrow\"><a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"link-button\" href=\"/news-politics\" role=\"link\"><div class=\"rt-Box flex items-center gap-0.5\"><p class=\"rt-Text break-words font-utility-label-bold-caps-03 text-text-color-01\">News &amp; Politics</p></div></a></div></div><a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"link-button\" href=\"/minnesota-states-new-software-system-costs-50-million-more-than-initially-approved/601577233\" role=\"link\"><div class=\"rt-Box flex items-center gap-0.5\"><h3 class=\"rt-Heading break-words font-editorial-news-heading-04 rt-r-size-6 rt-r-weight-bold\" data-testid=\"content-headline\">Minnesota State\u2019s new software system costs $50 million more than expected</h3></div></a><div class=\"rt-Box flex gap-4\"><div class=\"rt-Box flex flex-col gap-3 w-full\"><span class=\"rt-Text text-text-secondary font-editorial-body-reg-05 md:font-editorial-body-reg-04\" data-testid=\"subheadline-component\">The new software system is key for everything from faculty payroll to how students sign up for classes.</span><div class=\"rt-Box flex flex-col md:flex-row md:flex-initial items-start flex-wrap md:items-center gap-2\"><div class=\"rt-Box font-utility-label-reg-caps-03 text-text-tertiary\"><div class=\"rt-Flex flex rt-r-display-flex rt-r-jc-start\"><span class=\"rt-Text font-utility-label-reg-caps-02 text-text-tertiary\">March 9, 2026</span></div></div></div></div><div class=\"rt-Box md:hidden relative flex justify-end\"><div class=\"rt-Box w-[6.875rem] md:w-full relative\"><a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"link-button\" href=\"/minnesota-states-new-software-system-costs-50-m..."
+    ],
+    "div.rt-Box.col-span-8.md\\:col-span-5": [
+      "<div class=\"rt-Box col-span-8 md:col-span-5 flex flex-col gap-2\"><div class=\"rt-Box\" data-testid=\"primary-section-eyebrow\"><div class=\"rt-Box flex items-center gap-x-1 items-center gap-1.5 hover:underline\" data-testid=\"link-eyebrow\"><a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"link-button\" href=\"/news-politics\" role=\"link\"><div class=\"rt-Box flex items-center gap-0.5\"><p class=\"rt-Text break-words font-utility-label-bold-caps-03 text-text-color-01\">News &amp; Politics</p></div></a></div></div><a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"link-button\" href=\"/minnesota-states-new-software-system-costs-50-million-more-than-initially-approved/601577233\" role=\"link\"><div class=\"rt-Box flex items-center gap-0.5\"><h3 class=\"rt-Heading break-words font-editorial-news-heading-04 rt-r-size-6 rt-r-weight-bold\" data-testid=\"content-headline\">Minnesota State\u2019s new software system costs $50 million more than expected</h3></div></a><div class=\"rt-Box flex gap-4\"><div class=\"rt-Box flex flex-col gap-3 w-full\"><span class=\"rt-Text text-text-secondary font-editorial-body-reg-05 md:font-editorial-body-reg-04\" data-testid=\"subheadline-component\">The new software system is key for everything from faculty payroll to how students sign up for classes.</span><div class=\"rt-Box flex flex-col md:flex-row md:flex-initial items-start flex-wrap md:items-center gap-2\"><div class=\"rt-Box font-utility-label-reg-caps-03 text-text-tertiary\"><div class=\"rt-Flex flex rt-r-display-flex rt-r-jc-start\"><span class=\"rt-Text font-utility-label-reg-caps-02 text-text-tertiary\">March 9, 2026</span></div></div></div></div><div class=\"rt-Box md:hidden relative flex justify-end\"><div class=\"rt-Box w-[6.875rem] md:w-full relative\"><a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"link-button\" href=\"/minnesota-states-new-software-system-costs-50-m..."
+    ]
+  },
+  "next_page_examples": {
+    "button.Button_secondary-default-mode__yzoDW": [
+      "<button class=\"rt-reset rt-BaseButton rt-Button flex Button_button__9QGZa secondary large-size px-4 py-3 w-fit h-fit items-center justify-center rounded-full border border-solid Button_secondary-default-mode__yzoDW rt-r-size-2 rt-variant-solid\" data-testid=\"text-button\" role=\"button\"><div class=\"rt-Box flex items-center gap-1 w-full justify-center\"><span class=\"rt-Text font-utility-button-link-01\">Load More</span></div></button>"
+    ],
+    "button.rt-reset.rt-BaseButton.rt-Button": [
+      "<button aria-controls=\"radix-:r2:\" aria-expanded=\"false\" aria-haspopup=\"dialog\" aria-label=\"open hamburger menu\" class=\"rt-reset rt-BaseButton rt-Button flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb p-0 rt-r-size-2 rt-variant-solid\" data-state=\"closed\" data-testid=\"site-header-hamburger-button\" role=\"button\"><div class=\"rt-Box flex items-center gap-1 w-full justify-center\"><img alt=\"hamburger menu\" class=\"hidden lg:block object-contain shrink-0 size-5\" data-nimg=\"1\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"/_next/static/media/hamburger.e1882ce7.svg\" style=\"color: transparent;\" width=\"20\"/><img alt=\"hamburger menu\" class=\"lg:hidden size-6 object-contain shrink-0\" data-nimg=\"1\" decoding=\"async\" height=\"24\" loading=\"lazy\" src=\"/_next/static/media/search-menu-hamburger.e045d473.svg\" style=\"color: transparent;\" width=\"24\"/></div></button>"
+    ]
+  },
+  "title_selectors": [
+    "h3.rt-Heading"
+  ],
+  "title_examples": {
+    "h3.rt-Heading": [
+      "<h3 class=\"rt-Heading break-words break-words text-text-primary hover:underline hover:decoration-1 hover:underline-offset-4 hover:decoration-black font-editorial-news-heading-03 md:font-editorial-news-heading-04 lg:font-editorial-news-heading-03 rt-r-size-6 rt-r-weight-bold\" data-testid=\"content-headline\">U.S. Commission on Civil Rights chair in St. Paul to hear testimony on ICE tactics </h3>"
+    ]
+  },
+  "date_selectors": [
+    "span.rt-Text.text-text-secondary"
+  ],
+  "date_examples": {
+    "span.rt-Text.text-text-secondary": [
+      "<span class=\"rt-Text text-text-secondary font-editorial-body-reg-05 md:font-editorial-body-reg-04\" data-testid=\"subheadline-component\">The new software system is key for everything from faculty payroll to how students sign up for classes.</span>"
+    ]
+  },
+  "url_selectors": [
+    "div.rt-Box.col-span-8.md\\:col-span-5 a.Button_button__9QGZa",
+    "a.Button_button__9QGZa.Button_button-link__auMnb"
+  ],
+  "url_examples": {
+    "div.rt-Box.col-span-8.md\\:col-span-5 a.Button_button__9QGZa": [
+      "<a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"link-button\" href=\"/news-politics\" role=\"link\"><div class=\"rt-Box flex items-center gap-0.5\"><p class=\"rt-Text break-words font-utility-label-bold-caps-03 text-text-color-01\">News &amp; Politics</p></div></a>"
+    ],
+    "a.Button_button__9QGZa.Button_button-link__auMnb": [
+      "<a class=\"flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb\" data-testid=\"site-header-logo-button\" href=\"/\" role=\"link\"><div class=\"rt-Box flex items-center gap-0.5\"><img alt=\"Star Tribune Logo\" class=\"object-contain size-7\" data-nimg=\"1\" decoding=\"async\" height=\"54\" loading=\"lazy\" src=\"/_next/static/media/star-tribune-logo.2cf1bafe.svg\" style=\"color: transparent;\" width=\"54\"/></div></a>"
+    ]
+  }
+}

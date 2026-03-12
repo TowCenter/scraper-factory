@@ -1,0 +1,68 @@
+{
+  "item_selectors": [
+    "ul.index-module_sectionTeaserList__RJUF li.teaserItem",
+    "ul.teaserList-module_teaserList__LLBP li.teaserItem",
+    "li.teaserItem"
+  ],
+  "next_page_selectors": [],
+  "item_examples": {
+    "ul.index-module_sectionTeaserList__RJUF li.teaserItem": [
+      "<li class=\"teaserItem themeHoverText\" id=\"sectionTeaserList-teaser_0\"><div class=\"index-module_teaser__fbfM\" data-storyuuid=\"cc57e55c-fcc4-49a3-85e1-4eaf3ac2aa93\"><div class=\"index-module_imageContainer__z3gL imageContainer index-module_imageLeft__EhsK index-module_image16x9__FeL7\"><a alt=\"CW CREW: Kandi Krush\" aria-label=\"CW CREW: Kandi Krush\" href=\"/news/local/cw-crew-kandi-krush\" title=\"CW CREW: Kandi Krush\"><div class=\"index-module_imageSubContainer__QgkA imageSubContainer\"><div class=\"index-module_image__VmDl\" style=\"background-color:#f5f5f5\"><img alt=\"Image for story: CW CREW: Kandi Krush\" class=\"index-module_imageTeaser__oFIb\" fetchpriority=\"high\" src=\"/resources/media2/16x9/full/400/center/80/08d0f96b-7ea8-4e91-822f-e01bc1e40a13-large16x9_136A0086.jpg\"/></div></div></a></div><div class=\"index-module_headlineLarge__yjN9 undefined index-module_headline__h51M headline\"><div class=\"index-module_publishedSinceWithTeaserStatus__tkAa\"><span class=\"publishedSince\">3 years ago</span></div><a href=\"/news/local/cw-crew-kandi-krush#\">CW CREW: Kandi Krush</a><p class=\"index-module_summary__Mr4i\">Jordan Alberino teams up with Minnesota's own Kandi Krush, of WOW Women of Wrestling.</p></div></div></li>"
+    ],
+    "ul.teaserList-module_teaserList__LLBP li.teaserItem": [
+      "<li class=\"teaserItem themeHoverText\" id=\"heroPrimary-teaser_0\"><div class=\"index-module_teaser__fbfM\" data-storyuuid=\"015d328a-fa60-46f6-868f-d844660fbfa8\"><div class=\"index-module_imageContainer__z3gL imageContainer index-module_imageTop__RjQf index-module_image16x9__FeL7\"><a alt=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" aria-label=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon\" title=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\"><div class=\"index-module_imageSubContainer__QgkA imageSubContainer\"><div class=\"index-module_image__VmDl\" style=\"background-color:#f5f5f5\"><img alt=\"Image for story: Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" class=\"index-module_imageTeaser__oFIb\" fetchpriority=\"high\" src=\"/resources/media2/16x9/2087/986/6x0/90/a951529c-8d8d-4258-8801-896ec8f58c9b-MauryIntervew.png\"/></div></div></a></div><div class=\"index-module_headlineLarge__yjN9 undefined index-module_headline__h51M headline\"><div class=\"index-module_publishedSinceWithTeaserStatus__tkAa\"><span class=\"publishedSince\">3 months ago</span></div><a href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon#\">Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon</a></div></div></li>"
+    ],
+    "li.teaserItem": [
+      "<li class=\"teaserItem themeHoverText\" id=\"heroPrimary-teaser_0\"><div class=\"index-module_teaser__fbfM\" data-storyuuid=\"015d328a-fa60-46f6-868f-d844660fbfa8\"><div class=\"index-module_imageContainer__z3gL imageContainer index-module_imageTop__RjQf index-module_image16x9__FeL7\"><a alt=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" aria-label=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon\" title=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\"><div class=\"index-module_imageSubContainer__QgkA imageSubContainer\"><div class=\"index-module_image__VmDl\" style=\"background-color:#f5f5f5\"><img alt=\"Image for story: Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" class=\"index-module_imageTeaser__oFIb\" fetchpriority=\"high\" src=\"/resources/media2/16x9/2087/986/6x0/90/a951529c-8d8d-4258-8801-896ec8f58c9b-MauryIntervew.png\"/></div></div></a></div><div class=\"index-module_headlineLarge__yjN9 undefined index-module_headline__h51M headline\"><div class=\"index-module_publishedSinceWithTeaserStatus__tkAa\"><span class=\"publishedSince\">3 months ago</span></div><a href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon#\">Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon</a></div></div></li>"
+    ]
+  },
+  "next_page_examples": {},
+  "title_selectors": [
+    ".index-module_headlineLarge__yjN9 a",
+    ".index-module_headline__h51M a",
+    "li.teaserItem .index-module_headlineLarge__yjN9"
+  ],
+  "title_examples": {
+    ".index-module_headlineLarge__yjN9 a": [
+      "<a href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon#\">Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon</a>"
+    ],
+    ".index-module_headline__h51M a": [
+      "<a href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon#\">Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon</a>"
+    ],
+    "li.teaserItem .index-module_headlineLarge__yjN9": [
+      "<div class=\"index-module_headlineLarge__yjN9 undefined index-module_headline__h51M headline\"><div class=\"index-module_publishedSinceWithTeaserStatus__tkAa\"><span class=\"publishedSince\">3 months ago</span></div><a href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon#\">Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon</a></div>"
+    ]
+  },
+  "date_selectors": [
+    "li.teaserItem .index-module_publishedSinceWithTeaserStatus__tkAa",
+    ".index-module_publishedSinceWithTeaserStatus__tkAa",
+    ".publishedSince"
+  ],
+  "date_examples": {
+    "li.teaserItem .index-module_publishedSinceWithTeaserStatus__tkAa": [
+      "<div class=\"index-module_publishedSinceWithTeaserStatus__tkAa\"><span class=\"publishedSince\">3 months ago</span></div>"
+    ],
+    ".index-module_publishedSinceWithTeaserStatus__tkAa": [
+      "<div class=\"index-module_publishedSinceWithTeaserStatus__tkAa\"><span class=\"publishedSince\">3 months ago</span></div>"
+    ],
+    ".publishedSince": [
+      "<span class=\"publishedSince\">3 months ago</span>"
+    ]
+  },
+  "url_selectors": [
+    "li.teaserItem a",
+    "li.teaserItem a[href]",
+    ".teaserItem a[aria-label]"
+  ],
+  "url_examples": {
+    "li.teaserItem a": [
+      "<a alt=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" aria-label=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon\" title=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\"><div class=\"index-module_imageSubContainer__QgkA imageSubContainer\"><div class=\"index-module_image__VmDl\" style=\"background-color:#f5f5f5\"><img alt=\"Image for story: Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" class=\"index-module_imageTeaser__oFIb\" fetchpriority=\"high\" src=\"/resources/media2/16x9/2087/986/6x0/90/a951529c-8d8d-4258-8801-896ec8f58c9b-MauryIntervew.png\"/></div></div></a>"
+    ],
+    "li.teaserItem a[href]": [
+      "<a alt=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" aria-label=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon\" title=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\"><div class=\"index-module_imageSubContainer__QgkA imageSubContainer\"><div class=\"index-module_image__VmDl\" style=\"background-color:#f5f5f5\"><img alt=\"Image for story: Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" class=\"index-module_imageTeaser__oFIb\" fetchpriority=\"high\" src=\"/resources/media2/16x9/2087/986/6x0/90/a951529c-8d8d-4258-8801-896ec8f58c9b-MauryIntervew.png\"/></div></div></a>"
+    ],
+    ".teaserItem a[aria-label]": [
+      "<a alt=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" aria-label=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" href=\"/news/local/maury-povich-on-reinvention-viral-fame-why-hes-not-slowing-down-anytime-soon\" title=\"Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\"><div class=\"index-module_imageSubContainer__QgkA imageSubContainer\"><div class=\"index-module_image__VmDl\" style=\"background-color:#f5f5f5\"><img alt=\"Image for story: Maury Povich on Reinvention, Viral Fame &amp; Why He\u2019s Not Slowing Down Anytime Soon\" class=\"index-module_imageTeaser__oFIb\" fetchpriority=\"high\" src=\"/resources/media2/16x9/2087/986/6x0/90/a951529c-8d8d-4258-8801-896ec8f58c9b-MauryIntervew.png\"/></div></div></a>"
+    ]
+  }
+}

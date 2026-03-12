@@ -1,0 +1,62 @@
+{
+  "item_selectors": [
+    ".profile-rendered.catlist-tile",
+    ".catlist_tiles_wrap .profile-rendered"
+  ],
+  "next_page_selectors": [
+    ".sno-infinite-scroll-button-active",
+    ".sno-infinite-scroll-button"
+  ],
+  "item_examples": {
+    ".profile-rendered.catlist-tile": [
+      "<div class=\"profile-rendered catlist-tile sno-tile-clickable sno-tile-resized\" data-rendered=\"42570\">\n<article>\n<div class=\"catlist-tile-inner\" style=\"height: 475.25px;\">\n<div class=\"catlist-tile-media-photo\">\n<img alt=\"Photo gallery: Residence halls compete in Polar Cup\" class=\"enlarge-effect\" data-ratio=\"0.67\" src=\"https://thebuclarion.com/wp-content/uploads/2026/03/260224_tan_kickball_26-1200x800.jpg\" style=\"object-fit: cover;\"/>\n</div>\n<div class=\"catlist-tile-textarea-with-media\">\n<h2>\n<a class=\"homeheadline\" href=\"https://thebuclarion.com/42570/news/photo-gallery-residence-halls-compete-in-polar-cup/\" title=\"Permanent Link to Story\">\n                                                Photo gallery: Residence halls compete in Polar Cup                        </a>\n</h2>\n<div class=\"catlist-meta\">\n<span class=\"catlist-writer\"> <a class=\"creditline\" href=\"https://thebuclarion.com/staff_name/kailey-tan/\">Kailey Tan</a></span>\n<br/> <span class=\"catlist-date\"><span class=\"time-wrapper\"> March 2, 2026</span></span>\n</div>\n</div>\n<div class=\"clear\"></div>\n</div>\n</article>\n</div>"
+    ],
+    ".catlist_tiles_wrap .profile-rendered": [
+      "<div class=\"profile-rendered catlist-tile sno-tile-clickable sno-tile-resized\" data-rendered=\"42570\">\n<article>\n<div class=\"catlist-tile-inner\" style=\"height: 475.25px;\">\n<div class=\"catlist-tile-media-photo\">\n<img alt=\"Photo gallery: Residence halls compete in Polar Cup\" class=\"enlarge-effect\" data-ratio=\"0.67\" src=\"https://thebuclarion.com/wp-content/uploads/2026/03/260224_tan_kickball_26-1200x800.jpg\" style=\"object-fit: cover;\"/>\n</div>\n<div class=\"catlist-tile-textarea-with-media\">\n<h2>\n<a class=\"homeheadline\" href=\"https://thebuclarion.com/42570/news/photo-gallery-residence-halls-compete-in-polar-cup/\" title=\"Permanent Link to Story\">\n                                                Photo gallery: Residence halls compete in Polar Cup                        </a>\n</h2>\n<div class=\"catlist-meta\">\n<span class=\"catlist-writer\"> <a class=\"creditline\" href=\"https://thebuclarion.com/staff_name/kailey-tan/\">Kailey Tan</a></span>\n<br/> <span class=\"catlist-date\"><span class=\"time-wrapper\"> March 2, 2026</span></span>\n</div>\n</div>\n<div class=\"clear\"></div>\n</div>\n</article>\n</div>"
+    ]
+  },
+  "next_page_examples": {
+    ".sno-infinite-scroll-button-active": [
+      "<div class=\"sno-infinite-scroll-button sno-infinite-scroll-button-active\" data-category=\"7\" data-month=\"0\" data-paged=\"0\" data-tag=\"\" data-taxonomy=\"\" data-template=\"catlist_tiles\" data-term=\"\" data-year=\"0\">Load More Stories</div>"
+    ],
+    ".sno-infinite-scroll-button": [
+      "<div class=\"sno-infinite-scroll-button sno-infinite-scroll-button-active\" data-category=\"7\" data-month=\"0\" data-paged=\"0\" data-tag=\"\" data-taxonomy=\"\" data-template=\"catlist_tiles\" data-term=\"\" data-year=\"0\">Load More Stories</div>"
+    ]
+  },
+  "title_selectors": [
+    ".catlist-tile-inner h2",
+    "a.homeheadline"
+  ],
+  "title_examples": {
+    ".catlist-tile-inner h2": [
+      "<h2>\n<a class=\"homeheadline\" href=\"https://thebuclarion.com/42570/news/photo-gallery-residence-halls-compete-in-polar-cup/\" title=\"Permanent Link to Story\">\n                                                Photo gallery: Residence halls compete in Polar Cup                        </a>\n</h2>"
+    ],
+    "a.homeheadline": [
+      "<a class=\"menuheadline homeheadline\" href=\"https://thebuclarion.com/42570/news/photo-gallery-residence-halls-compete-in-polar-cup/\">Photo gallery: Residence halls compete in Polar Cup</a>"
+    ]
+  },
+  "date_selectors": [
+    "span.catlist-date",
+    ".catlist-meta .time-wrapper"
+  ],
+  "date_examples": {
+    "span.catlist-date": [
+      "<span class=\"catlist-date\"><span class=\"time-wrapper\"> March 2, 2026</span></span>"
+    ],
+    ".catlist-meta .time-wrapper": [
+      "<span class=\"time-wrapper\"> March 2, 2026</span>"
+    ]
+  },
+  "url_selectors": [
+    ".catlist-tile-textarea-with-media a.homeheadline",
+    "a.homeheadline"
+  ],
+  "url_examples": {
+    ".catlist-tile-textarea-with-media a.homeheadline": [
+      "<a class=\"homeheadline\" href=\"https://thebuclarion.com/42570/news/photo-gallery-residence-halls-compete-in-polar-cup/\" title=\"Permanent Link to Story\">\n                                                Photo gallery: Residence halls compete in Polar Cup                        </a>"
+    ],
+    "a.homeheadline": [
+      "<a class=\"menuheadline homeheadline\" href=\"https://thebuclarion.com/42570/news/photo-gallery-residence-halls-compete-in-polar-cup/\">Photo gallery: Residence halls compete in Polar Cup</a>"
+    ]
+  }
+}

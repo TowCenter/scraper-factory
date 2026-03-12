@@ -1,0 +1,9 @@
+{
+    "name": "The UpTake",
+    "scrapers": [
+        {
+            "path": "scrapers.the_uptake.scraper",
+            "url": "https://theuptake.org/"
+        }
+    ]
+}

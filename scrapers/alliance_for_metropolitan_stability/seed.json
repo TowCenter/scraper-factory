@@ -1,0 +1,9 @@
+{
+    "name": "Alliance for Metropolitan Stability",
+    "scrapers": [
+        {
+            "path": "scrapers.alliance_for_metropolitan_stability.scraper",
+            "url": "http://thealliancetc.org/news-events/news/"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "LA Times Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.la_times_minneapolis.scraper",
+            "url": "https://www.latimes.com/search?q=minneapolis&s=1"
+        }
+    ]
+}

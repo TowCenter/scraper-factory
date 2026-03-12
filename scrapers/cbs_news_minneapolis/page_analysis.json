@@ -1,0 +1,66 @@
+{
+  "item_selectors": [
+    ".list-river .item",
+    "section.search-results article.item",
+    "article.item"
+  ],
+  "next_page_selectors": [
+    "a.component__view-more",
+    ".component__view-more--sm"
+  ],
+  "item_examples": {
+    ".list-river .item": [
+      "<article class=\"item item--type-video\">\n<a class=\"item__anchor\" href=\"https://www.cbsnews.com/minnesota/video/minneapolis-mayor-jacob-frey-vetoes-eviction-notice-extension-ordinance/?intcid=CNM-00-10abd1h\" target=\"_parent\">\n<span class=\"img item__thumb item__thumb--crop-0\">\n<img height=\"360\" src=\"https://assets3.cbsnewsstatic.com/hub/i/r/2026/03/12/51ac316c-5b61-45cb-ac48-23688f49540f/thumbnail/1200x630/7e66f3afda4a4b41b7e4954dd5699fd4/dce33967072dcc99faadfe73878ade87.jpg\" width=\"640\"/>\n</span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">Minneapolis Mayor Jacob Frey vetoes eviction notice extension ordinance</h4>\n<p class=\"item__dek\">Minneapolis Mayor Jacob Frey vetoed a measure passed by the City Council that advocates say would have eased the burden for renters after Operation Metro Surge.</p>\n<div class=\"item__metadata\">\n<span class=\"item__date\">8h ago</span>\n</div>\n</div>\n</a>\n</article>"
+    ],
+    "section.search-results article.item": [
+      "<article class=\"item item--type-video\">\n<a class=\"item__anchor\" href=\"https://www.cbsnews.com/minnesota/video/minneapolis-mayor-jacob-frey-vetoes-eviction-notice-extension-ordinance/?intcid=CNM-00-10abd1h\" target=\"_parent\">\n<span class=\"img item__thumb item__thumb--crop-0\">\n<img height=\"360\" src=\"https://assets3.cbsnewsstatic.com/hub/i/r/2026/03/12/51ac316c-5b61-45cb-ac48-23688f49540f/thumbnail/1200x630/7e66f3afda4a4b41b7e4954dd5699fd4/dce33967072dcc99faadfe73878ade87.jpg\" width=\"640\"/>\n</span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">Minneapolis Mayor Jacob Frey vetoes eviction notice extension ordinance</h4>\n<p class=\"item__dek\">Minneapolis Mayor Jacob Frey vetoed a measure passed by the City Council that advocates say would have eased the burden for renters after Operation Metro Surge.</p>\n<div class=\"item__metadata\">\n<span class=\"item__date\">8h ago</span>\n</div>\n</div>\n</a>\n</article>"
+    ],
+    "article.item": [
+      "<article class=\"item item--type-video\">\n<a class=\"item__anchor\" href=\"https://www.cbsnews.com/minnesota/video/minneapolis-mayor-jacob-frey-vetoes-eviction-notice-extension-ordinance/?intcid=CNM-00-10abd1h\" target=\"_parent\">\n<span class=\"img item__thumb item__thumb--crop-0\">\n<img height=\"360\" src=\"https://assets3.cbsnewsstatic.com/hub/i/r/2026/03/12/51ac316c-5b61-45cb-ac48-23688f49540f/thumbnail/1200x630/7e66f3afda4a4b41b7e4954dd5699fd4/dce33967072dcc99faadfe73878ade87.jpg\" width=\"640\"/>\n</span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">Minneapolis Mayor Jacob Frey vetoes eviction notice extension ordinance</h4>\n<p class=\"item__dek\">Minneapolis Mayor Jacob Frey vetoed a measure passed by the City Council that advocates say would have eased the burden for renters after Operation Metro Surge.</p>\n<div class=\"item__metadata\">\n<span class=\"item__date\">8h ago</span>\n</div>\n</div>\n</a>\n</article>"
+    ]
+  },
+  "next_page_examples": {
+    "a.component__view-more": [
+      "<a class=\"component__view-more component__view-more--sm\" data-name=\"endindex\" data-value=\"15\">\n\t\t\t    Show More\n\t\t\t    <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ],
+    ".component__view-more--sm": [
+      "<a class=\"component__view-more component__view-more--sm\" data-name=\"endindex\" data-value=\"15\">\n\t\t\t    Show More\n\t\t\t    <svg aria-hidden=\"true\" class=\"icon__caret-right\" viewbox=\"0 0 32 32\">\n<use xlink:href=\"#icon-caret-down\"></use>\n</svg>\n</a>"
+    ]
+  },
+  "title_selectors": [
+    "h4.item__hed",
+    ".item__title-wrapper h4.item__hed"
+  ],
+  "title_examples": {
+    "h4.item__hed": [
+      "<h4 class=\"item__hed\">Minneapolis Mayor Jacob Frey vetoes eviction notice extension ordinance</h4>"
+    ],
+    ".item__title-wrapper h4.item__hed": [
+      "<h4 class=\"item__hed\">Minneapolis Mayor Jacob Frey vetoes eviction notice extension ordinance</h4>"
+    ]
+  },
+  "date_selectors": [
+    "span.item__date",
+    ".item__metadata .item__date"
+  ],
+  "date_examples": {
+    "span.item__date": [
+      "<span class=\"item__date\">8h ago</span>"
+    ],
+    ".item__metadata .item__date": [
+      "<span class=\"item__date\">8h ago</span>"
+    ]
+  },
+  "url_selectors": [
+    "article.item > a.item__anchor",
+    "a.item__anchor"
+  ],
+  "url_examples": {
+    "article.item > a.item__anchor": [
+      "<a class=\"item__anchor\" href=\"https://www.cbsnews.com/minnesota/video/minneapolis-mayor-jacob-frey-vetoes-eviction-notice-extension-ordinance/?intcid=CNM-00-10abd1h\" target=\"_parent\">\n<span class=\"img item__thumb item__thumb--crop-0\">\n<img height=\"360\" src=\"https://assets3.cbsnewsstatic.com/hub/i/r/2026/03/12/51ac316c-5b61-45cb-ac48-23688f49540f/thumbnail/1200x630/7e66f3afda4a4b41b7e4954dd5699fd4/dce33967072dcc99faadfe73878ade87.jpg\" width=\"640\"/>\n</span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">Minneapolis Mayor Jacob Frey vetoes eviction notice extension ordinance</h4>\n<p class=\"item__dek\">Minneapolis Mayor Jacob Frey vetoed a measure passed by the City Council that advocates say would have eased the burden for renters after Operation Metro Surge.</p>\n<div class=\"item__metadata\">\n<span class=\"item__date\">8h ago</span>\n</div>\n</div>\n</a>"
+    ],
+    "a.item__anchor": [
+      "<a class=\"item__anchor\" href=\"https://www.cbsnews.com/minnesota/video/minneapolis-mayor-jacob-frey-vetoes-eviction-notice-extension-ordinance/?intcid=CNM-00-10abd1h\" target=\"_parent\">\n<span class=\"img item__thumb item__thumb--crop-0\">\n<img height=\"360\" src=\"https://assets3.cbsnewsstatic.com/hub/i/r/2026/03/12/51ac316c-5b61-45cb-ac48-23688f49540f/thumbnail/1200x630/7e66f3afda4a4b41b7e4954dd5699fd4/dce33967072dcc99faadfe73878ade87.jpg\" width=\"640\"/>\n</span>\n<div class=\"item__title-wrapper\">\n<h4 class=\"item__hed\">Minneapolis Mayor Jacob Frey vetoes eviction notice extension ordinance</h4>\n<p class=\"item__dek\">Minneapolis Mayor Jacob Frey vetoed a measure passed by the City Council that advocates say would have eased the burden for renters after Operation Metro Surge.</p>\n<div class=\"item__metadata\">\n<span class=\"item__date\">8h ago</span>\n</div>\n</div>\n</a>"
+    ]
+  }
+}

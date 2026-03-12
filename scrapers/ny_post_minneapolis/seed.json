@@ -1,0 +1,9 @@
+{
+    "name": "NY Post Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.ny_post_minneapolis.scraper",
+            "url": "https://nypost.com/search/minneapolis/?orderby=date&order=desc"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Fox News Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.fox_news_minneapolis.scraper",
+            "url": "https://www.foxnews.com/search-results/search#q=minneapolis"
+        }
+    ]
+}

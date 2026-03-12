@@ -1,0 +1,58 @@
+{
+  "item_selectors": [
+    "article.styles_Card__h4UC9",
+    "article.styles_ArticleCard__ZF3Wi"
+  ],
+  "next_page_selectors": [
+    "a.styles_Pagination__link__MAljo",
+    "a.styles_Section__linkButton__y7Z2i"
+  ],
+  "item_examples": {
+    "article.styles_Card__h4UC9": [
+      "<article class=\"styles_ArticleCard__ZF3Wi styles_Card__h4UC9\"><div class=\"styles_Card__Content__lz0WO\"><div class=\"styles_Card__TextContentWrapper__ccXOQ styles_Card__TextContentWrapper--Condensed__Qqhxp\"><h6 class=\"styles_Card__LabelWrapper__e_6qr\"><span class=\"styles_Card__CommunityName__zHXc4\">Minneapolis</span><span class=\"styles_Card__LabelDivider__bwCWf\">|</span><span class=\"\">News</span><span class=\"styles_Card__LabelDivider__bwCWf\">|</span><time datetime=\"2026-03-12T03:36:35Z\">15h</time></h6><h2 class=\"styles_Card__Title__cEqF8\"><a class=\"styles_Card__TitleLink__Df5jx\" href=\"/minnesota/minneapolis/target-lower-prices-3-000-items\" title=\"Target To Lower Prices On 3,000 Items\">Target To Lower Prices On 3,000 Items</a></h2><p class=\"styles_Card__Description__kWZTu\">The cuts will start in March and continue throughout spring on products including apparel, pantry goods and more.</p><div class=\"styles_Card__BylineWrapper__HbQ6L\"><div class=\"styles_BylineSummary__AvatarContainer__3hk8S\"><div class=\"styles_BylineSummary__Avatar__vCkIf\" style=\"z-index:10\"><img alt=\"Anna Schier's profile picture\" class=\"avatar-img avatar-img--base is-lazy-loaded\" src=\"https://patch.com/img/cdn20/users/920517/profile_pics/styles/large/public/head-shot___03131932219.jpg?width=64\"/><noscript><img alt=\"Anna Schier's profile picture\" class=\"avatar-img avatar-img--base\" src=\"https://patch.com/img/cdn20/users/920517/profile_pics/styles/large/public/head-shot___03131932219.jpg?width=64\"/></noscript></div></div><div><div class=\"styles_BylineSummary__pZ3AJ styles_BylineSummary__Simple__M0QIY\"><span><strong>Anna Schier</strong>, </span><span>Patch Staff</span><span class=\"styles_Badges__xSLXF styles_Badges--small__IXgzL\"><span style=\"cursor:pointer\"><img alt=\"Verified Patch Staff Badge\" class=\"styles_Badge__np_hU is-lazy-loaded\" src=\"https://patch.com/img/cdn/assets/layout/badges/verified-patch-staff.svg\"/><noscript><img alt=\"Verified Patch Staff Badge\" class=\"styles_Badge__np_hU\" src=\"https://p..."
+    ],
+    "article.styles_ArticleCard__ZF3Wi": [
+      "<article class=\"styles_ArticleCard__ZF3Wi styles_Card__h4UC9\"><div class=\"styles_Card__Content__lz0WO\"><div class=\"styles_Card__TextContentWrapper__ccXOQ styles_Card__TextContentWrapper--Condensed__Qqhxp\"><h6 class=\"styles_Card__LabelWrapper__e_6qr\"><span class=\"styles_Card__CommunityName__zHXc4\">Minneapolis</span><span class=\"styles_Card__LabelDivider__bwCWf\">|</span><span class=\"\">News</span><span class=\"styles_Card__LabelDivider__bwCWf\">|</span><time datetime=\"2026-03-12T03:36:35Z\">15h</time></h6><h2 class=\"styles_Card__Title__cEqF8\"><a class=\"styles_Card__TitleLink__Df5jx\" href=\"/minnesota/minneapolis/target-lower-prices-3-000-items\" title=\"Target To Lower Prices On 3,000 Items\">Target To Lower Prices On 3,000 Items</a></h2><p class=\"styles_Card__Description__kWZTu\">The cuts will start in March and continue throughout spring on products including apparel, pantry goods and more.</p><div class=\"styles_Card__BylineWrapper__HbQ6L\"><div class=\"styles_BylineSummary__AvatarContainer__3hk8S\"><div class=\"styles_BylineSummary__Avatar__vCkIf\" style=\"z-index:10\"><img alt=\"Anna Schier's profile picture\" class=\"avatar-img avatar-img--base is-lazy-loaded\" src=\"https://patch.com/img/cdn20/users/920517/profile_pics/styles/large/public/head-shot___03131932219.jpg?width=64\"/><noscript><img alt=\"Anna Schier's profile picture\" class=\"avatar-img avatar-img--base\" src=\"https://patch.com/img/cdn20/users/920517/profile_pics/styles/large/public/head-shot___03131932219.jpg?width=64\"/></noscript></div></div><div><div class=\"styles_BylineSummary__pZ3AJ styles_BylineSummary__Simple__M0QIY\"><span><strong>Anna Schier</strong>, </span><span>Patch Staff</span><span class=\"styles_Badges__xSLXF styles_Badges--small__IXgzL\"><span style=\"cursor:pointer\"><img alt=\"Verified Patch Staff Badge\" class=\"styles_Badge__np_hU is-lazy-loaded\" src=\"https://patch.com/img/cdn/assets/layout/badges/verified-patch-staff.svg\"/><noscript><img alt=\"Verified Patch Staff Badge\" class=\"styles_Badge__np_hU\" src=\"https://p..."
+    ]
+  },
+  "next_page_examples": {
+    "a.styles_Pagination__link__MAljo": [
+      "<a class=\"styles_Pagination__link__MAljo\" href=\"/minnesota/minneapolis?page=2\">Read more<i class=\"fa fa-angle-double-right icon icon--space-left\"></i></a>"
+    ],
+    "a.styles_Section__linkButton__y7Z2i": [
+      "<a class=\"styles_Section__linkButton__y7Z2i\" href=\"/minnesota/minneapolis/events\">See more events</a>"
+    ]
+  },
+  "title_selectors": [
+    "h2.styles_Card__Title__cEqF8",
+    "a.styles_Card__TitleLink__Df5jx"
+  ],
+  "title_examples": {
+    "h2.styles_Card__Title__cEqF8": [
+      "<h2 class=\"styles_Card__Title__cEqF8\"><a class=\"styles_Card__TitleLink__Df5jx\" href=\"/minnesota/minneapolis/target-lower-prices-3-000-items\" title=\"Target To Lower Prices On 3,000 Items\">Target To Lower Prices On 3,000 Items</a></h2>"
+    ],
+    "a.styles_Card__TitleLink__Df5jx": [
+      "<a class=\"styles_Card__TitleLink__Df5jx\" href=\"/minnesota/minneapolis/target-lower-prices-3-000-items\" title=\"Target To Lower Prices On 3,000 Items\">Target To Lower Prices On 3,000 Items</a>"
+    ]
+  },
+  "date_selectors": [
+    "time"
+  ],
+  "date_examples": {
+    "time": [
+      "<time datetime=\"2026-03-12T03:36:35Z\">15h</time>"
+    ]
+  },
+  "url_selectors": [
+    "article.styles_ArticleCard__ZF3Wi a.styles_Card__Thumbnail__5pQOj",
+    "a.styles_Card__TitleLink__Df5jx"
+  ],
+  "url_examples": {
+    "article.styles_ArticleCard__ZF3Wi a.styles_Card__Thumbnail__5pQOj": [
+      "<a class=\"styles_Card__Thumbnail__5pQOj\" href=\"/minnesota/minneapolis/target-lower-prices-3-000-items\" title=\"Target To Lower Prices On 3,000 Items\"><img alt=\"Target To Lower Prices On 3,000 Items\" class=\"styles_Card__ThumbnailImage__tI6PS\" sizes=\"(min-width: 768px) 174px, calc(100vw - 32px)\" src=\"https://patch.com/img/cdn20/users/920517/20260311/113633/styles/patch_image/public/target-generic-by-renee___11232922742.jpg\" srcset=\"https://patch.com/img/cdn20/users/920517/20260311/113633/styles/patch_image/public/target-generic-by-renee___11232922742.jpg?width=174 174w, https://patch.com/img/cdn20/users/920517/20260311/113633/styles/patch_image/public/target-generic-by-renee___11232922742.jpg?width=600 600w\"/></a>"
+    ],
+    "a.styles_Card__TitleLink__Df5jx": [
+      "<a class=\"styles_Card__TitleLink__Df5jx\" href=\"/minnesota/minneapolis/target-lower-prices-3-000-items\" title=\"Target To Lower Prices On 3,000 Items\">Target To Lower Prices On 3,000 Items</a>"
+    ]
+  }
+}

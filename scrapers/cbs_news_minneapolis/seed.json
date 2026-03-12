@@ -1,0 +1,9 @@
+{
+    "name": "CBS News Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.cbs_news_minneapolis.scraper",
+            "url": "https://www.cbsnews.com/search/?q=minneapolis&sort=date"
+        }
+    ]
+}

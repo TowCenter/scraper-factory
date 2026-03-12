@@ -1,0 +1,62 @@
+{
+  "item_selectors": [
+    ".search-results__story",
+    ".story.story--archive"
+  ],
+  "next_page_selectors": [
+    ".search-results__more a.button--solid",
+    "a.button.button--solid"
+  ],
+  "item_examples": {
+    ".search-results__story": [
+      "<div class=\"search-results__story\">\n<div class=\"story story--archive story--i-float\" style=\"contain-intrinsic-size: 818px 204px; content-visibility: auto;\">\n<div class=\"story__image story__image--floated\">\n<a class=\"postid-38747222\" href=\"https://nypost.com/2026/03/12/opinion/how-san-francisco-quietly-launched-a-reparations-program/\" tabindex=\"-1\">\n<img alt=\"How San Francisco quietly relaunched its scandalized free money for black residents program\" class=\"attachment-nyp_section_tag size-nyp_section_tag\" decoding=\"async\" fetchpriority=\"high\" height=\"204\" sizes=\"(max-width: 306px) 100vw, 306px\" src=\"https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?quality=90&amp;strip=all&amp;1773255957&amp;w=306&amp;h=204&amp;crop=1\" srcset=\"https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?quality=90&amp;strip=all 2000w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=300,200&amp;quality=90&amp;strip=all 300w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=768,512&amp;quality=90&amp;strip=all 768w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=1024,682&amp;quality=90&amp;strip=all 1024w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=1536,1024&amp;quality=90&amp;strip=all 1536w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=600,400&amp;quality=90&amp;strip=all 600w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=956,633&amp;quality=90&amp;strip=all 956w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=717,475&amp;quality=90&amp;strip=all 717w, https://nypost.com/wp-conte..."
+    ],
+    ".story.story--archive": [
+      "<div class=\"story story--archive story--i-float\" style=\"contain-intrinsic-size: 818px 204px; content-visibility: auto;\">\n<div class=\"story__image story__image--floated\">\n<a class=\"postid-38747222\" href=\"https://nypost.com/2026/03/12/opinion/how-san-francisco-quietly-launched-a-reparations-program/\" tabindex=\"-1\">\n<img alt=\"How San Francisco quietly relaunched its scandalized free money for black residents program\" class=\"attachment-nyp_section_tag size-nyp_section_tag\" decoding=\"async\" fetchpriority=\"high\" height=\"204\" sizes=\"(max-width: 306px) 100vw, 306px\" src=\"https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?quality=90&amp;strip=all&amp;1773255957&amp;w=306&amp;h=204&amp;crop=1\" srcset=\"https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?quality=90&amp;strip=all 2000w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=300,200&amp;quality=90&amp;strip=all 300w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=768,512&amp;quality=90&amp;strip=all 768w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=1024,682&amp;quality=90&amp;strip=all 1024w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=1536,1024&amp;quality=90&amp;strip=all 1536w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=600,400&amp;quality=90&amp;strip=all 600w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=956,633&amp;quality=90&amp;strip=all 956w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=717,475&amp;quality=90&amp;strip=all 717w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress..."
+    ]
+  },
+  "next_page_examples": {
+    ".search-results__more a.button--solid": [
+      "<a class=\"button button--solid\" data-ga4-event='\n\t\t{\"event_name\":\"ux_engagement\",\"source_unit\":\"Read More Stories\"}\t\t' href=\"https://nypost.com/search/minneapolis/page/2/?orderby=date&amp;order=desc\">\n\t\tSee More Stories\t</a>"
+    ],
+    "a.button.button--solid": [
+      "<a class=\"button button--solid\" data-ga4-event='\n\t\t{\"event_name\":\"ux_engagement\",\"source_unit\":\"Read More Stories\"}\t\t' href=\"https://nypost.com/search/minneapolis/page/2/?orderby=date&amp;order=desc\">\n\t\tSee More Stories\t</a>"
+    ]
+  },
+  "title_selectors": [
+    "h3.story__headline",
+    "h3.story__headline a"
+  ],
+  "title_examples": {
+    "h3.story__headline": [
+      "<h3 class=\"story__headline headline headline--archive\">\n<a class=\"postid-38747222\" href=\"https://nypost.com/2026/03/12/opinion/how-san-francisco-quietly-launched-a-reparations-program/\">\n\t\t\t\t\tHow San Francisco quietly relaunched its scandalized free money for black residents program\t\t\t\t</a>\n</h3>"
+    ],
+    "h3.story__headline a": [
+      "<a class=\"postid-38747222\" href=\"https://nypost.com/2026/03/12/opinion/how-san-francisco-quietly-launched-a-reparations-program/\">\n\t\t\t\t\tHow San Francisco quietly relaunched its scandalized free money for black residents program\t\t\t\t</a>"
+    ]
+  },
+  "date_selectors": [
+    ".meta.meta--byline",
+    ".story .meta--byline"
+  ],
+  "date_examples": {
+    ".meta.meta--byline": [
+      "<span class=\"meta meta--byline\">\n\t\t\t\tBy <a class=\"meta__link christopher-f-rufo\" href=\"https://nypost.com/author/christopher-f-rufo/\">Christopher F. Rufo</a> <span class=\"connect\">and</span> <a class=\"meta__link haley-strack\" href=\"https://nypost.com/author/haley-strack/\">Haley Strack</a>\u00a0\t\t\t\tMarch 12, 2026 |\n\t\t\t\t11:00am</span>"
+    ],
+    ".story .meta--byline": [
+      "<span class=\"meta meta--byline\">\n\t\t\t\tBy <a class=\"meta__link christopher-f-rufo\" href=\"https://nypost.com/author/christopher-f-rufo/\">Christopher F. Rufo</a> <span class=\"connect\">and</span> <a class=\"meta__link haley-strack\" href=\"https://nypost.com/author/haley-strack/\">Haley Strack</a>\u00a0\t\t\t\tMarch 12, 2026 |\n\t\t\t\t11:00am</span>"
+    ]
+  },
+  "url_selectors": [
+    ".search-results__story a[class^=\"postid-\"]",
+    "h3.story__headline a"
+  ],
+  "url_examples": {
+    ".search-results__story a[class^=\"postid-\"]": [
+      "<a class=\"postid-38747222\" href=\"https://nypost.com/2026/03/12/opinion/how-san-francisco-quietly-launched-a-reparations-program/\" tabindex=\"-1\">\n<img alt=\"How San Francisco quietly relaunched its scandalized free money for black residents program\" class=\"attachment-nyp_section_tag size-nyp_section_tag\" decoding=\"async\" fetchpriority=\"high\" height=\"204\" sizes=\"(max-width: 306px) 100vw, 306px\" src=\"https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?quality=90&amp;strip=all&amp;1773255957&amp;w=306&amp;h=204&amp;crop=1\" srcset=\"https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?quality=90&amp;strip=all 2000w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=300,200&amp;quality=90&amp;strip=all 300w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=768,512&amp;quality=90&amp;strip=all 768w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=1024,682&amp;quality=90&amp;strip=all 1024w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=1536,1024&amp;quality=90&amp;strip=all 1536w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=600,400&amp;quality=90&amp;strip=all 600w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=956,633&amp;quality=90&amp;strip=all 956w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=717,475&amp;quality=90&amp;strip=all 717w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1773270320032.jpg?resize=878,585&amp;quality=90&amp;strip=all 878w, https://nypost.com/wp-content/uploads/sites/2/2026/03/newspress-collage-34chnfmvd-1..."
+    ],
+    "h3.story__headline a": [
+      "<a class=\"postid-38747222\" href=\"https://nypost.com/2026/03/12/opinion/how-san-francisco-quietly-launched-a-reparations-program/\">\n\t\t\t\t\tHow San Francisco quietly relaunched its scandalized free money for black residents program\t\t\t\t</a>"
+    ]
+  }
+}

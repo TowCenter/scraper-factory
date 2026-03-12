@@ -1,0 +1,9 @@
+{
+    "name": "Patch Minneapolis",
+    "scrapers": [
+        {
+            "path": "scrapers.patch_minneapolis.scraper",
+            "url": "https://patch.com/minnesota/minneapolis"
+        }
+    ]
+}
